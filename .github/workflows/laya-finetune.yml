@@ -1,33 +1,20 @@
-name: Laya scam-screen fine-tune
+name: Laya CI smoke test
 
-# Runs the full fine-tune pipeline on GitHub's runners (CPU). Triggered
-# manually, or on any push that touches the corpus generator, question packs,
-# or training code. Uploads the trained head + metrics as a build artifact.
+# Runs a tiny smoke test on push to verify the pipeline (corpus generation,
+# model loading, training loop) works end-to-end. Real fine-tuning happens
+# locally or on a larger runner — GitHub's free CPU runners OOM on the 421M
+# model with more than ~100 examples.
 
 on:
-  workflow_dispatch:
-    inputs:
-      n_scam:
-        description: "scam examples"
-        default: "1500"
-      n_legit:
-        description: "legit examples"
-        default: "1500"
-      epochs:
-        description: "training epochs"
-        default: "3"
-      unfreeze:
-        description: "also fine-tune the encoder (slow on CPU)"
-        type: boolean
-        default: false
   push:
     paths:
       - "laya/**"
+      - ".github/workflows/laya-finetune.yml"
 
 jobs:
-  finetune:
+  smoke-test:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -40,35 +27,19 @@ jobs:
           pip install torch --index-url https://download.pytorch.org/whl/cpu
           pip install laya scikit-learn
 
-      - name: Generate corpus
+      - name: Generate small corpus
         run: |
           python laya/datasets/generate_scam_corpus.py \
-            --out laya/datasets/scam_corpus.jsonl \
-            --n-scam ${{ inputs.n_scam || 1500 }} \
-            --n-legit ${{ inputs.n_legit || 1500 }} \
-            --seed 42
+            --out laya/datasets/smoke_corpus.jsonl \
+            --n-scam 50 --n-legit 50 --seed 42
 
-      - name: Fine-tune
+      - name: Smoke-test training (100 examples, 1 epoch)
         run: |
-          UNFREEZE_FLAG=""
-          if [ "${{ inputs.unfreeze }}" = "true" ]; then
-            UNFREEZE_FLAG="--unfreeze"
-          fi
           python laya/train/finetune_local.py \
-            --corpus laya/datasets/scam_corpus.jsonl \
-            --epochs ${{ inputs.epochs || 3 }} \
-            --n 1000 \
-            --batch-size 8 \
-            --save laya/train/scam_head.pt \
-            $UNFREEZE_FLAG \
-            | tee laya/train/metrics.txt
+            --corpus laya/datasets/smoke_corpus.jsonl \
+            --epochs 1 --n 100 --batch-size 8 \
+            --save laya/train/smoke_head.pt
 
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: scam-screen-model
-          path: |
-            laya/train/scam_head.pt
-            laya/train/metrics.txt
-            laya/datasets/scam_corpus.jsonl
-          retention-days: 30
+      - name: Verify output
+        run: |
+          test -f laya/train/smoke_head.pt && echo "smoke test passed"
