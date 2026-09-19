@@ -1,0 +1,1000 @@
+{"text": "Oh, Do I need a jacket next week please.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "How do you spell February if you can.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "I got a text about my insurance, is it real okay?", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Um, someone called saying they're from Social Security, is that real", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "I'd like to speak with Sean thanks.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Um, I got a maybe strange message, can you check it", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Um, how cold is it outside", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Well, How do I turn off the Wi-Fi", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Listen, is this email a scam", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Well, What I guess time is it", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "can maybe you call Lisa please.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Any doctor appointments this morning", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Oh, Did I take my blood pressure pill this morning", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "My pill schedule", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Um, tell me about a package", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "what medications do I take today", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Honey, What's on my calendar this week", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Well, How many feet in a cup", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Honey, Read me my mail", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "i got a bill from Verizon, can you handle it thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Listen, Can you look at this email and tell me if it's safe", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Honey, Who is Tom", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Honey, What's the temperature please.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, emergency, please help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Will it snow this afternoon", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Hey, Do I have anything tomorrow", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Oh, Ring Tom please.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Um, I think someone is trying to trick me", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Oh, What time is it", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Listen, pay the water", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Call Sarah", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Oh, how many feet in a pound", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Do I I guess have any appointments next week please.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "We're out I think of eggs", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Listen, I need groceries thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Honey, Did I take my atorvastatin today okay?", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Well, Is this phone call legitimate", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Honey, can you look at this email and tell me if it's safe please.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Well, What's I guess in my email thanks.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, Do I have any appointments today", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Well, i need milk and bananas okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Oh, Read the email I guess from Tom", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, What's the temperature", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, I got a strange message, can you check it", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Listen, Take care of the electric bill if you can.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "how do I print something please.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Um, I need to take my cholesterol medication at 6 PM", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, What's in my email", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "i fell and I can't get up", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, My electric payment is due okay?", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Oh, Check if Jenny emailed me", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, don't let me forget my vitamin D", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Remind me to take my metformin", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Well, I'm having chest pain", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, I need maybe to call Tom back if you can.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Um, This doesn't look right, is it fraud", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Call Sean", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "I got a I think strange message, can you check it please.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "I need to make a payment to the water company please.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Um, I need to call Mike back", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Oh, I fell and I can't get up okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "get maybe me some milk please.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "time to pay the electric again okay?", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, can I think you pay my gas bill for me thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "i need to make a payment to AT&T thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Someone called saying they're from Microsoft, is that real if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Call Jenny", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Well, It's time for my pills thanks.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Listen, Someone broke into my house", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, Tell me about a package okay?", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Oh, emergency, please I guess help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "set a reminder for my atorvastatin if you can.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Um, How maybe cold is it outside", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Hey, I got a strange message, can you check it", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Oh, Can you get me milk from the store if you can.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Honey, Get me some bananas please.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Well, Check if this is a scam thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "I got a strange message, can you check it if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Hey, someone called saying they're from Microsoft, is that real please.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "i need chicken and rice if you can.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "i got a strange message, can you check it okay?", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Hey, did I take my metformin this afternoon", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Well, I got maybe a text about my account, is it real", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Um, time to pay the phone again", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "what does my I guess day look like this afternoon thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "The water bill is due, can you take care of it thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Oh, I got I think a bill from Consumers Energy, can you handle it thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Honey, My cable payment is due", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Listen, what does my day look like today please.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "I got a text about a refund, is it real okay?", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Do I have any appointments this afternoon thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Um, I got a bill from AT&T, can you handle it okay?", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "What time I guess is it", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "check my inbox thanks.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Um, i want to pay Verizon", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, I need maybe rice and bananas please.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "I need to order food", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Listen, Is I guess it nice out", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Well, get me some toilet paper", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Oh, i need help if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, How do you spell Wednesday okay?", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "i'd like I guess to speak with David", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Honey, Call my brother thanks.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Hey, Do I have anything today", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Honey, Is it going to rain today thanks.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "I need help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "How do I reset my password", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Um, I need to make a payment to Comcast thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Tell me about a package", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Um, Can you pay my internet bill for me if you can.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, Call 911 please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, i need I guess to take my aspirin at 6 PM", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, ring Sean please.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Hey, Is this phone call legitimate okay?", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "What am I doing today okay?", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Hey, It's time for my pills", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "what medications do I take this afternoon thanks.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, I smell gas thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, do I need a jacket this afternoon", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Honey, Order groceries from Meijer okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Get me some milk okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Um, What's forty plus twelve", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "how do I I guess turn off the Wi-Fi please.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Well, How do you spell February thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "can you do I guess the shopping if you can.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "I need to order food thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Oh, Read my email please.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "How hot is it going to get please.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Order groceries from Walmart", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "call my brother", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "it's I think time for my pills please.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Well, How do you spell February thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Um, What's the temperature", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Get me some milk", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "how many inches in a foot please.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Hey, This doesn't look right, is it fraud please.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Oh, how cold is it outside", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Is this email a scam okay?", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "do I need I guess a jacket next week", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "call Lisa if you can.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "i need toilet paper and chicken", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Um, It's time for my pills thanks.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Um, I want to I think hear my messages okay?", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Well, What does my I guess day look like this morning thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Well, Check my schedule for tomorrow if you can.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "someone broke into maybe my house", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "i need groceries thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Oh, Any maybe doctor appointments next week please.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Oh, Will it snow today if you can.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, when is my next appointment if you can.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Listen, It's time for my pills", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Oh, is it I think nice out", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "remind me to take my cholesterol medication", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "I need to make a payment to Consumers Energy okay?", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Honey, Am I free this afternoon thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Well, How many feet in a yard thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Hey, is this email a scam thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Oh, Don't let me forget my metformin", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Oh, what's the temperature please.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, Did I take my Lisinopril this week okay?", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Oh, Get I think Sean on the phone if you can.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Listen, Read me my mail thanks.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, My electric payment is due if you can.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Um, I want to talk to Sean okay?", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Oh, How many tablespoons in a yard thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Well, Order some eggs for me", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "What year did the war end happen if you can.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Hey, Will it snow tomorrow", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Honey, How many ounces in a yard", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Listen, Do I have any new emails thanks.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "is this email a scam if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Um, I need to call Tom back if you can.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "What am I doing this afternoon if you can.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Honey, Something is wrong, get help if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "how cold is it outside if you can.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Honey, I need to call Sarah back if you can.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Um, Should I bring an umbrella if you can.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Hey, what's the weather like if you can.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Honey, Get Mike on the phone", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Listen, Pay the cable thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Oh, When do I take my Lisinopril if you can.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Listen, i need to order food okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "how maybe do you spell Wednesday okay?", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Oh, what's the temperature okay?", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Um, Read my email", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "get me some rice if you can.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Get Lisa on the phone please.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Listen, I fell and I can't get up", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, i need to call Sean back please.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Hey, Dial Tom", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Who is Mike thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Well, We're out of chicken", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Listen, I want to I guess pay DTE okay?", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Um, i I think want to pay Verizon if you can.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Is it nice out", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "What time is it if you can.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Get me maybe some chicken okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "I'd like to speak with Jenny", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Pay the cable", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, When do I take my cholesterol medication", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, what I think medications do I take this afternoon", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "I got a bill from Consumers Energy, can you handle it", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "get Jenny on the phone", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Um, this doesn't look right, is it fraud", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "how hot is it going to get okay?", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Hey, I got I think a text about my insurance, is it real thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Oh, I got I guess a strange message, can you check it if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Listen, what does receipt mean if you can.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "What am I doing today", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Hey, How do I print something please.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Hey, I need to make a payment to DTE", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "My water payment I guess is due if you can.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Listen, Time to pay the cable again if you can.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Listen, I fell and I can't get up", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, I think I'm having a stroke", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Do I I guess have any appointments next week please.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "How many inches in a pound", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Hey, Is this phone call legitimate if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Hey, what's the date next week okay?", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "What's the temperature", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Oh, I got a strange message, can you check it if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "I need to order food okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "I need to call Jenny back thanks.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Um, pay the insurance please.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "someone maybe called saying they're from my bank, is that real", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Oh, how do I reset my password okay?", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Um, I think someone is trying to trick me please.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Hey, Can you get I guess me eggs from the store", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "when is my next appointment", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Um, What does my day look like tomorrow thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Honey, Order some coffee for me if you can.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Honey, Time to pay the electric again thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, what's the maybe weather like", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "what's the weather like", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Um, My water payment is due", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Set I guess a reminder for my vitamin D", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Honey, What's on my I guess calendar today thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Listen, i got a bill from DTE, can you handle it", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, i want to talk to Sarah", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "What's the temperature thanks.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "How many feet in a yard", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Listen, someone called saying I think they're from Medicare, is that real if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Set a reminder for my cholesterol medication", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Is this email a scam thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "someone called saying they're from the IRS, is that real thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Hey, Am I supposed to take something this afternoon okay?", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Honey, I smell gas", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, how many tablespoons in a pound", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Well, This doesn't look right, is it fraud", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Um, I maybe need groceries", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Listen, get me some bread thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Oh, any doctor appointments next week", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Honey, Time to pay maybe the insurance again if you can.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Hey, Read me my mail", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Can you call Lisa", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Did anyone email me okay?", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Hey, We're out of bread", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Honey, Am I supposed I guess to take something this afternoon", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "i want to pay Verizon okay?", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Is it going to rain next week if you can.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "someone broke into my house", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I need to make a payment to DTE", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, Who is Sean", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Um, Can you call Sarah thanks.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Well, pay the maybe electric thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Um, Pay the water okay?", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Listen, Check my inbox okay?", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Honey, is this email a scam", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Oh, Take care of the water bill okay?", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, do I have any new emails", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Well, Emergency, please help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, My electric payment is due", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Order groceries from Costco", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "I can't breathe", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, set a reminder for my levothyroxine okay?", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Um, How do you spell receipt please.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Oh, We're I guess out of coffee thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Honey, Read me my mail if you can.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Oh, weather I think forecast for today", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Oh, set a reminder I think for my blood pressure pill", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Oh, read me my mail", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Honey, Tell maybe me about my insurance thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Hey, check if this is a scam if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "How do you spell February okay?", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Emergency, maybe please help thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "i need to order food", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Oh, Order some toilet paper for me please.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Listen, What time is it thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Honey, Can you look at this email and tell me if it's safe", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "i I think can't breathe", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "what does my day look like next week", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Well, Can you I think get me bread from the store if you can.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Get me some rice", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Listen, add eggs to my grocery list", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Oh, Add bread to my grocery list please.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Well, i want I think to hear my messages please.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Hey, is this phone call legitimate if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "what's coming up this afternoon", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Do I have anything tomorrow", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "what year did man land on the moon happen please.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Listen, how do I turn off the Wi-Fi please.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "What time is it if you can.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Oh, I want to talk to Jenny", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Um, Get Sarah on the phone thanks.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Hey, I want to pay AT&T if you can.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "something seems fishy about this", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Honey, i I think need groceries okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Hey, What does my I think day look like this morning", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Listen, Am I I guess free today if you can.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Honey, Check if Sean I guess emailed me", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Um, Read my email if you can.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, dial Jenny", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Listen, i I guess fell and I can't get up if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, Do I have any new emails please.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Honey, Remind me to take my aspirin", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "I I guess need to call Jenny back", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "i need I guess help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "remind me to take my metformin", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Well, should I bring an umbrella if you can.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Call Sean", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Um, I'd like to speak with Sean", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Read I think the email from David", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, Dial Mary", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "I need to make a payment to AT&T", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Honey, I got a bill from Verizon, can you handle it", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Hey, Should I bring an umbrella thanks.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, Pay the internet okay?", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "I think someone is trying to trick me", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "any messages for me please.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "What does February mean", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Well, i I think smell gas", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Do I have any new emails okay?", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Can you call Mike please.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Oh, Did anyone email me please.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "do I need a jacket today thanks.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Um, What's the I guess temperature", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, when do I take my Lisinopril thanks.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, i can't breathe if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, i need help please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Ring David please.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Well, Do I have maybe any new emails", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "it's I guess time for my pills", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Listen, What's the maybe temperature if you can.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, what am I doing this afternoon", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Am I supposed maybe to take something today", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "I think someone is trying to trick me if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Um, don't let me forget my atorvastatin", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Listen, Emergency, please help thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, I need to order food", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Honey, What medications do I take this week please.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "I think I'm I guess having a stroke", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "i need to take my blood pressure pill at 6 PM thanks.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Well, do I have any appointments next week", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Um, I need milk and coffee thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "someone I guess broke into my house", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, Someone broke into my house okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, Get David on the phone", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "What's in my email please.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Order some milk for me", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Oh, Order groceries from Walmart okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Honey, Don't let me I think forget my aspirin if you can.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Honey, i can't breathe thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, did I take I guess my blood pressure pill tomorrow", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Listen, did I take I guess my vitamin D tomorrow please.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, I need groceries", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Oh, Check if Sean emailed me if you can.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, i need to pay the internet bill", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "I think I'm having a stroke", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, can I think you look at this email and tell me if it's safe", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "We're out of coffee if you can.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Um, Will it snow today", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Well, time to pay the phone again", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "I want to pay Consumers Energy", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Hey, I want to hear my messages", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Oh, I'd like to speak with David", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Listen, Am I I think supposed to take something next week", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Check my schedule for next week thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Can you do the shopping thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Well, time to pay the water again thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Hey, emergency, please help okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "do I have anything this week please.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Dial Sean", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Well, do I have anything next week thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Someone broke into my house please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Do I have any new emails please.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, Check my inbox if you can.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Hey, call 911", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Phone Lisa for me thanks.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "I think I think I'm having a stroke if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, I want to talk to Tom thanks.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "what time is it if you can.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "what medications do I take this morning if you can.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "I'd like to speak with Mary", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "How do you spell restaurant thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Listen, Any messages for me thanks.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Um, Something seems fishy about this please.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "I need I think rice and bananas please.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Well, I can't breathe please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, call Sarah", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Honey, order groceries from Meijer okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "I fell and I can't get up thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, What's coming up next week please.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "i'd I guess like to speak with Mary okay?", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Well, Can you get me toilet paper from the store if you can.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Um, Who is Sean thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "what's the date this afternoon", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "do I need a jacket this afternoon", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "any doctor appointments next week okay?", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Well, Don't let me forget my blood pressure pill", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Honey, Can you look at this email and tell me if it's safe please.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Honey, Read maybe my email please.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Honey, how do I print something thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Well, Should I bring maybe an umbrella", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, Set a reminder for my aspirin please.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Well, I need to pay the electric bill", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Phone Tom for me okay?", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Listen, something is wrong, get help thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "how do I zoom in", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Call Mary", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Hey, Emergency, please help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "What's coming up I think this afternoon", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "time to pay the gas again okay?", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Read the email from Mary", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Honey, call my brother", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Can you look at this email and tell me if it's safe please.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Listen, order some bread for me", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Honey, I want to hear my messages", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "I want to hear my messages", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Um, i need groceries", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Oh, Did I take my vitamin D next week", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "What's in maybe my email", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Um, I got a bill from the water company, can you handle it okay?", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "how I guess cold is it outside", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Um, Do I need a jacket this week please.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Honey, Can you look at this email and tell me if it's safe please.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Call my granddaughter okay?", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Honey, i need to call Sarah back thanks.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Set a reminder I guess for my vitamin D", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, How cold is it outside", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Hey, How do you spell necessary if you can.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Hey, I think someone is trying to trick me please.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Hey, Is it going to rain next week", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Read me my mail", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Um, Order some rice for me if you can.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Oh, do I need a jacket tomorrow thanks.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Well, get me some bananas okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Well, This doesn't look right, is it fraud okay?", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Read me my mail thanks.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "I smell gas please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, What's I think twenty-three plus a hundred if you can.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Listen, tell me about a package", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "is this email I think a scam", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "what medications do I take this week", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, Something is wrong, get help please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "weather forecast for this morning if you can.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Well, I want to talk to Tom okay?", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Hey, the cable bill is due, can you take care of it", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Um, I need help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, Ring Mike", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Um, i got I guess a text about a refund, is it real", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Well, Tell me about my insurance if you can.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Hey, what's the temperature", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, Call my I think grandson", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Um, Check if Mike emailed me", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Honey, Read I think me my mail okay?", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Um, I got a I guess strange message, can you check it please.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Oh, i need groceries", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Hey, I want to hear my messages", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Honey, i'm having chest pain", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, can you look at this email and tell me if it's safe please.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "someone broke into my house", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, call 911", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Did anyone email me", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "I fell and I guess I can't get up please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, take care of the internet bill", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, How many ounces in a cup", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Hey, i need to take my Lisinopril at breakfast", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Um, Is this phone call legitimate", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Listen, What does my day look like this week", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Listen, what year did the Berlin Wall fall happen thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Hey, I think someone is trying to trick me okay?", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Hey, What's the date tomorrow", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Listen, Order some toilet paper for me", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Add toilet paper to my grocery list okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Is this phone call legitimate", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Honey, Check my schedule for this morning", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "The internet bill is due, can you take care of it please.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Um, What's the date next week", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Hey, dial Mike if you can.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "What's a hundred plus twelve", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Honey, read the email from Mike please.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "What am I doing tomorrow please.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "can you do the shopping", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Hey, What's coming up this afternoon please.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Well, Is it going to rain this morning", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Hey, Do I have I guess any new emails if you can.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Hey, What time is it if you can.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "I I think got a strange message, can you check it", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Oh, I smell gas okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, I'd like to speak with Lisa", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Oh, Check if Mike emailed me if you can.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Um, can you get me coffee from the store thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Emergency, maybe please help if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I I guess need help please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, is it nice out", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, did anyone email me", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Um, What does Wednesday mean", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "time to pay the cable again", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, We're out I guess of bread okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Phone Sarah for me", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "do I have anything tomorrow", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Listen, Dial Sean", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Hey, Can you get me bananas from the store if you can.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Um, is it nice out", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, Read me my mail okay?", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Um, i smell gas", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, Something seems fishy about this thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Honey, what's the temperature", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Hey, Is this phone call legitimate if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Well, Is it nice out please.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, Do I need a jacket this week", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "we're out of milk if you can.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Well, Weather forecast for maybe tomorrow", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Hey, the cable bill is due, can you take care of it please.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Hey, Am I supposed to take something next week", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, we're out of toilet paper thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "i need help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, is this email a scam if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Listen, Call Mike please.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "How many I guess tablespoons in a foot", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Um, Time to pay I guess the cable again", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Um, don't let me forget my metformin", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, how do you spell receipt please.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "i want to pay Verizon", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Honey, How hot is it going to get", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "I want to hear my messages", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Hey, Is it going to rain this afternoon please.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Well, i got a text about a refund, is it real", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Um, don't let me maybe forget my aspirin", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "The cable bill is due, can you take care of it", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Oh, It's time for my pills", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Is it going to rain today thanks.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Um, I want to talk to David", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Oh, I need groceries", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Hey, phone I guess Mary for me", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Am I supposed to take something next week thanks.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Set a reminder maybe for my Lisinopril okay?", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Do I have any appointments this morning", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "how many feet in a cup please.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Listen, what's in my email please.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Do I have anything next week okay?", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "What's twelve plus I guess five thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Hey, Read me my mail if you can.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Oh, I want to talk to Tom", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Hey, Dial Sarah", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Oh, What does my day look like this week", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Um, i need rice and rice thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Who maybe is Lisa", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Um, Check if this is a scam thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Um, I need to take my vitamin D at breakfast okay?", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Um, Is it nice out", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, read me my mail", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, I want to hear my messages", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "I want to pay Consumers Energy", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Um, am I free this morning", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Don't let me I guess forget my Lisinopril", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Who is Tom", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Hey, What's maybe in my email", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Hey, I need help if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, i want to hear my messages if you can.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Any doctor appointments tomorrow thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Listen, Call 911 okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, I need to take my atorvastatin at breakfast", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Honey, Will it snow today", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, Who is Lisa", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Honey, I got a text about my account, is it real", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "check if Jenny I think emailed me okay?", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Something is wrong, get help please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I'm I think having chest pain", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, do I have any new emails thanks.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "phone Sean for me please.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Oh, What's the I think date tomorrow please.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Um, I can't breathe", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Emergency, please help if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I need groceries", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Well, Check if David emailed me if you can.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Well, Any messages for me", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, When do I take my atorvastatin thanks.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "any doctor appointments this morning okay?", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "it's time for my pills okay?", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Honey, did I take my cholesterol medication this week thanks.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, I got maybe a bill from Comcast, can you handle it", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Honey, My pill schedule okay?", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "what does my day look like this week", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "order groceries from the store if you can.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Listen, read me my mail thanks.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Hey, My pill schedule if you can.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Call 911 if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, I want to pay Verizon", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Did I take my atorvastatin next week please.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "This doesn't look right, is it fraud", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "What am I doing today please.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Um, Order some eggs for me", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Honey, I need to pay the insurance bill please.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "What medications do I think I take this morning", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Well, my cable payment is due thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Honey, can you pay my phone bill for me", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Um, I got a text about my account, is it real if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Oh, i want to hear my messages okay?", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Um, i can't breathe", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "time to pay the gas again thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Call 911", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Don't let me forget my Lisinopril thanks.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "I need to call Tom back", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "When is my next appointment", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Something seems fishy about this", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Do I have anything this week thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Hey, I need help if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, Check if Sean I think emailed me if you can.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "I want to talk to Mike please.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Weather forecast for next week", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, Do I have any new emails thanks.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Hey, i think someone is trying to trick me if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Listen, i want maybe to pay Verizon", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Hey, i got a bill from Consumers Energy, can you handle it please.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "The cable bill is due, can you take care of it", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Honey, I need help thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, Pay the internet thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Oh, Who I guess is Jenny", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Oh, i can't breathe please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "When do I take my levothyroxine thanks.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "I'm having chest pain", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, Do I have any appointments this morning if you can.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Um, I'm having chest pain thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Is this email a scam thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Well, Dial Lisa", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Listen, call 911", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I got a bill from AT&T, can you handle it if you can.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Listen, how do I reset my password if you can.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Listen, Any messages for me thanks.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Honey, Can maybe you pay my electric bill for me please.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, what does February mean if you can.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "When do I take my aspirin if you can.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Um, what time is maybe it", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "I need to make a payment to the water company", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, I need help if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, Is this email a scam", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Honey, I smell gas", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Remind me to take my aspirin", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, Will it snow tomorrow thanks.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Um, Do I need a jacket today please.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "take care of the cable bill", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Honey, what's the weather like", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "What's coming up this week", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Oh, Can you do the shopping thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "order groceries from the store please.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Do I have I guess any new emails okay?", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Hey, the phone bill is due, can you take care of it okay?", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Tell me about my computer thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Um, i think I'm having a stroke okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "emergency, please help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "What's coming up this morning", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Honey, i need help thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I need to make a payment to Consumers Energy", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Um, What's the weather like", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Honey, I maybe think someone is trying to trick me okay?", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "This doesn't look right, is it fraud thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Is this email a scam thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "What does my day look like today if you can.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Set a reminder for my vitamin D", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Add I think eggs to my grocery list thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Is it nice out if you can.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, how do you spell receipt", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Listen, Ring Mary okay?", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "is it nice out okay?", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "My pill schedule please.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Um, How cold is it outside", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, Call my brother", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Oh, how many inches in a foot okay?", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "We're out maybe of bread", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Hey, what does Wednesday mean thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Hey, i need to make a payment to Consumers Energy", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Listen, I'd like to speak with Mike thanks.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "when is my I guess next appointment", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Well, This doesn't I guess look right, is it fraud thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Listen, how many ounces in a yard thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Listen, we're out of rice", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Honey, weather forecast for this week", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Um, Don't let me forget my vitamin D", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "we're out of rice", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Time to pay the water again please.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "dial Mary if you can.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "what I guess year did the Berlin Wall fall happen", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Hey, Will it snow this afternoon if you can.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Honey, read the email from Mike okay?", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, Ring Sarah", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Listen, call my daughter if you can.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Honey, Check my schedule for today if you can.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Hey, I can't breathe thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, weather forecast for this morning please.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Check my schedule for this week please.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Oh, What's a hundred plus twelve", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Honey, It's time for my pills thanks.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Listen, do I have maybe any new emails thanks.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "What time is it", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Well, My phone payment I guess is due if you can.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Hey, What am I doing this afternoon thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Well, I fell and I can't get up", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, Am I free this morning thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Oh, Am I supposed to take something this afternoon thanks.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Well, My pill schedule please.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Um, Ring Sarah okay?", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Well, Any doctor appointments this afternoon please.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Oh, get me some eggs", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Well, Do I have anything tomorrow if you can.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Hey, I need to order food thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Well, Order some bread for me okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Phone Sean for me", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Um, Can you get me bananas from the store", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "What's the weather like", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, I think I'm having a stroke", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, add maybe bananas to my grocery list", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Well, check if this is a scam thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Honey, Read my email please.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Well, i need to take my cholesterol medication at 8 AM", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Well, Read me my mail", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Well, How cold is it outside please.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Hey, Someone called saying they're from the IRS, is that real", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "When do maybe I take my aspirin please.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "ring Mike if you can.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "What am I doing next week if you can.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Um, i fell and I can't get up thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, Weather forecast for this afternoon", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Oh, Someone broke into my house okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "time to pay the internet again thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Hey, I need help please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Did I take maybe my cholesterol medication this afternoon", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, I need chicken and rice okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Listen, Tell me I guess about a package", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Listen, what's the temperature if you can.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, Do I have anything next week", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Listen, I want to hear my messages if you can.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "i smell gas okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, Read my email", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, I need groceries", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "ring Jenny okay?", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Well, Weather forecast for this morning please.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Hey, Is this email maybe a scam thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Honey, What medications do I take this week thanks.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Can you I guess pay my insurance bill for me", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Listen, Add chicken to my grocery list please.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Honey, i need to take my aspirin at dinner", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Listen, We're out of rice", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Oh, Call Lisa", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Oh, i fell and I can't get up", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "i think someone is trying to trick me", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Well, Am I free next week okay?", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Hey, How cold is it outside", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Hey, What am I doing this afternoon", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Oh, We're out of coffee", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "This doesn't look right, is it fraud thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Listen, Call Tom okay?", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Will it snow tomorrow", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, weather I think forecast for this afternoon", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "What's in my email please.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "I got a text about a package, is it real thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Check if Lisa emailed me okay?", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, get me some rice", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Listen, Order groceries from Costco", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Listen, i can't breathe", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, Call 911 please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Am I free tomorrow", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "how do I turn off the Wi-Fi please.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Oh, how do you spell necessary thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Um, i got a strange message, can you check it please.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Listen, I can't breathe if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I I guess smell gas", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, What's the weather like if you can.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Well, It's time for my pills okay?", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Oh, did anyone email me", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "when is my next appointment", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Hey, What's the temperature", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Well, My pill schedule please.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "How hot is it going to get if you can.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "i need to take my atorvastatin at 8 AM", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "don't let me forget my blood pressure pill if you can.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Honey, Can you get me chicken from the store thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Um, take I guess care of the gas bill if you can.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Oh, is it nice out okay?", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "read my email thanks.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Honey, Dial Mike if you can.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Hey, what's on my calendar this morning", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Um, How cold is it outside thanks.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Hey, Order I guess groceries from Costco thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Listen, how do you spell necessary", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Oh, Any doctor appointments tomorrow okay?", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Oh, i got a I think text about a package, is it real please.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Hey, Something seems fishy about this if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Hey, check if David emailed me", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "check if Jenny emailed me if you can.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "i want to pay Consumers Energy", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Listen, Ring Sarah okay?", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Hey, Take care of the electric bill thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Ring Lisa", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Emergency, please help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, Do I have any new emails", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Well, I think someone is trying to trick me okay?", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Oh, Get Tom I think on the phone", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Honey, Take care of the electric bill okay?", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Check my schedule for next week", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Um, Is this phone call legitimate please.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Hey, when is my next appointment thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Do I have anything this morning if you can.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Hey, My internet payment I guess is due please.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Um, i need help okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, What am I doing next week", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Um, Can you call Mary", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Listen, I maybe think I'm having a stroke", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, i maybe need chicken and eggs", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Honey, This doesn't look right, is it fraud if you can.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Hey, How cold is it outside", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, do I I think have any appointments today please.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Do I need a jacket tomorrow", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Listen, Can you get me toilet paper from the store", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Time to pay the phone again thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Oh, Call 911 if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, how do you spell restaurant okay?", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "i I guess got a text about my account, is it real okay?", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Oh, What does receipt mean okay?", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Listen, Don't let me forget my vitamin D thanks.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Oh, what's coming up this afternoon if you can.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Oh, It's time for my pills", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Will it snow tomorrow thanks.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "I need to pay the gas bill", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Someone called saying they're from my bank, is that real", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Um, what does my day look like tomorrow thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Well, Any doctor appointments today if you can.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Listen, Ring David", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Do I have any new emails", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Don't let me forget my levothyroxine please.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "what's I guess the temperature", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Well, Order groceries from the store thanks.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "is it nice out", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Hey, Am I free this week thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Listen, Dial Mike please.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Listen, My pill schedule okay?", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Um, Did I guess anyone email me thanks.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Don't let me forget my blood pressure pill okay?", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Am I free this afternoon okay?", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "My I think pill schedule", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, Check if this is a scam okay?", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Listen, i want maybe to hear my messages please.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Hey, i need to call Sean back please.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Um, My pill schedule okay?", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Honey, Check my schedule for this afternoon", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Um, Read me my mail", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Oh, This doesn't look right, is it fraud", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Well, Who is Lisa thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Honey, Don't let me forget my Lisinopril okay?", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Remind me to take my metformin if you can.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Do I have any appointments next week if you can.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Listen, i think I'm having a stroke", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, How hot is it going to get", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Honey, Any doctor I guess appointments today thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Hey, i fell and I can't get up", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, how hot is it going to get please.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "I want to talk to Sarah okay?", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "I need to take my levothyroxine at breakfast thanks.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Well, Read the email from Lisa", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "get maybe me some bananas", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Honey, take care of the electric bill please.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Honey, Will it snow this morning okay?", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Do I have any new emails", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "This doesn't look right, is it fraud", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Listen, What's the weather like", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Honey, Any I guess doctor appointments tomorrow", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Um, Call my granddaughter okay?", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "I got a bill from Consumers Energy, can you handle it", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "can you pay my water bill for me", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, What's on my calendar this afternoon", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Did anyone email me if you can.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, get Mary on the phone please.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Will it snow next week thanks.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "I'd like to speak with Tom", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Listen, Remind me to take my vitamin D", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Um, i need to take my atorvastatin at dinner", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Time to pay maybe the internet again if you can.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Listen, Check my inbox thanks.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Um, don't let me forget my blood pressure pill", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, i need to order food okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Honey, Read my email", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "What does my day look like this week please.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Oh, What does my day look like this week okay?", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Listen, can you pay my water bill for me thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Oh, do I have anything this week please.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Well, Will it snow this afternoon", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "How cold is it outside okay?", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Oh, Will I think it snow next week", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "What's five plus forty okay?", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Um, I need to call Lisa back", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Oh, Remind me to take my atorvastatin please.", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Um, Should I bring an umbrella", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Well, i think someone is trying to trick me", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Well, phone Mary maybe for me if you can.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Listen, Someone called saying they're from Apple, is that real", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Oh, My pill schedule", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Hey, i got a bill from the water company, can you handle it", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Get me some eggs if you can.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Call 911", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, What's on my calendar this morning thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Um, my water payment is due", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, Check my inbox please.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Oh, something seems I guess fishy about this okay?", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Oh, i want to hear my messages", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Honey, what's the date next week", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Tell me about my insurance", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Any doctor appointments this morning thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Oh, What am I doing next week okay?", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "check my maybe inbox okay?", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Honey, Will maybe it snow this afternoon please.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "I need I think groceries if you can.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Oh, Someone called saying they're from my bank, is that real okay?", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Honey, Someone called saying they're from the IRS, is that real thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Honey, Can you do the shopping please.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "I want to talk to Tom", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Listen, I got a bill from the water company, can you handle it", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, Order some eggs for me", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "How do I turn off the Wi-Fi", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Um, take care of the insurance bill", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Listen, What's on my calendar today thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Well, I need to take my levothyroxine at 6 PM okay?", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "What's the temperature", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "what's coming up this morning", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Don't let I think me forget my metformin", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "Read me my mail if you can.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Um, Tell me about my account okay?", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Um, I need to call Mike back if you can.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Well, Am I free this morning okay?", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "What does receipt mean", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Oh, Call 911", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Read the email from Mike", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "I got a strange message, can you check it", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Listen, I got a strange message, can you check it", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Do I have anything this morning", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Do I need a jacket this afternoon", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Oh, I want to hear my messages", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Hey, what year did the Berlin Wall fall happen thanks.", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Um, Check I think if this is a scam thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Oh, I want to hear my messages", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Hey, I need groceries", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "What time is it", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "I need eggs and bananas", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Oh, what year did the war end happen", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Order groceries from maybe Costco", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Hey, Can you do the shopping if you can.", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "What medications I guess do I take today", "label": "medication_reminder", "category": "medication_reminder", "source": "synthetic"}
+{"text": "How do you spell restaurant okay?", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Call 911 okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "the electric maybe bill is due, can you take care of it", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Well, i'm having chest pain", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, should I bring an umbrella", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Honey, This doesn't look right, is it fraud thanks.", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Listen, What time is it", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Honey, Get Tom on the phone if you can.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Well, Read my email please.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, Call David", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Read me my mail", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Is this email a scam okay?", "label": "scam_check", "category": "scam_check", "source": "synthetic"}
+{"text": "Um, I fell and I can't get up please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, What's the temperature if you can.", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Honey, What am I doing this afternoon", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "The gas bill is due, can you take care of it please.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Listen, What time is maybe it", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Listen, Call Jenny okay?", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "i want maybe to talk to Mary if you can.", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "what's I think the date today okay?", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "what's the temperature okay?", "label": "weather_check", "category": "weather_check", "source": "synthetic"}
+{"text": "Honey, call 911", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, Dial David", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "How many feet in a pound", "label": "general_question", "category": "general_question", "source": "synthetic"}
+{"text": "Well, Check my schedule for this week please.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Well, I got a bill from the water company, can you handle it", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "my I guess insurance payment is due okay?", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "Oh, Dial Mary", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Um, Check if Mary emailed me", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Honey, What's coming up today thanks.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "I need help okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Take care of the internet bill thanks.", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
+{"text": "i think I'm having a stroke thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Read me my mail thanks.", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "any messages for me", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Oh, Check I guess my schedule for this morning if you can.", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Hey, Someone broke into maybe my house", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, get Mary on the phone", "label": "call_family", "category": "call_family", "source": "synthetic"}
+{"text": "Hey, What's coming up this week okay?", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Well, Someone I guess broke into my house if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, any doctor appointments today okay?", "label": "check_calendar", "category": "check_calendar", "source": "synthetic"}
+{"text": "Hey, check I guess my inbox", "label": "read_email", "category": "read_email", "source": "synthetic"}
+{"text": "Listen, Order groceries from Kroger okay?", "label": "grocery_order", "category": "grocery_order", "source": "synthetic"}
+{"text": "Well, i need to make a payment to Verizon", "label": "pay_bill", "category": "pay_bill", "source": "synthetic"}
