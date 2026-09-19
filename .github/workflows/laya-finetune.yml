@@ -57,8 +57,8 @@ jobs:
           python laya/train/finetune_local.py \
             --corpus laya/datasets/scam_corpus.jsonl \
             --epochs ${{ inputs.epochs || 3 }} \
-            --n 3000 \
-            --batch-size 16 \
+            --n 1000 \
+            --batch-size 8 \
             --save laya/train/scam_head.pt \
             $UNFREEZE_FLAG \
             | tee laya/train/metrics.txt
