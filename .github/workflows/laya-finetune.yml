@@ -1,0 +1,74 @@
+name: Laya scam-screen fine-tune
+
+# Runs the full fine-tune pipeline on GitHub's runners (CPU). Triggered
+# manually, or on any push that touches the corpus generator, question packs,
+# or training code. Uploads the trained head + metrics as a build artifact.
+
+on:
+  workflow_dispatch:
+    inputs:
+      n_scam:
+        description: "scam examples"
+        default: "1500"
+      n_legit:
+        description: "legit examples"
+        default: "1500"
+      epochs:
+        description: "training epochs"
+        default: "3"
+      unfreeze:
+        description: "also fine-tune the encoder (slow on CPU)"
+        type: boolean
+        default: false
+  push:
+    paths:
+      - "laya/**"
+
+jobs:
+  finetune:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install laya scikit-learn
+
+      - name: Generate corpus
+        run: |
+          python laya/datasets/generate_scam_corpus.py \
+            --out laya/datasets/scam_corpus.jsonl \
+            --n-scam ${{ inputs.n_scam || 1500 }} \
+            --n-legit ${{ inputs.n_legit || 1500 }} \
+            --seed 42
+
+      - name: Fine-tune
+        run: |
+          UNFREEZE_FLAG=""
+          if [ "${{ inputs.unfreeze }}" = "true" ]; then
+            UNFREEZE_FLAG="--unfreeze"
+          fi
+          python laya/train/finetune_local.py \
+            --corpus laya/datasets/scam_corpus.jsonl \
+            --epochs ${{ inputs.epochs || 3 }} \
+            --n 3000 \
+            --batch-size 16 \
+            --save laya/train/scam_head.pt \
+            $UNFREEZE_FLAG \
+            | tee laya/train/metrics.txt
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: scam-screen-model
+          path: |
+            laya/train/scam_head.pt
+            laya/train/metrics.txt
+            laya/datasets/scam_corpus.jsonl
+          retention-days: 30

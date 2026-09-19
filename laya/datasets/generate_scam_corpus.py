@@ -84,6 +84,20 @@ SCAM_TEMPLATES = [
     ("tech_support",
      "Your iCloud account has been compromised. Apple Support needs to verify your identity. "
      "Have your Apple ID password and payment method ready when you call.", {}),
+    ("tech_support",
+     "This is Geek Squad. We detected a problem with your {device} during a routine scan. "
+     "To fix it remotely, we need you to install a small tool. Go to {link} and enter the code we give you.",
+     {"device": ["laptop", "computer", "iPad", "router"]}),
+    ("tech_support",
+     "Your antivirus subscription has expired. Your device is UNPROTECTED. "
+     "Renew now for ${amount}/year or your files may be at risk. Call to renew: 1-800-555-0199.",
+     {"amount": ["49.99", "79.99", "99.99"]}),
+    ("tech_support",
+     "ALERT: Suspicious sign-in to your email from Russia. If this wasn't you, "
+     "secure your account now by calling support. Have your password ready to verify.", {}),
+    ("tech_support",
+     "Comcast/Xfinity: We've detected unusual activity on your home network. "
+     "A technician needs to run a remote diagnostic. Please allow remote access when prompted.", {}),
     # Sweepstakes / prize
     ("sweepstakes",
      "CONGRATULATIONS! You've won the Publishers Clearing House grand prize of $2.5 million! "
@@ -133,6 +147,41 @@ LEGIT_TEMPLATES = [
      "Your prescription at {pharmacy} is ready for pickup. "
      "Pickup by {date}. Questions? Call the pharmacy.",
      {"pharmacy": ["CVS", "Walgreens", "Kroger Pharmacy"], "date": ["Friday", "Oct 10", "this week"]}),
+    # --- Hard negatives: legit messages that share surface features with scams ---
+    ("bank_legit",
+     "FRAUD ALERT from {bank}: Did you attempt a purchase of ${amount} at {merchant}? "
+     "Reply YES or NO. If NO, we'll block the card and send a replacement. "
+     "Or call the number on the back of your card.",
+     {"bank": ["Chase", "Bank of America", "your credit union"],
+      "amount": ["62.18", "143.50", "28.99"], "merchant": ["Meijer", "Shell", "Walgreens"]}),
+    ("bank_legit",
+     "Unusual sign-in activity on your {bank} account from a new device. "
+     "If this was you, no action is needed. If not, visit {bank}.com or call us directly.",
+     {"bank": ["Chase", "Wells Fargo", "Citibank"]}),
+    ("tech_support_legit",
+     "Your {service} subscription renews on {date} for ${amount}. "
+     "Manage your subscription in your account settings. No action needed to continue.",
+     {"service": ["Norton AntiVirus", "Microsoft 365", "McAfee"],
+      "date": ["Oct 12", "Nov 1", "Oct 28"], "amount": ["39.99", "69.99", "99.99"]}),
+    ("tech_support_legit",
+     "A new device signed in to your Apple ID ({device}). "
+     "If this was you, you can ignore this message. If not, change your password at appleid.apple.com.",
+     {"device": ["iPhone 16", "iPad", "MacBook Air"]}),
+    ("gov_legit",
+     "This is a reminder from the Social Security Administration: your annual statement "
+     "is available online at ssa.gov. We will never call to ask for your SSN or payment.", {}),
+    ("medicare_legit",
+     "Medicare Open Enrollment runs Oct 15 – Dec 7. Review your plan options at medicare.gov. "
+     "Medicare will never call you to sell a plan or ask for payment over the phone.", {}),
+    ("utility_urgent_legit",
+     "Consumers Energy: A payment of ${amount} is due in 3 days. "
+     "Pay at consumersenergy.com or by phone at the number on your bill. "
+     "If you've already paid, please disregard.",
+     {"amount": ["87.43", "112.18", "94.60"]}),
+    ("delivery_urgent_legit",
+     "UPS: We attempted delivery but no one was home. Your package will be held at the "
+     "{city} facility for 5 business days. Track at ups.com with your tracking number.",
+     {"city": ["Grand Rapids", "Lansing", "Detroit"]}),
 ]
 
 
