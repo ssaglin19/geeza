@@ -26,9 +26,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 # ---------- data ----------
 
 class ScamDataset(Dataset):
-    def __init__(self, records, tokenizer, max_len=512):
+    def __init__(self, records, tokenizer, label_map, max_len=512):
         self.records = records
         self.tok = tokenizer
+        self.label_map = label_map
         self.max_len = max_len
 
     def __len__(self):
@@ -37,7 +38,7 @@ class ScamDataset(Dataset):
     def __getitem__(self, idx):
         r = self.records[idx]
         text = r["text"]
-        label = 1 if r["label"] == "scam" else 0
+        label = self.label_map[r["label"]]
         enc = self.tok(
             text,
             truncation=True,
@@ -60,27 +61,37 @@ def load_corpus(path, n=None, seed=42):
     rng = random.Random(seed)
     rng.shuffle(records)
     if n and len(records) > n:
-        # stratified: keep scam/legit balance
-        scams = [r for r in records if r["label"] == "scam"]
-        legits = [r for r in records if r["label"] == "legit"]
-        half = n // 2
-        records = scams[:half] + legits[:half]
+        # stratified: keep label balance
+        from collections import defaultdict
+        by_label = defaultdict(list)
+        for r in records:
+            by_label[r["label"]].append(r)
+        per_label = n // len(by_label)
+        records = []
+        for label, recs in by_label.items():
+            records.extend(recs[:per_label])
         rng.shuffle(records)
     return records
 
 
 def split(records, seed=42):
     rng = random.Random(seed)
-    scams = [r for r in records if r["label"] == "scam"]
-    legits = [r for r in records if r["label"] == "legit"]
-    rng.shuffle(scams)
-    rng.shuffle(legits)
+    from collections import defaultdict
+    by_label = defaultdict(list)
+    for r in records:
+        by_label[r["label"]].append(r)
+    for recs in by_label.values():
+        rng.shuffle(recs)
     def cut(lst):
         n = len(lst)
         return lst[: int(n * 0.7)], lst[int(n * 0.7) : int(n * 0.85)], lst[int(n * 0.85) :]
-    s_tr, s_cal, s_ev = cut(scams)
-    l_tr, l_cal, l_ev = cut(legits)
-    return s_tr + l_tr, s_cal + l_cal, s_ev + l_ev
+    train, cal, ev = [], [], []
+    for recs in by_label.values():
+        tr, ca, ev_ = cut(recs)
+        train.extend(tr)
+        cal.extend(ca)
+        ev.extend(ev_)
+    return train, cal, ev
 
 
 # ---------- metrics ----------
@@ -160,6 +171,29 @@ def predict_probs(model, head, records, tokenizer, device, max_len=512):
     return probs
 
 
+def predict_classes(model, head, records, tokenizer, device, max_len=512):
+    model.eval()
+    head.eval()
+    preds = []
+    with torch.no_grad():
+        for r in records:
+            enc = tokenizer(
+                r["text"],
+                truncation=True,
+                max_length=max_len,
+                padding="max_length",
+                return_tensors="pt",
+            )
+            input_ids = enc["input_ids"].to(device)
+            attention_mask = enc["attention_mask"].to(device)
+            outputs = model.encoder(input_ids=input_ids, attention_mask=attention_mask)
+            cls = outputs.last_hidden_state[:, 0, :]
+            logits = head(cls)
+            pred = torch.argmax(logits, dim=-1).item()
+            preds.append(pred)
+    return preds
+
+
 def fit_temperature(probs, labels):
     """Find the temperature that minimizes log-loss on calibration data."""
     import math
@@ -202,11 +236,18 @@ def main():
                     help="also fine-tune the encoder (much slower, needs GPU for real runs)")
     ap.add_argument("--encoder-lr", type=float, default=1e-5,
                     help="learning rate for encoder when --unfreeze is set")
+    ap.add_argument("--num-classes", type=int, default=2,
+                    help="number of output classes (2 for binary scam/legit, 10 for intent routing)")
     args = ap.parse_args()
 
     print(f"Loading corpus from {args.corpus} ...")
     records = load_corpus(args.corpus, n=args.n, seed=args.seed)
-    print(f"  {len(records)} examples ({sum(1 for r in records if r['label']=='scam')} scam)")
+    print(f"  {len(records)} examples")
+
+    # Build label map from corpus
+    labels = sorted(set(r["label"] for r in records))
+    label_map = {label: idx for idx, label in enumerate(labels)}
+    print(f"  classes: {label_map}")
 
     train, cal, ev = split(records, seed=args.seed)
     print(f"  split: {len(train)} train / {len(cal)} calibration / {len(ev)} eval")
@@ -219,13 +260,13 @@ def main():
     device = torch.device("cpu")
     model = model.to(device)
 
-    # Build a binary classification head on top of the encoder
+    # Build classification head on top of the encoder
     hidden_size = model.encoder.config.hidden_size
     head = nn.Sequential(
         nn.Linear(hidden_size, 256),
         nn.ReLU(),
         nn.Dropout(0.1),
-        nn.Linear(256, 2),
+        nn.Linear(256, args.num_classes),
     ).to(device)
 
     # Freeze encoder by default (faster, less overfitting on small data).
@@ -234,7 +275,7 @@ def main():
         for param in model.encoder.parameters():
             param.requires_grad = False
 
-    train_ds = ScamDataset(train, tokenizer)
+    train_ds = ScamDataset(train, tokenizer, label_map)
     train_loader = DataLoader(train_ds, batch_size=args.batch_size, shuffle=True)
 
     if args.unfreeze:
@@ -254,52 +295,86 @@ def main():
 
     # --- evaluate ---
     print("\nEvaluating ...")
-    labels = [1 if r["label"] == "scam" else 0 for r in ev]
-    raw_probs = predict_probs(model, head, ev, tokenizer, device)
 
-    # temperature fitting on calibration set
-    cal_labels = [1 if r["label"] == "scam" else 0 for r in cal]
-    cal_probs = predict_probs(model, head, cal, tokenizer, device)
-    temperature = fit_temperature(cal_probs, cal_labels)
-    print(f"  fitted temperature: {temperature:.2f}")
+    if args.num_classes == 2:
+        # Binary classification (scam/legit)
+        labels = [label_map[r["label"]] for r in ev]
+        raw_probs = predict_probs(model, head, ev, tokenizer, device)
 
-    cal_probs_t = [apply_temperature(p, temperature) for p in cal_probs]
-    ev_probs_t = [apply_temperature(p, temperature) for p in raw_probs]
+        # temperature fitting on calibration set
+        cal_labels = [label_map[r["label"]] for r in cal]
+        cal_probs = predict_probs(model, head, cal, tokenizer, device)
+        temperature = fit_temperature(cal_probs, cal_labels)
+        print(f"  fitted temperature: {temperature:.2f}")
 
-    # metrics
-    m = evaluate_probs(ev_probs_t, labels)
-    confs = [max(p, 1 - p) for p in ev_probs_t]
-    corrects = [1 if (p >= 0.5) == bool(l) else 0 for p, l in zip(ev_probs_t, labels)]
-    ece = expected_calibration_error(confs, corrects)
+        cal_probs_t = [apply_temperature(p, temperature) for p in cal_probs]
+        ev_probs_t = [apply_temperature(p, temperature) for p in raw_probs]
 
-    print(f"\n  eval metrics (temperature-scaled):")
-    print(f"    recall (scam detected): {m['recall']:.3f}")
-    print(f"    false positive rate:    {m['fpr']:.3f}")
-    print(f"    accuracy:               {m['accuracy']:.3f}")
-    print(f"    ECE:                    {ece:.3f}")
+        # metrics
+        m = evaluate_probs(ev_probs_t, labels)
+        confs = [max(p, 1 - p) for p in ev_probs_t]
+        corrects = [1 if (p >= 0.5) == bool(l) else 0 for p, l in zip(ev_probs_t, labels)]
+        ece = expected_calibration_error(confs, corrects)
 
-    # per-category recall
-    from collections import defaultdict
-    cat_probs = defaultdict(list)
-    cat_labels = defaultdict(list)
-    for r, p, l in zip(ev, ev_probs_t, labels):
-        cat_probs[r["category"]].append(p)
-        cat_labels[r["category"]].append(l)
-    print(f"\n  per-category recall:")
-    for cat in sorted(cat_probs.keys()):
-        cps = cat_probs[cat]
-        cls = cat_labels[cat]
-        tp = sum(1 for p, l in zip(cps, cls) if p >= 0.5 and l == 1)
-        fn = sum(1 for p, l in zip(cps, cls) if p < 0.5 and l == 1)
-        total = tp + fn
-        if total > 0:
-            print(f"    {cat}: {tp}/{total} = {tp/total:.2f}")
+        print(f"\n  eval metrics (temperature-scaled):")
+        print(f"    recall (scam detected): {m['recall']:.3f}")
+        print(f"    false positive rate:    {m['fpr']:.3f}")
+        print(f"    accuracy:               {m['accuracy']:.3f}")
+        print(f"    ECE:                    {ece:.3f}")
 
-    # gates
-    print(f"\n  gates:")
-    print(f"    recall >= 0.95:  {'PASS' if m['recall'] >= 0.95 else 'FAIL'} ({m['recall']:.3f})")
-    print(f"    fpr <= 0.05:     {'PASS' if m['fpr'] <= 0.05 else 'FAIL'} ({m['fpr']:.3f})")
-    print(f"    ece <= 0.10:     {'PASS' if ece <= 0.10 else 'FAIL'} ({ece:.3f})")
+        # per-category recall
+        from collections import defaultdict
+        cat_probs = defaultdict(list)
+        cat_labels = defaultdict(list)
+        for r, p, l in zip(ev, ev_probs_t, labels):
+            cat_probs[r["category"]].append(p)
+            cat_labels[r["category"]].append(l)
+        print(f"\n  per-category recall:")
+        for cat in sorted(cat_probs.keys()):
+            cps = cat_probs[cat]
+            cls = cat_labels[cat]
+            tp = sum(1 for p, l in zip(cps, cls) if p >= 0.5 and l == 1)
+            fn = sum(1 for p, l in zip(cps, cls) if p < 0.5 and l == 1)
+            total = tp + fn
+            if total > 0:
+                print(f"    {cat}: {tp}/{total} = {tp/total:.2f}")
+
+        # gates
+        print(f"\n  gates:")
+        print(f"    recall >= 0.95:  {'PASS' if m['recall'] >= 0.95 else 'FAIL'} ({m['recall']:.3f})")
+        print(f"    fpr <= 0.05:     {'PASS' if m['fpr'] <= 0.05 else 'FAIL'} ({m['fpr']:.3f})")
+        print(f"    ece <= 0.10:     {'PASS' if ece <= 0.10 else 'FAIL'} ({ece:.3f})")
+
+    else:
+        # Multi-class classification (intent routing, mail triage)
+        true_labels = [label_map[r["label"]] for r in ev]
+        pred_labels = predict_classes(model, head, ev, tokenizer, device)
+
+        # accuracy
+        correct = sum(1 for t, p in zip(true_labels, pred_labels) if t == p)
+        accuracy = correct / len(true_labels) if true_labels else 0.0
+        print(f"\n  accuracy: {accuracy:.3f} ({correct}/{len(true_labels)})")
+
+        # per-class recall
+        from collections import defaultdict
+        class_correct = defaultdict(int)
+        class_total = defaultdict(int)
+        for t, p in zip(true_labels, pred_labels):
+            class_total[t] += 1
+            if t == p:
+                class_correct[t] += 1
+        print(f"\n  per-class recall:")
+        idx_to_label = {v: k for k, v in label_map.items()}
+        for idx in sorted(class_total.keys()):
+            label_name = idx_to_label[idx]
+            recall = class_correct[idx] / class_total[idx]
+            print(f"    {label_name}: {class_correct[idx]}/{class_total[idx]} = {recall:.2f}")
+
+        # confusion matrix (compact)
+        print(f"\n  confusion (true -> predicted):")
+        for t, p in zip(true_labels, pred_labels):
+            if t != p:
+                print(f"    {idx_to_label[t]} -> {idx_to_label[p]}")
 
     if args.save:
         payload = {
