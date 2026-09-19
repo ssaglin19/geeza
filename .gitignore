@@ -1,0 +1,24 @@
+# Haze workspace state
+.haze/
+*.db
+*.db-shm
+*.db-wal
+index/
+
+# Personal reference material — stays local, never in the repo
+BOOSH — Project Handoff.txt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Swift / Xcode
+.DS_Store
+xcuserdata/
+build/
+
+# Models (never commit weights)
+*.gguf
+*.mlmodel
+*.safetensors

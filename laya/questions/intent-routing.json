@@ -1,0 +1,22 @@
+{
+  "comment": "Laya typed question pack — routes a spoken request to a v1 skill. Band routing (act/confirm/abort) is done by app code on the returned confidence, never by the model.",
+  "state": "raw transcript of the user's spoken request, plus the current date and time",
+  "questions": {
+    "skill": {
+      "type": "choice",
+      "instructions": "Which routine is the user asking for?",
+      "criteria": {
+        "pay_bill": "paying a utility, insurance, or credit-card bill",
+        "read_mail": "reading email or text messages aloud",
+        "scam_check": "asking whether a message, call, or letter is a scam",
+        "reminders": "setting or checking reminders, medications, appointments",
+        "read_document": "reading or explaining a letter, bill, or photo of text",
+        "call_contact": "calling or texting a specific person",
+        "calendar": "appointments and schedule questions",
+        "weather": "weather questions",
+        "chat": "general conversation or questions",
+        "app_help": "asking for help using the assistant"
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "consumers-energy-pay",
+  "vendor": "Consumers Energy",
+  "version": 1,
+  "entry_url": "https://www.consumersenergy.com/",
+  "spends": true,
+  "thresholds": { "act": 0.85, "confirm": 0.5 },
+  "pages": [
+    {
+      "name": "login",
+      "match": {
+        "url_host": "www.consumersenergy.com",
+        "url_contains": "/login",
+        "anchors": [
+          { "selector": "#username", "weight": 1.0 },
+          { "selector": "#password", "weight": 1.0 },
+          { "text": "Sign in", "weight": 1.0 }
+        ]
+      },
+      "steps": [
+        { "action": "fill", "params": { "selector": "#username", "value": "$credentials.consumers_energy.username" } },
+        { "action": "fill", "params": { "selector": "#password", "value": "$credentials.consumers_energy.password" } },
+        { "action": "click", "params": { "text": "Sign in" } }
+      ]
+    },
+    {
+      "name": "dashboard",
+      "match": {
+        "url_host": "www.consumersenergy.com",
+        "url_contains": "/account",
+        "anchors": [
+          { "selector": ".amount-due", "weight": 1.5 },
+          { "text": "Amount due", "weight": 1.0 },
+          { "text": "Pay Now", "weight": 1.0 }
+        ]
+      },
+      "steps": [
+        { "action": "read", "params": { "selector": ".amount-due", "as": "amount_due" } },
+        { "action": "gate", "params": { "type": "amount_sanity", "value_key": "amount_due", "last_key": "history.consumers_energy_last_amount", "within_pct": 15 } },
+        { "action": "click", "params": { "text": "Pay Now" } }
+      ]
+    },
+    {
+      "name": "payment_review",
+      "match": {
+        "url_host": "www.consumersenergy.com",
+        "url_contains": "/pay",
+        "anchors": [
+          { "text": "Confirm payment", "weight": 1.5 },
+          { "text": "Consumers Energy", "weight": 1.0 },
+          { "selector": "button.pay-submit", "weight": 1.0 }
+        ]
+      },
+      "steps": [
+        { "action": "confirm", "params": { "prompt": "Pay this amount to Consumers Energy?", "amount_key": "amount_due" } },
+        { "action": "click", "params": { "selector": "button.pay-submit" } },
+        { "action": "complete", "params": {} }
+      ]
+    }
+  ]
+}

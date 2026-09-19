@@ -1,0 +1,32 @@
+{
+  "comment": "Laya typed question pack — scam screen. Runs on EVERY message before anything else is said about it. v1's highest value-per-hour feature: elderly users are the primary phishing target population. Calibrated: recall is the metric that matters; a false alarm costs a question to the caregiver, a miss can cost the retirement account.",
+  "state": "sender address, subject, and body of the message",
+  "questions": {
+    "is_phishing": {
+      "type": "noul",
+      "instructions": "Is this message a scam or phishing attempt?"
+    },
+    "requests_payment": {
+      "type": "noul",
+      "instructions": "Does it ask for money, gift cards, wire transfers, or cryptocurrency?"
+    },
+    "requests_credentials": {
+      "type": "noul",
+      "instructions": "Does it ask for passwords, Social Security numbers, account numbers, or one-time verification codes?"
+    },
+    "urgency_pressure": {
+      "type": "noul",
+      "instructions": "Does it pressure the reader to act immediately or threaten consequences for delay?"
+    },
+    "impersonates_authority": {
+      "type": "noul",
+      "instructions": "Does it claim to be a bank, government agency, Medicare, or a known company to gain trust?"
+    }
+  },
+  "app_policy": {
+    "act_band": ">= 0.85 on is_phishing → warn: 'This looks like a scam. Do not reply or click. Ask [caregiver].' plus block links in read-back",
+    "confirm_band": "0.50-0.85 → show a soft warning and offer the caregiver check",
+    "abort_band": "< 0.50 → read normally, log the score",
+    "overrides": "requests_payment=true at any confidence ≥ 0.5 also triggers the warning"
+  }
+}

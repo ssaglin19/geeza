@@ -1,0 +1,19 @@
+{
+  "comment": "Laya typed question pack — page-recognition assist. Called only when the code-computed anchor-match confidence lands in the confirm band (site drift, minor redesign). It is a second opinion, never the primary matcher: the URL hard gate and anchor scoring run first in code.",
+  "state": "the registered page's anchor criteria (selectors and expected text) plus the live snapshot's element list and text",
+  "questions": {
+    "is_expected_page": {
+      "type": "noul",
+      "instructions": "Does this live page show the same content the criteria describe, despite changes in wording or layout?"
+    },
+    "needs_reregistration": {
+      "type": "noul",
+      "instructions": "Has the page changed so much that the vendor flow needs to be re-registered by the caregiver?"
+    }
+  },
+  "app_policy": {
+    "act_band": "is_expected_page >= 0.85 → proceed, log as drift-handled",
+    "confirm_band": "0.50-0.85 → stop, surface to the user: 'This page looks different than usual.'",
+    "abort_band": "< 0.50, or needs_reregistration >= 0.5 → abort flow, notify caregiver to re-register the vendor"
+  }
+}
