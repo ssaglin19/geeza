@@ -379,9 +379,10 @@ def main():
     if args.save:
         payload = {
             "head_state_dict": head.state_dict(),
-            "temperature": temperature,
             "hidden_size": hidden_size,
         }
+        if args.num_classes == 2:
+            payload["temperature"] = temperature
         if args.unfreeze:
             payload["encoder_state_dict"] = model.encoder.state_dict()
         torch.save(payload, args.save)
