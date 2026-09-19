@@ -4,6 +4,36 @@ Chronological record of the architecture decisions that shaped this build spec
 (conversation of 2026-09-19 onward). Each entry replaces whatever the original
 handoff doc said on the topic.
 
+## Dependencies
+
+| Package | Version | Purpose | Source |
+|---------|---------|---------|--------|
+| `torch` | 2.5.1+cpu | ML runtime | PyPI |
+| `laya` | 0.3.3 | System 1 decision engine (scam screen, intent routing, mail triage) | PyPI |
+| `scikit-learn` | 1.9.1 | Metrics (ECE, calibration) | PyPI |
+| `cactus-needle` | TBD | Tool calling, structured extraction, embeddings (evaluating) | PyPI |
+| `gliner` | TBD | Control scoring (evaluating) | PyPI |
+| `transformers` | 5.17.0 | Model loading (via laya) | PyPI |
+
+## Model weights
+
+| Model | Size | Purpose | Source |
+|-------|------|---------|--------|
+| `convaiinnovations/laya` | 421M | Base checkpoint for fine-tuning | Hugging Face |
+| `prism-ml/Ternary-Bonsai-2-27B-mlx-2bit` | 8.6GB | System 2 comprehension (Mac only) | Hugging Face |
+| `prism-ml/Ternary-Bonsai-8B-gguf` | ~2.4GB | System 2 comprehension (iPhone 16 Plus) | Hugging Face |
+| `prism-ml/Ternary-Bonsai-4B-gguf` | ~1.2GB | System 2 comprehension (parents' phones) | Hugging Face |
+| `Cactus-Compute/needle3` | 8-29MB | Tool calling, extraction, embeddings (evaluating) | Hugging Face |
+| `fastino/gliner2-multi-v1` | TBD | Control scoring (evaluating) | Hugging Face |
+
+## External tools
+
+| Tool | Purpose | When |
+|------|---------|------|
+| Cua Driver | Native app automation (macOS) | Mac mini arrives |
+| PrismML mlx-swift fork | Bonsai inference on iOS | Mac mini arrives |
+| GitHub Actions | CI smoke tests | Already configured |
+
 ## D1 — Product: elderly-first assistant, not a personal assistant for the founder
 The original spec was a private assistant for one technical user. The product is
 now an extremely-easy-to-use assistant for elderly, routine-based users. First

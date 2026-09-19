@@ -1,0 +1,12 @@
+# Boosh dependencies
+# Install: pip install -r requirements.txt
+# For CPU-only torch (Windows/Linux): pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+torch>=2.5.0
+laya>=0.3.3
+scikit-learn>=1.5.0
+transformers>=4.45.0
+
+# Evaluating (uncomment when adopted):
+# cactus-needle
+# gliner
