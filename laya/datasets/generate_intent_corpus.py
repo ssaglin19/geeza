@@ -30,7 +30,7 @@ FILLER_END = ["", "", "", " please.", " if you can.", " thanks.", " okay?"]
 UNCERTAIN = ["I think ", "maybe ", "I guess ", "", "", ""]
 
 UTTERANCES = {
-    "pay_bill": [
+    "handle_bills": [
         "I need to pay the {bill} bill",
         "Can you pay my {bill} bill for me",
         "The {bill} bill is due, can you take care of it",
@@ -41,8 +41,13 @@ UTTERANCES = {
         "Time to pay the {bill} again",
         "Take care of the {bill} bill",
         "I need to make a payment to {company}",
+        "Read my email about the {bill}",
+        "Check if {company} sent me a bill",
+        "What do I owe {company}",
+        "Did the {bill} bill come in the mail",
+        "Handle my {company} account",
     ],
-    "check_calendar": [
+    "check_schedule": [
         "What's on my calendar {when}",
         "Do I have any appointments {when}",
         "What am I doing {when}",
@@ -53,20 +58,13 @@ UTTERANCES = {
         "What does my day look like {when}",
         "Any doctor appointments {when}",
         "When is my next appointment",
+        "Did I take my {med} {when}",
+        "Remind me to take my {med}",
+        "It's time for my pills",
+        "Set a reminder for my {med}",
+        "What medications do I take {when}",
     ],
-    "read_email": [
-        "Read my email",
-        "Do I have any new emails",
-        "Check my inbox",
-        "Any messages for me",
-        "Read me my mail",
-        "What's in my email",
-        "Did anyone email me",
-        "Check if {person} emailed me",
-        "Read the email from {person}",
-        "I want to hear my messages",
-    ],
-    "call_family": [
+    "contact_family": [
         "Call {person}",
         "I want to talk to {person}",
         "Phone {person} for me",
@@ -77,20 +75,13 @@ UTTERANCES = {
         "Dial {person}",
         "Call my {relation}",
         "I need to call {person} back",
+        "Did {person} email me",
+        "Read the message from {person}",
+        "Check if {person} wrote to me",
+        "Any word from {person}",
+        "I want to hear from {person}",
     ],
-    "medication_reminder": [
-        "Did I take my {med} {when}",
-        "Remind me to take my {med}",
-        "It's time for my pills",
-        "Set a reminder for my {med}",
-        "What medications do I take {when}",
-        "I need to take my {med} at {time}",
-        "Don't let me forget my {med}",
-        "When do I take my {med}",
-        "My pill schedule",
-        "Am I supposed to take something {when}",
-    ],
-    "grocery_order": [
+    "get_groceries": [
         "I need groceries",
         "Order some {item} for me",
         "Can you get me {item} from the store",
@@ -101,20 +92,13 @@ UTTERANCES = {
         "Order groceries from {store}",
         "I need {item} and {item2}",
         "Can you do the shopping",
+        "Pick up {item} on the way home",
+        "I ran out of {item}",
+        "Buy {item} at the store",
+        "Get {item} delivered",
+        "I need to stock up on {item}",
     ],
-    "weather_check": [
-        "What's the weather like",
-        "Is it going to rain {when}",
-        "How cold is it outside",
-        "What's the temperature",
-        "Do I need a jacket {when}",
-        "Weather forecast for {when}",
-        "Is it nice out",
-        "Will it snow {when}",
-        "How hot is it going to get",
-        "Should I bring an umbrella",
-    ],
-    "scam_check": [
+    "check_safety": [
         "Is this email a scam",
         "I got a strange message, can you check it",
         "Someone called saying they're from {org}, is that real",
@@ -125,8 +109,13 @@ UTTERANCES = {
         "Can you look at this email and tell me if it's safe",
         "I got a text about {topic}, is it real",
         "Something seems fishy about this",
+        "What's the weather like",
+        "Is it going to rain {when}",
+        "How cold is it outside",
+        "What's the temperature",
+        "Do I need a jacket {when}",
     ],
-    "general_question": [
+    "general_help": [
         "What time is it",
         "What's {number} plus {number2}",
         "How do you spell {word}",
@@ -137,6 +126,11 @@ UTTERANCES = {
         "Tell me about {topic}",
         "What year did {event} happen",
         "How do I {task}",
+        "Can you help me with something",
+        "I have a question",
+        "What do you know about {topic}",
+        "Explain {topic} to me",
+        "I'm confused about {topic}",
     ],
     "emergency": [
         "I need help",
@@ -149,6 +143,11 @@ UTTERANCES = {
         "I think I'm having a stroke",
         "Someone broke into my house",
         "I smell gas",
+        "There's a fire",
+        "I can't wake up my spouse",
+        "I'm dizzy and nauseous",
+        "My chest hurts",
+        "I need an ambulance",
     ],
 }
 

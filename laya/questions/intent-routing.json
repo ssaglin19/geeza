@@ -1,22 +1,33 @@
 {
-  "comment": "Laya typed question pack — routes a spoken request to a v1 skill. Band routing (act/confirm/abort) is done by app code on the returned confidence, never by the model.",
-  "state": "raw transcript of the user's spoken request, plus the current date and time",
+  "domain": "intent-routing",
+  "description": "Route a voice command to one of 7 skills. The model sees the transcribed utterance and picks which skill should handle it. Merged from 10 original skills based on confusion matrix analysis.",
   "questions": {
     "skill": {
       "type": "choice",
-      "instructions": "Which routine is the user asking for?",
+      "instructions": "Which skill should handle this request?",
       "criteria": {
-        "pay_bill": "paying a utility, insurance, or credit-card bill",
-        "read_mail": "reading email or text messages aloud",
-        "scam_check": "asking whether a message, call, or letter is a scam",
-        "reminders": "setting or checking reminders, medications, appointments",
-        "read_document": "reading or explaining a letter, bill, or photo of text",
-        "call_contact": "calling or texting a specific person",
-        "calendar": "appointments and schedule questions",
-        "weather": "weather questions",
-        "chat": "general conversation or questions",
-        "app_help": "asking for help using the assistant"
+        "handle_bills": "paying bills, checking account balances, reading bills from email, utility payments, insurance payments",
+        "check_schedule": "calendar, appointments, medication reminders, daily schedule, what to do today",
+        "contact_family": "calling family, reading emails from family, checking messages from relatives",
+        "get_groceries": "ordering groceries, shopping lists, food delivery, picking up items",
+        "check_safety": "scam detection, fraud checks, weather safety, verifying suspicious messages",
+        "general_help": "questions, calculations, information lookup, how-to help, general assistance",
+        "emergency": "urgent help, medical emergency, safety threat, immediate danger"
       }
     }
+  },
+  "usage": {
+    "handle_bills": "launch bill-pay flow or read bill-related emails",
+    "check_schedule": "read calendar or set/read medication reminders",
+    "contact_family": "initiate call or read family emails",
+    "get_groceries": "launch grocery ordering flow",
+    "check_safety": "run scam screen or check weather",
+    "general_help": "pass to System 2 for open-ended response",
+    "emergency": "immediate escalation — bypass all other checks"
+  },
+  "confidence_bands": {
+    "high": ">= 0.80 — route directly to skill",
+    "medium": "0.50–0.79 — ask user to confirm ('Did you want to pay a bill?')",
+    "low": "< 0.50 — fall back to general_help or ask for clarification"
   }
 }
