@@ -1,0 +1,38 @@
+{
+  "description": "Mail triage: categorize an email into one of five buckets, then flag urgency and whether it needs the user's attention. Used by the mail read-back feature — the assistant reads the category first, then decides whether to summarize, read in full, or flag as a scam.",
+  "questions": {
+    "category": {
+      "type": "choice",
+      "instructions": "What kind of email is this? Categorize it into exactly one bucket.",
+      "criteria": {
+        "bill": "A bill, invoice, statement, or payment reminder from a utility, credit card, insurance, or service provider. Includes 'your bill is ready', 'payment due', 'statement available'.",
+        "medical": "Anything from a doctor's office, hospital, pharmacy, insurance (health), or Medicare. Appointments, test results, prescription notices, Explanation of Benefits.",
+        "personal": "From a real person the user knows — family, friends, church, community groups. Conversational tone, no commercial content.",
+        "junk": "Marketing, newsletters, promotions, political fundraising, surveys. Not dangerous, just noise. The user did not ask for this and does not need to see it.",
+        "scam": "Phishing, fraud, impersonation. Urgency, threats, requests for payment/credentials/personal info, suspicious links, too-good-to-be-true offers. When in doubt between junk and scam, choose scam."
+      }
+    },
+    "urgency": {
+      "type": "score",
+      "instructions": "How time-sensitive is this email for the user? 0 = can wait indefinitely, 1 = should be seen within a few days, 2 = needs attention today.",
+      "criteria": ["not urgent", "soon", "today"]
+    },
+    "needs_reply": {
+      "type": "noul",
+      "instructions": "Does this email expect a response from the user? Bills that are already on autopay do not need a reply. Personal messages usually do. Scams never get a reply."
+    },
+    "is_scam": {
+      "type": "noul",
+      "instructions": "Is this email a phishing attempt, fraud, or impersonation? Look for: urgency/threats, requests for payment or credentials, suspicious sender domains, too-good-to-be-true offers, requests to click links or call numbers."
+    }
+  },
+  "usage": {
+    "input": "The email's subject + body as the state. Optionally include the sender address.",
+    "routing": "category determines the read-back behavior: bill/medical/personal get summarized, junk gets skipped, scam gets flagged with a warning. urgency decides whether to interrupt the user or batch it into a daily digest. needs_reply decides whether to offer 'would you like to reply?' after reading.",
+    "confidence_bands": {
+      "high": ">= 0.85 — act on the category without confirmation",
+      "medium": "0.60–0.85 — state the category with a hedge ('this looks like a bill from...') and let the user correct",
+      "low": "< 0.60 — read the subject and sender verbatim, let the user decide"
+    }
+  }
+}
