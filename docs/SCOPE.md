@@ -33,6 +33,12 @@
 - Notifications that carry content off-device
 - Multi-user / accounts
 
+## OPEN ITEMS
+
+| Item | Owner | Status | Notes |
+|------|-------|--------|-------|
+| Emergency GitHub repo | Sean | 🔍 Finding | Small framework to supply; may replace/supplement current emergency handling. Sean to find and provide URL. |
+
 ## v2 candidates (documented, not scheduled)
 
 Patterns identified from WeKnora (Tencent) and other frameworks that would
