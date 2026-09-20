@@ -1,0 +1,1050 @@
+{"query": "how cold is it outside", "tool": "check_safety", "args": {"query": "how cold is it outside"}}
+{"query": "Hey, Order groceries from Costco thanks.", "tool": "get_groceries", "args": {"query": "Hey, Order groceries from Costco thanks."}}
+{"query": "Hey, i need groceries", "tool": "get_groceries", "args": {"query": "Hey, i need groceries"}}
+{"query": "Um, I'm having chest pain thanks.", "tool": "emergency", "args": {"query": "Um, I'm having chest pain thanks."}}
+{"query": "i need coffee and coffee", "tool": "get_groceries", "args": {"query": "i need coffee and coffee"}}
+{"query": "Hey, i'm confused about a package thanks.", "tool": "general_help", "args": {"query": "Hey, i'm confused about a package thanks."}}
+{"query": "i'm dizzy and nauseous", "tool": "emergency", "args": {"query": "i'm dizzy and nauseous"}}
+{"query": "Hey, Call 911 if you can.", "tool": "emergency", "args": {"query": "Hey, Call 911 if you can."}}
+{"query": "Honey, how cold is it outside", "tool": "check_safety", "args": {"query": "Honey, how cold is it outside"}}
+{"query": "Um, My chest I guess hurts", "tool": "emergency", "args": {"query": "Um, My chest I guess hurts"}}
+{"query": "Listen, Buy coffee I guess at the store", "tool": "get_groceries", "args": {"query": "Listen, Buy coffee I guess at the store"}}
+{"query": "The phone bill is due, can you take care of it", "tool": "handle_bills", "args": {"query": "The phone bill is due, can you take care of it"}}
+{"query": "Um, is it going to rain today please.", "tool": "check_safety", "args": {"query": "Um, is it going to rain today please."}}
+{"query": "Honey, I got a text about my account, is it real", "tool": "check_safety", "args": {"query": "Honey, I got a text about my account, is it real"}}
+{"query": "Hey, Order groceries from Walmart", "tool": "get_groceries", "args": {"query": "Hey, Order groceries from Walmart"}}
+{"query": "Something seems fishy about this if you can.", "tool": "check_safety", "args": {"query": "Something seems fishy about this if you can."}}
+{"query": "Ring Sean", "tool": "contact_family", "args": {"query": "Ring Sean"}}
+{"query": "Buy rice at the store", "tool": "get_groceries", "args": {"query": "Buy rice at the store"}}
+{"query": "Honey, I can't I think wake up my spouse okay?", "tool": "emergency", "args": {"query": "Honey, I can't I think wake up my spouse okay?"}}
+{"query": "Order some bread for me", "tool": "get_groceries", "args": {"query": "Order some bread for me"}}
+{"query": "Honey, What's coming up today thanks.", "tool": "check_schedule", "args": {"query": "Honey, What's coming up today thanks."}}
+{"query": "Any doctor appointments tomorrow", "tool": "check_schedule", "args": {"query": "Any doctor appointments tomorrow"}}
+{"query": "Listen, how do you spell receipt", "tool": "general_help", "args": {"query": "Listen, how do you spell receipt"}}
+{"query": "Listen, Dial Sean if you can.", "tool": "contact_family", "args": {"query": "Listen, Dial Sean if you can."}}
+{"query": "Hey, I can't breathe", "tool": "emergency", "args": {"query": "Hey, I can't breathe"}}
+{"query": "my chest hurts thanks.", "tool": "emergency", "args": {"query": "my chest hurts thanks."}}
+{"query": "Honey, Something seems fishy about this", "tool": "check_safety", "args": {"query": "Honey, Something seems fishy about this"}}
+{"query": "Honey, I need to make a payment to the water company please.", "tool": "handle_bills", "args": {"query": "Honey, I need to make a payment to the water company please."}}
+{"query": "What's the temperature", "tool": "check_safety", "args": {"query": "What's the temperature"}}
+{"query": "Honey, I got a strange message, can you check it thanks.", "tool": "check_safety", "args": {"query": "Honey, I got a strange message, can you check it thanks."}}
+{"query": "Um, i need to order food please.", "tool": "get_groceries", "args": {"query": "Um, i need to order food please."}}
+{"query": "This doesn't look right, is it fraud if you can.", "tool": "check_safety", "args": {"query": "This doesn't look right, is it fraud if you can."}}
+{"query": "Listen, Can you help me with something thanks.", "tool": "general_help", "args": {"query": "Listen, Can you help me with something thanks."}}
+{"query": "Um, Do I have any appointments this week", "tool": "check_schedule", "args": {"query": "Um, Do I have any appointments this week"}}
+{"query": "what's maybe the temperature", "tool": "check_safety", "args": {"query": "what's maybe the temperature"}}
+{"query": "Honey, Can you get me chicken from the store thanks.", "tool": "get_groceries", "args": {"query": "Honey, Can you get me chicken from the store thanks."}}
+{"query": "when is my next appointment thanks.", "tool": "check_schedule", "args": {"query": "when is my next appointment thanks."}}
+{"query": "Listen, Am I I guess free today if you can.", "tool": "check_schedule", "args": {"query": "Listen, Am I I guess free today if you can."}}
+{"query": "How do you spell restaurant thanks.", "tool": "general_help", "args": {"query": "How do you spell restaurant thanks."}}
+{"query": "Well, phone Mary maybe for me if you can.", "tool": "contact_family", "args": {"query": "Well, phone Mary maybe for me if you can."}}
+{"query": "Honey, Something is wrong, get help if you can.", "tool": "emergency", "args": {"query": "Honey, Something is wrong, get help if you can."}}
+{"query": "Well, I got a text about my insurance, is it real", "tool": "check_safety", "args": {"query": "Well, I got a text about my insurance, is it real"}}
+{"query": "Well, what medications do I take this morning okay?", "tool": "check_schedule", "args": {"query": "Well, what medications do I take this morning okay?"}}
+{"query": "Um, Get Mike on the phone", "tool": "contact_family", "args": {"query": "Um, Get Mike on the phone"}}
+{"query": "Um, What's coming up I guess this week", "tool": "check_schedule", "args": {"query": "Um, What's coming up I guess this week"}}
+{"query": "Oh, Pick up chicken maybe on the way home okay?", "tool": "get_groceries", "args": {"query": "Oh, Pick up chicken maybe on the way home okay?"}}
+{"query": "Honey, What year did the Berlin Wall fall happen", "tool": "general_help", "args": {"query": "Honey, What year did the Berlin Wall fall happen"}}
+{"query": "Can you help me with something okay?", "tool": "general_help", "args": {"query": "Can you help me with something okay?"}}
+{"query": "Do I need I think a jacket today please.", "tool": "check_safety", "args": {"query": "Do I need I think a jacket today please."}}
+{"query": "Hey, Tell me about my insurance", "tool": "general_help", "args": {"query": "Hey, Tell me about my insurance"}}
+{"query": "Honey, set a reminder for my aspirin please.", "tool": "check_schedule", "args": {"query": "Honey, set a reminder for my aspirin please."}}
+{"query": "Oh, pay the phone", "tool": "handle_bills", "args": {"query": "Oh, pay the phone"}}
+{"query": "Well, Who I guess is Lisa okay?", "tool": "general_help", "args": {"query": "Well, Who I guess is Lisa okay?"}}
+{"query": "Oh, I got a text about a package, is it real if you can.", "tool": "check_safety", "args": {"query": "Oh, I got a text about a package, is it real if you can."}}
+{"query": "Listen, Is it going to rain this morning", "tool": "check_safety", "args": {"query": "Listen, Is it going to rain this morning"}}
+{"query": "Listen, explain my account to me okay?", "tool": "general_help", "args": {"query": "Listen, explain my account to me okay?"}}
+{"query": "Hey, Can you do the shopping", "tool": "get_groceries", "args": {"query": "Hey, Can you do the shopping"}}
+{"query": "there's a fire", "tool": "emergency", "args": {"query": "there's a fire"}}
+{"query": "Listen, My electric payment is due if you can.", "tool": "handle_bills", "args": {"query": "Listen, My electric payment is due if you can."}}
+{"query": "Pick up toilet paper on the way home", "tool": "get_groceries", "args": {"query": "Pick up toilet paper on the way home"}}
+{"query": "Is it I think going to rain this morning", "tool": "check_safety", "args": {"query": "Is it I think going to rain this morning"}}
+{"query": "Um, I need help", "tool": "emergency", "args": {"query": "Um, I need help"}}
+{"query": "Oh, Check if this is a scam please.", "tool": "check_safety", "args": {"query": "Oh, Check if this is a scam please."}}
+{"query": "Oh, what do I owe Verizon", "tool": "handle_bills", "args": {"query": "Oh, what do I owe Verizon"}}
+{"query": "Set a reminder for my cholesterol medication", "tool": "check_schedule", "args": {"query": "Set a reminder for my cholesterol medication"}}
+{"query": "Well, What maybe year did the war end happen please.", "tool": "general_help", "args": {"query": "Well, What maybe year did the war end happen please."}}
+{"query": "Listen, What's a hundred plus five if you can.", "tool": "general_help", "args": {"query": "Listen, What's a hundred plus five if you can."}}
+{"query": "Um, I'd like to speak with Sarah", "tool": "contact_family", "args": {"query": "Um, I'd like to speak with Sarah"}}
+{"query": "Listen, we're out of rice", "tool": "get_groceries", "args": {"query": "Listen, we're out of rice"}}
+{"query": "I'd like maybe to speak with David", "tool": "contact_family", "args": {"query": "I'd like maybe to speak with David"}}
+{"query": "Well, i smell gas if you can.", "tool": "emergency", "args": {"query": "Well, i smell gas if you can."}}
+{"query": "Hey, It's time for I guess my pills if you can.", "tool": "check_schedule", "args": {"query": "Hey, It's time for I guess my pills if you can."}}
+{"query": "Hey, What do I owe Comcast", "tool": "handle_bills", "args": {"query": "Hey, What do I owe Comcast"}}
+{"query": "Well, I need help if you can.", "tool": "emergency", "args": {"query": "Well, I need help if you can."}}
+{"query": "Um, What's the weather like thanks.", "tool": "check_safety", "args": {"query": "Um, What's the weather like thanks."}}
+{"query": "it's time for maybe my pills okay?", "tool": "check_schedule", "args": {"query": "it's time for maybe my pills okay?"}}
+{"query": "Honey, Handle my Consumers Energy account please.", "tool": "handle_bills", "args": {"query": "Honey, Handle my Consumers Energy account please."}}
+{"query": "I want to pay AT&T please.", "tool": "handle_bills", "args": {"query": "I want to pay AT&T please."}}
+{"query": "Hey, Tell me about my insurance thanks.", "tool": "general_help", "args": {"query": "Hey, Tell me about my insurance thanks."}}
+{"query": "check my schedule for this afternoon", "tool": "check_schedule", "args": {"query": "check my schedule for this afternoon"}}
+{"query": "Well, I think someone is trying to trick me okay?", "tool": "check_safety", "args": {"query": "Well, I think someone is trying to trick me okay?"}}
+{"query": "The water bill is due, can you take care of it", "tool": "handle_bills", "args": {"query": "The water bill is due, can you take care of it"}}
+{"query": "Explain a refund to me if you can.", "tool": "general_help", "args": {"query": "Explain a refund to me if you can."}}
+{"query": "i need to order food", "tool": "get_groceries", "args": {"query": "i need to order food"}}
+{"query": "I have a question", "tool": "general_help", "args": {"query": "I have a question"}}
+{"query": "i I guess have a question okay?", "tool": "general_help", "args": {"query": "i I guess have a question okay?"}}
+{"query": "the cable bill is due, can you take care of it thanks.", "tool": "handle_bills", "args": {"query": "the cable bill is due, can you take care of it thanks."}}
+{"query": "How maybe many tablespoons in a cup okay?", "tool": "general_help", "args": {"query": "How maybe many tablespoons in a cup okay?"}}
+{"query": "Honey, What does my day look like this morning please.", "tool": "check_schedule", "args": {"query": "Honey, What does my day look like this morning please."}}
+{"query": "Listen, what's the date maybe this morning", "tool": "general_help", "args": {"query": "Listen, what's the date maybe this morning"}}
+{"query": "I maybe can't breathe", "tool": "emergency", "args": {"query": "I maybe can't breathe"}}
+{"query": "Hey, I want to talk to Lisa", "tool": "contact_family", "args": {"query": "Hey, I want to talk to Lisa"}}
+{"query": "Hey, Set a reminder for my cholesterol medication thanks.", "tool": "check_schedule", "args": {"query": "Hey, Set a reminder for my cholesterol medication thanks."}}
+{"query": "Hey, i ran out of toilet paper thanks.", "tool": "get_groceries", "args": {"query": "Hey, i ran out of toilet paper thanks."}}
+{"query": "Listen, set a reminder for my cholesterol medication", "tool": "check_schedule", "args": {"query": "Listen, set a reminder for my cholesterol medication"}}
+{"query": "Did I take my vitamin D next week if you can.", "tool": "check_schedule", "args": {"query": "Did I take my vitamin D next week if you can."}}
+{"query": "We're out of I think coffee", "tool": "get_groceries", "args": {"query": "We're out of I think coffee"}}
+{"query": "Can I think you get me bread from the store thanks.", "tool": "get_groceries", "args": {"query": "Can I think you get me bread from the store thanks."}}
+{"query": "who is I guess Jenny okay?", "tool": "general_help", "args": {"query": "who is I guess Jenny okay?"}}
+{"query": "Um, I got a text about my computer, is it real okay?", "tool": "check_safety", "args": {"query": "Um, I got a text about my computer, is it real okay?"}}
+{"query": "Honey, How do I print something", "tool": "general_help", "args": {"query": "Honey, How do I print something"}}
+{"query": "Is it going to rain this morning if you can.", "tool": "check_safety", "args": {"query": "Is it going to rain this morning if you can."}}
+{"query": "Listen, Read the message from Mary okay?", "tool": "contact_family", "args": {"query": "Listen, Read the message from Mary okay?"}}
+{"query": "Something is wrong, get help please.", "tool": "emergency", "args": {"query": "Something is wrong, get help please."}}
+{"query": "Um, I got a bill from Comcast, can you handle it", "tool": "handle_bills", "args": {"query": "Um, I got a bill from Comcast, can you handle it"}}
+{"query": "I can't breathe", "tool": "emergency", "args": {"query": "I can't breathe"}}
+{"query": "What's on my calendar next week if you can.", "tool": "check_schedule", "args": {"query": "What's on my calendar next week if you can."}}
+{"query": "Hey, Call Sean okay?", "tool": "contact_family", "args": {"query": "Hey, Call Sean okay?"}}
+{"query": "Call my granddaughter okay?", "tool": "contact_family", "args": {"query": "Call my granddaughter okay?"}}
+{"query": "Hey, i need to order food", "tool": "get_groceries", "args": {"query": "Hey, i need to order food"}}
+{"query": "order some I think coffee for me please.", "tool": "get_groceries", "args": {"query": "order some I think coffee for me please."}}
+{"query": "Um, Is this phone call legitimate", "tool": "check_safety", "args": {"query": "Um, Is this phone call legitimate"}}
+{"query": "Honey, I smell gas", "tool": "emergency", "args": {"query": "Honey, I smell gas"}}
+{"query": "Honey, I want to talk to David", "tool": "contact_family", "args": {"query": "Honey, I want to talk to David"}}
+{"query": "Hey, I need groceries", "tool": "get_groceries", "args": {"query": "Hey, I need groceries"}}
+{"query": "Listen, What's the maybe temperature if you can.", "tool": "check_safety", "args": {"query": "Listen, What's the maybe temperature if you can."}}
+{"query": "Hey, Do I have anything this morning if you can.", "tool": "check_schedule", "args": {"query": "Hey, Do I have anything this morning if you can."}}
+{"query": "Listen, Time to pay the cable again", "tool": "handle_bills", "args": {"query": "Listen, Time to pay the cable again"}}
+{"query": "Oh, buy bananas at the store", "tool": "get_groceries", "args": {"query": "Oh, buy bananas at the store"}}
+{"query": "Um, i want to talk to Mary okay?", "tool": "contact_family", "args": {"query": "Um, i want to talk to Mary okay?"}}
+{"query": "Listen, I'm confused about my computer", "tool": "general_help", "args": {"query": "Listen, I'm confused about my computer"}}
+{"query": "Oh, handle my AT&T account", "tool": "handle_bills", "args": {"query": "Oh, handle my AT&T account"}}
+{"query": "Um, Is it going to rain this afternoon if you can.", "tool": "check_safety", "args": {"query": "Um, Is it going to rain this afternoon if you can."}}
+{"query": "I want to talk to Tom", "tool": "contact_family", "args": {"query": "I want to talk to Tom"}}
+{"query": "get toilet paper delivered please.", "tool": "get_groceries", "args": {"query": "get toilet paper delivered please."}}
+{"query": "Well, What's coming up this afternoon thanks.", "tool": "check_schedule", "args": {"query": "Well, What's coming up this afternoon thanks."}}
+{"query": "Time to pay the gas again please.", "tool": "handle_bills", "args": {"query": "Time to pay the gas again please."}}
+{"query": "Well, what time is it if you can.", "tool": "general_help", "args": {"query": "Well, what time is it if you can."}}
+{"query": "Honey, Something is wrong, get help please.", "tool": "emergency", "args": {"query": "Honey, Something is wrong, get help please."}}
+{"query": "Well, call 911", "tool": "emergency", "args": {"query": "Well, call 911"}}
+{"query": "Um, I fell and I can't get up okay?", "tool": "emergency", "args": {"query": "Um, I fell and I can't get up okay?"}}
+{"query": "Honey, i need groceries thanks.", "tool": "get_groceries", "args": {"query": "Honey, i need groceries thanks."}}
+{"query": "Honey, What time is it", "tool": "general_help", "args": {"query": "Honey, What time is it"}}
+{"query": "Well, I need to stock up on eggs if you can.", "tool": "get_groceries", "args": {"query": "Well, I need to stock up on eggs if you can."}}
+{"query": "Honey, Who is Jenny", "tool": "general_help", "args": {"query": "Honey, Who is Jenny"}}
+{"query": "Oh, What does receipt mean if you can.", "tool": "general_help", "args": {"query": "Oh, What does receipt mean if you can."}}
+{"query": "Remind me to take my metformin", "tool": "check_schedule", "args": {"query": "Remind me to take my metformin"}}
+{"query": "i have a I think question", "tool": "general_help", "args": {"query": "i have a I think question"}}
+{"query": "Honey, check if I think AT&T sent me a bill please.", "tool": "handle_bills", "args": {"query": "Honey, check if I think AT&T sent me a bill please."}}
+{"query": "Hey, what's coming up tomorrow okay?", "tool": "check_schedule", "args": {"query": "Hey, what's coming up tomorrow okay?"}}
+{"query": "The water bill is due, can you take care of it please.", "tool": "handle_bills", "args": {"query": "The water bill is due, can you take care of it please."}}
+{"query": "Add toilet paper to my grocery list", "tool": "get_groceries", "args": {"query": "Add toilet paper to my grocery list"}}
+{"query": "Hey, I ran maybe out of milk please.", "tool": "get_groceries", "args": {"query": "Hey, I ran maybe out of milk please."}}
+{"query": "Um, I'd like to speak with Sean", "tool": "contact_family", "args": {"query": "Um, I'd like to speak with Sean"}}
+{"query": "Well, Explain my insurance to me", "tool": "general_help", "args": {"query": "Well, Explain my insurance to me"}}
+{"query": "Honey, I have a question okay?", "tool": "general_help", "args": {"query": "Honey, I have a question okay?"}}
+{"query": "Um, any doctor appointments I guess this morning please.", "tool": "check_schedule", "args": {"query": "Um, any doctor appointments I guess this morning please."}}
+{"query": "Um, I need to order food", "tool": "get_groceries", "args": {"query": "Um, I need to order food"}}
+{"query": "Um, Am I free today", "tool": "check_schedule", "args": {"query": "Um, Am I free today"}}
+{"query": "Well, I'm having chest pain", "tool": "emergency", "args": {"query": "Well, I'm having chest pain"}}
+{"query": "Pay the gas if you can.", "tool": "handle_bills", "args": {"query": "Pay the gas if you can."}}
+{"query": "Hey, Read the message maybe from Tom", "tool": "contact_family", "args": {"query": "Hey, Read the message maybe from Tom"}}
+{"query": "Hey, Something I guess is wrong, get help if you can.", "tool": "emergency", "args": {"query": "Hey, Something I guess is wrong, get help if you can."}}
+{"query": "Listen, i can't breathe", "tool": "emergency", "args": {"query": "Listen, i can't breathe"}}
+{"query": "Add toilet paper to my grocery list okay?", "tool": "get_groceries", "args": {"query": "Add toilet paper to my grocery list okay?"}}
+{"query": "Hey, Can you help me with something okay?", "tool": "general_help", "args": {"query": "Hey, Can you help me with something okay?"}}
+{"query": "Well, Check if Verizon sent me a bill please.", "tool": "handle_bills", "args": {"query": "Well, Check if Verizon sent me a bill please."}}
+{"query": "Hey, can you get me chicken from the store", "tool": "get_groceries", "args": {"query": "Hey, can you get me chicken from the store"}}
+{"query": "i got a bill from Comcast, can you handle it", "tool": "handle_bills", "args": {"query": "i got a bill from Comcast, can you handle it"}}
+{"query": "Oh, phone Jenny for me", "tool": "contact_family", "args": {"query": "Oh, phone Jenny for me"}}
+{"query": "I can't breathe", "tool": "emergency", "args": {"query": "I can't breathe"}}
+{"query": "Well, I need toilet paper and bread", "tool": "get_groceries", "args": {"query": "Well, I need toilet paper and bread"}}
+{"query": "Honey, Get me some bananas please.", "tool": "get_groceries", "args": {"query": "Honey, Get me some bananas please."}}
+{"query": "Honey, Call Tom okay?", "tool": "contact_family", "args": {"query": "Honey, Call Tom okay?"}}
+{"query": "I ran out of chicken thanks.", "tool": "get_groceries", "args": {"query": "I ran out of chicken thanks."}}
+{"query": "the electric maybe bill is due, can you take care of it", "tool": "handle_bills", "args": {"query": "the electric maybe bill is due, can you take care of it"}}
+{"query": "Um, how do I print something okay?", "tool": "general_help", "args": {"query": "Um, how do I print something okay?"}}
+{"query": "Listen, Call David", "tool": "contact_family", "args": {"query": "Listen, Call David"}}
+{"query": "Um, I want to hear from Sean", "tool": "contact_family", "args": {"query": "Um, I want to hear from Sean"}}
+{"query": "Oh, Order groceries from Walmart okay?", "tool": "get_groceries", "args": {"query": "Oh, Order groceries from Walmart okay?"}}
+{"query": "i'd like to speak with Tom if you can.", "tool": "contact_family", "args": {"query": "i'd like to speak with Tom if you can."}}
+{"query": "i want to hear from Mike", "tool": "contact_family", "args": {"query": "i want to hear from Mike"}}
+{"query": "Listen, Can you call Jenny", "tool": "contact_family", "args": {"query": "Listen, Can you call Jenny"}}
+{"query": "Hey, any word from Tom please.", "tool": "contact_family", "args": {"query": "Hey, any word from Tom please."}}
+{"query": "Remind me to take my metformin if you can.", "tool": "check_schedule", "args": {"query": "Remind me to take my metformin if you can."}}
+{"query": "I need an ambulance", "tool": "emergency", "args": {"query": "I need an ambulance"}}
+{"query": "Hey, What does my day look like next week if you can.", "tool": "check_schedule", "args": {"query": "Hey, What does my day look like next week if you can."}}
+{"query": "Order groceries from Walmart", "tool": "get_groceries", "args": {"query": "Order groceries from Walmart"}}
+{"query": "Oh, Remind me to take my vitamin D if you can.", "tool": "check_schedule", "args": {"query": "Oh, Remind me to take my vitamin D if you can."}}
+{"query": "Oh, I want to talk to Tom", "tool": "contact_family", "args": {"query": "Oh, I want to talk to Tom"}}
+{"query": "Well, Am I free today", "tool": "check_schedule", "args": {"query": "Well, Am I free today"}}
+{"query": "Um, What's coming up next week if you can.", "tool": "check_schedule", "args": {"query": "Um, What's coming up next week if you can."}}
+{"query": "Um, Set a reminder for my levothyroxine thanks.", "tool": "check_schedule", "args": {"query": "Um, Set a reminder for my levothyroxine thanks."}}
+{"query": "Um, I need maybe to call Tom back if you can.", "tool": "contact_family", "args": {"query": "Um, I need maybe to call Tom back if you can."}}
+{"query": "Hey, My chest hurts thanks.", "tool": "emergency", "args": {"query": "Hey, My chest hurts thanks."}}
+{"query": "Um, Emergency, please help okay?", "tool": "emergency", "args": {"query": "Um, Emergency, please help okay?"}}
+{"query": "Well, Call 911 please.", "tool": "emergency", "args": {"query": "Well, Call 911 please."}}
+{"query": "can you do the shopping okay?", "tool": "get_groceries", "args": {"query": "can you do the shopping okay?"}}
+{"query": "Honey, Read the message from Mike", "tool": "contact_family", "args": {"query": "Honey, Read the message from Mike"}}
+{"query": "what time is it", "tool": "general_help", "args": {"query": "what time is it"}}
+{"query": "Um, I need to make a payment to Verizon if you can.", "tool": "handle_bills", "args": {"query": "Um, I need to make a payment to Verizon if you can."}}
+{"query": "I need to stock up on chicken", "tool": "get_groceries", "args": {"query": "I need to stock up on chicken"}}
+{"query": "what do you know about a package thanks.", "tool": "general_help", "args": {"query": "what do you know about a package thanks."}}
+{"query": "Hey, I got a strange message, can you check it please.", "tool": "check_safety", "args": {"query": "Hey, I got a strange message, can you check it please."}}
+{"query": "Honey, i can't breathe if you can.", "tool": "emergency", "args": {"query": "Honey, i can't breathe if you can."}}
+{"query": "Listen, I think someone is trying to trick me", "tool": "check_safety", "args": {"query": "Listen, I think someone is trying to trick me"}}
+{"query": "Listen, i think I'm having a stroke", "tool": "emergency", "args": {"query": "Listen, i think I'm having a stroke"}}
+{"query": "Listen, when is maybe my next appointment please.", "tool": "check_schedule", "args": {"query": "Listen, when is maybe my next appointment please."}}
+{"query": "Um, what do you know about a package okay?", "tool": "general_help", "args": {"query": "Um, what do you know about a package okay?"}}
+{"query": "Listen, What's five plus five please.", "tool": "general_help", "args": {"query": "Listen, What's five plus five please."}}
+{"query": "Honey, Did Sean email me please.", "tool": "contact_family", "args": {"query": "Honey, Did Sean email me please."}}
+{"query": "Add milk I guess to my grocery list thanks.", "tool": "get_groceries", "args": {"query": "Add milk I guess to my grocery list thanks."}}
+{"query": "I want to talk to Jenny", "tool": "contact_family", "args": {"query": "I want to talk to Jenny"}}
+{"query": "Listen, i I think think someone is trying to trick me", "tool": "check_safety", "args": {"query": "Listen, i I think think someone is trying to trick me"}}
+{"query": "Hey, When is my next appointment", "tool": "check_schedule", "args": {"query": "Hey, When is my next appointment"}}
+{"query": "Can you I guess pay my gas bill for me please.", "tool": "handle_bills", "args": {"query": "Can you I guess pay my gas bill for me please."}}
+{"query": "Listen, Am I free this morning thanks.", "tool": "check_schedule", "args": {"query": "Listen, Am I free this morning thanks."}}
+{"query": "Listen, dial Jenny", "tool": "contact_family", "args": {"query": "Listen, dial Jenny"}}
+{"query": "Emergency, please help", "tool": "emergency", "args": {"query": "Emergency, please help"}}
+{"query": "Well, Pick up chicken on the way home if you can.", "tool": "get_groceries", "args": {"query": "Well, Pick up chicken on the way home if you can."}}
+{"query": "Oh, what's the temperature if you can.", "tool": "check_safety", "args": {"query": "Oh, what's the temperature if you can."}}
+{"query": "Um, Someone called saying they're from my bank, is that real", "tool": "check_safety", "args": {"query": "Um, Someone called saying they're from my bank, is that real"}}
+{"query": "Can you call I think Sean", "tool": "contact_family", "args": {"query": "Can you call I think Sean"}}
+{"query": "What's I think the weather like", "tool": "check_safety", "args": {"query": "What's I think the weather like"}}
+{"query": "i have a question thanks.", "tool": "general_help", "args": {"query": "i have a question thanks."}}
+{"query": "Check if Consumers Energy sent me a bill", "tool": "handle_bills", "args": {"query": "Check if Consumers Energy sent me a bill"}}
+{"query": "Oh, Did I take my levothyroxine this afternoon", "tool": "check_schedule", "args": {"query": "Oh, Did I take my levothyroxine this afternoon"}}
+{"query": "Take care of the electric bill", "tool": "handle_bills", "args": {"query": "Take care of the electric bill"}}
+{"query": "Honey, I need to pay the internet bill", "tool": "handle_bills", "args": {"query": "Honey, I need to pay the internet bill"}}
+{"query": "Well, Order some rice for me", "tool": "get_groceries", "args": {"query": "Well, Order some rice for me"}}
+{"query": "my insurance payment is due thanks.", "tool": "handle_bills", "args": {"query": "my insurance payment is due thanks."}}
+{"query": "Hey, read the I guess message from Tom please.", "tool": "contact_family", "args": {"query": "Hey, read the I guess message from Tom please."}}
+{"query": "What year did the war end happen please.", "tool": "general_help", "args": {"query": "What year did the war end happen please."}}
+{"query": "Hey, The cable bill is due, can you take care of it", "tool": "handle_bills", "args": {"query": "Hey, The cable bill is due, can you take care of it"}}
+{"query": "Listen, Can you pay I guess my phone bill for me", "tool": "handle_bills", "args": {"query": "Listen, Can you pay I guess my phone bill for me"}}
+{"query": "Listen, Who is Lisa", "tool": "general_help", "args": {"query": "Listen, Who is Lisa"}}
+{"query": "Do I need a jacket this morning please.", "tool": "check_safety", "args": {"query": "Do I need a jacket this morning please."}}
+{"query": "Honey, Am I free this week", "tool": "check_schedule", "args": {"query": "Honey, Am I free this week"}}
+{"query": "Do I have any appointments this morning", "tool": "check_schedule", "args": {"query": "Do I have any appointments this morning"}}
+{"query": "Well, It's time for my pills please.", "tool": "check_schedule", "args": {"query": "Well, It's time for my pills please."}}
+{"query": "Listen, Did the phone bill come in the mail please.", "tool": "handle_bills", "args": {"query": "Listen, Did the phone bill come in the mail please."}}
+{"query": "Um, Order some rice for me if you can.", "tool": "get_groceries", "args": {"query": "Um, Order some rice for me if you can."}}
+{"query": "Hey, read the message from Mary please.", "tool": "contact_family", "args": {"query": "Hey, read the message from Mary please."}}
+{"query": "i want to pay Verizon", "tool": "handle_bills", "args": {"query": "i want to pay Verizon"}}
+{"query": "Time to pay I think the insurance again please.", "tool": "handle_bills", "args": {"query": "Time to pay I think the insurance again please."}}
+{"query": "Oh, i fell and I can't get up", "tool": "emergency", "args": {"query": "Oh, i fell and I can't get up"}}
+{"query": "Um, This doesn't I guess look right, is it fraud", "tool": "check_safety", "args": {"query": "Um, This doesn't I guess look right, is it fraud"}}
+{"query": "Oh, What do I owe the water company if you can.", "tool": "handle_bills", "args": {"query": "Oh, What do I owe the water company if you can."}}
+{"query": "Um, how cold is it outside thanks.", "tool": "check_safety", "args": {"query": "Um, how cold is it outside thanks."}}
+{"query": "What do you maybe know about my computer", "tool": "general_help", "args": {"query": "What do you maybe know about my computer"}}
+{"query": "Listen, I can't wake up my spouse", "tool": "emergency", "args": {"query": "Listen, I can't wake up my spouse"}}
+{"query": "Well, Do I I guess have any appointments tomorrow thanks.", "tool": "check_schedule", "args": {"query": "Well, Do I I guess have any appointments tomorrow thanks."}}
+{"query": "Hey, What time is it if you can.", "tool": "general_help", "args": {"query": "Hey, What time is it if you can."}}
+{"query": "when is my next appointment please.", "tool": "check_schedule", "args": {"query": "when is my next appointment please."}}
+{"query": "Hey, i need help please.", "tool": "emergency", "args": {"query": "Hey, i need help please."}}
+{"query": "what maybe do you know about a refund okay?", "tool": "general_help", "args": {"query": "what maybe do you know about a refund okay?"}}
+{"query": "Hey, Can you look at this email and tell me if it's safe", "tool": "check_safety", "args": {"query": "Hey, Can you look at this email and tell me if it's safe"}}
+{"query": "I'd like to speak with Tom", "tool": "contact_family", "args": {"query": "I'd like to speak with Tom"}}
+{"query": "Um, Can you do the shopping", "tool": "get_groceries", "args": {"query": "Um, Can you do the shopping"}}
+{"query": "Get me maybe some chicken okay?", "tool": "get_groceries", "args": {"query": "Get me maybe some chicken okay?"}}
+{"query": "Oh, Emergency, please help thanks.", "tool": "emergency", "args": {"query": "Oh, Emergency, please help thanks."}}
+{"query": "What's coming up I think this afternoon", "tool": "check_schedule", "args": {"query": "What's coming up I think this afternoon"}}
+{"query": "emergency, please I guess help", "tool": "emergency", "args": {"query": "emergency, please I guess help"}}
+{"query": "What's coming up this morning", "tool": "check_schedule", "args": {"query": "What's coming up this morning"}}
+{"query": "My chest hurts", "tool": "emergency", "args": {"query": "My chest hurts"}}
+{"query": "Well, What's on my calendar tomorrow", "tool": "check_schedule", "args": {"query": "Well, What's on my calendar tomorrow"}}
+{"query": "we're out of coffee", "tool": "get_groceries", "args": {"query": "we're out of coffee"}}
+{"query": "Well, Can you get me toilet paper from the store if you can.", "tool": "get_groceries", "args": {"query": "Well, Can you get me toilet paper from the store if you can."}}
+{"query": "i need toilet paper and chicken", "tool": "get_groceries", "args": {"query": "i need toilet paper and chicken"}}
+{"query": "Well, My chest hurts if you can.", "tool": "emergency", "args": {"query": "Well, My chest hurts if you can."}}
+{"query": "Check if Verizon sent me a bill if you can.", "tool": "handle_bills", "args": {"query": "Check if Verizon sent me a bill if you can."}}
+{"query": "Honey, Check my schedule for today if you can.", "tool": "check_schedule", "args": {"query": "Honey, Check my schedule for today if you can."}}
+{"query": "Well, i'm having chest pain thanks.", "tool": "emergency", "args": {"query": "Well, i'm having chest pain thanks."}}
+{"query": "Honey, I think someone is trying to trick me", "tool": "check_safety", "args": {"query": "Honey, I think someone is trying to trick me"}}
+{"query": "I'm confused about my account", "tool": "general_help", "args": {"query": "I'm confused about my account"}}
+{"query": "Hey, I need I guess to call David back please.", "tool": "contact_family", "args": {"query": "Hey, I need I guess to call David back please."}}
+{"query": "Call Jenny", "tool": "contact_family", "args": {"query": "Call Jenny"}}
+{"query": "any maybe doctor appointments this morning", "tool": "check_schedule", "args": {"query": "any maybe doctor appointments this morning"}}
+{"query": "Um, i can't breathe", "tool": "emergency", "args": {"query": "Um, i can't breathe"}}
+{"query": "Well, can you I think get me bread from the store", "tool": "get_groceries", "args": {"query": "Well, can you I think get me bread from the store"}}
+{"query": "Listen, i maybe need to stock up on bananas", "tool": "get_groceries", "args": {"query": "Listen, i maybe need to stock up on bananas"}}
+{"query": "Hey, any word from David", "tool": "contact_family", "args": {"query": "Hey, any word from David"}}
+{"query": "Listen, Call Jenny okay?", "tool": "contact_family", "args": {"query": "Listen, Call Jenny okay?"}}
+{"query": "Hey, Set a reminder for my blood pressure pill please.", "tool": "check_schedule", "args": {"query": "Hey, Set a reminder for my blood pressure pill please."}}
+{"query": "is it going to rain today", "tool": "check_safety", "args": {"query": "is it going to rain today"}}
+{"query": "did I guess the cable bill come in the mail okay?", "tool": "handle_bills", "args": {"query": "did I guess the cable bill come in the mail okay?"}}
+{"query": "i think I guess I'm having a stroke if you can.", "tool": "emergency", "args": {"query": "i think I guess I'm having a stroke if you can."}}
+{"query": "Listen, I need to pay the insurance bill", "tool": "handle_bills", "args": {"query": "Listen, I need to pay the insurance bill"}}
+{"query": "Listen, Check my schedule for this week okay?", "tool": "check_schedule", "args": {"query": "Listen, Check my schedule for this week okay?"}}
+{"query": "Um, Buy chicken at the store", "tool": "get_groceries", "args": {"query": "Um, Buy chicken at the store"}}
+{"query": "time to pay the internet again", "tool": "handle_bills", "args": {"query": "time to pay the internet again"}}
+{"query": "Can you pay my internet bill for me please.", "tool": "handle_bills", "args": {"query": "Can you pay my internet bill for me please."}}
+{"query": "Listen, can you call Sarah if you can.", "tool": "contact_family", "args": {"query": "Listen, can you call Sarah if you can."}}
+{"query": "Um, Someone called saying they're from Social Security, is that real please.", "tool": "check_safety", "args": {"query": "Um, Someone called saying they're from Social Security, is that real please."}}
+{"query": "How do I turn off the Wi-Fi", "tool": "general_help", "args": {"query": "How do I turn off the Wi-Fi"}}
+{"query": "I need I think an ambulance if you can.", "tool": "emergency", "args": {"query": "I need I think an ambulance if you can."}}
+{"query": "Honey, Read the message from David please.", "tool": "contact_family", "args": {"query": "Honey, Read the message from David please."}}
+{"query": "Hey, Something is wrong, get help please.", "tool": "emergency", "args": {"query": "Hey, Something is wrong, get help please."}}
+{"query": "Hey, the insurance bill is due, can you take care of it if you can.", "tool": "handle_bills", "args": {"query": "Hey, the insurance bill is due, can you take care of it if you can."}}
+{"query": "Well, Someone called saying they're from Apple, is that real please.", "tool": "check_safety", "args": {"query": "Well, Someone called saying they're from Apple, is that real please."}}
+{"query": "i think I'm having a stroke please.", "tool": "emergency", "args": {"query": "i think I'm having a stroke please."}}
+{"query": "Well, I need eggs and chicken", "tool": "get_groceries", "args": {"query": "Well, I need eggs and chicken"}}
+{"query": "Tell me about my insurance", "tool": "general_help", "args": {"query": "Tell me about my insurance"}}
+{"query": "Well, I have a question", "tool": "general_help", "args": {"query": "Well, I have a question"}}
+{"query": "Listen, Do I have any appointments this week", "tool": "check_schedule", "args": {"query": "Listen, Do I have any appointments this week"}}
+{"query": "Listen, i need to order food okay?", "tool": "get_groceries", "args": {"query": "Listen, i need to order food okay?"}}
+{"query": "Honey, I got a text about a package, is it real", "tool": "check_safety", "args": {"query": "Honey, I got a text about a package, is it real"}}
+{"query": "Listen, Something seems fishy about this", "tool": "check_safety", "args": {"query": "Listen, Something seems fishy about this"}}
+{"query": "Well, how many tablespoons in a pound", "tool": "general_help", "args": {"query": "Well, how many tablespoons in a pound"}}
+{"query": "Honey, any doctor appointments this morning", "tool": "check_schedule", "args": {"query": "Honey, any doctor appointments this morning"}}
+{"query": "Hey, I want to pay Verizon", "tool": "handle_bills", "args": {"query": "Hey, I want to pay Verizon"}}
+{"query": "Oh, Call Lisa", "tool": "contact_family", "args": {"query": "Oh, Call Lisa"}}
+{"query": "Listen, Ring Mary okay?", "tool": "contact_family", "args": {"query": "Listen, Ring Mary okay?"}}
+{"query": "Hey, Can you get me bananas from the store if you can.", "tool": "get_groceries", "args": {"query": "Hey, Can you get me bananas from the store if you can."}}
+{"query": "Tell me about a package", "tool": "general_help", "args": {"query": "Tell me about a package"}}
+{"query": "Honey, Explain my insurance to me thanks.", "tool": "general_help", "args": {"query": "Honey, Explain my insurance to me thanks."}}
+{"query": "Um, Any word from Sarah okay?", "tool": "contact_family", "args": {"query": "Um, Any word from Sarah okay?"}}
+{"query": "call 911 thanks.", "tool": "emergency", "args": {"query": "call 911 thanks."}}
+{"query": "someone called saying they're from the IRS, is that real please.", "tool": "check_safety", "args": {"query": "someone called saying they're from the IRS, is that real please."}}
+{"query": "Emergency, please help if you can.", "tool": "emergency", "args": {"query": "Emergency, please help if you can."}}
+{"query": "can you help me with something thanks.", "tool": "general_help", "args": {"query": "can you help me with something thanks."}}
+{"query": "Listen, I want to hear from David", "tool": "contact_family", "args": {"query": "Listen, I want to hear from David"}}
+{"query": "Um, Emergency, please help okay?", "tool": "emergency", "args": {"query": "Um, Emergency, please help okay?"}}
+{"query": "I'm confused about I guess a package okay?", "tool": "general_help", "args": {"query": "I'm confused about I guess a package okay?"}}
+{"query": "Hey, What's the temperature", "tool": "check_safety", "args": {"query": "Hey, What's the temperature"}}
+{"query": "Um, I want to talk to Sean okay?", "tool": "contact_family", "args": {"query": "Um, I want to talk to Sean okay?"}}
+{"query": "Oh, can you look at this email and tell me if it's safe", "tool": "check_safety", "args": {"query": "Oh, can you look at this email and tell me if it's safe"}}
+{"query": "Well, how many inches in a pound if you can.", "tool": "general_help", "args": {"query": "Well, how many inches in a pound if you can."}}
+{"query": "Listen, I want to I guess pay DTE okay?", "tool": "handle_bills", "args": {"query": "Listen, I want to I guess pay DTE okay?"}}
+{"query": "Honey, Can you do the shopping please.", "tool": "get_groceries", "args": {"query": "Honey, Can you do the shopping please."}}
+{"query": "What medications do I take this afternoon okay?", "tool": "check_schedule", "args": {"query": "What medications do I take this afternoon okay?"}}
+{"query": "I need to call Tom back", "tool": "contact_family", "args": {"query": "I need to call Tom back"}}
+{"query": "Hey, explain my computer to me please.", "tool": "general_help", "args": {"query": "Hey, explain my computer to me please."}}
+{"query": "What year did man land on the moon happen please.", "tool": "general_help", "args": {"query": "What year did man land on the moon happen please."}}
+{"query": "Well, I I guess got a bill from the water company, can you handle it please.", "tool": "handle_bills", "args": {"query": "Well, I I guess got a bill from the water company, can you handle it please."}}
+{"query": "What's the temperature thanks.", "tool": "check_safety", "args": {"query": "What's the temperature thanks."}}
+{"query": "Um, it's time for my pills", "tool": "check_schedule", "args": {"query": "Um, it's time for my pills"}}
+{"query": "Order groceries from Costco please.", "tool": "get_groceries", "args": {"query": "Order groceries from Costco please."}}
+{"query": "What does receipt mean okay?", "tool": "general_help", "args": {"query": "What does receipt mean okay?"}}
+{"query": "i can't wake up my spouse if you can.", "tool": "emergency", "args": {"query": "i can't wake up my spouse if you can."}}
+{"query": "emergency, please help if you can.", "tool": "emergency", "args": {"query": "emergency, please help if you can."}}
+{"query": "Um, I got a strange message, can you check it", "tool": "check_safety", "args": {"query": "Um, I got a strange message, can you check it"}}
+{"query": "I need help", "tool": "emergency", "args": {"query": "I need help"}}
+{"query": "Listen, i need to order food okay?", "tool": "get_groceries", "args": {"query": "Listen, i need to order food okay?"}}
+{"query": "Hey, Can you I think help me with something if you can.", "tool": "general_help", "args": {"query": "Hey, Can you I think help me with something if you can."}}
+{"query": "Listen, Explain my insurance I guess to me", "tool": "general_help", "args": {"query": "Listen, Explain my insurance I guess to me"}}
+{"query": "Listen, Explain my account to me", "tool": "general_help", "args": {"query": "Listen, Explain my account to me"}}
+{"query": "Add eggs to my grocery list", "tool": "get_groceries", "args": {"query": "Add eggs to my grocery list"}}
+{"query": "I fell maybe and I can't get up", "tool": "emergency", "args": {"query": "I fell maybe and I can't get up"}}
+{"query": "Well, Can you do the shopping if you can.", "tool": "get_groceries", "args": {"query": "Well, Can you do the shopping if you can."}}
+{"query": "can you maybe get me coffee from the store please.", "tool": "get_groceries", "args": {"query": "can you maybe get me coffee from the store please."}}
+{"query": "Um, check if this is a scam", "tool": "check_safety", "args": {"query": "Um, check if this is a scam"}}
+{"query": "Um, I think I'm having a stroke", "tool": "emergency", "args": {"query": "Um, I think I'm having a stroke"}}
+{"query": "Oh, what do I I guess owe DTE thanks.", "tool": "handle_bills", "args": {"query": "Oh, what do I I guess owe DTE thanks."}}
+{"query": "Um, Take care of the cable bill thanks.", "tool": "handle_bills", "args": {"query": "Um, Take care of the cable bill thanks."}}
+{"query": "what do I owe DTE thanks.", "tool": "handle_bills", "args": {"query": "what do I owe DTE thanks."}}
+{"query": "Hey, Buy bread maybe at the store if you can.", "tool": "get_groceries", "args": {"query": "Hey, Buy bread maybe at the store if you can."}}
+{"query": "Oh, i need to I think call Tom back", "tool": "contact_family", "args": {"query": "Oh, i need to I think call Tom back"}}
+{"query": "Hey, handle my the water company account", "tool": "handle_bills", "args": {"query": "Hey, handle my the water company account"}}
+{"query": "Oh, Add bread to my grocery list please.", "tool": "get_groceries", "args": {"query": "Oh, Add bread to my grocery list please."}}
+{"query": "What am I doing tomorrow thanks.", "tool": "check_schedule", "args": {"query": "What am I doing tomorrow thanks."}}
+{"query": "I I guess smell gas", "tool": "emergency", "args": {"query": "I I guess smell gas"}}
+{"query": "Um, It's time for my pills if you can.", "tool": "check_schedule", "args": {"query": "Um, It's time for my pills if you can."}}
+{"query": "Um, Is it going maybe to rain this afternoon okay?", "tool": "check_safety", "args": {"query": "Um, Is it going maybe to rain this afternoon okay?"}}
+{"query": "Who is Lisa thanks.", "tool": "general_help", "args": {"query": "Who is Lisa thanks."}}
+{"query": "Honey, My chest hurts", "tool": "emergency", "args": {"query": "Honey, My chest hurts"}}
+{"query": "Well, I ran out of milk thanks.", "tool": "get_groceries", "args": {"query": "Well, I ran out of milk thanks."}}
+{"query": "Honey, Dial Mike if you can.", "tool": "contact_family", "args": {"query": "Honey, Dial Mike if you can."}}
+{"query": "Listen, what medications do I take today okay?", "tool": "check_schedule", "args": {"query": "Listen, what medications do I take today okay?"}}
+{"query": "Honey, What's five plus twelve thanks.", "tool": "general_help", "args": {"query": "Honey, What's five plus twelve thanks."}}
+{"query": "We're out of bread", "tool": "get_groceries", "args": {"query": "We're out of bread"}}
+{"query": "Honey, What does my day look like this week", "tool": "check_schedule", "args": {"query": "Honey, What does my day look like this week"}}
+{"query": "call my son", "tool": "contact_family", "args": {"query": "call my son"}}
+{"query": "Um, how do you spell restaurant okay?", "tool": "general_help", "args": {"query": "Um, how do you spell restaurant okay?"}}
+{"query": "Listen, We're out of coffee please.", "tool": "get_groceries", "args": {"query": "Listen, We're out of coffee please."}}
+{"query": "Am I maybe free today please.", "tool": "check_schedule", "args": {"query": "Am I maybe free today please."}}
+{"query": "what time is I think it", "tool": "general_help", "args": {"query": "what time is I think it"}}
+{"query": "someone broke into my house okay?", "tool": "emergency", "args": {"query": "someone broke into my house okay?"}}
+{"query": "Honey, I want to hear from David if you can.", "tool": "contact_family", "args": {"query": "Honey, I want to hear from David if you can."}}
+{"query": "Um, I maybe can't wake up my spouse", "tool": "emergency", "args": {"query": "Um, I maybe can't wake up my spouse"}}
+{"query": "Listen, what year did the Berlin Wall fall happen thanks.", "tool": "general_help", "args": {"query": "Listen, what year did the Berlin Wall fall happen thanks."}}
+{"query": "Check my schedule I think for this week please.", "tool": "check_schedule", "args": {"query": "Check my schedule I think for this week please."}}
+{"query": "add coffee to my grocery list thanks.", "tool": "get_groceries", "args": {"query": "add coffee to my grocery list thanks."}}
+{"query": "How cold is it outside", "tool": "check_safety", "args": {"query": "How cold is it outside"}}
+{"query": "what does my day look like this afternoon please.", "tool": "check_schedule", "args": {"query": "what does my day look like this afternoon please."}}
+{"query": "Honey, buy coffee at the store", "tool": "get_groceries", "args": {"query": "Honey, buy coffee at the store"}}
+{"query": "Hey, Is this email a scam thanks.", "tool": "check_safety", "args": {"query": "Hey, Is this email a scam thanks."}}
+{"query": "Honey, I need toilet paper and chicken", "tool": "get_groceries", "args": {"query": "Honey, I need toilet paper and chicken"}}
+{"query": "Oh, Is it going to rain this week", "tool": "check_safety", "args": {"query": "Oh, Is it going to rain this week"}}
+{"query": "Listen, Did Lisa maybe email me okay?", "tool": "contact_family", "args": {"query": "Listen, Did Lisa maybe email me okay?"}}
+{"query": "Honey, What time is it if you can.", "tool": "general_help", "args": {"query": "Honey, What time is it if you can."}}
+{"query": "Oh, what's the weather like okay?", "tool": "check_safety", "args": {"query": "Oh, what's the weather like okay?"}}
+{"query": "Um, It's time for my pills if you can.", "tool": "check_schedule", "args": {"query": "Um, It's time for my pills if you can."}}
+{"query": "Oh, Dial Mary", "tool": "contact_family", "args": {"query": "Oh, Dial Mary"}}
+{"query": "Any maybe word from Sarah", "tool": "contact_family", "args": {"query": "Any maybe word from Sarah"}}
+{"query": "I want to talk to Tom", "tool": "contact_family", "args": {"query": "I want to talk to Tom"}}
+{"query": "Do I have I guess any appointments this afternoon okay?", "tool": "check_schedule", "args": {"query": "Do I have I guess any appointments this afternoon okay?"}}
+{"query": "i need an ambulance", "tool": "emergency", "args": {"query": "i need an ambulance"}}
+{"query": "How do you spell February if you can.", "tool": "general_help", "args": {"query": "How do you spell February if you can."}}
+{"query": "Oh, Someone broke into my house okay?", "tool": "emergency", "args": {"query": "Oh, Someone broke into my house okay?"}}
+{"query": "Honey, I want to hear from Mike okay?", "tool": "contact_family", "args": {"query": "Honey, I want to hear from Mike okay?"}}
+{"query": "Well, get me some toilet paper", "tool": "get_groceries", "args": {"query": "Well, get me some toilet paper"}}
+{"query": "Can you pay my internet bill for me", "tool": "handle_bills", "args": {"query": "Can you pay my internet bill for me"}}
+{"query": "What time is it", "tool": "general_help", "args": {"query": "What time is it"}}
+{"query": "Hey, I'd like to speak with Tom", "tool": "contact_family", "args": {"query": "Hey, I'd like to speak with Tom"}}
+{"query": "Listen, I'm confused about my computer", "tool": "general_help", "args": {"query": "Listen, I'm confused about my computer"}}
+{"query": "Hey, i want I guess to talk to Tom thanks.", "tool": "contact_family", "args": {"query": "Hey, i want I guess to talk to Tom thanks."}}
+{"query": "Oh, Am I free this afternoon please.", "tool": "check_schedule", "args": {"query": "Oh, Am I free this afternoon please."}}
+{"query": "Um, Any word from Tom", "tool": "contact_family", "args": {"query": "Um, Any word from Tom"}}
+{"query": "Listen, I got a bill from the water company, can you handle it", "tool": "handle_bills", "args": {"query": "Listen, I got a bill from the water company, can you handle it"}}
+{"query": "is it going to rain tomorrow if you can.", "tool": "check_safety", "args": {"query": "is it going to rain tomorrow if you can."}}
+{"query": "Listen, Do I have any appointments this week if you can.", "tool": "check_schedule", "args": {"query": "Listen, Do I have any appointments this week if you can."}}
+{"query": "What am I doing tomorrow", "tool": "check_schedule", "args": {"query": "What am I doing tomorrow"}}
+{"query": "Um, What medications do I take this week okay?", "tool": "check_schedule", "args": {"query": "Um, What medications do I take this week okay?"}}
+{"query": "I need help thanks.", "tool": "emergency", "args": {"query": "I need help thanks."}}
+{"query": "Well, Pick up maybe rice on the way home please.", "tool": "get_groceries", "args": {"query": "Well, Pick up maybe rice on the way home please."}}
+{"query": "Hey, Handle my Consumers Energy account please.", "tool": "handle_bills", "args": {"query": "Hey, Handle my Consumers Energy account please."}}
+{"query": "I need to pay the electric bill", "tool": "handle_bills", "args": {"query": "I need to pay the electric bill"}}
+{"query": "Um, My phone payment is due if you can.", "tool": "handle_bills", "args": {"query": "Um, My phone payment is due if you can."}}
+{"query": "I can't wake up my spouse okay?", "tool": "emergency", "args": {"query": "I can't wake up my spouse okay?"}}
+{"query": "Oh, I need to I guess make a payment to DTE please.", "tool": "handle_bills", "args": {"query": "Oh, I need to I guess make a payment to DTE please."}}
+{"query": "Listen, I'm confused about a package", "tool": "general_help", "args": {"query": "Listen, I'm confused about a package"}}
+{"query": "Well, Check if Verizon sent me a bill okay?", "tool": "handle_bills", "args": {"query": "Well, Check if Verizon sent me a bill okay?"}}
+{"query": "Hey, My chest hurts if you can.", "tool": "emergency", "args": {"query": "Hey, My chest hurts if you can."}}
+{"query": "I need an ambulance if you can.", "tool": "emergency", "args": {"query": "I need an ambulance if you can."}}
+{"query": "Honey, this doesn't look right, is it fraud", "tool": "check_safety", "args": {"query": "Honey, this doesn't look right, is it fraud"}}
+{"query": "What year did the war end happen if you can.", "tool": "general_help", "args": {"query": "What year did the war end happen if you can."}}
+{"query": "check if this is a scam", "tool": "check_safety", "args": {"query": "check if this is a scam"}}
+{"query": "Listen, Remind me to take my metformin", "tool": "check_schedule", "args": {"query": "Listen, Remind me to take my metformin"}}
+{"query": "I need to pay the gas bill", "tool": "handle_bills", "args": {"query": "I need to pay the gas bill"}}
+{"query": "Well, Can you help me with something", "tool": "general_help", "args": {"query": "Well, Can you help me with something"}}
+{"query": "Well, Order groceries from the store thanks.", "tool": "get_groceries", "args": {"query": "Well, Order groceries from the store thanks."}}
+{"query": "Well, I'm dizzy and nauseous", "tool": "emergency", "args": {"query": "Well, I'm dizzy and nauseous"}}
+{"query": "Oh, Who is maybe Mary thanks.", "tool": "general_help", "args": {"query": "Oh, Who is maybe Mary thanks."}}
+{"query": "Is this phone call legitimate if you can.", "tool": "check_safety", "args": {"query": "Is this phone call legitimate if you can."}}
+{"query": "Call 911", "tool": "emergency", "args": {"query": "Call 911"}}
+{"query": "Um, I have a question", "tool": "general_help", "args": {"query": "Um, I have a question"}}
+{"query": "Honey, My chest hurts", "tool": "emergency", "args": {"query": "Honey, My chest hurts"}}
+{"query": "Hey, did Sean email me", "tool": "contact_family", "args": {"query": "Hey, did Sean email me"}}
+{"query": "Listen, Add rice I think to my grocery list if you can.", "tool": "get_groceries", "args": {"query": "Listen, Add rice I think to my grocery list if you can."}}
+{"query": "Oh, Take maybe care of the internet bill please.", "tool": "handle_bills", "args": {"query": "Oh, Take maybe care of the internet bill please."}}
+{"query": "Oh, Did I think I take my atorvastatin this morning", "tool": "check_schedule", "args": {"query": "Oh, Did I think I take my atorvastatin this morning"}}
+{"query": "how do I print something please.", "tool": "general_help", "args": {"query": "how do I print something please."}}
+{"query": "Honey, order some toilet paper for me", "tool": "get_groceries", "args": {"query": "Honey, order some toilet paper for me"}}
+{"query": "Honey, call my brother", "tool": "contact_family", "args": {"query": "Honey, call my brother"}}
+{"query": "Um, I can't wake up my spouse please.", "tool": "emergency", "args": {"query": "Um, I can't wake up my spouse please."}}
+{"query": "Honey, Order groceries from Meijer okay?", "tool": "get_groceries", "args": {"query": "Honey, Order groceries from Meijer okay?"}}
+{"query": "Well, i need to make a payment to Verizon", "tool": "handle_bills", "args": {"query": "Well, i need to make a payment to Verizon"}}
+{"query": "Oh, I think I'm having a stroke okay?", "tool": "emergency", "args": {"query": "Oh, I think I'm having a stroke okay?"}}
+{"query": "Honey, Check my schedule for this morning", "tool": "check_schedule", "args": {"query": "Honey, Check my schedule for this morning"}}
+{"query": "Hey, i can't breathe", "tool": "emergency", "args": {"query": "Hey, i can't breathe"}}
+{"query": "i'm dizzy and nauseous", "tool": "emergency", "args": {"query": "i'm dizzy and nauseous"}}
+{"query": "Well, My electric payment is due", "tool": "handle_bills", "args": {"query": "Well, My electric payment is due"}}
+{"query": "Listen, I smell maybe gas", "tool": "emergency", "args": {"query": "Listen, I smell maybe gas"}}
+{"query": "Um, any doctor appointments today okay?", "tool": "check_schedule", "args": {"query": "Um, any doctor appointments today okay?"}}
+{"query": "Honey, I need to pay the gas bill", "tool": "handle_bills", "args": {"query": "Honey, I need to pay the gas bill"}}
+{"query": "what year did man land on the moon happen thanks.", "tool": "general_help", "args": {"query": "what year did man land on the moon happen thanks."}}
+{"query": "Buy coffee at the store please.", "tool": "get_groceries", "args": {"query": "Buy coffee at the store please."}}
+{"query": "Hey, Someone called saying they're from my bank, is that real please.", "tool": "check_safety", "args": {"query": "Hey, Someone called saying they're from my bank, is that real please."}}
+{"query": "Well, Call 911 please.", "tool": "emergency", "args": {"query": "Well, Call 911 please."}}
+{"query": "Oh, i need help if you can.", "tool": "emergency", "args": {"query": "Oh, i need help if you can."}}
+{"query": "Hey, There's a fire", "tool": "emergency", "args": {"query": "Hey, There's a fire"}}
+{"query": "call Jenny", "tool": "contact_family", "args": {"query": "call Jenny"}}
+{"query": "i'm dizzy and nauseous please.", "tool": "emergency", "args": {"query": "i'm dizzy and nauseous please."}}
+{"query": "can you get I think me milk from the store", "tool": "get_groceries", "args": {"query": "can you get I think me milk from the store"}}
+{"query": "Well, what medications do I take next week", "tool": "check_schedule", "args": {"query": "Well, what medications do I take next week"}}
+{"query": "I can't wake up my spouse okay?", "tool": "emergency", "args": {"query": "I can't wake up my spouse okay?"}}
+{"query": "Well, What's coming up this afternoon if you can.", "tool": "check_schedule", "args": {"query": "Well, What's coming up this afternoon if you can."}}
+{"query": "Oh, can you pay my cable bill for me if you can.", "tool": "handle_bills", "args": {"query": "Oh, can you pay my cable bill for me if you can."}}
+{"query": "Oh, set a reminder I guess for my vitamin D please.", "tool": "check_schedule", "args": {"query": "Oh, set a reminder I guess for my vitamin D please."}}
+{"query": "Listen, explain a package to me okay?", "tool": "general_help", "args": {"query": "Listen, explain a package to me okay?"}}
+{"query": "it's time for my pills", "tool": "check_schedule", "args": {"query": "it's time for my pills"}}
+{"query": "Honey, I got a bill from Verizon, can you handle it", "tool": "handle_bills", "args": {"query": "Honey, I got a bill from Verizon, can you handle it"}}
+{"query": "Well, Ring Jenny", "tool": "contact_family", "args": {"query": "Well, Ring Jenny"}}
+{"query": "How many I guess tablespoons in a foot", "tool": "general_help", "args": {"query": "How many I guess tablespoons in a foot"}}
+{"query": "Honey, Order maybe some eggs for me", "tool": "get_groceries", "args": {"query": "Honey, Order maybe some eggs for me"}}
+{"query": "Listen, i need to pay the gas bill thanks.", "tool": "handle_bills", "args": {"query": "Listen, i need to pay the gas bill thanks."}}
+{"query": "There's a fire if you can.", "tool": "emergency", "args": {"query": "There's a fire if you can."}}
+{"query": "Um, call maybe my son thanks.", "tool": "contact_family", "args": {"query": "Um, call maybe my son thanks."}}
+{"query": "i'm dizzy and maybe nauseous", "tool": "emergency", "args": {"query": "i'm dizzy and maybe nauseous"}}
+{"query": "We're out I think of eggs", "tool": "get_groceries", "args": {"query": "We're out I think of eggs"}}
+{"query": "Is this phone call legitimate if you can.", "tool": "check_safety", "args": {"query": "Is this phone call legitimate if you can."}}
+{"query": "Can you look at this email and tell me if it's safe", "tool": "check_safety", "args": {"query": "Can you look at this email and tell me if it's safe"}}
+{"query": "Honey, i have a question if you can.", "tool": "general_help", "args": {"query": "Honey, i have a question if you can."}}
+{"query": "Oh, I need groceries", "tool": "get_groceries", "args": {"query": "Oh, I need groceries"}}
+{"query": "i'm confused about my insurance", "tool": "general_help", "args": {"query": "i'm confused about my insurance"}}
+{"query": "Hey, Emergency, please help okay?", "tool": "emergency", "args": {"query": "Hey, Emergency, please help okay?"}}
+{"query": "Oh, Did David email me", "tool": "contact_family", "args": {"query": "Oh, Did David email me"}}
+{"query": "Honey, When is my next appointment", "tool": "check_schedule", "args": {"query": "Honey, When is my next appointment"}}
+{"query": "Honey, what's the date this morning okay?", "tool": "general_help", "args": {"query": "Honey, what's the date this morning okay?"}}
+{"query": "Oh, I need to pay the electric bill", "tool": "handle_bills", "args": {"query": "Oh, I need to pay the electric bill"}}
+{"query": "Honey, Any I guess doctor appointments tomorrow", "tool": "check_schedule", "args": {"query": "Honey, Any I guess doctor appointments tomorrow"}}
+{"query": "Hey, Do I need a jacket this afternoon", "tool": "check_safety", "args": {"query": "Hey, Do I need a jacket this afternoon"}}
+{"query": "i want to hear from Sean please.", "tool": "contact_family", "args": {"query": "i want to hear from Sean please."}}
+{"query": "Hey, I have a question", "tool": "general_help", "args": {"query": "Hey, I have a question"}}
+{"query": "Honey, my internet payment is due", "tool": "handle_bills", "args": {"query": "Honey, my internet payment is due"}}
+{"query": "Oh, Check if Mike wrote to me", "tool": "contact_family", "args": {"query": "Oh, Check if Mike wrote to me"}}
+{"query": "I maybe need an ambulance if you can.", "tool": "emergency", "args": {"query": "I maybe need an ambulance if you can."}}
+{"query": "Oh, do I have I think any appointments tomorrow", "tool": "check_schedule", "args": {"query": "Oh, do I have I think any appointments tomorrow"}}
+{"query": "I'm confused about my account", "tool": "general_help", "args": {"query": "I'm confused about my account"}}
+{"query": "Um, Check my schedule for this afternoon okay?", "tool": "check_schedule", "args": {"query": "Um, Check my schedule for this afternoon okay?"}}
+{"query": "Um, Check if Mike I guess wrote to me", "tool": "contact_family", "args": {"query": "Um, Check if Mike I guess wrote to me"}}
+{"query": "Hey, i smell gas", "tool": "emergency", "args": {"query": "Hey, i smell gas"}}
+{"query": "Um, Check if Lisa wrote to me thanks.", "tool": "contact_family", "args": {"query": "Um, Check if Lisa wrote to me thanks."}}
+{"query": "Can you help I think me with something", "tool": "general_help", "args": {"query": "Can you help I think me with something"}}
+{"query": "order groceries from Meijer thanks.", "tool": "get_groceries", "args": {"query": "order groceries from Meijer thanks."}}
+{"query": "Oh, Pay the electric okay?", "tool": "handle_bills", "args": {"query": "Oh, Pay the electric okay?"}}
+{"query": "Hey, I want to pay DTE thanks.", "tool": "handle_bills", "args": {"query": "Hey, I want to pay DTE thanks."}}
+{"query": "What's coming up I think next week if you can.", "tool": "check_schedule", "args": {"query": "What's coming up I think next week if you can."}}
+{"query": "Hey, What am I doing this afternoon thanks.", "tool": "check_schedule", "args": {"query": "Hey, What am I doing this afternoon thanks."}}
+{"query": "Who is Jenny if you can.", "tool": "general_help", "args": {"query": "Who is Jenny if you can."}}
+{"query": "Well, Any doctor appointments this afternoon please.", "tool": "check_schedule", "args": {"query": "Well, Any doctor appointments this afternoon please."}}
+{"query": "Hey, Do I guess I have any appointments this afternoon", "tool": "check_schedule", "args": {"query": "Hey, Do I guess I have any appointments this afternoon"}}
+{"query": "Hey, Emergency, please help", "tool": "emergency", "args": {"query": "Hey, Emergency, please help"}}
+{"query": "What am I doing this week", "tool": "check_schedule", "args": {"query": "What am I doing this week"}}
+{"query": "I want to I think talk to Tom", "tool": "contact_family", "args": {"query": "I want to I think talk to Tom"}}
+{"query": "Um, take maybe care of the electric bill", "tool": "handle_bills", "args": {"query": "Um, take maybe care of the electric bill"}}
+{"query": "Oh, Do I maybe have anything next week", "tool": "check_schedule", "args": {"query": "Oh, Do I maybe have anything next week"}}
+{"query": "Hey, can you help maybe me with something okay?", "tool": "general_help", "args": {"query": "Hey, can you help maybe me with something okay?"}}
+{"query": "Oh, emergency, please I guess help", "tool": "emergency", "args": {"query": "Oh, emergency, please I guess help"}}
+{"query": "Honey, Do maybe I need a jacket this week", "tool": "check_safety", "args": {"query": "Honey, Do maybe I need a jacket this week"}}
+{"query": "the I guess internet bill is due, can you take care of it okay?", "tool": "handle_bills", "args": {"query": "the I guess internet bill is due, can you take care of it okay?"}}
+{"query": "Honey, i think someone is trying to trick me", "tool": "check_safety", "args": {"query": "Honey, i think someone is trying to trick me"}}
+{"query": "Well, Can you help me with something", "tool": "general_help", "args": {"query": "Well, Can you help me with something"}}
+{"query": "call 911 if you can.", "tool": "emergency", "args": {"query": "call 911 if you can."}}
+{"query": "i got a text about my computer, is it real okay?", "tool": "check_safety", "args": {"query": "i got a text about my computer, is it real okay?"}}
+{"query": "Oh, What's the weather like", "tool": "check_safety", "args": {"query": "Oh, What's the weather like"}}
+{"query": "Listen, what am I doing this week", "tool": "check_schedule", "args": {"query": "Listen, what am I doing this week"}}
+{"query": "Honey, tell me about a refund", "tool": "general_help", "args": {"query": "Honey, tell me about a refund"}}
+{"query": "Hey, Pick up chicken on the way home okay?", "tool": "get_groceries", "args": {"query": "Hey, Pick up chicken on the way home okay?"}}
+{"query": "What's the maybe temperature please.", "tool": "check_safety", "args": {"query": "What's the maybe temperature please."}}
+{"query": "Listen, I can't wake up my spouse", "tool": "emergency", "args": {"query": "Listen, I can't wake up my spouse"}}
+{"query": "Oh, i need help thanks.", "tool": "emergency", "args": {"query": "Oh, i need help thanks."}}
+{"query": "Oh, What's the weather like", "tool": "check_safety", "args": {"query": "Oh, What's the weather like"}}
+{"query": "Listen, i got a strange message, can you check it", "tool": "check_safety", "args": {"query": "Listen, i got a strange message, can you check it"}}
+{"query": "Oh, Pick I guess up coffee on the way home", "tool": "get_groceries", "args": {"query": "Oh, Pick I guess up coffee on the way home"}}
+{"query": "call Lisa if you can.", "tool": "contact_family", "args": {"query": "call Lisa if you can."}}
+{"query": "I need to order food please.", "tool": "get_groceries", "args": {"query": "I need to order food please."}}
+{"query": "Hey, I need help", "tool": "emergency", "args": {"query": "Hey, I need help"}}
+{"query": "Hey, get rice delivered", "tool": "get_groceries", "args": {"query": "Hey, get rice delivered"}}
+{"query": "i fell and I can't get up", "tool": "emergency", "args": {"query": "i fell and I can't get up"}}
+{"query": "Um, time to pay the phone again", "tool": "handle_bills", "args": {"query": "Um, time to pay the phone again"}}
+{"query": "What's the weather like thanks.", "tool": "check_safety", "args": {"query": "What's the weather like thanks."}}
+{"query": "Is this phone call legitimate", "tool": "check_safety", "args": {"query": "Is this phone call legitimate"}}
+{"query": "what's coming up tomorrow thanks.", "tool": "check_schedule", "args": {"query": "what's coming up tomorrow thanks."}}
+{"query": "Well, is it going to rain this afternoon", "tool": "check_safety", "args": {"query": "Well, is it going to rain this afternoon"}}
+{"query": "any doctor appointments next week please.", "tool": "check_schedule", "args": {"query": "any doctor appointments next week please."}}
+{"query": "Did Jenny email me if you can.", "tool": "contact_family", "args": {"query": "Did Jenny email me if you can."}}
+{"query": "Honey, We're out I guess of milk if you can.", "tool": "get_groceries", "args": {"query": "Honey, We're out I guess of milk if you can."}}
+{"query": "Listen, can you get me coffee from the store", "tool": "get_groceries", "args": {"query": "Listen, can you get me coffee from the store"}}
+{"query": "Hey, add I think rice to my grocery list", "tool": "get_groceries", "args": {"query": "Hey, add I think rice to my grocery list"}}
+{"query": "Um, how do you spell February", "tool": "general_help", "args": {"query": "Um, how do you spell February"}}
+{"query": "Oh, Who I think is Tom please.", "tool": "general_help", "args": {"query": "Oh, Who I think is Tom please."}}
+{"query": "Oh, I have a question", "tool": "general_help", "args": {"query": "Oh, I have a question"}}
+{"query": "Listen, when is my next appointment", "tool": "check_schedule", "args": {"query": "Listen, when is my next appointment"}}
+{"query": "Um, pay the insurance please.", "tool": "handle_bills", "args": {"query": "Um, pay the insurance please."}}
+{"query": "There's a fire", "tool": "emergency", "args": {"query": "There's a fire"}}
+{"query": "Um, My chest hurts", "tool": "emergency", "args": {"query": "Um, My chest hurts"}}
+{"query": "handle my Consumers Energy account", "tool": "handle_bills", "args": {"query": "handle my Consumers Energy account"}}
+{"query": "Listen, Read my email about the insurance if you can.", "tool": "handle_bills", "args": {"query": "Listen, Read my email about the insurance if you can."}}
+{"query": "There's a fire", "tool": "emergency", "args": {"query": "There's a fire"}}
+{"query": "I need an ambulance", "tool": "emergency", "args": {"query": "I need an ambulance"}}
+{"query": "Honey, Any doctor appointments next week", "tool": "check_schedule", "args": {"query": "Honey, Any doctor appointments next week"}}
+{"query": "i I guess think I'm having a stroke", "tool": "emergency", "args": {"query": "i I guess think I'm having a stroke"}}
+{"query": "Listen, i got a bill from DTE, can you handle it", "tool": "handle_bills", "args": {"query": "Listen, i got a bill from DTE, can you handle it"}}
+{"query": "Hey, I need groceries", "tool": "get_groceries", "args": {"query": "Hey, I need groceries"}}
+{"query": "Um, What does February mean", "tool": "general_help", "args": {"query": "Um, What does February mean"}}
+{"query": "i'm having chest pain thanks.", "tool": "emergency", "args": {"query": "i'm having chest pain thanks."}}
+{"query": "Check if this is a scam if you can.", "tool": "check_safety", "args": {"query": "Check if this is a scam if you can."}}
+{"query": "Well, Am I free today", "tool": "check_schedule", "args": {"query": "Well, Am I free today"}}
+{"query": "Phone Jenny for me", "tool": "contact_family", "args": {"query": "Phone Jenny for me"}}
+{"query": "Well, What do I owe the water company", "tool": "handle_bills", "args": {"query": "Well, What do I owe the water company"}}
+{"query": "Honey, i I think need groceries okay?", "tool": "get_groceries", "args": {"query": "Honey, i I think need groceries okay?"}}
+{"query": "I got a text about my insurance, is it real if you can.", "tool": "check_safety", "args": {"query": "I got a text about my insurance, is it real if you can."}}
+{"query": "Well, what do I owe Comcast thanks.", "tool": "handle_bills", "args": {"query": "Well, what do I owe Comcast thanks."}}
+{"query": "Um, Any word from Mike please.", "tool": "contact_family", "args": {"query": "Um, Any word from Mike please."}}
+{"query": "Um, I want to pay Comcast if you can.", "tool": "handle_bills", "args": {"query": "Um, I want to pay Comcast if you can."}}
+{"query": "Um, read the message from Lisa", "tool": "contact_family", "args": {"query": "Um, read the message from Lisa"}}
+{"query": "Um, I can't breathe thanks.", "tool": "emergency", "args": {"query": "Um, I can't breathe thanks."}}
+{"query": "how do I zoom in", "tool": "general_help", "args": {"query": "how do I zoom in"}}
+{"query": "Well, Any word from Lisa if you can.", "tool": "contact_family", "args": {"query": "Well, Any word from Lisa if you can."}}
+{"query": "what time is it thanks.", "tool": "general_help", "args": {"query": "what time is it thanks."}}
+{"query": "Listen, Is I guess this phone call legitimate", "tool": "check_safety", "args": {"query": "Listen, Is I guess this phone call legitimate"}}
+{"query": "get Mary on the phone", "tool": "contact_family", "args": {"query": "get Mary on the phone"}}
+{"query": "Hey, How do I I think zoom in thanks.", "tool": "general_help", "args": {"query": "Hey, How do I I think zoom in thanks."}}
+{"query": "Hey, can I guess you call Sarah okay?", "tool": "contact_family", "args": {"query": "Hey, can I guess you call Sarah okay?"}}
+{"query": "Well, I need to pay the electric bill", "tool": "handle_bills", "args": {"query": "Well, I need to pay the electric bill"}}
+{"query": "Oh, something is wrong, get help please.", "tool": "emergency", "args": {"query": "Oh, something is wrong, get help please."}}
+{"query": "Oh, i ran out of bread", "tool": "get_groceries", "args": {"query": "Oh, i ran out of bread"}}
+{"query": "Listen, Read the message from Tom please.", "tool": "contact_family", "args": {"query": "Listen, Read the message from Tom please."}}
+{"query": "Um, What's I think on my calendar next week", "tool": "check_schedule", "args": {"query": "Um, What's I think on my calendar next week"}}
+{"query": "Well, I'm dizzy and nauseous", "tool": "emergency", "args": {"query": "Well, I'm dizzy and nauseous"}}
+{"query": "Who is Sarah okay?", "tool": "general_help", "args": {"query": "Who is Sarah okay?"}}
+{"query": "Hey, We're out of bread", "tool": "get_groceries", "args": {"query": "Hey, We're out of bread"}}
+{"query": "Oh, Is maybe it going to rain this afternoon okay?", "tool": "check_safety", "args": {"query": "Oh, Is maybe it going to rain this afternoon okay?"}}
+{"query": "Um, Dial Mary", "tool": "contact_family", "args": {"query": "Um, Dial Mary"}}
+{"query": "I got a bill from Verizon, can you handle it thanks.", "tool": "handle_bills", "args": {"query": "I got a bill from Verizon, can you handle it thanks."}}
+{"query": "The electric bill is due, can you take care of it thanks.", "tool": "handle_bills", "args": {"query": "The electric bill is due, can you take care of it thanks."}}
+{"query": "Listen, I want to talk to Sarah", "tool": "contact_family", "args": {"query": "Listen, I want to talk to Sarah"}}
+{"query": "Oh, I'm dizzy and I think nauseous", "tool": "emergency", "args": {"query": "Oh, I'm dizzy and I think nauseous"}}
+{"query": "Honey, is it going maybe to rain next week", "tool": "check_safety", "args": {"query": "Honey, is it going maybe to rain next week"}}
+{"query": "I want to talk to Tom", "tool": "contact_family", "args": {"query": "I want to talk to Tom"}}
+{"query": "Check I think if Verizon sent me a bill please.", "tool": "handle_bills", "args": {"query": "Check I think if Verizon sent me a bill please."}}
+{"query": "what year did I think the war end happen", "tool": "general_help", "args": {"query": "what year did I think the war end happen"}}
+{"query": "Well, there's I think a fire", "tool": "emergency", "args": {"query": "Well, there's I think a fire"}}
+{"query": "Um, what's the weather like okay?", "tool": "check_safety", "args": {"query": "Um, what's the weather like okay?"}}
+{"query": "Listen, can you help me with something please.", "tool": "general_help", "args": {"query": "Listen, can you help me with something please."}}
+{"query": "Listen, phone David for me please.", "tool": "contact_family", "args": {"query": "Listen, phone David for me please."}}
+{"query": "Well, Something is wrong, get help okay?", "tool": "emergency", "args": {"query": "Well, Something is wrong, get help okay?"}}
+{"query": "Well, Can you call Mike if you can.", "tool": "contact_family", "args": {"query": "Well, Can you call Mike if you can."}}
+{"query": "Is it going to rain today please.", "tool": "check_safety", "args": {"query": "Is it going to rain today please."}}
+{"query": "Do I have anything this week thanks.", "tool": "check_schedule", "args": {"query": "Do I have anything this week thanks."}}
+{"query": "Listen, I'm confused I guess about a package", "tool": "general_help", "args": {"query": "Listen, I'm confused I guess about a package"}}
+{"query": "is this phone call legitimate okay?", "tool": "check_safety", "args": {"query": "is this phone call legitimate okay?"}}
+{"query": "get Sean on the phone if you can.", "tool": "contact_family", "args": {"query": "get Sean on the phone if you can."}}
+{"query": "Well, get Sarah on the phone if you can.", "tool": "contact_family", "args": {"query": "Well, get Sarah on the phone if you can."}}
+{"query": "Listen, Order groceries from the store thanks.", "tool": "get_groceries", "args": {"query": "Listen, Order groceries from the store thanks."}}
+{"query": "Oh, get Mike on I think the phone", "tool": "contact_family", "args": {"query": "Oh, get Mike on I think the phone"}}
+{"query": "what's on my calendar this afternoon", "tool": "check_schedule", "args": {"query": "what's on my calendar this afternoon"}}
+{"query": "get chicken I think delivered if you can.", "tool": "get_groceries", "args": {"query": "get chicken I think delivered if you can."}}
+{"query": "Listen, Set a reminder for my aspirin thanks.", "tool": "check_schedule", "args": {"query": "Listen, Set a reminder for my aspirin thanks."}}
+{"query": "Hey, ring Sean please.", "tool": "contact_family", "args": {"query": "Hey, ring Sean please."}}
+{"query": "Honey, Buy milk at the store please.", "tool": "get_groceries", "args": {"query": "Honey, Buy milk at the store please."}}
+{"query": "Honey, I'm dizzy I guess and nauseous", "tool": "emergency", "args": {"query": "Honey, I'm dizzy I guess and nauseous"}}
+{"query": "Listen, Is this email I think a scam okay?", "tool": "check_safety", "args": {"query": "Listen, Is this email I think a scam okay?"}}
+{"query": "Hey, Check my schedule for today", "tool": "check_schedule", "args": {"query": "Hey, Check my schedule for today"}}
+{"query": "Pay the cable thanks.", "tool": "handle_bills", "args": {"query": "Pay the cable thanks."}}
+{"query": "Well, What I guess time is it", "tool": "general_help", "args": {"query": "Well, What I guess time is it"}}
+{"query": "Well, Can you pay my internet bill for me please.", "tool": "handle_bills", "args": {"query": "Well, Can you pay my internet bill for me please."}}
+{"query": "what year did the war end happen", "tool": "general_help", "args": {"query": "what year did the war end happen"}}
+{"query": "Can you pay my gas bill for me", "tool": "handle_bills", "args": {"query": "Can you pay my gas bill for me"}}
+{"query": "I ran out of toilet paper if you can.", "tool": "get_groceries", "args": {"query": "I ran out of toilet paper if you can."}}
+{"query": "Time to pay the internet again", "tool": "handle_bills", "args": {"query": "Time to pay the internet again"}}
+{"query": "Hey, Something is wrong, get help please.", "tool": "emergency", "args": {"query": "Hey, Something is wrong, get help please."}}
+{"query": "my chest hurts okay?", "tool": "emergency", "args": {"query": "my chest hurts okay?"}}
+{"query": "This doesn't look right, is it fraud", "tool": "check_safety", "args": {"query": "This doesn't look right, is it fraud"}}
+{"query": "I want I think to hear from Jenny", "tool": "contact_family", "args": {"query": "I want I think to hear from Jenny"}}
+{"query": "Oh, Am I free this morning", "tool": "check_schedule", "args": {"query": "Oh, Am I free this morning"}}
+{"query": "Get rice delivered thanks.", "tool": "get_groceries", "args": {"query": "Get rice delivered thanks."}}
+{"query": "Well, i ran I guess out of chicken", "tool": "get_groceries", "args": {"query": "Well, i ran I guess out of chicken"}}
+{"query": "Listen, can you pay my electric bill for me if you can.", "tool": "handle_bills", "args": {"query": "Listen, can you pay my electric bill for me if you can."}}
+{"query": "What do you know about my computer", "tool": "general_help", "args": {"query": "What do you know about my computer"}}
+{"query": "Oh, Is this email a scam if you can.", "tool": "check_safety", "args": {"query": "Oh, Is this email a scam if you can."}}
+{"query": "Listen, i have maybe a question thanks.", "tool": "general_help", "args": {"query": "Listen, i have maybe a question thanks."}}
+{"query": "Did Mike maybe email me if you can.", "tool": "contact_family", "args": {"query": "Did Mike maybe email me if you can."}}
+{"query": "This doesn't I think look right, is it fraud okay?", "tool": "check_safety", "args": {"query": "This doesn't I think look right, is it fraud okay?"}}
+{"query": "Who I guess is Mike", "tool": "general_help", "args": {"query": "Who I guess is Mike"}}
+{"query": "Um, What medications do I take today", "tool": "check_schedule", "args": {"query": "Um, What medications do I take today"}}
+{"query": "We're out of coffee if you can.", "tool": "get_groceries", "args": {"query": "We're out of coffee if you can."}}
+{"query": "Ring Sarah okay?", "tool": "contact_family", "args": {"query": "Ring Sarah okay?"}}
+{"query": "my chest hurts please.", "tool": "emergency", "args": {"query": "my chest hurts please."}}
+{"query": "Dial Jenny", "tool": "contact_family", "args": {"query": "Dial Jenny"}}
+{"query": "do I need I guess a jacket next week", "tool": "check_safety", "args": {"query": "do I need I guess a jacket next week"}}
+{"query": "Hey, Time to pay I think the water again", "tool": "handle_bills", "args": {"query": "Hey, Time to pay I think the water again"}}
+{"query": "Did the phone bill come in the mail okay?", "tool": "handle_bills", "args": {"query": "Did the phone bill come in the mail okay?"}}
+{"query": "Remind me to take my vitamin D if you can.", "tool": "check_schedule", "args": {"query": "Remind me to take my vitamin D if you can."}}
+{"query": "Did I take my vitamin D this afternoon please.", "tool": "check_schedule", "args": {"query": "Did I take my vitamin D this afternoon please."}}
+{"query": "Can you look maybe at this email and tell me if it's safe", "tool": "check_safety", "args": {"query": "Can you look maybe at this email and tell me if it's safe"}}
+{"query": "Well, Do I have anything today", "tool": "check_schedule", "args": {"query": "Well, Do I have anything today"}}
+{"query": "Listen, I want to talk to Tom thanks.", "tool": "contact_family", "args": {"query": "Listen, I want to talk to Tom thanks."}}
+{"query": "What does February mean", "tool": "general_help", "args": {"query": "What does February mean"}}
+{"query": "I need eggs and bananas", "tool": "get_groceries", "args": {"query": "I need eggs and bananas"}}
+{"query": "What's the temperature please.", "tool": "check_safety", "args": {"query": "What's the temperature please."}}
+{"query": "Hey, Get eggs I guess delivered", "tool": "get_groceries", "args": {"query": "Hey, Get eggs I guess delivered"}}
+{"query": "I I think got a strange message, can you check it", "tool": "check_safety", "args": {"query": "I I think got a strange message, can you check it"}}
+{"query": "Hey, I need to order food thanks.", "tool": "get_groceries", "args": {"query": "Hey, I need to order food thanks."}}
+{"query": "i want maybe to talk to Mary if you can.", "tool": "contact_family", "args": {"query": "i want maybe to talk to Mary if you can."}}
+{"query": "Well, Check if AT&T sent me a bill please.", "tool": "handle_bills", "args": {"query": "Well, Check if AT&T sent me a bill please."}}
+{"query": "Well, my chest hurts", "tool": "emergency", "args": {"query": "Well, my chest hurts"}}
+{"query": "Dial Tom please.", "tool": "contact_family", "args": {"query": "Dial Tom please."}}
+{"query": "Hey, Dial Sean thanks.", "tool": "contact_family", "args": {"query": "Hey, Dial Sean thanks."}}
+{"query": "Um, what do I owe AT&T thanks.", "tool": "handle_bills", "args": {"query": "Um, what do I owe AT&T thanks."}}
+{"query": "Well, Something seems fishy maybe about this", "tool": "check_safety", "args": {"query": "Well, Something seems fishy maybe about this"}}
+{"query": "How cold is it outside", "tool": "check_safety", "args": {"query": "How cold is it outside"}}
+{"query": "i have a question", "tool": "general_help", "args": {"query": "i have a question"}}
+{"query": "What medications do maybe I take this week thanks.", "tool": "check_schedule", "args": {"query": "What medications do maybe I take this week thanks."}}
+{"query": "Well, Did I take my blood pressure pill next week thanks.", "tool": "check_schedule", "args": {"query": "Well, Did I take my blood pressure pill next week thanks."}}
+{"query": "Hey, How do I print something please.", "tool": "general_help", "args": {"query": "Hey, How do I print something please."}}
+{"query": "What's the weather like if you can.", "tool": "check_safety", "args": {"query": "What's the weather like if you can."}}
+{"query": "The gas bill I think is due, can you take care of it thanks.", "tool": "handle_bills", "args": {"query": "The gas bill I think is due, can you take care of it thanks."}}
+{"query": "Oh, is I guess this phone call legitimate thanks.", "tool": "check_safety", "args": {"query": "Oh, is I guess this phone call legitimate thanks."}}
+{"query": "Is it going to rain this afternoon", "tool": "check_safety", "args": {"query": "Is it going to rain this afternoon"}}
+{"query": "Hey, i think someone is trying to trick me please.", "tool": "check_safety", "args": {"query": "Hey, i think someone is trying to trick me please."}}
+{"query": "Handle my AT&T account please.", "tool": "handle_bills", "args": {"query": "Handle my AT&T account please."}}
+{"query": "What am I doing next week if you can.", "tool": "check_schedule", "args": {"query": "What am I doing next week if you can."}}
+{"query": "Listen, is it going to rain this morning if you can.", "tool": "check_safety", "args": {"query": "Listen, is it going to rain this morning if you can."}}
+{"query": "Honey, check if this is a scam", "tool": "check_safety", "args": {"query": "Honey, check if this is a scam"}}
+{"query": "there's a I think fire please.", "tool": "emergency", "args": {"query": "there's a I think fire please."}}
+{"query": "what year I think did the Berlin Wall fall happen okay?", "tool": "general_help", "args": {"query": "what year I think did the Berlin Wall fall happen okay?"}}
+{"query": "is this phone call legitimate", "tool": "check_safety", "args": {"query": "is this phone call legitimate"}}
+{"query": "get chicken delivered please.", "tool": "get_groceries", "args": {"query": "get chicken delivered please."}}
+{"query": "Read my I guess email about the electric", "tool": "handle_bills", "args": {"query": "Read my I guess email about the electric"}}
+{"query": "Um, Can you maybe do the shopping", "tool": "get_groceries", "args": {"query": "Um, Can you maybe do the shopping"}}
+{"query": "Well, I want to hear from Mike okay?", "tool": "contact_family", "args": {"query": "Well, I want to hear from Mike okay?"}}
+{"query": "what do I I think owe Consumers Energy", "tool": "handle_bills", "args": {"query": "what do I I think owe Consumers Energy"}}
+{"query": "I need to order food", "tool": "get_groceries", "args": {"query": "I need to order food"}}
+{"query": "Well, something is wrong, maybe get help", "tool": "emergency", "args": {"query": "Well, something is wrong, maybe get help"}}
+{"query": "Um, i got a strange message, can you check it please.", "tool": "check_safety", "args": {"query": "Um, i got a strange message, can you check it please."}}
+{"query": "What does my day look like tomorrow", "tool": "check_schedule", "args": {"query": "What does my day look like tomorrow"}}
+{"query": "Well, i can't breathe if you can.", "tool": "emergency", "args": {"query": "Well, i can't breathe if you can."}}
+{"query": "pick up toilet paper on the way home thanks.", "tool": "get_groceries", "args": {"query": "pick up toilet paper on the way home thanks."}}
+{"query": "i have a maybe question thanks.", "tool": "general_help", "args": {"query": "i have a maybe question thanks."}}
+{"query": "Listen, call 911", "tool": "emergency", "args": {"query": "Listen, call 911"}}
+{"query": "I think I think I'm having a stroke if you can.", "tool": "emergency", "args": {"query": "I think I think I'm having a stroke if you can."}}
+{"query": "Um, What am I doing next week please.", "tool": "check_schedule", "args": {"query": "Um, What am I doing next week please."}}
+{"query": "Listen, Call 911", "tool": "emergency", "args": {"query": "Listen, Call 911"}}
+{"query": "Listen, I want to hear from Jenny if you can.", "tool": "contact_family", "args": {"query": "Listen, I want to hear from Jenny if you can."}}
+{"query": "I need to call Jenny back thanks.", "tool": "contact_family", "args": {"query": "I need to call Jenny back thanks."}}
+{"query": "Oh, It's time for my pills please.", "tool": "check_schedule", "args": {"query": "Oh, It's time for my pills please."}}
+{"query": "Listen, What does my I think day look like this morning if you can.", "tool": "check_schedule", "args": {"query": "Listen, What does my I think day look like this morning if you can."}}
+{"query": "Check my schedule for tomorrow", "tool": "check_schedule", "args": {"query": "Check my schedule for tomorrow"}}
+{"query": "Oh, do I need a jacket next week", "tool": "check_safety", "args": {"query": "Oh, do I need a jacket next week"}}
+{"query": "Listen, Read the message from Tom if you can.", "tool": "contact_family", "args": {"query": "Listen, Read the message from Tom if you can."}}
+{"query": "Honey, it's time for maybe my pills thanks.", "tool": "check_schedule", "args": {"query": "Honey, it's time for maybe my pills thanks."}}
+{"query": "Something seems fishy about this", "tool": "check_safety", "args": {"query": "Something seems fishy about this"}}
+{"query": "Honey, Check if Consumers Energy sent me a bill if you can.", "tool": "handle_bills", "args": {"query": "Honey, Check if Consumers Energy sent me a bill if you can."}}
+{"query": "I'd like to speak with Jenny", "tool": "contact_family", "args": {"query": "I'd like to speak with Jenny"}}
+{"query": "Listen, My chest hurts", "tool": "emergency", "args": {"query": "Listen, My chest hurts"}}
+{"query": "Well, What does my I guess day look like this morning thanks.", "tool": "check_schedule", "args": {"query": "Well, What does my I guess day look like this morning thanks."}}
+{"query": "Oh, What time is it", "tool": "general_help", "args": {"query": "Oh, What time is it"}}
+{"query": "tell me about a refund", "tool": "general_help", "args": {"query": "tell me about a refund"}}
+{"query": "something is wrong, get help", "tool": "emergency", "args": {"query": "something is wrong, get help"}}
+{"query": "Um, i have a question", "tool": "general_help", "args": {"query": "Um, i have a question"}}
+{"query": "Oh, Call 911", "tool": "emergency", "args": {"query": "Oh, Call 911"}}
+{"query": "Listen, I fell and I can't get up", "tool": "emergency", "args": {"query": "Listen, I fell and I can't get up"}}
+{"query": "I need groceries", "tool": "get_groceries", "args": {"query": "I need groceries"}}
+{"query": "I think someone is trying to trick me please.", "tool": "check_safety", "args": {"query": "I think someone is trying to trick me please."}}
+{"query": "Listen, i need to make a payment to Consumers Energy please.", "tool": "handle_bills", "args": {"query": "Listen, i need to make a payment to Consumers Energy please."}}
+{"query": "I I think got a text about my computer, is it real", "tool": "check_safety", "args": {"query": "I I think got a text about my computer, is it real"}}
+{"query": "Oh, i fell and I can't get up", "tool": "emergency", "args": {"query": "Oh, i fell and I can't get up"}}
+{"query": "Hey, what I guess am I doing this afternoon", "tool": "check_schedule", "args": {"query": "Hey, what I guess am I doing this afternoon"}}
+{"query": "Do I need a jacket next week if you can.", "tool": "check_safety", "args": {"query": "Do I need a jacket next week if you can."}}
+{"query": "Hey, Get David on the phone please.", "tool": "contact_family", "args": {"query": "Hey, Get David on the phone please."}}
+{"query": "Pick up bananas on the way home", "tool": "get_groceries", "args": {"query": "Pick up bananas on the way home"}}
+{"query": "Oh, Something I think is wrong, get help thanks.", "tool": "emergency", "args": {"query": "Oh, Something I think is wrong, get help thanks."}}
+{"query": "Listen, Check if Mary wrote to me okay?", "tool": "contact_family", "args": {"query": "Listen, Check if Mary wrote to me okay?"}}
+{"query": "Um, can you get me coffee from the store thanks.", "tool": "get_groceries", "args": {"query": "Um, can you get me coffee from the store thanks."}}
+{"query": "Hey, What's the date this morning okay?", "tool": "general_help", "args": {"query": "Hey, What's the date this morning okay?"}}
+{"query": "pay the internet", "tool": "handle_bills", "args": {"query": "pay the internet"}}
+{"query": "Um, What's coming up next week", "tool": "check_schedule", "args": {"query": "Um, What's coming up next week"}}
+{"query": "Hey, did Sarah email me please.", "tool": "contact_family", "args": {"query": "Hey, did Sarah email me please."}}
+{"query": "Well, I'd like to speak with Jenny", "tool": "contact_family", "args": {"query": "Well, I'd like to speak with Jenny"}}
+{"query": "Hey, How I guess cold is it outside thanks.", "tool": "check_safety", "args": {"query": "Hey, How I guess cold is it outside thanks."}}
+{"query": "Honey, It's time for my pills", "tool": "check_schedule", "args": {"query": "Honey, It's time for my pills"}}
+{"query": "Listen, This doesn't look right, is it fraud", "tool": "check_safety", "args": {"query": "Listen, This doesn't look right, is it fraud"}}
+{"query": "Hey, I want to pay AT&T if you can.", "tool": "handle_bills", "args": {"query": "Hey, I want to pay AT&T if you can."}}
+{"query": "Um, What I guess does restaurant mean", "tool": "general_help", "args": {"query": "Um, What I guess does restaurant mean"}}
+{"query": "Listen, Time to pay the gas again", "tool": "handle_bills", "args": {"query": "Listen, Time to pay the gas again"}}
+{"query": "What's coming up this week", "tool": "check_schedule", "args": {"query": "What's coming up this week"}}
+{"query": "Am I free next week thanks.", "tool": "check_schedule", "args": {"query": "Am I free next week thanks."}}
+{"query": "I need to I guess order food", "tool": "get_groceries", "args": {"query": "I need to I guess order food"}}
+{"query": "i got a strange message, can you check it", "tool": "check_safety", "args": {"query": "i got a strange message, can you check it"}}
+{"query": "Do I need a jacket this week", "tool": "check_safety", "args": {"query": "Do I need a jacket this week"}}
+{"query": "how I think do I turn off the Wi-Fi", "tool": "general_help", "args": {"query": "how I think do I turn off the Wi-Fi"}}
+{"query": "Hey, pay the water if you can.", "tool": "handle_bills", "args": {"query": "Hey, pay the water if you can."}}
+{"query": "Well, what am maybe I doing this week", "tool": "check_schedule", "args": {"query": "Well, what am maybe I doing this week"}}
+{"query": "Well, i maybe ran out of chicken", "tool": "get_groceries", "args": {"query": "Well, i maybe ran out of chicken"}}
+{"query": "Um, pay the cable", "tool": "handle_bills", "args": {"query": "Um, pay the cable"}}
+{"query": "Listen, Read the message from Sean", "tool": "contact_family", "args": {"query": "Listen, Read the message from Sean"}}
+{"query": "Hey, I want to hear from Mary", "tool": "contact_family", "args": {"query": "Hey, I want to hear from Mary"}}
+{"query": "Well, Get I guess Sarah on the phone okay?", "tool": "contact_family", "args": {"query": "Well, Get I guess Sarah on the phone okay?"}}
+{"query": "I think someone is trying to trick me okay?", "tool": "check_safety", "args": {"query": "I think someone is trying to trick me okay?"}}
+{"query": "Um, read my email about the insurance", "tool": "handle_bills", "args": {"query": "Um, read my email about the insurance"}}
+{"query": "Hey, emergency, please help", "tool": "emergency", "args": {"query": "Hey, emergency, please help"}}
+{"query": "Hey, Something seems fishy about this if you can.", "tool": "check_safety", "args": {"query": "Hey, Something seems fishy about this if you can."}}
+{"query": "i'm dizzy and nauseous okay?", "tool": "emergency", "args": {"query": "i'm dizzy and nauseous okay?"}}
+{"query": "Well, It's time for my pills please.", "tool": "check_schedule", "args": {"query": "Well, It's time for my pills please."}}
+{"query": "Oh, Did the maybe insurance bill come in the mail okay?", "tool": "handle_bills", "args": {"query": "Oh, Did the maybe insurance bill come in the mail okay?"}}
+{"query": "Listen, I need help", "tool": "emergency", "args": {"query": "Listen, I need help"}}
+{"query": "Well, I need groceries okay?", "tool": "get_groceries", "args": {"query": "Well, I need groceries okay?"}}
+{"query": "Can you do the shopping okay?", "tool": "get_groceries", "args": {"query": "Can you do the shopping okay?"}}
+{"query": "Can you look at this email and tell me if it's safe", "tool": "check_safety", "args": {"query": "Can you look at this email and tell me if it's safe"}}
+{"query": "Well, my cable payment is due thanks.", "tool": "handle_bills", "args": {"query": "Well, my cable payment is due thanks."}}
+{"query": "Honey, I want to hear from David okay?", "tool": "contact_family", "args": {"query": "Honey, I want to hear from David okay?"}}
+{"query": "Honey, The cable bill is due, can you take care of it", "tool": "handle_bills", "args": {"query": "Honey, The cable bill is due, can you take care of it"}}
+{"query": "Um, i think someone is trying to trick me please.", "tool": "check_safety", "args": {"query": "Um, i think someone is trying to trick me please."}}
+{"query": "Do I need a jacket this morning if you can.", "tool": "check_safety", "args": {"query": "Do I need a jacket this morning if you can."}}
+{"query": "Um, What does my day look like this morning", "tool": "check_schedule", "args": {"query": "Um, What does my day look like this morning"}}
+{"query": "Oh, Check if Jenny wrote to me", "tool": "contact_family", "args": {"query": "Oh, Check if Jenny wrote to me"}}
+{"query": "Hey, do I need a jacket this afternoon", "tool": "check_safety", "args": {"query": "Hey, do I need a jacket this afternoon"}}
+{"query": "Call Tom", "tool": "contact_family", "args": {"query": "Call Tom"}}
+{"query": "Oh, can you look at this email and tell me if it's safe if you can.", "tool": "check_safety", "args": {"query": "Oh, can you look at this email and tell me if it's safe if you can."}}
+{"query": "Something seems fishy about this", "tool": "check_safety", "args": {"query": "Something seems fishy about this"}}
+{"query": "How many feet in a pound", "tool": "general_help", "args": {"query": "How many feet in a pound"}}
+{"query": "Honey, What's on my calendar this afternoon okay?", "tool": "check_schedule", "args": {"query": "Honey, What's on my calendar this afternoon okay?"}}
+{"query": "Um, I need to stock up on coffee okay?", "tool": "get_groceries", "args": {"query": "Um, I need to stock up on coffee okay?"}}
+{"query": "Oh, i'd like to speak with Lisa please.", "tool": "contact_family", "args": {"query": "Oh, i'd like to speak with Lisa please."}}
+{"query": "Well, I need to pay the internet bill please.", "tool": "handle_bills", "args": {"query": "Well, I need to pay the internet bill please."}}
+{"query": "What's the date this week thanks.", "tool": "general_help", "args": {"query": "What's the date this week thanks."}}
+{"query": "what's the temperature", "tool": "check_safety", "args": {"query": "what's the temperature"}}
+{"query": "Hey, can I think you help me with something", "tool": "general_help", "args": {"query": "Hey, can I think you help me with something"}}
+{"query": "Well, How do you spell February", "tool": "general_help", "args": {"query": "Well, How do you spell February"}}
+{"query": "Hey, order some bread for me", "tool": "get_groceries", "args": {"query": "Hey, order some bread for me"}}
+{"query": "I want to talk to Sarah okay?", "tool": "contact_family", "args": {"query": "I want to talk to Sarah okay?"}}
+{"query": "ring Mike if you can.", "tool": "contact_family", "args": {"query": "ring Mike if you can."}}
+{"query": "Honey, what do I owe DTE", "tool": "handle_bills", "args": {"query": "Honey, what do I owe DTE"}}
+{"query": "Well, I need to stock up on rice", "tool": "get_groceries", "args": {"query": "Well, I need to stock up on rice"}}
+{"query": "Listen, I'd like to speak with Mike thanks.", "tool": "contact_family", "args": {"query": "Listen, I'd like to speak with Mike thanks."}}
+{"query": "Um, I maybe need groceries", "tool": "get_groceries", "args": {"query": "Um, I maybe need groceries"}}
+{"query": "Listen, What's five plus twenty-three thanks.", "tool": "general_help", "args": {"query": "Listen, What's five plus twenty-three thanks."}}
+{"query": "Hey, Is this phone I guess call legitimate", "tool": "check_safety", "args": {"query": "Hey, Is this phone I guess call legitimate"}}
+{"query": "Oh, Did I guess the internet bill come in the mail please.", "tool": "handle_bills", "args": {"query": "Oh, Did I guess the internet bill come in the mail please."}}
+{"query": "Did I take my aspirin this week", "tool": "check_schedule", "args": {"query": "Did I take my aspirin this week"}}
+{"query": "When is my next appointment if you can.", "tool": "check_schedule", "args": {"query": "When is my next appointment if you can."}}
+{"query": "Oh, I smell gas okay?", "tool": "emergency", "args": {"query": "Oh, I smell gas okay?"}}
+{"query": "Honey, check if Tom wrote to me", "tool": "contact_family", "args": {"query": "Honey, check if Tom wrote to me"}}
+{"query": "did I take my levothyroxine tomorrow thanks.", "tool": "check_schedule", "args": {"query": "did I take my levothyroxine tomorrow thanks."}}
+{"query": "Honey, My gas payment is due", "tool": "handle_bills", "args": {"query": "Honey, My gas payment is due"}}
+{"query": "Um, Check if Tom wrote to me if you can.", "tool": "contact_family", "args": {"query": "Um, Check if Tom wrote to me if you can."}}
+{"query": "Hey, This doesn't look right, is it fraud", "tool": "check_safety", "args": {"query": "Hey, This doesn't look right, is it fraud"}}
+{"query": "We're out of coffee if you can.", "tool": "get_groceries", "args": {"query": "We're out of coffee if you can."}}
+{"query": "what's coming up this morning", "tool": "check_schedule", "args": {"query": "what's coming up this morning"}}
+{"query": "I think someone is trying to trick me", "tool": "check_safety", "args": {"query": "I think someone is trying to trick me"}}
+{"query": "Listen, When is my next appointment if you can.", "tool": "check_schedule", "args": {"query": "Listen, When is my next appointment if you can."}}
+{"query": "something is wrong, get help", "tool": "emergency", "args": {"query": "something is wrong, get help"}}
+{"query": "Listen, i need I guess groceries please.", "tool": "get_groceries", "args": {"query": "Listen, i need I guess groceries please."}}
+{"query": "Read my email I think about the gas okay?", "tool": "handle_bills", "args": {"query": "Read my email I think about the gas okay?"}}
+{"query": "Listen, I want to hear from David", "tool": "contact_family", "args": {"query": "Listen, I want to hear from David"}}
+{"query": "i have a question please.", "tool": "general_help", "args": {"query": "i have a question please."}}
+{"query": "Well, Can you I think get me bread from the store if you can.", "tool": "get_groceries", "args": {"query": "Well, Can you I think get me bread from the store if you can."}}
+{"query": "Hey, I got a strange message, can you check it", "tool": "check_safety", "args": {"query": "Hey, I got a strange message, can you check it"}}
+{"query": "my I guess chest hurts", "tool": "emergency", "args": {"query": "my I guess chest hurts"}}
+{"query": "Oh, Someone called saying they're from the IRS, is that real", "tool": "check_safety", "args": {"query": "Oh, Someone called saying they're from the IRS, is that real"}}
+{"query": "Honey, We're out of chicken thanks.", "tool": "get_groceries", "args": {"query": "Honey, We're out of chicken thanks."}}
+{"query": "Listen, What's the date tomorrow", "tool": "general_help", "args": {"query": "Listen, What's the date tomorrow"}}
+{"query": "Honey, the insurance bill is due, can you take care of it please.", "tool": "handle_bills", "args": {"query": "Honey, the insurance bill is due, can you take care of it please."}}
+{"query": "Honey, Check if this maybe is a scam", "tool": "check_safety", "args": {"query": "Honey, Check if this maybe is a scam"}}
+{"query": "Oh, Tell me about a package thanks.", "tool": "general_help", "args": {"query": "Oh, Tell me about a package thanks."}}
+{"query": "Hey, What's the date this week please.", "tool": "general_help", "args": {"query": "Hey, What's the date this week please."}}
+{"query": "Oh, i maybe want to pay DTE if you can.", "tool": "handle_bills", "args": {"query": "Oh, i maybe want to pay DTE if you can."}}
+{"query": "I smell gas", "tool": "emergency", "args": {"query": "I smell gas"}}
+{"query": "Call my granddaughter", "tool": "contact_family", "args": {"query": "Call my granddaughter"}}
+{"query": "Honey, Something is wrong, I think get help", "tool": "emergency", "args": {"query": "Honey, Something is wrong, I think get help"}}
+{"query": "is this email a scam if you can.", "tool": "check_safety", "args": {"query": "is this email a scam if you can."}}
+{"query": "Oh, I need to pay the insurance bill", "tool": "handle_bills", "args": {"query": "Oh, I need to pay the insurance bill"}}
+{"query": "Listen, Check if Consumers Energy sent me a bill if you can.", "tool": "handle_bills", "args": {"query": "Listen, Check if Consumers Energy sent me a bill if you can."}}
+{"query": "I want to hear from Sarah okay?", "tool": "contact_family", "args": {"query": "I want to hear from Sarah okay?"}}
+{"query": "emergency, I guess please help please.", "tool": "emergency", "args": {"query": "emergency, I guess please help please."}}
+{"query": "What do you know about a refund okay?", "tool": "general_help", "args": {"query": "What do you know about a refund okay?"}}
+{"query": "Honey, Can you pay I guess my gas bill for me", "tool": "handle_bills", "args": {"query": "Honey, Can you pay I guess my gas bill for me"}}
+{"query": "Any word from Lisa if you can.", "tool": "contact_family", "args": {"query": "Any word from Lisa if you can."}}
+{"query": "Add coffee I guess to my grocery list", "tool": "get_groceries", "args": {"query": "Add coffee I guess to my grocery list"}}
+{"query": "Honey, what do you know about a package", "tool": "general_help", "args": {"query": "Honey, what do you know about a package"}}
+{"query": "Honey, Order groceries from Costco please.", "tool": "get_groceries", "args": {"query": "Honey, Order groceries from Costco please."}}
+{"query": "time to pay the gas again okay?", "tool": "handle_bills", "args": {"query": "time to pay the gas again okay?"}}
+{"query": "i want I guess to hear from Mike", "tool": "contact_family", "args": {"query": "i want I guess to hear from Mike"}}
+{"query": "Listen, I smell gas if you can.", "tool": "emergency", "args": {"query": "Listen, I smell gas if you can."}}
+{"query": "did I take my aspirin this afternoon", "tool": "check_schedule", "args": {"query": "did I take my aspirin this afternoon"}}
+{"query": "Honey, what do you know about my computer", "tool": "general_help", "args": {"query": "Honey, what do you know about my computer"}}
+{"query": "Honey, Read maybe my email about the electric please.", "tool": "handle_bills", "args": {"query": "Honey, Read maybe my email about the electric please."}}
+{"query": "My chest hurts okay?", "tool": "emergency", "args": {"query": "My chest hurts okay?"}}
+{"query": "Well, Can you get me chicken from the store", "tool": "get_groceries", "args": {"query": "Well, Can you get me chicken from the store"}}
+{"query": "it's I think time for my pills", "tool": "check_schedule", "args": {"query": "it's I think time for my pills"}}
+{"query": "Well, i'm dizzy and nauseous", "tool": "emergency", "args": {"query": "Well, i'm dizzy and nauseous"}}
+{"query": "it's time for my pills if you can.", "tool": "check_schedule", "args": {"query": "it's time for my pills if you can."}}
+{"query": "i need maybe help okay?", "tool": "emergency", "args": {"query": "i need maybe help okay?"}}
+{"query": "Um, Someone broke into my house", "tool": "emergency", "args": {"query": "Um, Someone broke into my house"}}
+{"query": "Listen, explain a package to me thanks.", "tool": "general_help", "args": {"query": "Listen, explain a package to me thanks."}}
+{"query": "Do I have any appointments next week if you can.", "tool": "check_schedule", "args": {"query": "Do I have any appointments next week if you can."}}
+{"query": "Well, someone called saying I think they're from Medicare, is that real thanks.", "tool": "check_safety", "args": {"query": "Well, someone called saying I think they're from Medicare, is that real thanks."}}
+{"query": "Um, I need to call Mike back if you can.", "tool": "contact_family", "args": {"query": "Um, I need to call Mike back if you can."}}
+{"query": "Hey, Do I have any appointments this morning thanks.", "tool": "check_schedule", "args": {"query": "Hey, Do I have any appointments this morning thanks."}}
+{"query": "I need to make a payment to the water company", "tool": "handle_bills", "args": {"query": "I need to make a payment to the water company"}}
+{"query": "Hey, Add eggs to my grocery list please.", "tool": "get_groceries", "args": {"query": "Hey, Add eggs to my grocery list please."}}
+{"query": "Oh, Do I have any appointments this week okay?", "tool": "check_schedule", "args": {"query": "Oh, Do I have any appointments this week okay?"}}
+{"query": "Um, Who is Mike", "tool": "general_help", "args": {"query": "Um, Who is Mike"}}
+{"query": "I need to order food", "tool": "get_groceries", "args": {"query": "I need to order food"}}
+{"query": "I'm dizzy I think and nauseous", "tool": "emergency", "args": {"query": "I'm dizzy I think and nauseous"}}
+{"query": "Oh, do I have anything tomorrow", "tool": "check_schedule", "args": {"query": "Oh, do I have anything tomorrow"}}
+{"query": "I think someone is trying to trick me", "tool": "check_safety", "args": {"query": "I think someone is trying to trick me"}}
+{"query": "What do I owe Verizon", "tool": "handle_bills", "args": {"query": "What do I owe Verizon"}}
+{"query": "Hey, do I need a jacket this morning", "tool": "check_safety", "args": {"query": "Hey, do I need a jacket this morning"}}
+{"query": "Hey, Someone called saying they're from Medicare, is that real", "tool": "check_safety", "args": {"query": "Hey, Someone called saying they're from Medicare, is that real"}}
+{"query": "Honey, Order some coffee for me if you can.", "tool": "get_groceries", "args": {"query": "Honey, Order some coffee for me if you can."}}
+{"query": "Tell me about my computer thanks.", "tool": "general_help", "args": {"query": "Tell me about my computer thanks."}}
+{"query": "Um, Can you help me with something please.", "tool": "general_help", "args": {"query": "Um, Can you help me with something please."}}
+{"query": "Oh, What's the weather like", "tool": "check_safety", "args": {"query": "Oh, What's the weather like"}}
+{"query": "explain I guess my computer to me", "tool": "general_help", "args": {"query": "explain I guess my computer to me"}}
+{"query": "Honey, There's a fire thanks.", "tool": "emergency", "args": {"query": "Honey, There's a fire thanks."}}
+{"query": "I got a text about my insurance, is it real okay?", "tool": "check_safety", "args": {"query": "I got a text about my insurance, is it real okay?"}}
+{"query": "What am I doing today please.", "tool": "check_schedule", "args": {"query": "What am I doing today please."}}
+{"query": "I got a bill from Consumers Energy, can you handle it", "tool": "handle_bills", "args": {"query": "I got a bill from Consumers Energy, can you handle it"}}
+{"query": "Honey, What's on my calendar this week", "tool": "check_schedule", "args": {"query": "Honey, What's on my calendar this week"}}
+{"query": "Well, Is this phone call legitimate please.", "tool": "check_safety", "args": {"query": "Well, Is this phone call legitimate please."}}
+{"query": "Well, can you help me with something thanks.", "tool": "general_help", "args": {"query": "Well, can you help me with something thanks."}}
+{"query": "Listen, Order some rice for me", "tool": "get_groceries", "args": {"query": "Listen, Order some rice for me"}}
+{"query": "Oh, i need help okay?", "tool": "emergency", "args": {"query": "Oh, i need help okay?"}}
+{"query": "Honey, The phone bill is due, can you take care of it", "tool": "handle_bills", "args": {"query": "Honey, The phone bill is due, can you take care of it"}}
+{"query": "get I think Mike on the phone please.", "tool": "contact_family", "args": {"query": "get I think Mike on the phone please."}}
+{"query": "Remind me to take my vitamin D okay?", "tool": "check_schedule", "args": {"query": "Remind me to take my vitamin D okay?"}}
+{"query": "I need to pay the water bill please.", "tool": "handle_bills", "args": {"query": "I need to pay the water bill please."}}
+{"query": "Can you call Lisa", "tool": "contact_family", "args": {"query": "Can you call Lisa"}}
+{"query": "Um, How do you spell restaurant if you can.", "tool": "general_help", "args": {"query": "Um, How do you spell restaurant if you can."}}
+{"query": "Hey, The internet bill is due, can you take care of it", "tool": "handle_bills", "args": {"query": "Hey, The internet bill is due, can you take care of it"}}
+{"query": "Listen, Emergency, please help", "tool": "emergency", "args": {"query": "Listen, Emergency, please help"}}
+{"query": "Well, i'm having chest pain okay?", "tool": "emergency", "args": {"query": "Well, i'm having chest pain okay?"}}
+{"query": "What's coming up this morning thanks.", "tool": "check_schedule", "args": {"query": "What's coming up this morning thanks."}}
+{"query": "Call 911", "tool": "emergency", "args": {"query": "Call 911"}}
+{"query": "Hey, Order some chicken for me if you can.", "tool": "get_groceries", "args": {"query": "Hey, Order some chicken for me if you can."}}
+{"query": "I need groceries if you can.", "tool": "get_groceries", "args": {"query": "I need groceries if you can."}}
+{"query": "Listen, I got a bill from the water company, can you handle it if you can.", "tool": "handle_bills", "args": {"query": "Listen, I got a bill from the water company, can you handle it if you can."}}
+{"query": "Read my email about the water please.", "tool": "handle_bills", "args": {"query": "Read my email about the water please."}}
+{"query": "Listen, I got a bill from AT&T, can you handle it if you can.", "tool": "handle_bills", "args": {"query": "Listen, I got a bill from AT&T, can you handle it if you can."}}
+{"query": "Hey, did Sean email me okay?", "tool": "contact_family", "args": {"query": "Hey, did Sean email me okay?"}}
+{"query": "Who is Mike thanks.", "tool": "general_help", "args": {"query": "Who is Mike thanks."}}
+{"query": "Honey, I'd like to speak with Lisa thanks.", "tool": "contact_family", "args": {"query": "Honey, I'd like to speak with Lisa thanks."}}
+{"query": "Oh, I got a text about a package, is it real please.", "tool": "check_safety", "args": {"query": "Oh, I got a text about a package, is it real please."}}
+{"query": "Listen, How cold is it outside", "tool": "check_safety", "args": {"query": "Listen, How cold is it outside"}}
+{"query": "Listen, I need to stock up on toilet paper", "tool": "get_groceries", "args": {"query": "Listen, I need to stock up on toilet paper"}}
+{"query": "What am I doing tomorrow okay?", "tool": "check_schedule", "args": {"query": "What am I doing tomorrow okay?"}}
+{"query": "Someone called saying they're from Microsoft, is that real thanks.", "tool": "check_safety", "args": {"query": "Someone called saying they're from Microsoft, is that real thanks."}}
+{"query": "Pay the water please.", "tool": "handle_bills", "args": {"query": "Pay the water please."}}
+{"query": "Um, am I guess I free today", "tool": "check_schedule", "args": {"query": "Um, am I guess I free today"}}
+{"query": "Call Jenny thanks.", "tool": "contact_family", "args": {"query": "Call Jenny thanks."}}
+{"query": "what am I doing this afternoon", "tool": "check_schedule", "args": {"query": "what am I doing this afternoon"}}
+{"query": "Listen, Is this phone call legitimate okay?", "tool": "check_safety", "args": {"query": "Listen, Is this phone call legitimate okay?"}}
+{"query": "Oh, What do I owe AT&T okay?", "tool": "handle_bills", "args": {"query": "Oh, What do I owe AT&T okay?"}}
+{"query": "Hey, Set a reminder for my blood pressure pill if you can.", "tool": "check_schedule", "args": {"query": "Hey, Set a reminder for my blood pressure pill if you can."}}
+{"query": "Oh, Can you do the shopping", "tool": "get_groceries", "args": {"query": "Oh, Can you do the shopping"}}
+{"query": "Oh, Did Tom email me please.", "tool": "contact_family", "args": {"query": "Oh, Did Tom email me please."}}
+{"query": "What time is it if you can.", "tool": "general_help", "args": {"query": "What time is it if you can."}}
+{"query": "Well, What's I guess coming up this week thanks.", "tool": "check_schedule", "args": {"query": "Well, What's I guess coming up this week thanks."}}
+{"query": "Hey, Read the message I guess from Tom", "tool": "contact_family", "args": {"query": "Hey, Read the message I guess from Tom"}}
+{"query": "Oh, check if Comcast I guess sent me a bill okay?", "tool": "handle_bills", "args": {"query": "Oh, check if Comcast I guess sent me a bill okay?"}}
+{"query": "Hey, what's the date next week okay?", "tool": "general_help", "args": {"query": "Hey, what's the date next week okay?"}}
+{"query": "how many inches in a foot please.", "tool": "general_help", "args": {"query": "how many inches in a foot please."}}
+{"query": "Listen, Am I free tomorrow okay?", "tool": "check_schedule", "args": {"query": "Listen, Am I free tomorrow okay?"}}
+{"query": "What's the date today", "tool": "general_help", "args": {"query": "What's the date today"}}
+{"query": "Well, Is this phone call legitimate please.", "tool": "check_safety", "args": {"query": "Well, Is this phone call legitimate please."}}
+{"query": "Listen, what time is it thanks.", "tool": "general_help", "args": {"query": "Listen, what time is it thanks."}}
+{"query": "Listen, Is this phone call legitimate please.", "tool": "check_safety", "args": {"query": "Listen, Is this phone call legitimate please."}}
+{"query": "Oh, I'm confused about my insurance please.", "tool": "general_help", "args": {"query": "Oh, I'm confused about my insurance please."}}
+{"query": "who is Lisa", "tool": "general_help", "args": {"query": "who is Lisa"}}
+{"query": "It's time I guess for my pills please.", "tool": "check_schedule", "args": {"query": "It's time I guess for my pills please."}}
+{"query": "Listen, I need to stock up on bananas okay?", "tool": "get_groceries", "args": {"query": "Listen, I need to stock up on bananas okay?"}}
+{"query": "I want to hear from Jenny", "tool": "contact_family", "args": {"query": "I want to hear from Jenny"}}
+{"query": "Oh, I ran out maybe of bread", "tool": "get_groceries", "args": {"query": "Oh, I ran out maybe of bread"}}
+{"query": "check if Lisa I think wrote to me okay?", "tool": "contact_family", "args": {"query": "check if Lisa I think wrote to me okay?"}}
+{"query": "Well, I ran out of toilet paper", "tool": "get_groceries", "args": {"query": "Well, I ran out of toilet paper"}}
+{"query": "what do I owe Consumers Energy okay?", "tool": "handle_bills", "args": {"query": "what do I owe Consumers Energy okay?"}}
+{"query": "I I guess need help please.", "tool": "emergency", "args": {"query": "I I guess need help please."}}
+{"query": "Hey, Phone Sarah I think for me please.", "tool": "contact_family", "args": {"query": "Hey, Phone Sarah I think for me please."}}
+{"query": "Hey, i got a text about my computer, is it real if you can.", "tool": "check_safety", "args": {"query": "Hey, i got a text about my computer, is it real if you can."}}
+{"query": "Listen, Get rice delivered okay?", "tool": "get_groceries", "args": {"query": "Listen, Get rice delivered okay?"}}
+{"query": "Oh, pay the insurance", "tool": "handle_bills", "args": {"query": "Oh, pay the insurance"}}
+{"query": "how cold maybe is it outside if you can.", "tool": "check_safety", "args": {"query": "how cold maybe is it outside if you can."}}
+{"query": "Oh, Do I have any appointments this week", "tool": "check_schedule", "args": {"query": "Oh, Do I have any appointments this week"}}
+{"query": "Well, Get Lisa on I think the phone", "tool": "contact_family", "args": {"query": "Well, Get Lisa on I think the phone"}}
+{"query": "what's the weather like okay?", "tool": "check_safety", "args": {"query": "what's the weather like okay?"}}
+{"query": "Order groceries maybe from Walmart please.", "tool": "get_groceries", "args": {"query": "Order groceries maybe from Walmart please."}}
+{"query": "Um, I got a bill from Comcast, can you handle it", "tool": "handle_bills", "args": {"query": "Um, I got a bill from Comcast, can you handle it"}}
+{"query": "handle my Comcast account if you can.", "tool": "handle_bills", "args": {"query": "handle my Comcast account if you can."}}
+{"query": "Um, there's a fire", "tool": "emergency", "args": {"query": "Um, there's a fire"}}
+{"query": "Pay the cable okay?", "tool": "handle_bills", "args": {"query": "Pay the cable okay?"}}
+{"query": "Listen, I need to order food", "tool": "get_groceries", "args": {"query": "Listen, I need to order food"}}
+{"query": "Listen, Did Tom email me thanks.", "tool": "contact_family", "args": {"query": "Listen, Did Tom email me thanks."}}
+{"query": "Oh, Call Jenny", "tool": "contact_family", "args": {"query": "Oh, Call Jenny"}}
+{"query": "I'm confused about my computer okay?", "tool": "general_help", "args": {"query": "I'm confused about my computer okay?"}}
+{"query": "Honey, I fell I guess and I can't get up okay?", "tool": "emergency", "args": {"query": "Honey, I fell I guess and I can't get up okay?"}}
+{"query": "Well, can I think you pay my gas bill for me thanks.", "tool": "handle_bills", "args": {"query": "Well, can I think you pay my gas bill for me thanks."}}
+{"query": "Oh, What does receipt mean okay?", "tool": "general_help", "args": {"query": "Oh, What does receipt mean okay?"}}
+{"query": "Honey, I smell gas", "tool": "emergency", "args": {"query": "Honey, I smell gas"}}
+{"query": "order I guess some rice for me please.", "tool": "get_groceries", "args": {"query": "order I guess some rice for me please."}}
+{"query": "Hey, what do you know about my insurance please.", "tool": "general_help", "args": {"query": "Hey, what do you know about my insurance please."}}
+{"query": "Oh, What's twenty-three maybe plus twelve okay?", "tool": "general_help", "args": {"query": "Oh, What's twenty-three maybe plus twelve okay?"}}
+{"query": "Um, i think I'm having a stroke please.", "tool": "emergency", "args": {"query": "Um, i think I'm having a stroke please."}}
+{"query": "Honey, call 911", "tool": "emergency", "args": {"query": "Honey, call 911"}}
+{"query": "Honey, my cable payment is due thanks.", "tool": "handle_bills", "args": {"query": "Honey, my cable payment is due thanks."}}
+{"query": "I want to talk to Mary if you can.", "tool": "contact_family", "args": {"query": "I want to talk to Mary if you can."}}
+{"query": "Well, I I guess can't wake up my spouse okay?", "tool": "emergency", "args": {"query": "Well, I I guess can't wake up my spouse okay?"}}
+{"query": "Hey, i can't breathe if you can.", "tool": "emergency", "args": {"query": "Hey, i can't breathe if you can."}}
+{"query": "Add I think eggs to my grocery list thanks.", "tool": "get_groceries", "args": {"query": "Add I think eggs to my grocery list thanks."}}
+{"query": "What's on my I think calendar this morning if you can.", "tool": "check_schedule", "args": {"query": "What's on my I think calendar this morning if you can."}}
+{"query": "Um, How maybe cold is it outside", "tool": "check_safety", "args": {"query": "Um, How maybe cold is it outside"}}
+{"query": "Honey, My water payment is due if you can.", "tool": "handle_bills", "args": {"query": "Honey, My water payment is due if you can."}}
+{"query": "Oh, how do I reset my password okay?", "tool": "general_help", "args": {"query": "Oh, how do I reset my password okay?"}}
+{"query": "I'm having chest pain", "tool": "emergency", "args": {"query": "I'm having chest pain"}}
+{"query": "Listen, is it I think going to rain this week please.", "tool": "check_safety", "args": {"query": "Listen, is it I think going to rain this week please."}}
+{"query": "Hey, read the message from Mike thanks.", "tool": "contact_family", "args": {"query": "Hey, read the message from Mike thanks."}}
+{"query": "Oh, Phone David for me", "tool": "contact_family", "args": {"query": "Oh, Phone David for me"}}
+{"query": "Hey, Add coffee to my grocery list", "tool": "get_groceries", "args": {"query": "Hey, Add coffee to my grocery list"}}
+{"query": "Oh, I fell and I can't get up okay?", "tool": "emergency", "args": {"query": "Oh, I fell and I can't get up okay?"}}
+{"query": "Um, i need rice and rice thanks.", "tool": "get_groceries", "args": {"query": "Um, i need rice and rice thanks."}}
+{"query": "Well, time to pay the phone again", "tool": "handle_bills", "args": {"query": "Well, time to pay the phone again"}}
+{"query": "Honey, set a reminder for my Lisinopril thanks.", "tool": "check_schedule", "args": {"query": "Honey, set a reminder for my Lisinopril thanks."}}
+{"query": "How do you spell February okay?", "tool": "general_help", "args": {"query": "How do you spell February okay?"}}
+{"query": "I'd like to speak with Sean thanks.", "tool": "contact_family", "args": {"query": "I'd like to speak with Sean thanks."}}
+{"query": "Honey, Do I have any appointments this morning", "tool": "check_schedule", "args": {"query": "Honey, Do I have any appointments this morning"}}
+{"query": "Well, What medications do I take next week okay?", "tool": "check_schedule", "args": {"query": "Well, What medications do I take next week okay?"}}
+{"query": "Listen, i ran out of eggs", "tool": "get_groceries", "args": {"query": "Listen, i ran out of eggs"}}
+{"query": "Can you pay my water bill for me okay?", "tool": "handle_bills", "args": {"query": "Can you pay my water bill for me okay?"}}
+{"query": "it's time for my pills", "tool": "check_schedule", "args": {"query": "it's time for my pills"}}
+{"query": "Honey, Can you look at this email and tell me if it's safe okay?", "tool": "check_safety", "args": {"query": "Honey, Can you look at this email and tell me if it's safe okay?"}}
+{"query": "Um, i got a I think text about my insurance, is it real", "tool": "check_safety", "args": {"query": "Um, i got a I think text about my insurance, is it real"}}
+{"query": "Do I need a jacket tomorrow", "tool": "check_safety", "args": {"query": "Do I need a jacket tomorrow"}}
+{"query": "Call my daughter", "tool": "contact_family", "args": {"query": "Call my daughter"}}
+{"query": "I I think got a bill from AT&T, can you handle it if you can.", "tool": "handle_bills", "args": {"query": "I I think got a bill from AT&T, can you handle it if you can."}}
+{"query": "Well, There's I guess a fire if you can.", "tool": "emergency", "args": {"query": "Well, There's I guess a fire if you can."}}
+{"query": "I need to call Mike back", "tool": "contact_family", "args": {"query": "I need to call Mike back"}}
+{"query": "Um, Take care of the water bill okay?", "tool": "handle_bills", "args": {"query": "Um, Take care of the water bill okay?"}}
+{"query": "Well, This doesn't I guess look right, is it fraud thanks.", "tool": "check_safety", "args": {"query": "Well, This doesn't I guess look right, is it fraud thanks."}}
+{"query": "I can't wake up my spouse", "tool": "emergency", "args": {"query": "I can't wake up my spouse"}}
+{"query": "Hey, Someone called saying they're from the IRS, is that real", "tool": "check_safety", "args": {"query": "Hey, Someone called saying they're from the IRS, is that real"}}
+{"query": "Listen, Tell me about my insurance", "tool": "general_help", "args": {"query": "Listen, Tell me about my insurance"}}
+{"query": "Listen, Can you help me with something", "tool": "general_help", "args": {"query": "Listen, Can you help me with something"}}
+{"query": "Um, Did I maybe take my atorvastatin this morning", "tool": "check_schedule", "args": {"query": "Um, Did I maybe take my atorvastatin this morning"}}
+{"query": "Call Sean", "tool": "contact_family", "args": {"query": "Call Sean"}}
+{"query": "Um, Did Mike email me", "tool": "contact_family", "args": {"query": "Um, Did Mike email me"}}
+{"query": "Um, Someone maybe called saying they're from Medicare, is that real", "tool": "check_safety", "args": {"query": "Um, Someone maybe called saying they're from Medicare, is that real"}}
+{"query": "I have a question okay?", "tool": "general_help", "args": {"query": "I have a question okay?"}}
+{"query": "Check if Mike wrote to me okay?", "tool": "contact_family", "args": {"query": "Check if Mike wrote to me okay?"}}
+{"query": "Um, What's the weather like", "tool": "check_safety", "args": {"query": "Um, What's the weather like"}}
+{"query": "I I guess need help please.", "tool": "emergency", "args": {"query": "I I guess need help please."}}
+{"query": "I ran maybe out of bread", "tool": "get_groceries", "args": {"query": "I ran maybe out of bread"}}
+{"query": "Honey, i got a text about my computer, is it real", "tool": "check_safety", "args": {"query": "Honey, i got a text about my computer, is it real"}}
+{"query": "Listen, Is it going to rain this week okay?", "tool": "check_safety", "args": {"query": "Listen, Is it going to rain this week okay?"}}
+{"query": "The cable bill is due, can you take care of it", "tool": "handle_bills", "args": {"query": "The cable bill is due, can you take care of it"}}
+{"query": "take care of the electric bill okay?", "tool": "handle_bills", "args": {"query": "take care of the electric bill okay?"}}
+{"query": "Um, we're out of toilet paper", "tool": "get_groceries", "args": {"query": "Um, we're out of toilet paper"}}
+{"query": "Hey, Order some milk I think for me okay?", "tool": "get_groceries", "args": {"query": "Hey, Order some milk I think for me okay?"}}
+{"query": "Listen, how do you spell necessary", "tool": "general_help", "args": {"query": "Listen, how do you spell necessary"}}
+{"query": "Oh, someone called I think saying they're from my bank, is that real", "tool": "check_safety", "args": {"query": "Oh, someone called I think saying they're from my bank, is that real"}}
+{"query": "I need an ambulance okay?", "tool": "emergency", "args": {"query": "I need an ambulance okay?"}}
+{"query": "did I take my Lisinopril this week please.", "tool": "check_schedule", "args": {"query": "did I take my Lisinopril this week please."}}
+{"query": "Listen, Ring Sarah okay?", "tool": "contact_family", "args": {"query": "Listen, Ring Sarah okay?"}}
+{"query": "Can I guess you do the shopping", "tool": "get_groceries", "args": {"query": "Can I guess you do the shopping"}}
+{"query": "Um, Add eggs to my grocery list", "tool": "get_groceries", "args": {"query": "Um, Add eggs to my grocery list"}}
+{"query": "Um, How do you spell February okay?", "tool": "general_help", "args": {"query": "Um, How do you spell February okay?"}}
+{"query": "get me some rice if you can.", "tool": "get_groceries", "args": {"query": "get me some rice if you can."}}
+{"query": "Um, It's time for my pills", "tool": "check_schedule", "args": {"query": "Um, It's time for my pills"}}
+{"query": "Hey, Read my email about the insurance", "tool": "handle_bills", "args": {"query": "Hey, Read my email about the insurance"}}
+{"query": "Oh, take care of the phone bill", "tool": "handle_bills", "args": {"query": "Oh, take care of the phone bill"}}
+{"query": "Call Mary", "tool": "contact_family", "args": {"query": "Call Mary"}}
+{"query": "i'd like to speak with Mike thanks.", "tool": "contact_family", "args": {"query": "i'd like to speak with Mike thanks."}}
+{"query": "Oh, i want to pay Verizon if you can.", "tool": "handle_bills", "args": {"query": "Oh, i want to pay Verizon if you can."}}
+{"query": "Honey, order groceries from Meijer okay?", "tool": "get_groceries", "args": {"query": "Honey, order groceries from Meijer okay?"}}
+{"query": "Um, Did I think the electric bill come in the mail please.", "tool": "handle_bills", "args": {"query": "Um, Did I think the electric bill come in the mail please."}}
+{"query": "Hey, get bananas delivered", "tool": "get_groceries", "args": {"query": "Hey, get bananas delivered"}}
+{"query": "Someone I guess called saying they're from Microsoft, is that real", "tool": "check_safety", "args": {"query": "Someone I guess called saying they're from Microsoft, is that real"}}
+{"query": "what do I owe Comcast", "tool": "handle_bills", "args": {"query": "what do I owe Comcast"}}
+{"query": "Well, Any word from Mary", "tool": "contact_family", "args": {"query": "Well, Any word from Mary"}}
+{"query": "Well, Who is David if you can.", "tool": "general_help", "args": {"query": "Well, Who is David if you can."}}
+{"query": "i smell gas okay?", "tool": "emergency", "args": {"query": "i smell gas okay?"}}
+{"query": "Um, I need to pay the internet bill okay?", "tool": "handle_bills", "args": {"query": "Um, I need to pay the internet bill okay?"}}
+{"query": "Can you look at this email and tell me if it's safe thanks.", "tool": "check_safety", "args": {"query": "Can you look at this email and tell me if it's safe thanks."}}
+{"query": "Um, Order some milk for me", "tool": "get_groceries", "args": {"query": "Um, Order some milk for me"}}
+{"query": "Hey, I got a bill from DTE, can you handle it", "tool": "handle_bills", "args": {"query": "Hey, I got a bill from DTE, can you handle it"}}
+{"query": "Um, I need to make a payment to DTE", "tool": "handle_bills", "args": {"query": "Um, I need to make a payment to DTE"}}
+{"query": "Did the water bill come in the mail", "tool": "handle_bills", "args": {"query": "Did the water bill come in the mail"}}
+{"query": "Read my email about the cable", "tool": "handle_bills", "args": {"query": "Read my email about the cable"}}
+{"query": "Hey, i have a question okay?", "tool": "general_help", "args": {"query": "Hey, i have a question okay?"}}
+{"query": "Listen, do I have anything this week", "tool": "check_schedule", "args": {"query": "Listen, do I have anything this week"}}
+{"query": "Listen, Ring Sarah", "tool": "contact_family", "args": {"query": "Listen, Ring Sarah"}}
+{"query": "Hey, when is my next appointment thanks.", "tool": "check_schedule", "args": {"query": "Hey, when is my next appointment thanks."}}
+{"query": "Honey, Call Mike", "tool": "contact_family", "args": {"query": "Honey, Call Mike"}}
+{"query": "Oh, I want to hear from Jenny", "tool": "contact_family", "args": {"query": "Oh, I want to hear from Jenny"}}
+{"query": "Listen, Is this email a scam please.", "tool": "check_safety", "args": {"query": "Listen, Is this email a scam please."}}
+{"query": "Honey, did I I guess take my metformin this morning thanks.", "tool": "check_schedule", "args": {"query": "Honey, did I I guess take my metformin this morning thanks."}}
+{"query": "Well, Order some bananas for me", "tool": "get_groceries", "args": {"query": "Well, Order some bananas for me"}}
+{"query": "Well, i ran out of coffee", "tool": "get_groceries", "args": {"query": "Well, i ran out of coffee"}}

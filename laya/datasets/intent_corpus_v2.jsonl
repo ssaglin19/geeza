@@ -1,0 +1,600 @@
+{"text": "Honey, time to pay the cable again please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, Set up autopay for Consumers Energy thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Set up autopay for Consumers Energy", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, how much do I owe DTE", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, My husband/wife is unresponsive please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, I want to talk to Mike if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, I got a bill from Comcast, can you handle it okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "how much do I owe DTE please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, I got a bill from the water company, can you handle it okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "i need an ambulance please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I need to make a payment to the water company please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Someone broke into my house thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, I'm having a heart attack okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, Time to pay the cable again thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "how much do I owe AT&T", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Handle my Comcast payment thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, I got a bill from DTE, can you handle it okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, Time to pay the electric again", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, take care of the phone bill please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, Call my grandson thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, Did Jenny call me okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, Can you call Sean", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, The insurance bill is due, can you take care of it", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Did the cable bill come in", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, Something is wrong, get help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, Ring Tom", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Pay the phone please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "The internet bill is due, can you take care of it okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Read the message from Sean please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, I need to pay the internet bill please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I fell and I can't get up thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, I fell and I can't get up please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, check my Verizon account balance okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, handle my DTE payment thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "how much do I owe DTE thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, i need to call Sean back thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, I need to call Lisa back please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, take care of the insurance bill if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, i need to pay the water bill if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Time to pay the phone again okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Dial David", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "pay the water okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, I'm bleeding badly if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, Something is wrong, get help okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Call 911", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Call my grandson if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I need to call Mike back thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, I'd like to speak with Mike okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, Call 911", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, i can't breathe", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, My husband/wife is unresponsive", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, Pay the electric", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Call 911 please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, i smell gas thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, I fell and I can't get up", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, There's a fire", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, Handle my Consumers Energy payment okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I need an ambulance if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, I'd like to speak with Sarah thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, There's a fire", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Pay the cable okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, There's a fire thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I'm bleeding badly if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, Pay the gas okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, phone Mary for me okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, Dial Lisa if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, There's a fire", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "i want to pay DTE please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, pay the insurance", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, I'm having chest pain", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, call Sarah thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "i fell and I can't get up", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, someone broke into my house okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, Time to pay the gas again", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, I need to call Tom back", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Can you call Lisa", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "i need help right now if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, I need to pay the internet bill thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, There's a fire please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Set up autopay for DTE", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Send a message to Tom", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, I'm bleeding badly thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, I want to pay Verizon please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, call 911 please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Pay the water okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, pay the cable if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Read the message from David", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I need to make a payment to the water company if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, Can you call Lisa thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, The electric bill is due, can you take care of it please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Set up autopay for AT&T okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, Can you call Tom", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, Something is wrong, get help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Did Jenny call me if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I need to make a payment to Comcast please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, the electric bill is due, can you take care of it", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, i want to talk to David", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Honey, Ring Sarah", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, Get Tom on the phone", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I need to make a payment to DTE okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, Handle my DTE payment okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Did Tom call me please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, Someone broke into my house thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "i'd like to speak with Jenny thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, read the message from Mary thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Check my Verizon account balance", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, Call my daughter", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Phone David for me", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Someone broke into my house thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Someone broke into my house okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "How much do I owe DTE thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "The insurance bill is due, can you take care of it okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, someone broke into my house", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, i'm having chest pain please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, Can you call Jenny okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, take care of the phone bill", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, Can you pay my insurance bill for me okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, I can't breathe if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, i fell and I can't get up", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, I got a bill from AT&T, can you handle it please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I need to make a payment to Consumers Energy", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I need to call Sean back please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, i'm having chest pain please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, emergency, please help me", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, i need to call Lisa back okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, someone broke into my house thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "emergency, please help me please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Dial Mary thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, Handle my Consumers Energy payment", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I want to talk to David thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, Handle my Verizon payment please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, Set up autopay for the water company", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, i'm bleeding badly", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, get Jenny on the phone", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Take care of the water bill okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I'd like to speak with Sarah", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "i need help right now thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I can't breathe", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, Call my son thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, Emergency, please help me okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Handle my AT&T payment", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I'd like to speak with Sean thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "i need to make a payment to Consumers Energy okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "something is wrong, get help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, i can't breathe okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, I'm bleeding badly", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "handle my Verizon payment please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, emergency, please help me", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, There's a fire", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, Call my sister", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, How much do I owe AT&T", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Read the message from Mike if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, how much do I owe Verizon", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, i'm having chest pain thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, Call 911 please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Call Tom", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, Send a message to Jenny okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, Set up autopay for the water company", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, Emergency, please help me please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, Text Lisa for me", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, did the phone bill come in okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, Someone broke into my house", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I fell and I can't get up please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, Dial Mary", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, i'm having chest pain if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, My gas payment is due please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, How much do I owe Consumers Energy please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, text Mike for me if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, Take care of the water bill if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, Call my sister", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "text Mike for me please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Call David if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, My phone payment is due", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, dial Jenny okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "i'm bleeding badly if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, get David on the phone okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "My husband/wife is unresponsive", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I want to pay DTE", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, I'm having a heart attack", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, There's a fire", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Read the message from Mary", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, Check my Consumers Energy account balance okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Text Lisa for me", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, how much do I owe Verizon thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Can you pay my gas bill for me", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, there's a fire", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, The cable bill is due, can you take care of it if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, send a message to Sarah if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, i need to pay the electric bill thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, My husband/wife is unresponsive okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Check if David texted", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, Take care of the phone bill", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, i need help right now", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Emergency, please help me", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, Get Mike on the phone if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I'd like to speak with Sarah please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Take care of the water bill if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "i'd like to speak with Sean", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, send a message to Mike", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Honey, I want to pay the water company if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Time to pay the internet again if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Set up autopay for DTE", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I need to call Jenny back", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I need to make a payment to AT&T", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, I'm having a heart attack", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Dial Mike", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, Send a message to Lisa", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, Ring Sean", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I can't breathe please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, i want to pay Comcast", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, Dial Mike", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, Check if Mary texted okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "There's a fire if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, Handle my AT&T payment thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, i got a bill from AT&T, can you handle it okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Phone Sean for me okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "My husband/wife is unresponsive thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, Someone broke into my house okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I need to call Tom back if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, I need an ambulance if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "read the message from Mary", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, I need to make a payment to Consumers Energy", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Someone broke into my house thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, time to pay the electric again okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, Send a message to Lisa thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "can you pay my water bill for me", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I think I'm having a stroke please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Pay the phone", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, Read the message from David please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I need to pay the water bill", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Check if Tom texted", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I smell gas please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, Ring Sarah thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "My husband/wife is unresponsive", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, can you pay my water bill for me if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, I need help right now", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, Check if Sarah texted", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I'm having a heart attack thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Time to pay the insurance again", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, i'm having chest pain thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I need an ambulance okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, I'd like to speak with Sean", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "emergency, please help me if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, I want to pay Consumers Energy if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, i want to pay the water company thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Pay the cable", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Take care of the electric bill okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, Did Mike call me okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, Pay the cable if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, Dial Tom okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, My cable payment is due okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "there's a fire please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, the electric bill is due, can you take care of it", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, i can't breathe if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "i want to talk to Tom thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Phone Mary for me if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I need an ambulance thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, Something is wrong, get help please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Ring Sarah if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "did the water bill come in", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, my husband/wife is unresponsive okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Someone broke into my house", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, there's a fire", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I need an ambulance", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, My cable payment is due if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "My husband/wife is unresponsive", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I'm bleeding badly okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, Get David on the phone okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "time to pay the water again", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I think I'm having a stroke", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, Get Mike on the phone", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, I can't breathe okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, phone Mary for me", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, i'm having chest pain", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "text Sarah for me", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, the water bill is due, can you take care of it", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, Ring Jenny okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, phone David for me thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Dial David", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, Did Sean call me", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Something is wrong, get help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, How much do I owe DTE", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I need to call Mary back", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, Get Mike on the phone okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, i got a bill from Comcast, can you handle it okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, I'm having a heart attack if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, I'm bleeding badly thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, did Sean call me okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I got a bill from Verizon, can you handle it", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, My husband/wife is unresponsive", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Can you pay my internet bill for me", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "there's a fire please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, Something is wrong, get help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "i'd like to speak with Jenny", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Can you call Mike", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Honey, i'd like to speak with Sean", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Honey, set up autopay for the water company", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, Text Mary for me okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Honey, There's a fire", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, I got a bill from AT&T, can you handle it okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Get Mary on the phone", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, get Tom on the phone okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, Call my daughter okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, Take care of the internet bill", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, I need an ambulance", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "i need to make a payment to Consumers Energy", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, Read the message from Tom", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I need an ambulance", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, i need an ambulance please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I need to call Lisa back okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Call Mary okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, my gas payment is due", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "The gas bill is due, can you take care of it thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, I think I'm having a stroke", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, The electric bill is due, can you take care of it", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Call Sean", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, I'm bleeding badly", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, i need help right now thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Ring Mike if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, dial Lisa please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, I need an ambulance", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, my husband/wife is unresponsive please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, Ring Mike", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, Someone broke into my house okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, Phone Mary for me", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, i'd like to speak with Sarah please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, I'm having a heart attack", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Check my the water company account balance if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, There's a fire thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, Check if Tom texted", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, Can you call Lisa", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, I'm having chest pain", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, set up autopay for Verizon", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I need an ambulance", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, Can you call Tom", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "set up autopay for DTE please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, the gas bill is due, can you take care of it", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "i need to make a payment to Comcast okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I'm bleeding badly", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, text Mary for me", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Can you pay my water bill for me", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, There's a fire okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, Dial Sarah please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Check my Verizon account balance please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, There's a fire please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, Call my sister if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, Handle my DTE payment please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I'm having a heart attack thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, Can you pay my insurance bill for me", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, my husband/wife is unresponsive if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Check if Jenny texted if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, i'd like to speak with Sean thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I'd like to speak with Tom thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "i got a bill from Verizon, can you handle it okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, I want to pay Comcast if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, Check my Verizon account balance if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, dial Sarah", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, I can't breathe please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, I need to pay the cable bill please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "check if Jenny texted if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, I need to pay the phone bill", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Get David on the phone okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Honey, I need to call Sean back", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, Check if Sarah texted", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, I think I'm having a stroke okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, how much do I owe the water company okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, Call 911", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "send a message to Lisa please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Can you pay my water bill for me okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Check my AT&T account balance", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, How much do I owe Consumers Energy okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, I smell gas okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I need help right now", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, How much do I owe Consumers Energy please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "check if Lisa texted", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, i'd like to speak with Lisa please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, dial Mary", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, Ring Sean", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, i'm having a heart attack please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, Dial Mary thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, I fell and I can't get up okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Call Mike", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Honey, I need an ambulance please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "my husband/wife is unresponsive", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, Phone Mike for me okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, I need help right now thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Dial Sean", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Honey, I'm having chest pain thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, Check my the water company account balance if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, Ring Lisa", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "send a message to Mary thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Ring Mike okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, My husband/wife is unresponsive okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, text Lisa for me please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I want to pay DTE if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, Call my sister", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, set up autopay for Verizon thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, Something is wrong, get help please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, I'd like to speak with Sean if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I'm having a heart attack", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, i'm bleeding badly if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, handle my Verizon payment if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, I fell and I can't get up", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, i need to pay the internet bill thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, I want to talk to Sean", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, I think I'm having a stroke if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, time to pay the internet again", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, something is wrong, get help okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Ring Mike", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "my electric payment is due okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I fell and I can't get up if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Pay the gas", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, Ring Lisa if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I think I'm having a stroke", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, Text Mike for me", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I need help right now if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Something is wrong, get help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, I'm having chest pain please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Send a message to Tom", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, Did Sean call me please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Someone broke into my house okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Call 911 okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, I fell and I can't get up", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, I want to pay DTE", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, I fell and I can't get up please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, Dial Tom okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, I'm having chest pain thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "set up autopay for DTE okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, i need to call Sarah back okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Dial David", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, I fell and I can't get up", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, I want to talk to Mary if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, My phone payment is due", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, ring Jenny", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Can you pay my electric bill for me okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, Call my brother please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, I can't breathe", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, set up autopay for AT&T", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Pay the water", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, Set up autopay for the water company please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, get Sean on the phone thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I'm having chest pain if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Handle my DTE payment if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Text Mary for me if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, Can you pay my internet bill for me", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, Phone Tom for me okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Can you pay my insurance bill for me okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, Get Mike on the phone please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, I think I'm having a stroke please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, handle my AT&T payment", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I want to pay Verizon", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "i smell gas please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I want to pay Verizon", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, I need to call Lisa back", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, i need an ambulance", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, i need to call David back", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "The water bill is due, can you take care of it", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, call my son thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "i need help right now okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, check my Comcast account balance", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Call 911", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Phone Sean for me please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, Call my son", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, I need help right now", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, call Mary", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I need to make a payment to Verizon please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, Pay the cable", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, I need to make a payment to Consumers Energy if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, Did Mary call me if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I'm having chest pain please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, i can't breathe", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "i need to make a payment to DTE thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Check if Sean texted if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "i need to call Mary back", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, I smell gas please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, I need to make a payment to the water company", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, I need to call Lisa back if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "can you call Mike please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Can you call Jenny thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, I want to pay AT&T thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Text David for me thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Honey, I'm having a heart attack", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I want to talk to Sean okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "i got a bill from the water company, can you handle it please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, Emergency, please help me please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I fell and I can't get up", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, Ring Lisa", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Honey, Ring Jenny", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Honey, I'm having chest pain if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, call 911 thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "i want to pay Verizon thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Did the internet bill come in okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Call 911 please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, check my Consumers Energy account balance", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I want to pay Comcast okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "emergency, please help me", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Set up autopay for Consumers Energy", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "i need an ambulance thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, I can't breathe okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, i need to pay the cable bill", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, Text Jenny for me", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, I need to pay the gas bill", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, Emergency, please help me thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "something is wrong, get help", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, Text Sean for me okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, I think I'm having a stroke", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, Someone broke into my house", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Did the gas bill come in", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, my husband/wife is unresponsive please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Call 911", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, Send a message to David", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, Something is wrong, get help please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Pay the electric thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, send a message to Sean please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, Take care of the phone bill", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, I need to make a payment to DTE", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, I'd like to speak with Jenny", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, I'm having chest pain thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "read the message from Mary", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, how much do I owe Verizon", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, I smell gas thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, Someone broke into my house thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, Phone Mary for me thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, Get Mary on the phone", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, Text Jenny for me please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I'd like to speak with Sarah if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, Read the message from Sean okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, send a message to Sarah okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Read the message from Tom okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Honey, I got a bill from the water company, can you handle it okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, the cable bill is due, can you take care of it okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, I fell and I can't get up", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, My husband/wife is unresponsive", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, I need to pay the insurance bill", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Call my daughter if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Oh, I need to call Mary back", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Pay the electric if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, Dial Mary", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I'd like to speak with Sarah if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, Pay the water okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, Call my granddaughter please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, Check my DTE account balance", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Honey, Read the message from David please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Get Lisa on the phone please.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Something is wrong, get help thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, i'm having chest pain", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, I think I'm having a stroke", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, Someone broke into my house", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Set up autopay for Comcast", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "My internet payment is due if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Take care of the gas bill okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "There's a fire", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "how much do I owe the water company please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, i need an ambulance", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Listen, Can you pay my insurance bill for me", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Listen, I'm having chest pain if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "i need to pay the phone bill", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, check my AT&T account balance", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Oh, How much do I owe Comcast", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Hey, My husband/wife is unresponsive", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, Someone broke into my house", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, time to pay the electric again thanks.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "i'm bleeding badly if you can.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, Dial Jenny if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Hey, I need help right now please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, i got a bill from Consumers Energy, can you handle it", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, Ring Sean", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Pay the insurance okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Emergency, please help me", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I smell gas", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Hey, Call my son okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, Send a message to Lisa", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I fell and I can't get up", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Well, I want to pay Consumers Energy if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I'm having chest pain okay?", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, I got a bill from Verizon, can you handle it okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "My husband/wife is unresponsive thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Honey, I think I'm having a stroke", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Um, i need an ambulance", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Oh, Read the message from Mike if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Listen, I need to pay the water bill okay?", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, take care of the electric bill please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Check if David texted if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "ring Sarah", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Honey, i need to pay the electric bill if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, Something is wrong, get help thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Phone Mike for me thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I smell gas please.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "call 911", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "Time to pay the insurance again if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Can you pay my insurance bill for me please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Well, The water bill is due, can you take care of it please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "I need to pay the internet bill", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "Um, Ring Mary", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "time to pay the insurance again please.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}
+{"text": "i'd like to speak with Sarah okay?", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "I need an ambulance thanks.", "label": "emergency", "category": "emergency", "source": "synthetic"}
+{"text": "I want to talk to Mike thanks.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Well, Call Mike if you can.", "label": "contact_family", "category": "contact_family", "source": "synthetic"}
+{"text": "Um, Handle my the water company payment if you can.", "label": "handle_bills", "category": "handle_bills", "source": "synthetic"}

@@ -16,6 +16,11 @@ import subprocess
 import sys
 from pathlib import Path
 
+# Find the needle CLI
+NEEDLE_CLI = Path(sys.executable).parent / "Scripts" / "needle.exe"
+if not NEEDLE_CLI.exists():
+    NEEDLE_CLI = "needle"  # fallback to PATH
+
 
 def convert_corpus_to_needle_format(corpus_path: str, output_path: str):
     """Convert our JSONL corpus to Needle's training format."""
@@ -55,7 +60,7 @@ def main():
     # Fine-tune
     print(f"Fine-tuning Needle ({args.layers} layers, {args.epochs} epochs) ...")
     train_cmd = [
-        "needle", "finetune", needle_data,
+        str(NEEDLE_CLI), "finetune", needle_data,
         "--epochs", str(args.epochs),
         "--out", args.adapter,
     ]
@@ -70,7 +75,7 @@ def main():
     # Build .cact
     print(f"Building .cact ({args.layers} layers) ...")
     build_cmd = [
-        "needle", "build",
+        str(NEEDLE_CLI), "build",
         "--lora", args.adapter,
         "--layers", str(args.layers),
         "--out", args.out,
@@ -86,7 +91,7 @@ def main():
     # Evaluate
     print("\nEvaluating ...")
     eval_cmd = [
-        "python", "eval_needle.py",
+        sys.executable, "eval_needle.py",
         "--corpus", args.corpus,
         "--model", args.out,
         "--n", "100",
