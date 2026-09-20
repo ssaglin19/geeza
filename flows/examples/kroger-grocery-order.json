@@ -1,12 +1,12 @@
 {
-  "id": "kroger-grocery-order",
   "name": "Kroger Grocery Order",
+  "vendor": "Kroger",
   "version": 1,
+  "entry_url": "https://www.kroger.com/signin",
   "spends": true,
-  "vendor": {
-    "name": "Kroger",
-    "url": "https://www.kroger.com",
-    "login_url": "https://www.kroger.com/signin"
+  "thresholds": {
+    "act": 0.85,
+    "confirm": 0.5
   },
   "pages": [
     {
@@ -15,18 +15,18 @@
         "url_host": "www.kroger.com",
         "url_contains": "/signin",
         "anchors": [
-          {"selector": "#SignIn-emailInput", "weight": 3},
-          {"selector": "#SignIn-passwordInput", "weight": 3},
+          {"selector": "#email", "weight": 3},
+          {"selector": "#password", "weight": 3},
           {"text": "Sign In", "weight": 2},
           {"text": "Email Address", "weight": 1},
           {"text": "Password", "weight": 1}
         ]
       },
       "steps": [
-        {"action": "fill", "selector": "#SignIn-emailInput", "value_from": "credentials.username"},
-        {"action": "fill", "selector": "#SignIn-passwordInput", "value_from": "credentials.password"},
-        {"action": "click", "selector": "#SignIn-submitButton"},
-        {"action": "wait_for", "page": "account"}
+        {"action": "fill", "params": {"selector": "#email", "value": "$credentials.kroger.username"}},
+        {"action": "fill", "params": {"selector": "#password", "value": "$credentials.kroger.password"}},
+        {"action": "click", "params": {"selector": "#signin-btn"}},
+        {"action": "wait", "params": {}}
       ]
     },
     {
@@ -36,14 +36,14 @@
         "url_contains": "/account",
         "anchors": [
           {"text": "My Account", "weight": 3},
-          {"text": "Order History", "weight": 2},
-          {"text": "Weekly Ad", "weight": 2},
-          {"selector": "[data-qa='account-menu']", "weight": 3}
+          {"text": "Recent Purchases", "weight": 2},
+          {"text": "Start Shopping", "weight": 2},
+          {"selector": ".account-name", "weight": 3}
         ]
       },
       "steps": [
-        {"action": "click", "text": "Shop"},
-        {"action": "wait_for", "page": "search"}
+        {"action": "click", "params": {"selector": ".cart-link"}},
+        {"action": "wait", "params": {}}
       ]
     },
     {
@@ -52,16 +52,15 @@
         "url_host": "www.kroger.com",
         "url_contains": "/search",
         "anchors": [
-          {"selector": "#search-input", "weight": 3},
-          {"text": "Search", "weight": 2},
-          {"text": "Results", "weight": 1},
-          {"selector": "[data-qa='product-card']", "weight": 3}
+          {"selector": ".product-grid", "weight": 3},
+          {"text": "Search Results", "weight": 2},
+          {"selector": ".product-card", "weight": 3},
+          {"text": "milk", "weight": 1}
         ]
       },
       "steps": [
-        {"action": "fill", "selector": "#search-input", "value_from": "context.grocery_item"},
-        {"action": "click", "selector": "#search-submit"},
-        {"action": "wait_for", "page": "product"}
+        {"action": "click", "params": {"selector": ".product-card"}},
+        {"action": "wait", "params": {}}
       ]
     },
     {
@@ -70,15 +69,15 @@
         "url_host": "www.kroger.com",
         "url_contains": "/p/",
         "anchors": [
-          {"selector": "[data-qa='add-to-cart']", "weight": 3},
+          {"selector": "#add-to-cart", "weight": 3},
           {"text": "Add to Cart", "weight": 2},
-          {"selector": "[data-qa='product-price']", "weight": 3},
-          {"text": "$", "weight": 1}
+          {"selector": ".product-price", "weight": 3},
+          {"text": "1 gal", "weight": 1}
         ]
       },
       "steps": [
-        {"action": "click", "selector": "[data-qa='add-to-cart']"},
-        {"action": "wait_for", "page": "cart"}
+        {"action": "click", "params": {"selector": "#add-to-cart"}},
+        {"action": "wait", "params": {}}
       ]
     },
     {
@@ -87,17 +86,17 @@
         "url_host": "www.kroger.com",
         "url_contains": "/cart",
         "anchors": [
-          {"text": "Cart", "weight": 3},
+          {"text": "Shopping Cart", "weight": 3},
           {"text": "Checkout", "weight": 3},
-          {"selector": "[data-qa='cart-total']", "weight": 3},
+          {"selector": ".cart-total", "weight": 3},
           {"text": "Estimated Total", "weight": 2}
         ]
       },
       "steps": [
-        {"action": "extract", "selector": "[data-qa='cart-total']", "store_as": "cart_total"},
-        {"action": "gate", "type": "amount_sanity", "path": "cart_total", "baseline_from": "context.last_order_total", "tolerance": 0.25},
-        {"action": "click", "text": "Checkout"},
-        {"action": "wait_for", "page": "checkout"}
+        {"action": "read", "params": {"selector": ".cart-total", "as": "cart_total"}},
+        {"action": "gate", "params": {"type": "amount_sanity", "value_key": "cart_total", "last_key": "baselines.cart_total", "within_pct": 30.0}},
+        {"action": "click", "params": {"selector": "#checkout-btn"}},
+        {"action": "wait", "params": {}}
       ]
     },
     {
@@ -106,17 +105,17 @@
         "url_host": "www.kroger.com",
         "url_contains": "/checkout",
         "anchors": [
-          {"text": "Checkout", "weight": 3},
+          {"text": "Review Order", "weight": 3},
           {"text": "Place Order", "weight": 3},
-          {"selector": "[data-qa='order-total']", "weight": 3},
-          {"text": "Pickup", "weight": 2},
-          {"text": "Delivery", "weight": 2}
+          {"selector": ".order-total", "weight": 3},
+          {"text": "Pickup", "weight": 2}
         ]
       },
       "steps": [
-        {"action": "extract", "selector": "[data-qa='order-total']", "store_as": "order_total"},
-        {"action": "gate", "type": "amount_sanity", "path": "order_total", "baseline_from": "context.last_order_total", "tolerance": 0.25},
-        {"action": "confirm", "message": "Order total: ${order_total}. Place this grocery order?"}
+        {"action": "read", "params": {"selector": ".order-total", "as": "order_total"}},
+        {"action": "gate", "params": {"type": "amount_sanity", "value_key": "order_total", "last_key": "baselines.order_total", "within_pct": 30.0}},
+        {"action": "confirm", "params": {"message": "Order total: ${order_total}. Place this grocery order?"}},
+        {"action": "complete", "params": {}}
       ]
     }
   ]

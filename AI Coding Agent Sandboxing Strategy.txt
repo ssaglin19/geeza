@@ -1,0 +1,135 @@
+AI Coding Agent Sandboxing Strategy
+
+A Guide to Securing Autonomous Code-Execution Agents (OpenCode, Claude Code, and Local Agents)
+
+Executive Summary
+
+Autonomous AI coding agents (such as OpenCode, Claude Code, and custom agent loops) operate by reading workspace context and issuing shell commands, modifying code, and installing dependencies directly within an environment. Because these agents possess terminal execution rights, providing them uncontained access to a host system introduces risks of file corruption, accidental system file deletion, and key exfiltration through prompt injection attacks.
+
+This document outlines three isolated sandboxing architectures alongside essential hardening practices to ensure safe operation.
+
+Method 1: Docker Sandboxes (docker-sbx)
+
+Docker Sandboxes create isolated microVMs featuring their own Docker daemons, non-root user permissions, and dedicated virtual file systems. This provides strong isolation while maintaining agent capabilities.
+
+Prerequisites & Installation
+
+macOS: brew trust docker/tap && brew install docker/tap/sbx
+
+Windows: winget install Docker.sbx
+
+Linux: sudo apt-get install docker-sbx
+
+Execution Workflow
+
+Navigate to your specific project repository and initialize the isolated sandbox template:
+
+# Launch OpenCode within a dedicated microVM sandbox
+sbx run docker/sandbox-templates:opencode
+
+
+Security Benefits
+
+The agent cannot traverse outside the mounted project root directory.
+
+Host credentials stored in ~/.ssh, ~/.aws, or system configuration directories are inaccessible.
+
+Destructive terminal commands (e.g., rm -rf /) are contained entirely within the disposable microVM environment.
+
+Method 2: Custom Docker Container Isolation
+
+For environments using standard Docker Desktop, Podman, or headless Linux servers, a custom non-root container limits execution scope strictly to the current working directory ($PWD).
+
+1. Dockerfile Configuration (Dockerfile.opencode)
+
+FROM node:20-slim
+
+# Install system dependencies and OpenCode agent
+RUN apt-get update && apt-get install -y \
+    git \
+    python3 \
+    curl \
+    jq \
+    && rm -rf /var/lib/apt/lists/* \
+    && npm install -g opencode-ai@latest
+
+# Create non-root working environment
+USER node
+WORKDIR /workspace
+
+ENTRYPOINT ["opencode"]
+
+
+2. Building the Image
+
+docker build -t opencode-sandbox -f Dockerfile.opencode .
+
+
+3. Execution Script
+
+Run the container by mounting only the immediate working directory and passing required API keys:
+
+docker run --rm -it \
+  -v "$(pwd)":/workspace \
+  -e OPENAI_API_KEY=$OPENAI_API_KEY \
+  -e ANTHROPIC_API_KEY=$ANTHROPIC_API_KEY \
+  opencode-sandbox
+
+
+Method 3: OS-Level Isolation using sandbox-runtime / Bubblewrap
+
+For low-latency execution without microVM overhead, OS-level sandboxing utilizes Linux unshare/bubblewrap namespaces or macOS Sandbox profiles to restrict system calls, filesystem paths, and network destinations.
+
+1. Installation
+
+npm install -g @anthropic-ai/sandbox-runtime
+
+
+2. Policy Configuration (~/.srt/opencode-policy.json)
+
+{
+  "filesystem": {
+    "allowWrite": [
+      "/tmp",
+      "./"
+    ],
+    "denyRead": [
+      "~/.ssh",
+      "~/.gnupg",
+      "~/.aws",
+      "~/Documents"
+    ]
+  },
+  "network": {
+    "allowedDomains": [
+      "api.anthropic.com",
+      "api.openai.com",
+      "github.com",
+      "registry.npmjs.org"
+    ]
+  }
+}
+
+
+3. Execution
+
+srt --settings ~/.srt/opencode-policy.json opencode
+
+
+Essential Safety Hardening Rules
+
+Avoid Root Mounts: Never execute docker run mounting the host user's home directory (-v ~:/workspace). Always restrict directory mounts to individual, single-purpose repository folders (-v $(pwd):/workspace).
+
+Git Checkpoints: Always commit pending local changes before executing autonomous loops:
+
+git add . && git commit -m "pre-agent checkpoint"
+
+
+If an agent corrupts or deletes files inside the mounted directory, revert state immediately:
+
+git reset --hard HEAD
+
+
+Environment Variable Filtering: Never mount entire .env files containing production database URIs or global AWS root credentials into the agent container.
+
+Disable Skip-Permission Flags: Avoid using flags like --dangerously-skip-permissions unless the execution is taking place entirely within an isolated disposable container or VM.
