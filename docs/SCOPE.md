@@ -33,6 +33,24 @@
 - Notifications that carry content off-device
 - Multi-user / accounts
 
+## v2 candidates (documented, not scheduled)
+
+Patterns identified from WeKnora (Tencent) and other frameworks that would
+improve UX but are not required for v1:
+
+| Pattern | Source | What it does | Boosh application |
+|---------|--------|--------------|-----------------|
+| **Plan-Then-Execute decomposition** | WeKnora ReAct agent | Breaks multi-part queries into sequential sub-tasks | "Pay the bill and then call Sean" → `handle_bills` + `contact_family` in order |
+| **Thread sessions / contextual stitching** | WeKnora IM quote-reply | Tracks pronouns across turns ("change that" → knows what "that" is) | "What time is my appointment?" → "Move it to 3pm" → resolves "it" |
+| **Retrieval reranker** | WeKnora RAG pipeline | Filters noisy search results before answering | BM25 returns 8 chunks → reranker picks top 3, less prompt dilution |
+| **Long-term memory** | WeKnora cross-session | Remembers user profile, preferences, frequent topics | "I take Lisinopril" → stored, recalled next session |
+| **MCP tool protocol** | WeKnora Agent Skills | Standardized interface for external tools | If Boosh ever exposes tools to third-party agents |
+| **Sandboxed execution** | WeKnora Docker/E2B | Isolated code execution environment | Not applicable — Boosh doesn't execute arbitrary code |
+
+**Rationale for v2:** v1's single-shot intent routing handles the 80% case
+("pay the light bill"). Multi-intent decomposition and pronoun resolution are
+polish that significantly improve UX but don't block the core value proposition.
+
 ## Milestones
 
 | # | Milestone | Blocked on |
