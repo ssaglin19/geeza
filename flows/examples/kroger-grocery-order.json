@@ -1,0 +1,123 @@
+{
+  "id": "kroger-grocery-order",
+  "name": "Kroger Grocery Order",
+  "version": 1,
+  "spends": true,
+  "vendor": {
+    "name": "Kroger",
+    "url": "https://www.kroger.com",
+    "login_url": "https://www.kroger.com/signin"
+  },
+  "pages": [
+    {
+      "name": "login",
+      "match": {
+        "url_host": "www.kroger.com",
+        "url_contains": "/signin",
+        "anchors": [
+          {"selector": "#SignIn-emailInput", "weight": 3},
+          {"selector": "#SignIn-passwordInput", "weight": 3},
+          {"text": "Sign In", "weight": 2},
+          {"text": "Email Address", "weight": 1},
+          {"text": "Password", "weight": 1}
+        ]
+      },
+      "steps": [
+        {"action": "fill", "selector": "#SignIn-emailInput", "value_from": "credentials.username"},
+        {"action": "fill", "selector": "#SignIn-passwordInput", "value_from": "credentials.password"},
+        {"action": "click", "selector": "#SignIn-submitButton"},
+        {"action": "wait_for", "page": "account"}
+      ]
+    },
+    {
+      "name": "account",
+      "match": {
+        "url_host": "www.kroger.com",
+        "url_contains": "/account",
+        "anchors": [
+          {"text": "My Account", "weight": 3},
+          {"text": "Order History", "weight": 2},
+          {"text": "Weekly Ad", "weight": 2},
+          {"selector": "[data-qa='account-menu']", "weight": 3}
+        ]
+      },
+      "steps": [
+        {"action": "click", "text": "Shop"},
+        {"action": "wait_for", "page": "search"}
+      ]
+    },
+    {
+      "name": "search",
+      "match": {
+        "url_host": "www.kroger.com",
+        "url_contains": "/search",
+        "anchors": [
+          {"selector": "#search-input", "weight": 3},
+          {"text": "Search", "weight": 2},
+          {"text": "Results", "weight": 1},
+          {"selector": "[data-qa='product-card']", "weight": 3}
+        ]
+      },
+      "steps": [
+        {"action": "fill", "selector": "#search-input", "value_from": "context.grocery_item"},
+        {"action": "click", "selector": "#search-submit"},
+        {"action": "wait_for", "page": "product"}
+      ]
+    },
+    {
+      "name": "product",
+      "match": {
+        "url_host": "www.kroger.com",
+        "url_contains": "/p/",
+        "anchors": [
+          {"selector": "[data-qa='add-to-cart']", "weight": 3},
+          {"text": "Add to Cart", "weight": 2},
+          {"selector": "[data-qa='product-price']", "weight": 3},
+          {"text": "$", "weight": 1}
+        ]
+      },
+      "steps": [
+        {"action": "click", "selector": "[data-qa='add-to-cart']"},
+        {"action": "wait_for", "page": "cart"}
+      ]
+    },
+    {
+      "name": "cart",
+      "match": {
+        "url_host": "www.kroger.com",
+        "url_contains": "/cart",
+        "anchors": [
+          {"text": "Cart", "weight": 3},
+          {"text": "Checkout", "weight": 3},
+          {"selector": "[data-qa='cart-total']", "weight": 3},
+          {"text": "Estimated Total", "weight": 2}
+        ]
+      },
+      "steps": [
+        {"action": "extract", "selector": "[data-qa='cart-total']", "store_as": "cart_total"},
+        {"action": "gate", "type": "amount_sanity", "path": "cart_total", "baseline_from": "context.last_order_total", "tolerance": 0.25},
+        {"action": "click", "text": "Checkout"},
+        {"action": "wait_for", "page": "checkout"}
+      ]
+    },
+    {
+      "name": "checkout",
+      "match": {
+        "url_host": "www.kroger.com",
+        "url_contains": "/checkout",
+        "anchors": [
+          {"text": "Checkout", "weight": 3},
+          {"text": "Place Order", "weight": 3},
+          {"selector": "[data-qa='order-total']", "weight": 3},
+          {"text": "Pickup", "weight": 2},
+          {"text": "Delivery", "weight": 2}
+        ]
+      },
+      "steps": [
+        {"action": "extract", "selector": "[data-qa='order-total']", "store_as": "order_total"},
+        {"action": "gate", "type": "amount_sanity", "path": "order_total", "baseline_from": "context.last_order_total", "tolerance": 0.25},
+        {"action": "confirm", "message": "Order total: ${order_total}. Place this grocery order?"}
+      ]
+    }
+  ]
+}
