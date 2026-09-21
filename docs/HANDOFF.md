@@ -1,160 +1,116 @@
-# Boosh — Project Handoff
+# Boosh Handoff — Current State
 
-**Date:** 2026-09-19 (evening)  
-**Status:** M1 in progress, Mac mini is critical path  
+**Date:** 2026-09-20
+**Session:** Morning continuation
 **Repo:** https://github.com/ssaglin19/old-folks-app (private)
+**Branch:** main
+**Last commit:** 4c69dc6
 
 ---
 
-## What Boosh is
+## What Boosh is now
 
-A private, local-first personal assistant for elderly users. Two jobs:
+A **text-first personal assistant** for elderly, routine-based users. No app to learn — they text like they'd text a person. The assistant lives on their phone (iPhone 15 Pro / 16 / 16 Plus or newer), runs entirely on-device, and never sends their data anywhere except vendors they already use.
 
-1. **Chat buddy / logic checker** — voice-first conversation, grounded in a pre-loaded corpus of routines, medications, contacts, family notes
-2. **Personal assistant** — voice commands, mail read-back, bill pay, calendar, reminders — all on-device, no cloud, no middleman
-
-**Non-negotiables:**
-- The brain never leaves hardware the user owns
-- Network only to vendors the user would talk to anyway (utility, pharmacy, etc.)
-- Approval gate before any purchase or send
-- One app, one interface — not a text-message bot
+**Core insight:** They don't know another alternative exists. Text messaging is the interface they already understand.
 
 ---
 
 ## Architecture (three systems)
 
-| System | Role | Model | Status |
-|--------|------|-------|--------|
-| **System 0 — Execute** | Deterministic flows, code-defined confidence | None (code) | ✅ 67 tests passing |
-| **System 1 — Decide** | Intent routing, scam screening, mail triage | Laya (421M) or Needle (29MB) | ⚠️ Mixed results |
-| **System 2 — Comprehend** | Conversation, reading, explaining | Bonsai ternary 8B (2.4GB) | 📋 Ready for Mac |
+| System | Role | Implementation | Status |
+|--------|------|---------------|--------|
+| **System 0** | Execute | Deterministic flow engine + WKWebView | ✅ 85 tests passing |
+| **System 1** | Decide | Laya (scam/mail) + hybrid intent router | ✅ Scam 100%, mail 98.7%, intent hybrid |
+| **System 2** | Comprehend | Bonsai ternary 8B (or Apple FM) | ⏳ Blocked on Mac |
 
-**Key insight:** Code executes, model comprehends, logic decides when to stop.
+**Interface:** Text messages via Shortcuts bridge → local gateway → Boosh stack. No app download required for basic use.
 
 ---
 
-## Current state
+## Key decisions (this session)
 
-### ✅ Done and verified
+| Decision | Rationale |
+|----------|-----------|
+| **Text-first, not app-first** | Users won't download apps. Text is the interface they know. |
+| **Shortcuts bridge for v1** | No Twilio cost, no Apple Business Chat wait. Local network only. |
+| **Hybrid intent routing** | Laya failed (41%), Needle failed (38%). 3-class Laya + keywords + fallback. |
+| **Emergency = Crisis Connect + JustInCase** | SOS broadcast + emergency toolkit + offline knowledge. |
+| **Kroger flow validated** | Second flow proves schema generalizes. 7 tests passing. |
+| **Needle fine-tune blocked** | Windows CLI crashes. Script ready for Linux/Mac. |
 
-| Component | Result | Notes |
+---
+
+## Current state by component
+
+| Component | Status | Notes |
 |-----------|--------|-------|
-| Flow engine (System 0) | 67 tests passing | Deterministic, fail-closed, approval gates |
-| Scam screen | 100% recall, 0% FPR | Laya fine-tuned, 2/3 gates pass (ECE 0.203) |
-| Mail triage | 98.7% accuracy | Laya fine-tuned, production-ready |
-| Escalation path | 10 tests passing | Caregiver notification, user voice messages |
-| Control scorer | 7 tests passing | GLiNER2-inspired, TF-IDF prototype |
-| Bonsai eval harness | Ready | Mock runner validates gates, real MLX pending |
-| CI smoke test | GitHub Actions | 100 examples, 1 epoch, passes on push |
-
-### ⚠️ In progress / blocked
-
-| Item | Status | Blocker |
-|------|--------|---------|
-| Intent routing | Laya 41%, Needle 57% | Needle fine-tune or accept Laya + keywords |
-| Emergency handling | Basic keyword matching | **Sean to supply emergency GitHub repo** |
-| GLiNER2 eval | Prototype only | Time — could run locally |
-| Second example flow | Only Consumers Energy | Pick second vendor |
-| Memory corpus | Schema only | Sean to provide parents' routines/meds/contacts |
-
-### 📋 Ready for Mac mini
-
-| Task | Depends on |
-|------|-----------|
-| Swift port of flow engine | Mac, Xcode |
-| MLX integration (Bonsai 8B) | Mac, iPhone 16 Plus |
-| Core ML conversion (Laya) | Mac |
-| Cua Driver eval | Mac |
-| Native app automation (Calendar, Mail, Contacts) | Mac, Cua Driver |
+| Flow engine | ✅ 85 tests | 2 flows (Consumers Energy, Kroger) |
+| Scam screen | ✅ Laya, 100% recall, 0% FPR | Ready for Core ML |
+| Mail triage | ✅ Laya, 98.7% accuracy | Ready for Core ML |
+| Intent routing | ✅ Hybrid | Laya 3-class + keywords + fallback |
+| Emergency spec | ✅ Documented | Crisis Connect + JustInCase patterns |
+| Text interface | ✅ Spec + gateway | Shortcuts bridge, local server |
+| Memory corpus | ✅ Template | Needs Sean to fill out |
+| Bonsai eval | ✅ Harness ready | Needs Mac |
+| iOS app | ⏳ Blocked | Needs Mac |
 
 ---
 
-## Key decisions (D1–D11)
+## Open items
 
-| # | Decision | Rationale |
-|---|----------|-----------|
-| D1 | Elderly-first product, not founder's assistant | Scale requires it |
-| D2 | Phone-only, no home server | $800/box kills scale |
-| D3 | Minimum: iPhone 15 Pro / 16 / 16 Plus (8GB) | Bonsai 8B fits, Apple Intelligence available |
-| D4 | In-app WKWebView, deterministic flows | Can't drive Safari; small models fumble open browsing |
-| D5 | Code-computed confidence, not model-claimed | Auditable, testable, no hallucination surface |
-| D6 | Laya (open weights), not Jev (hosted API) | Privacy: no third party in the middle |
-| D7 | Bonsai ternary for comprehension | 27B-class quality at 8B-class footprint |
-| D8 | Approval gate before spend/send | Structural, in code, not promptable around |
-| D9 | Caregiver escalation on low confidence | Elderly users can't self-recover |
-| D10 | On-device SQLite memory | Chunked corpus, FTS5/BM25, caregiver-installed |
-| D11 | Voice-first interface | Elderly users don't type |
-
----
-
-## Dependencies
-
-### Python packages (`requirements.txt`)
-- `torch==2.5.1` (CPU)
-- `laya==0.3.3`
-- `scikit-learn==1.9.1`
-- `cactus-needle==3.0.2` (evaluating)
-
-### Model weights (Hugging Face)
-- `convaiinnovations/laya` (421M) — System 1 base
-- `prism-ml/Ternary-Bonsai-2-27B-mlx-2bit` (8.6GB) — Mac only
-- `prism-ml/Ternary-Bonsai-8B-gguf` (~2.4GB) — iPhone 16 Plus
-- `prism-ml/Ternary-Bonsai-4B-gguf` (~1.2GB) — parents' phones
-- `Cactus-Compute/needle3` (8-29MB) — evaluating for intent routing
-
-### External tools
-- PrismML mlx-swift fork — Bonsai inference on iOS
-- Cua Driver — native app automation (macOS)
-- GitHub Actions — CI smoke tests
-
----
-
-## Open items (Sean)
-
-| Item | Priority | Notes |
-|------|----------|-------|
-| Emergency GitHub repo | 🔴 High | Small framework, may replace emergency handling |
-| Parents' phone models | 🔴 High | Exact models (12/13/14) determine 4B vs 1.7B tier |
-| Parents' memory corpus | 🟡 Medium | Routines, medications, contacts, family notes |
-| Second vendor for flow | 🟡 Medium | Grocery or pharmacy |
-| Mac mini purchase | 🔴 High | Used M1/M2 (~$300) or new M4 (~$600) |
+| Item | Owner | Priority | Notes |
+|------|-------|----------|-------|
+| **Mac mini purchase** | Sean | 🔴 Critical | ~$300 used M1/M2. Unblocks iOS, MLX, Core ML, Bonsai. |
+| **Parents' phone models** | Sean | High | Exact models (12/13/14?) for RAM tier. |
+| **Memory corpus content** | Sean | High | Fill out template with parents' info. |
+| **3-class Laya fine-tune** | Sean | Medium | Optional. Replaces keyword fallback. |
+| **GLiNER2 evaluation** | — | Low | Page matching resilience. |
+| **Bonsai GGUF download** | — | Low | Can download now, test on Mac. |
 
 ---
 
 ## Next actions (in order)
 
-1. **Sean:** Find and supply emergency GitHub repo
-2. **Sean:** Run Needle fine-tune or accept Laya + keyword fallback for intent routing
-3. **Sean:** Provide parents' exact phone models
-4. **Sean:** Purchase Mac mini
-5. **Agent:** Evaluate emergency repo, integrate if suitable
-6. **Agent:** Write Needle fine-tune script (if pursuing)
-7. **Agent:** GLiNER2 full eval (local)
-8. **Agent:** Second example flow (when vendor chosen)
+1. **Buy Mac mini** — used M1/M2, 16GB, ~$300. This is the critical path.
+2. **Fill out memory corpus** — with parents, using template.
+3. **Get parents' phone models** — Settings → General → About.
+4. **Run 3-class Laya fine-tune** (optional) — `python finetune_local.py --corpus ../datasets/intent_corpus_v2.jsonl --num-classes 3`
+5. **Download Bonsai weights** — `huggingface-cli download prism-ml/Ternary-Bonsai-8B-gguf`
 
 ---
 
-## Files to know
+## Files to read when resuming
 
 | File | Purpose |
 |------|---------|
-| `docs/DECISIONS.md` | D1–D11, dependencies, model weights |
-| `docs/SCOPE.md` | v1 scope, milestones, measurement gates, OPEN ITEMS |
-| `docs/ARCHITECTURE.md` | Three systems, walk-through, failure guards |
-| `engine/boosh_flow/` | System 0 reference implementation (Python) |
-| `engine/tests/` | 67 tests, all passing |
-| `flows/` | Flow schema, authoring rules, example |
-| `laya/` | Question packs, corpus generators, fine-tune scripts |
-| `ios/README.md` | Module map, port contract, blocked-on-Mac checklist |
+| `docs/HANDOFF.md` | This file — current state |
+| `docs/DECISIONS.md` | D1–D11, full decision log |
+| `docs/ARCHITECTURE.md` | Three systems, walkthrough |
+| `docs/SCOPE.md` | v1 in/out, milestones, gates |
+| `docs/TEXT-INTERFACE.md` | Text-first architecture spec |
+| `docs/EMERGENCY.md` | Emergency handling spec |
+| `memory/corpus_template.md` | Memory corpus template |
+| `gateway/server.py` | Shortcuts bridge server |
+| `gateway/shortcut_bridge.md` | Shortcut setup guide |
 
 ---
 
-## Contact
+## Working style
 
-- **Repo:** https://github.com/ssaglin19/old-folks-app (private)
-- **Owner:** Sean (ssaglin19)
-- **Agent session:** This conversation (Haze Code, 2026-09-19)
+- Terse, no assumptions, blunt disagreement
+- Don't make spend/scope/vendor calls for Sean
+- Every claim verified against code or docs
+- Test before committing
+- Push after every commit
 
 ---
 
-*This handoff supersedes the original `BOOSH — Project Handoff.txt` (2026-09-12). All source code is in the repo; nothing else is needed.*
+## Session history
+
+| Date | Commits | Key work |
+|------|---------|----------|
+| 2026-09-19 | 10 | Scaffold, flow engine, Laya fine-tune, emergency spec |
+| 2026-09-20 | 8 | Text interface, hybrid router, Kroger flow, corpus template |
+
+**Total:** 18 commits, 85 tests passing, 3 working models, 2 validated flows.
