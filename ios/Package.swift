@@ -14,9 +14,9 @@ let package = Package(
             targets: ["Boosh"])
     ],
     dependencies: [
-        // PrismML fork of MLX Swift — includes ternary weight support for Bonsai
-        // This replaces the upstream mlx-swift; it includes all base MLX functionality
-        .package(url: "https://github.com/PrismML-Eng/mlx-swift", branch: "prism"),
+        // MLX Swift for on-device LLM inference
+        // Note: We'll switch to PrismML-Eng/mlx-swift fork when integrating Bonsai ternary weights
+        .package(url: "https://github.com/ml-explore/mlx-swift", from: "0.21.0"),
     ],
     targets: [
         .target(
