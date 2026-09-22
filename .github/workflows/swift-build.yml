@@ -32,25 +32,17 @@ jobs:
       - name: Resolve package dependencies
         run: |
           cd ios
-          xcodebuild -resolvePackageDependencies -scheme Boosh
+          swift package resolve
 
-      - name: Build for testing
+      - name: Build
         run: |
           cd ios
-          xcodebuild build-for-testing \
-            -scheme Boosh \
-            -destination 'platform=iOS Simulator,name=iPhone 16 Plus' \
-            -derivedDataPath .build \
-            CODE_SIGNING_ALLOWED=NO
+          swift build -c release
 
       - name: Run tests
         run: |
           cd ios
-          xcodebuild test-without-building \
-            -scheme Boosh \
-            -destination 'platform=iOS Simulator,name=iPhone 16 Plus' \
-            -derivedDataPath .build \
-            CODE_SIGNING_ALLOWED=NO
+          swift test
 
       - name: Archive (device)
         if: github.event.inputs.upload_testflight == 'true'
