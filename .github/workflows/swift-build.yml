@@ -1,0 +1,91 @@
+name: Swift Build & Test
+
+# Builds the Boosh iOS package on macOS, runs XCTest, and produces an
+# archive ready for TestFlight upload. Triggered on push to ios/ or
+# manual dispatch.
+
+on:
+  push:
+    paths:
+      - "ios/**"
+      - ".github/workflows/swift-build.yml"
+  workflow_dispatch:
+    inputs:
+      upload_testflight:
+        description: "Upload to TestFlight (requires secrets)"
+        type: boolean
+        default: false
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Select Xcode
+        run: sudo xcode-select -s /Applications/Xcode_16.2.app
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Resolve package dependencies
+        run: |
+          cd ios
+          xcodebuild -resolvePackageDependencies -scheme Boosh
+
+      - name: Build for testing
+        run: |
+          cd ios
+          xcodebuild build-for-testing \
+            -scheme Boosh \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Plus' \
+            -derivedDataPath .build \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Run tests
+        run: |
+          cd ios
+          xcodebuild test-without-building \
+            -scheme Boosh \
+            -destination 'platform=iOS Simulator,name=iPhone 16 Plus' \
+            -derivedDataPath .build \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Archive (device)
+        if: github.event.inputs.upload_testflight == 'true'
+        run: |
+          cd ios
+          xcodebuild archive \
+            -scheme Boosh \
+            -destination 'generic/platform=iOS' \
+            -archivePath .build/Boosh.xcarchive \
+            CODE_SIGNING_ALLOWED=YES \
+            DEVELOPMENT_TEAM=${{ secrets.APPLE_TEAM_ID }}
+
+      - name: Export IPA
+        if: github.event.inputs.upload_testflight == 'true'
+        run: |
+          cd ios
+          xcodebuild -exportArchive \
+            -archivePath .build/Boosh.xcarchive \
+            -exportPath .build/ipa \
+            -exportOptionsPlist ExportOptions.plist
+
+      - name: Upload to TestFlight
+        if: github.event.inputs.upload_testflight == 'true'
+        uses: apple-actions/upload-testflight-build@v1
+        with:
+          app-path: ios/.build/ipa/Boosh.ipa
+          issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+          api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
+          api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-build
+          path: |
+            ios/.build/**/*.app
+            ios/.build/**/*.ipa
+          retention-days: 7
