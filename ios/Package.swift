@@ -14,18 +14,13 @@ let package = Package(
             targets: ["Boosh"])
     ],
     dependencies: [
-        // MLX Swift for on-device LLM inference
-        // Note: We'll switch to PrismML-Eng/mlx-swift fork when integrating Bonsai ternary weights
-        .package(url: "https://github.com/ml-explore/mlx-swift", from: "0.21.0"),
+        // No external dependencies for the flow engine core
+        // MLX will be added when integrating Bonsai for on-device inference
     ],
     targets: [
         .target(
             name: "Boosh",
-            dependencies: [
-                .product(name: "MLX", package: "mlx-swift"),
-                .product(name: "MLXLLM", package: "mlx-swift"),
-                .product(name: "MLXLMCommon", package: "mlx-swift"),
-            ],
+            dependencies: [],
             path: "Sources/Boosh"
         ),
         .testTarget(
