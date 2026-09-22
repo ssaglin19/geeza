@@ -24,25 +24,33 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Show available Xcode versions
-        run: ls -la /Applications/ | grep -i xcode
-
-      - name: Show default Xcode version
-        run: xcodebuild -version
+        run: |
+          echo "=== Available Xcode versions ==="
+          ls -la /Applications/ | grep -i xcode || echo "No Xcode found"
+          echo "=== Default Xcode ==="
+          xcodebuild -version || echo "xcodebuild failed"
+          echo "=== Swift version ==="
+          swift --version || echo "swift failed"
 
       - name: Resolve package dependencies
         run: |
           cd ios
-          swift package resolve
+          echo "=== Package.swift contents ==="
+          cat Package.swift
+          echo "=== Resolving dependencies ==="
+          swift package resolve -v
 
       - name: Build
         run: |
           cd ios
-          swift build -c release
+          echo "=== Building ==="
+          swift build -c release -v
 
       - name: Run tests
         run: |
           cd ios
-          swift test
+          echo "=== Running tests ==="
+          swift test -v
 
       - name: Archive (device)
         if: github.event.inputs.upload_testflight == 'true'
