@@ -20,7 +20,9 @@ let package = Package(
     targets: [
         .target(
             name: "Boosh",
-            dependencies: [],
+            dependencies: [
+                .product(name: "MLX", package: "mlx-swift"),
+            ],
             path: "Sources/Boosh"
         ),
         .testTarget(
