@@ -1,116 +1,80 @@
-# Boosh Handoff — Current State
+# Boosh — Project Handoff
 
-**Date:** 2026-09-20
-**Session:** Morning continuation
-**Repo:** https://github.com/ssaglin19/old-folks-app (private)
-**Branch:** main
-**Last commit:** 4c69dc6
+Last updated: 2026-09-22 (evening session)
 
----
+## Current State
 
-## What Boosh is now
+**Repo:** 31 commits, 85 tests passing, clean working tree
+**Architecture:** Text-first, phone-only, zero-infrastructure
+**Positioning:** Technologically deficient users (not just elderly)
 
-A **text-first personal assistant** for elderly, routine-based users. No app to learn — they text like they'd text a person. The assistant lives on their phone (iPhone 15 Pro / 16 / 16 Plus or newer), runs entirely on-device, and never sends their data anywhere except vendors they already use.
-
-**Core insight:** They don't know another alternative exists. Text messaging is the interface they already understand.
-
----
-
-## Architecture (three systems)
-
-| System | Role | Implementation | Status |
-|--------|------|---------------|--------|
-| **System 0** | Execute | Deterministic flow engine + WKWebView | ✅ 85 tests passing |
-| **System 1** | Decide | Laya (scam/mail) + hybrid intent router | ✅ Scam 100%, mail 98.7%, intent hybrid |
-| **System 2** | Comprehend | Bonsai ternary 8B (or Apple FM) | ⏳ Blocked on Mac |
-
-**Interface:** Text messages via Shortcuts bridge → local gateway → Boosh stack. No app download required for basic use.
-
----
-
-## Key decisions (this session)
-
-| Decision | Rationale |
-|----------|-----------|
-| **Text-first, not app-first** | Users won't download apps. Text is the interface they know. |
-| **Shortcuts bridge for v1** | No Twilio cost, no Apple Business Chat wait. Local network only. |
-| **Hybrid intent routing** | Laya failed (41%), Needle failed (38%). 3-class Laya + keywords + fallback. |
-| **Emergency = Crisis Connect + JustInCase** | SOS broadcast + emergency toolkit + offline knowledge. |
-| **Kroger flow validated** | Second flow proves schema generalizes. 7 tests passing. |
-| **Needle fine-tune blocked** | Windows CLI crashes. Script ready for Linux/Mac. |
-
----
-
-## Current state by component
+## What Works
 
 | Component | Status | Notes |
 |-----------|--------|-------|
-| Flow engine | ✅ 85 tests | 2 flows (Consumers Energy, Kroger) |
-| Scam screen | ✅ Laya, 100% recall, 0% FPR | Ready for Core ML |
-| Mail triage | ✅ Laya, 98.7% accuracy | Ready for Core ML |
-| Intent routing | ✅ Hybrid | Laya 3-class + keywords + fallback |
-| Emergency spec | ✅ Documented | Crisis Connect + JustInCase patterns |
-| Text interface | ✅ Spec + gateway | Shortcuts bridge, local server |
-| Memory corpus | ✅ Template | Needs Sean to fill out |
-| Bonsai eval | ✅ Harness ready | Needs Mac |
-| iOS app | ⏳ Blocked | Needs Mac |
+| Scam screen | ✅ Laya, 100% recall, 0% FPR | Production-ready |
+| Mail triage | ✅ Laya, 98.7% accuracy | Production-ready |
+| Intent routing | ✅ Hybrid (keywords + fallback) | 3-class Laya blocked on Mac |
+| Flow engine | ✅ 85 tests | 2 validated flows |
+| 5 OpenMuse patterns | ✅ All working | Durable tasks, action review, PDF forms, goals, conversation |
+| Memory corpus | ✅ Template + ingester | Waiting for content |
+| Gateway server | ✅ Python/Flask | Shortcuts bridge ready |
 
----
+## Blocked on Cloud Mac
 
-## Open items
+| Task | Status | Notes |
+|------|--------|-------|
+| Swift build | ⏳ Ready | Package.swift fixed, workflow debugged |
+| Core ML conversion | ⏳ Ready | Script written, needs macOS |
+| 3-class Laya fine-tune | ⏳ Ready | Corpus ready, needs macOS |
+| MLX/Bonsai integration | ⏳ Ready | Weights identified, needs macOS |
+| TestFlight upload | ⏳ Ready | Needs Apple Developer account |
 
-| Item | Owner | Priority | Notes |
-|------|-------|----------|-------|
-| **Mac mini purchase** | Sean | 🔴 Critical | ~$300 used M1/M2. Unblocks iOS, MLX, Core ML, Bonsai. |
-| **Parents' phone models** | Sean | High | Exact models (12/13/14?) for RAM tier. |
-| **Memory corpus content** | Sean | High | Fill out template with parents' info. |
-| **3-class Laya fine-tune** | Sean | Medium | Optional. Replaces keyword fallback. |
-| **GLiNER2 evaluation** | — | Low | Page matching resilience. |
-| **Bonsai GGUF download** | — | Low | Can download now, test on Mac. |
+## Key Decisions
 
----
+1. **Text-first, not app-first** — users text the bot like a person, no app to learn
+2. **Phone-only, no server** — the phone is the server, SQLite is the database
+3. **Technologically deficient, not elderly** — bigger market, same product
+4. **Hybrid intent routing** — Laya for 3 classes, keywords for rest, LLM fallback
+5. **Cloud Mac for validation** — rent first, buy later if MVP earns it
 
-## Next actions (in order)
+## Next Actions (Owner: Sean)
 
-1. **Buy Mac mini** — used M1/M2, 16GB, ~$300. This is the critical path.
-2. **Fill out memory corpus** — with parents, using template.
-3. **Get parents' phone models** — Settings → General → About.
-4. **Run 3-class Laya fine-tune** (optional) — `python finetune_local.py --corpus ../datasets/intent_corpus_v2.jsonl --num-classes 3`
-5. **Download Bonsai weights** — `huggingface-cli download prism-ml/Ternary-Bonsai-8B-gguf`
+| # | Task | Priority | Notes |
+|---|------|----------|-------|
+| 1 | **Cloud Mac signup** | 🔴 Critical | MacinCloud recommended (~$50-100/mo) |
+| 2 | **Apple Developer account** | 🔴 Critical | $99/yr, required for TestFlight |
+| 3 | **Fill memory corpus** | 🟡 High | Parents' routines, meds, contacts |
+| 4 | **Bonsai download** | 🟡 High | Run `scripts/download_bonsai.py` |
+| 5 | **Parents' phone upgrade** | 🟢 Medium | 8GB minimum (iPhone 15 Pro/16) |
 
----
+## Cloud Mac Recommendation
 
-## Files to read when resuming
+**MacinCloud** — cheapest entry, hourly billing, dedicated plans for persistent work.
+- Plan: Cheapest dedicated Mac (not VM)
+- Hardware: Apple Silicon (M1/M2)
+- Storage: 256GB minimum
+- Cost: ~$50-100/mo, cancel anytime
 
-| File | Purpose |
-|------|---------|
-| `docs/HANDOFF.md` | This file — current state |
-| `docs/DECISIONS.md` | D1–D11, full decision log |
-| `docs/ARCHITECTURE.md` | Three systems, walkthrough |
-| `docs/SCOPE.md` | v1 in/out, milestones, gates |
-| `docs/TEXT-INTERFACE.md` | Text-first architecture spec |
-| `docs/EMERGENCY.md` | Emergency handling spec |
-| `memory/corpus_template.md` | Memory corpus template |
-| `gateway/server.py` | Shortcuts bridge server |
-| `gateway/shortcut_bridge.md` | Shortcut setup guide |
+Alternative: **My Remote Mac** — $85/mo for M4, faster provisioning.
 
----
+## Files to Read When Resuming
 
-## Working style
+1. `docs/ARCHITECTURE.md` — System 0/1/2 design
+2. `docs/TEXT-INTERFACE.md` — Text-first architecture spec
+3. `docs/BUILD-SPEC.md` — Build pipeline and infrastructure
+4. `docs/CLOUD-MAC.md` — Cloud Mac setup guide
+5. `docs/EMERGENCY.md` — Emergency handling spec
+6. `memory/corpus_template.md` — Memory corpus structure
+7. `gateway/shortcut_bridge.md` — Shortcuts setup guide
 
-- Terse, no assumptions, blunt disagreement
-- Don't make spend/scope/vendor calls for Sean
-- Every claim verified against code or docs
-- Test before committing
-- Push after every commit
+## Open Items
 
----
+- Emergency GitHub repo (Sean finding)
+- GLiNER2 evaluation (blocked on Windows)
+- Needle fine-tune (blocked on Windows)
 
-## Session history
+## Contact
 
-| Date | Commits | Key work |
-|------|---------|----------|
-| 2026-09-19 | 10 | Scaffold, flow engine, Laya fine-tune, emergency spec |
-| 2026-09-20 | 8 | Text interface, hybrid router, Kroger flow, corpus template |
-
-**Total:** 18 commits, 85 tests passing, 3 working models, 2 validated flows.
+- Repo: https://github.com/ssaglin19/old-folks-app (private)
+- Token: Expired — regenerate for pushes
