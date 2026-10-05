@@ -1,50 +1,29 @@
-# Boosh
+# Geeza
 
-An on-device personal assistant for elderly users. One native iOS app; the model,
-the decision layer, the browser automation, and the memory all live on the phone.
-Nothing leaves the device except traffic to vendors the user already does business
-with. No cloud model, no relay, no middleman.
+A personal AI companion for older adults. Geeza helps with everyday online chores: reading mail, spotting scams, and walking through routine tasks like paying a bill or refilling a prescription, in plain language and one step at a time.
 
-**Status: spec + scaffold phase.** This repo supersedes `BOOSH — Project Handoff.txt`
-(kept as history — it described the previous architecture: phone-as-client to a
-home-server brain, which was dropped for scale reasons; see `docs/DECISIONS.md`).
+Built for the Nebius x NVIDIA Global AI Hackathon, Personal AI track.
 
-## Principles (non-negotiable)
+## Status
 
-1. **Everything on-device.** Network only to the vendor being transacted with.
-   No third-party API ever receives the user's content (mail, pages, voice).
-2. **Code executes, models comprehend.** Deterministic flows do the acting;
-   LLMs do the reading, listening, and explaining. Small models never drive
-   open-ended browsing.
-3. **The approval gate is structural.** Anything that spends or sends stops for
-   a human tap. No model output can skip it.
-4. **Low confidence escalates.** When a step is not confident, it stops and
-   surfaces to the user or a caregiver. It never guesses forward.
-5. **The model is a swappable component.** Same tool contract, same memory
-   format, so a better on-device model drops in without a rewrite.
+Early. This repo holds the design and the working pieces so far, not a finished app.
 
-## Repo map
+- `engine/` - deterministic flow engine in Python (stdlib only) with unit tests
+- `flows/` - JSON definitions for task flows
+- `laya/` - small classifier heads and synthetic training data for mail triage and scam screening
+- `docs/` - scope, architecture and decisions
+- `ios/` - planned iOS module map
 
-| Path | What it is | Needs Mac? |
-|---|---|---|
-| `docs/` | Scope, architecture, decision log | no |
-| `engine/` | Flow engine — deterministic System 0 reference implementation (Python) with tests. Ported 1:1 to Swift for the app | no |
-| `flows/` | Flow definitions (JSON): page matchers, steps, gates, thresholds | no |
-| `laya/` | System 1 decision layer: typed question packs + fine-tuning/calibration plan | no (fine-tune runs on free Colab/Kaggle GPUs; Core ML *conversion* needs the Mac) |
-| `ios/` | The app — module map; implementation blocked on Xcode/macOS | **yes** |
-| `BOOSH — Project Handoff.txt` | Original 2026-09-19 spec (superseded, historical) | — |
+All sample data in this repo is synthetic. The project started before the hackathon opened (originally named Boosh); the hackathon work adds the Nebius and NVIDIA layer.
 
-## Target hardware
+## Nebius and NVIDIA
 
-Minimum: 8 GB Apple Intelligence-class iPhone (iPhone 15 Pro / 16 / 16 Plus and up).
-Development target device: iPhone 16 Plus. Fine-tuning: free Colab/Kaggle T4.
-iOS build machine: used M1/M2 Mac mini.
+The assistant layer runs an NVIDIA open model (Nemotron) served from Nebius Token Factory. Work in progress is tracked in `docs/`.
 
-## Running the reference engine tests
+## Run the engine tests
 
-```
-cd engine
-python -m unittest discover -s tests -t . -v
-```
+    python -m unittest discover -s engine
 
-Python 3.10+, stdlib only.
+## License
+
+MIT. See LICENSE.
