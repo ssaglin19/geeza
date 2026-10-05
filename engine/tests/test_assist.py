@@ -29,8 +29,12 @@ class TestScam(unittest.TestCase):
         self.assertTrue(out["flagged"])
 
     def test_model_can_raise_a_warning(self):
-        out = assist.scam_screen(demo_data.EMAILS[0], Stub(json.dumps({"is_scam": True, "confidence": 0.9, "reasons": ["odd"]})))
+        out = assist.scam_screen(demo_data.EMAILS[0], Stub(json.dumps({"is_scam": True, "confidence": 0.95, "reasons": ["odd"]})))
         self.assertTrue(out["flagged"])
+
+    def test_weak_model_suspicion_does_not_flag_clean_mail(self):
+        out = assist.scam_screen(demo_data.EMAILS[1], Stub(json.dumps({"is_scam": True, "confidence": 0.7, "reasons": ["hm"]})))
+        self.assertFalse(out["flagged"])
 
     def test_spoofed_sender_domain_flagged(self):
         e = {"from": "x <a@evil.test>", "subject": "hi", "body": "hello", "claims_to_be_domain": "bank.com"}

@@ -54,13 +54,20 @@ def _parse_json(text: str) -> dict:
         return {}
 
 
+def _conf(out: dict) -> float:
+    try:
+        return float(out.get("confidence", 0) or 0)
+    except (TypeError, ValueError):
+        return 0.0
+
+
 def scam_screen(email: dict, client) -> dict:
     """Return {flagged, reasons, rule_hits, model_flag, model_used, fallback}."""
     rule_hits = rule_screen(email)
     msg = f"From: {email.get('from', '')}\nSubject: {email.get('subject', '')}\n\n{email.get('body', '')}"
     out = _parse_json(client.complete(
-        [{"role": "system", "content": SCAM_SYSTEM}, {"role": "user", "content": msg}], max_tokens=200))
-    model_flag = bool(out.get("is_scam")) and float(out.get("confidence", 0) or 0) >= 0.6
+        [{"role": "system", "content": SCAM_SYSTEM}, {"role": "user", "content": msg}], max_tokens=200, temperature=0.0))
+    model_flag = bool(out.get("is_scam")) and _conf(out) >= 0.85  # spec act band
     reasons = list(rule_hits)
     if model_flag:
         reasons += [r for r in out.get("reasons", []) if isinstance(r, str) and r not in reasons]
