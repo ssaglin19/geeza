@@ -76,5 +76,5 @@ Alternative: **My Remote Mac** — $85/mo for M4, faster provisioning.
 
 ## Contact
 
-- Repo: https://github.com/ssaglin19/old-folks-app (private)
+- Repo: https://github.com/ssaglin19/geeza
 - Token: Expired — regenerate for pushes

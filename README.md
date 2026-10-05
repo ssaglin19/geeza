@@ -1,24 +1,32 @@
 # Geeza
 
-A personal AI companion for older adults. Geeza helps with everyday online chores: reading mail, spotting scams, and walking through routine tasks like paying a bill or refilling a prescription, in plain language and one step at a time.
+A personal AI companion for older adults, built for the Nebius x NVIDIA Global AI Hackathon (Personal AI track).
 
-Built for the Nebius x NVIDIA Global AI Hackathon, Personal AI track.
+The goal: help with everyday online chores such as reading mail, spotting scams, and walking through routine tasks like paying a bill or refilling a prescription, in plain language and one step at a time.
 
-## Status
+## Status: early
 
-Early. This repo holds the design and the working pieces so far, not a finished app.
+This repo is a design plus working building blocks. It is not a finished app and there is no live demo yet.
+
+What exists today:
 
 - `engine/` - deterministic flow engine in Python (stdlib only) with unit tests
 - `flows/` - JSON definitions for task flows
 - `laya/` - small classifier heads and synthetic training data for mail triage and scam screening
 - `docs/` - scope, architecture and decisions
-- `ios/` - planned iOS module map
+- `ios/` - planned iOS module map (no app code yet)
 
-All sample data in this repo is synthetic. The project started before the hackathon opened (originally named Boosh); the hackathon work adds the Nebius and NVIDIA layer.
+All sample data in this repo is synthetic. The project started before the hackathon opened (originally named Boosh).
 
-## Nebius and NVIDIA
+## Hackathon plan (not built yet)
 
-The assistant layer runs an NVIDIA open model (Nemotron) served from Nebius Token Factory. Work in progress is tracked in `docs/`.
+Planned work for the hackathon, in progress:
+
+- Serve an NVIDIA open model (Nemotron) from Nebius Token Factory as the assistant layer
+- Connect it to the flow engine so the model plans and the engine executes
+- Ship a working demo
+
+Nothing above is implemented yet. This section will change as it lands. The older design docs in `docs/` describe an on-device-only approach; the hackathon version adds a cloud model call, and the docs will be updated to match.
 
 ## Run the engine tests
 
