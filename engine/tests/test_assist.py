@@ -88,3 +88,70 @@ class TestAssistant(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestTools(unittest.TestCase):
+    def setUp(self):
+        from boosh_flow import tools
+        self.tools = tools
+
+    def test_parse_valid_call(self):
+        c = self.tools.parse_call('ok {"tool": "set_reminder", "args": {"what": "pills", "when": "8am"}}')
+        self.assertEqual(c, {"tool": "set_reminder", "args": {"what": "pills", "when": "8am"}})
+
+    def test_unknown_tool_rejected(self):
+        c = self.tools.parse_call('{"tool": "wire_money", "args": {"to": "x"}}')
+        self.assertNotIn("tool", c)
+
+    def test_missing_or_nonstring_args_rejected(self):
+        self.assertNotIn("tool", self.tools.parse_call('{"tool": "set_reminder", "args": {"what": "pills"}}'))
+        self.assertNotIn("tool", self.tools.parse_call('{"tool": "tell_caregiver", "args": {"note": 5}}'))
+
+    def test_junk_and_extra_args_never_raise(self):
+        self.assertEqual(self.tools.parse_call("hello"), {"reply": "hello"})
+        c = self.tools.parse_call('{"tool": "pay_bill", "args": {"amount": "9999", "approved": "true"}}')
+        self.assertEqual(c, {"tool": "pay_bill", "args": {}})  # unknown args dropped, no approval flag exists
+
+    def test_acting_tools_flagged(self):
+        acts = {n for n, t in self.tools.REGISTRY.items() if t.acts}
+        self.assertEqual(acts, {"pay_bill", "set_reminder", "tell_caregiver"})
+
+
+class TestToolLoop(unittest.TestCase):
+    def make(self): return Assistant(NebiusClient(api_key=""))
+
+    def test_reminder_needs_yes(self):
+        a = self.make()
+        r = a.handle("remind me to take my pills at 8am")
+        self.assertEqual(r["actions"][0]["type"], "confirm")
+        self.assertEqual(a.reminders, {})
+        r = a.handle("yes")
+        self.assertEqual(r["actions"][0]["type"], "reminder_set")
+        self.assertEqual(len(a.reminders["demo"]), 1)
+
+    def test_reminder_not_saved_if_declined(self):
+        a = self.make()
+        a.handle("remind me to call Ruth at 5pm"); a.handle("no")
+        self.assertEqual(a.reminders, {})
+
+    def test_caregiver_note_is_draft_only(self):
+        a = self.make()
+        a.handle("tell Sean I need groceries")
+        r = a.handle("yes")
+        self.assertEqual(r["actions"][0]["type"], "draft_saved")
+        self.assertIn("not been sent", r["response"])
+
+    def test_scam_check_on_pasted_text(self):
+        a = self.make()
+        r = a.handle("Is this a scam? Your account is suspended, buy gift cards now to fix it")
+        self.assertTrue(r["actions"][0]["flagged"])
+
+    def test_live_model_cannot_skip_yes(self):
+        class Live:
+            live, used_fallback, last_model = True, False, "m"
+            def complete(self, messages, **kw):
+                return '{"tool": "set_reminder", "args": {"what": "pills", "when": "8am"}}'
+        a = Assistant(Live())
+        r = a.handle("anything")
+        self.assertEqual(r["actions"][0]["type"], "confirm")
+        self.assertEqual(a.reminders, {})

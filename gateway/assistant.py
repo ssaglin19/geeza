@@ -13,6 +13,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "engine"))
 from boosh_flow import assist  # noqa: E402
+from boosh_flow.tools import REGISTRY, TOOL_PROMPT, parse_call  # noqa: E402
 from boosh_flow.intent_router_hybrid import IntentAction, route_intent  # noqa: E402
 
 from . import demo_data  # noqa: E402
@@ -22,6 +23,9 @@ DEMO_FLOW = "demo-utility-pay"
 YES = re.compile(r"^\s*(yes|y|yep|yeah|ok|okay)\b[.! ]*$", re.I)
 NO = re.compile(r"^\s*(no|n|cancel|stop|don'?t)\b", re.I)
 MAIL = re.compile(r"\b(mail|email|emails|inbox|messages?)\b", re.I)
+REMIND = re.compile(r"\bremind me (?:to |about )?(?P<what>.+?)(?: (?P<when>(?:at|on|in|tomorrow|tonight|every)\b.*))?$", re.I)
+TELL = re.compile(r"\b(?:tell|message|text|let) (?:sean|my son|the caregiver)\b[ ,:]*(?:that |about )?(?P<note>.*)", re.I)
+SCAM_Q = re.compile(r"\b(is this|is that|check)\b.*\bscam\b|\bscam\b.*\?", re.I)
 BILL = re.compile(r"\b(pay|paying)\b.*\b(bill|electric|light|power)\b|\b(electric|power|light) bill\b", re.I)
 
 
@@ -29,8 +33,11 @@ class Assistant:
     def __init__(self, client, scenario: str = "normal"):
         self.client = client
         self.scenario = scenario
+        self.last_tool = None
         self.pending: dict[str, dict] = {}   # sender -> {"kind": "offer"|"approval", ...}
         self.history: dict[str, list] = {}
+        self.reminders: dict[str, list] = {}
+        self.drafts: dict[str, list] = {}
 
     def _meta(self, extra=None):
         d = {"model_used": getattr(self.client, "last_model", None),
@@ -45,25 +52,79 @@ class Assistant:
                 return self._on_yes(sender, p)
             if NO.match(text):
                 self.pending.pop(sender, None)
-                return {"response": "Okay, I did not pay anything.", "actions": [], **self._meta()}
+                return {"response": "Okay, I did not do it.", "actions": [], **self._meta()}
             self.pending.pop(sender, None)  # any other text cancels a pending offer/approval
 
-        if MAIL.search(text):
-            return self._mail()
+        call = self._choose(text)
+        self.last_tool = call.get("tool")
+        if "tool" not in call:
+            if call.get("reply"):
+                return {"response": call["reply"], "actions": [], **self._meta()}
+            return self._chat(text, sender)
+        return self._dispatch(call["tool"], call["args"], sender, text)
 
-        # Laya's 3-class skill model is not loaded here; a keyword stand-in picks the skill.
-        skill, conf = ("handle_bills", 0.9) if BILL.search(text) else ("general_help", 0.5)
-        result = route_intent(laya_skill=skill, laya_confidence=conf, laya_probs={},
-                              text=text, available_flows={"consumers-energy-pay"})
-        if result.action == IntentAction.LAUNCH_FLOW and result.flow_id == "consumers-energy-pay":
+    def _choose(self, text: str) -> dict:
+        """Pick a tool. Live model proposes JSON; code validates. With no key, keyword stand-in."""
+        if getattr(self.client, "live", False):
+            raw = self.client.complete(
+                [{"role": "system", "content": TOOL_PROMPT}, {"role": "user", "content": text}],
+                max_tokens=200)
+            if not getattr(self.client, "used_fallback", False):
+                call = parse_call(raw)
+                if "tool" in call or call.get("reply"):
+                    return call
+        return self._keyword_choice(text)
+
+    def _keyword_choice(self, text: str) -> dict:
+        if SCAM_Q.search(text) and len(text) > 40:
+            return {"tool": "scam_check", "args": {"text": text}}
+        if MAIL.search(text):
+            return {"tool": "read_mail", "args": {}}
+        m = REMIND.search(text)
+        if m:
+            return {"tool": "set_reminder", "args": {"what": m.group("what"), "when": m.group("when") or "when I say"}}
+        m = TELL.search(text)
+        if m and m.group("note").strip():
+            return {"tool": "tell_caregiver", "args": {"note": m.group("note").strip()}}
+        if BILL.search(text):
+            # Laya's 3-class skill model is not loaded here; the keyword match stands in for it.
+            r = route_intent(laya_skill="handle_bills", laya_confidence=0.9, laya_probs={},
+                             text=text, available_flows={"consumers-energy-pay"})
+            if r.action == IntentAction.LAUNCH_FLOW:
+                return {"tool": "pay_bill", "args": {}}
+        return {}
+
+    def _dispatch(self, name: str, args: dict, sender: str, text: str) -> dict:
+        tool = REGISTRY[name]
+        if name == "read_mail":
+            out = self._mail()
+            out["tool"] = name
+            return out
+        if name == "scam_check":
+            e = {"from": "", "subject": "", "body": args["text"]}
+            r = assist.scam_screen(e, self.client)
+            msg = ("This looks like a scam. Do not reply or click anything. " + "; ".join(r["reasons"]) + "."
+                   if r["flagged"] else "I did not find scam signs, but if it asks for money or codes, stop and ask Sean.")
+            return {"response": msg, "actions": [{"type": "scam_check", "flagged": r["flagged"]}],
+                    "tool": name, **self._meta()}
+        # Acting tools: never run before the person says YES.
+        if name == "pay_bill":
             self.pending[sender] = {"kind": "offer"}
             return {"response": "I can pay your electric bill. First I will look up the amount "
                                 "and check it. Reply YES to start.",
-                    "actions": [{"type": "flow_offer", "flow_id": DEMO_FLOW}], **self._meta()}
-        if result.action == IntentAction.EMERGENCY:
-            return {"response": result.message, "actions": [{"type": "emergency_call", "number": "911"}],
-                    **self._meta()}
+                    "actions": [{"type": "flow_offer", "flow_id": DEMO_FLOW}], "tool": name, **self._meta()}
+        if name == "set_reminder":
+            self.pending[sender] = {"kind": "reminder", "args": args}
+            return {"response": f"Set a reminder to {args['what']}, {args['when']}? Reply YES to set it.",
+                    "actions": [{"type": "confirm", "tool": name}], "tool": name, **self._meta()}
+        if name == "tell_caregiver":
+            self.pending[sender] = {"kind": "draft", "args": args}
+            return {"response": f'Draft note to Sean: "{args["note"]}". Reply YES to save it. '
+                                "I never send it by myself.",
+                    "actions": [{"type": "confirm", "tool": name}], "tool": name, **self._meta()}
+        raise AssertionError(f"unhandled tool {tool.name}")
 
+    def _chat(self, text: str, sender: str) -> dict:
         h = self.history.setdefault(sender, [])
         h.append({"role": "user", "content": text})
         out = assist.chat(h, self.client)
@@ -88,6 +149,17 @@ class Assistant:
         return run_demo_flow(amount, demo_data.LAST_BILL, approver)
 
     def _on_yes(self, sender: str, p: dict) -> dict:
+        if p["kind"] == "reminder":
+            self.pending.pop(sender, None)
+            self.reminders.setdefault(sender, []).append(p["args"])
+            return {"response": f"Done. I will remind you to {p['args']['what']}, {p['args']['when']}. "
+                                "(Demo: shown here, no phone notification is sent.)",
+                    "actions": [{"type": "reminder_set", **p["args"]}], "tool": "set_reminder", **self._meta()}
+        if p["kind"] == "draft":
+            self.pending.pop(sender, None)
+            self.drafts.setdefault(sender, []).append(p["args"])
+            return {"response": "Saved the note as a draft for Sean. It has not been sent.",
+                    "actions": [{"type": "draft_saved", **p["args"]}], "tool": "tell_caregiver", **self._meta()}
         if p["kind"] == "offer":
             # Dry run up to the approval gate: the approver always says no, so nothing is paid.
             seen = {}

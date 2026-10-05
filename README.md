@@ -25,6 +25,7 @@ System 2 (the model that reads, explains and chats) is NVIDIA Nemotron on Nebius
 - Scam screen: keyword and sender-domain rules run first. The model can add a warning but cannot clear one. A flagged message is never read aloud.
 - Mail read-back: the model explains clean mail in plain words.
 - Bill pay: the real flow engine runs against a fake utility vendor (`flows/examples/demo-utility-pay.json`). The amount-sanity gate and the approval step are code. The model cannot skip them, and the person's YES only covers the amount they were shown.
+- Tool loop: the model proposes a tool call as JSON (`engine/boosh_flow/tools.py` registry: read_mail, scam_check, pay_bill, set_reminder, tell_caregiver). Code validates it. Tools that act (pay, remind, draft a note to the caregiver) only run after the person replies YES; a note is saved as a draft and never sent. Reminders in the demo are stored in memory and shown on screen, not sent to a phone.
 - Interface: text-first. `gateway/server.py --demo` serves a chat page and the `/message` endpoint.
 
 Status: the code and tests above are in this repo. Live calls to Nebius have not been verified yet and there is no hosted demo URL yet. This section will say so when that changes.
