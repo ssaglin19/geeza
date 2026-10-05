@@ -68,10 +68,13 @@ class Assistant:
         if getattr(self.client, "live", False):
             raw = self.client.complete(
                 [{"role": "system", "content": TOOL_PROMPT}, {"role": "user", "content": text}],
-                max_tokens=200)
+                max_tokens=400)
             if not getattr(self.client, "used_fallback", False):
                 call = parse_call(raw)
-                if "tool" in call or call.get("reply"):
+                if "tool" in call:
+                    return call
+                # Plain-text answers pass through. Cut-off or malformed JSON never reaches the person.
+                if call.get("reply") and not raw.lstrip().startswith(("{", "[")):
                     return call
         return self._keyword_choice(text)
 

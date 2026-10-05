@@ -159,3 +159,11 @@ class TestToolLoop(unittest.TestCase):
         r = a.handle("anything")
         self.assertEqual(r["actions"][0]["type"], "confirm")
         self.assertEqual(a.reminders, {})
+
+    def test_malformed_model_json_falls_back_to_keywords(self):
+        class Cut:
+            live, used_fallback, last_model = True, False, "m"
+            def complete(self, messages, **kw): return '{"tool'
+        a = Assistant(Cut())
+        r = a.handle("Is this a scam? Your account is suspended, send gift cards now")
+        self.assertEqual(r["actions"][0]["type"], "scam_check")
