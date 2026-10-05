@@ -4,6 +4,8 @@ A personal AI companion for older adults, built for the Nebius x NVIDIA Global A
 
 The goal: help with everyday online chores such as reading mail, spotting scams, and walking through routine tasks like paying a bill or refilling a prescription, in plain language and one step at a time.
 
+![Geeza reading mail back and flagging a scam](docs/img/geeza-mail.png)
+
 ## Status: early
 
 This repo is a design plus working building blocks. It is a working demo on synthetic data, not a finished product.
@@ -43,3 +45,5 @@ The key is read from the environment only. All emails, vendors and amounts in th
 ## License
 
 MIT. See LICENSE.
+
+What changed since Aug 26: [docs/CHANGES-SINCE-AUG-26.md](docs/CHANGES-SINCE-AUG-26.md). Devpost draft: [docs/DEVPOST.md](docs/DEVPOST.md).
