@@ -6,7 +6,7 @@ The goal: help with everyday online chores such as reading mail, spotting scams,
 
 ## Status: early
 
-This repo is a design plus working building blocks. It is not a finished app.
+This repo is a design plus working building blocks. It is a working demo on synthetic data, not a finished product.
 
 What exists today:
 
@@ -28,7 +28,7 @@ System 2 (the model that reads, explains and chats) is NVIDIA Nemotron on Nebius
 - Tool loop: the model proposes a tool call as JSON (`engine/boosh_flow/tools.py` registry: read_mail, scam_check, pay_bill, set_reminder, tell_caregiver). Code validates it. Tools that act (pay, remind, draft a note to the caregiver) only run after the person replies YES; a note is saved as a draft and never sent. Reminders in the demo are stored in memory and shown on screen, not sent to a phone.
 - Interface: text-first. `gateway/server.py --demo` serves a chat page and the `/message` endpoint.
 
-Status: the code and tests above are in this repo. Live calls to Nebius have not been verified yet and there is no hosted demo URL yet. This section will say so when that changes.
+Status: live demo at https://geeza.onrender.com (free Render instance, so the first load after idle can take about a minute). The deployed demo calls Nemotron Nano 30B on Nebius Token Factory; the key is a server-side secret and is not in this repo. Mail read-back, scam screen, reminders and the caregiver draft were checked live against it; the bill-pay flow runs on the engine against a fake vendor. Only the Nano model is wired in so far.
 
 Run the demo locally (offline mock without a key):
 
