@@ -1,0 +1,40 @@
+{
+  "name": "demo-utility-pay",
+  "vendor": "Lakeshore Power (demo vendor, fake)",
+  "version": 1,
+  "entry_url": "https://demo.lakeshore-power.test/login",
+  "spends": true,
+  "thresholds": { "act": 0.85, "confirm": 0.5 },
+  "pages": [
+    {
+      "name": "login",
+      "match": { "url_host": "demo.lakeshore-power.test", "url_contains": "/login",
+        "anchors": [ { "selector": "#username", "weight": 1.0 }, { "selector": "#password", "weight": 1.0 }, { "text": "Sign in", "weight": 1.0 } ] },
+      "steps": [
+        { "action": "fill", "params": { "selector": "#username", "value": "$credentials.lakeshore.username" } },
+        { "action": "fill", "params": { "selector": "#password", "value": "$credentials.lakeshore.password" } },
+        { "action": "click", "params": { "text": "Sign in" } }
+      ]
+    },
+    {
+      "name": "dashboard",
+      "match": { "url_host": "demo.lakeshore-power.test", "url_contains": "/account",
+        "anchors": [ { "selector": ".amount-due", "weight": 1.5 }, { "text": "Amount due", "weight": 1.0 }, { "text": "Pay Now", "weight": 1.0 } ] },
+      "steps": [
+        { "action": "read", "params": { "selector": ".amount-due", "as": "amount_due" } },
+        { "action": "gate", "params": { "type": "amount_sanity", "value_key": "amount_due", "last_key": "history.lakeshore_last_amount", "within_pct": 15 } },
+        { "action": "click", "params": { "text": "Pay Now" } }
+      ]
+    },
+    {
+      "name": "payment_review",
+      "match": { "url_host": "demo.lakeshore-power.test", "url_contains": "/pay",
+        "anchors": [ { "text": "Confirm payment", "weight": 1.5 }, { "text": "Lakeshore Power", "weight": 1.0 }, { "selector": "button.pay-submit", "weight": 1.0 } ] },
+      "steps": [
+        { "action": "confirm", "params": { "prompt": "Pay this amount to Lakeshore Power?", "amount_key": "amount_due" } },
+        { "action": "click", "params": { "selector": "button.pay-submit" } },
+        { "action": "complete", "params": {} }
+      ]
+    }
+  ]
+}

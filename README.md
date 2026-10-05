@@ -6,7 +6,7 @@ The goal: help with everyday online chores such as reading mail, spotting scams,
 
 ## Status: early
 
-This repo is a design plus working building blocks. It is not a finished app and there is no live demo yet.
+This repo is a design plus working building blocks. It is not a finished app.
 
 What exists today:
 
@@ -18,19 +18,26 @@ What exists today:
 
 All sample data in this repo is synthetic. The project started before the hackathon opened (originally named Boosh).
 
-## Hackathon plan (not built yet)
+## Hackathon build
 
-Planned work for the hackathon, in progress:
+System 2 (the model that reads, explains and chats) is NVIDIA Nemotron on Nebius Token Factory, behind an OpenAI-compatible client with an offline mock fallback (`engine/boosh_flow/nebius.py`). Decision record: `docs/DECISIONS.md` D12.
 
-- Serve an NVIDIA open model (Nemotron) from Nebius Token Factory as the assistant layer
-- Connect it to the flow engine so the model plans and the engine executes
-- Ship a working demo
+- Scam screen: keyword and sender-domain rules run first. The model can add a warning but cannot clear one. A flagged message is never read aloud.
+- Mail read-back: the model explains clean mail in plain words.
+- Bill pay: the real flow engine runs against a fake utility vendor (`flows/examples/demo-utility-pay.json`). The amount-sanity gate and the approval step are code. The model cannot skip them, and the person's YES only covers the amount they were shown.
+- Interface: text-first. `gateway/server.py --demo` serves a chat page and the `/message` endpoint.
 
-Nothing above is implemented yet. This section will change as it lands. The older design docs in `docs/` describe an on-device-only approach; the hackathon version adds a cloud model call, and the docs will be updated to match.
+Status: the code and tests above are in this repo. Live calls to Nebius have not been verified yet and there is no hosted demo URL yet. This section will say so when that changes.
+
+Run the demo locally (offline mock without a key):
+
+    NEBIUS_API_KEY=... python gateway/server.py --demo --port 8080
+
+The key is read from the environment only. All emails, vendors and amounts in the demo are fake.
 
 ## Run the engine tests
 
-    python -m unittest discover -s engine
+    cd engine && python -m unittest discover -s tests -t .
 
 ## License
 

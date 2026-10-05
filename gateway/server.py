@@ -19,8 +19,26 @@ import sys
 
 # Add engine to path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "engine"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from boosh_flow.intent_router_hybrid import route_intent, IntentAction
+
+STATIC = Path(__file__).resolve().parent / "static"
+
+
+_HITS: dict[str, list] = {}
+
+
+def _rate_ok(ip: str, limit: int = 60, window: float = 3600.0) -> bool:
+    """Demo guard so a public URL cannot burn the Nebius credits. 60 messages/hour per IP."""
+    now = time.time()
+    hits = [t for t in _HITS.get(ip, []) if now - t < window]
+    if len(hits) >= limit:
+        _HITS[ip] = hits
+        return False
+    hits.append(now)
+    _HITS[ip] = hits
+    return True
 
 
 class BooshGateway(BaseHTTPRequestHandler):
@@ -30,6 +48,7 @@ class BooshGateway(BaseHTTPRequestHandler):
     config = {
         "token": None,
         "available_flows": ["consumers-energy-pay", "kroger-grocery-order"],
+        "assistant": None,  # set by run_server(demo=True): Nemotron-backed System 2 + engine demo
     }
 
     def log_message(self, format, *args):
@@ -56,7 +75,16 @@ class BooshGateway(BaseHTTPRequestHandler):
 
     def do_GET(self):
         """Handle GET requests."""
-        if self.path == "/health":
+        if self.path in ("/", "/index.html") and self.config["assistant"]:
+            body = (STATIC / "index.html").read_bytes()
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(body)
+        elif self.path == "/api/status" and self.config["assistant"]:
+            c = self.config["assistant"].client
+            self._send_json({"nebius_live": c.live, "model": c.model, "project": "Geeza"})
+        elif self.path == "/health":
             self._send_json({"status": "ok", "timestamp": time.time()})
         elif self.path == "/config":
             if not self._check_auth():
@@ -71,7 +99,7 @@ class BooshGateway(BaseHTTPRequestHandler):
 
     def do_POST(self):
         """Handle POST requests."""
-        if self.path != "/message":
+        if self.path not in ("/message", "/api/scenario"):
             self._send_error("not found", 404)
             return
 
@@ -88,12 +116,29 @@ class BooshGateway(BaseHTTPRequestHandler):
             self._send_error("invalid JSON", 400)
             return
 
+        if self.path == "/api/scenario":
+            a = self.config["assistant"]
+            if not a or data.get("scenario") not in ("normal", "suspicious"):
+                self._send_error("bad scenario", 400)
+                return
+            a.scenario = data["scenario"]
+            a.pending.clear()
+            self._send_json({"scenario": a.scenario})
+            return
+
         # Validate required fields
         text = data.get("text", "").strip()
         if not text:
             self._send_error("missing 'text' field", 400)
             return
 
+        if self.config["assistant"]:
+            if len(text) > 500:
+                self._send_error("message too long", 400)
+                return
+            if not _rate_ok(self.headers.get("X-Forwarded-For", self.client_address[0]).split(",")[0].strip()):
+                self._send_error("slow down: demo limit reached, try again later", 429)
+                return
         sender = data.get("sender", "unknown")
         message_id = data.get("message_id", str(uuid.uuid4()))
 
@@ -111,6 +156,12 @@ class BooshGateway(BaseHTTPRequestHandler):
                 "confidence": 1.0,
                 "message_id": message_id,
             }
+
+        # Demo mode: Nemotron-backed assistant answers everything the emergency bypass did not.
+        if self.config["assistant"]:
+            out = self.config["assistant"].handle(text, sender)
+            out["message_id"] = message_id
+            return out
 
         # Scam screen (if we had Laya loaded — placeholder for now)
         # TODO: integrate Laya scam screen when fine-tuned model is available
@@ -168,9 +219,13 @@ class BooshGateway(BaseHTTPRequestHandler):
         }
 
 
-def run_server(host="127.0.0.1", port=8080, token=None):
-    """Start the Boosh gateway server."""
+def run_server(host="127.0.0.1", port=8080, token=None, demo=False):
+    """Start the Boosh gateway server. demo=True wires in the Nemotron assistant (key from NEBIUS_API_KEY)."""
     BooshGateway.config["token"] = token
+    if demo:
+        from boosh_flow.nebius import NebiusClient
+        from gateway.assistant import Assistant
+        BooshGateway.config["assistant"] = Assistant(NebiusClient())
     server = HTTPServer((host, port), BooshGateway)
     print(f"Boosh Gateway running on http://{host}:{port}")
     print(f"  Health check: http://{host}:{port}/health")
@@ -188,5 +243,6 @@ if __name__ == "__main__":
     ap.add_argument("--host", default="127.0.0.1")
     ap.add_argument("--port", type=int, default=8080)
     ap.add_argument("--token", default=None, help="Shared secret for LAN auth")
+    ap.add_argument("--demo", action="store_true", help="serve the Geeza web demo with the Nemotron assistant")
     args = ap.parse_args()
-    run_server(args.host, args.port, args.token)
+    run_server(args.host, args.port, args.token, args.demo)

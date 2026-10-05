@@ -29,7 +29,7 @@
 - Any purchase flow beyond the single registered vendor
 - Background execution (nothing runs when the app is closed; iOS forbids it anyway)
 - Android
-- Any cloud model, API, or relay — including "just for tuning"
+- Any cloud model, API, or relay — including "just for tuning" (**hackathon build exception:** see D12; the Nebius Token Factory model call is in scope for the hackathon version only)
 - Notifications that carry content off-device
 - Multi-user / accounts
 

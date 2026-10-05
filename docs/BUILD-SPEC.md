@@ -86,8 +86,8 @@ User (iPhone) ──text──► Shortcuts ──► Gateway (local server)
 
 ## Security Model
 
-- No cloud APIs for user data
-- All inference on-device
+- No cloud APIs for user data (**hackathon build:** System 2 calls Nemotron on Nebius Token Factory, see D12)
+- All inference on-device (**hackathon build:** System 2 only; the flow engine and gates stay local code)
 - Credentials in iOS Keychain
 - Approval gate for financial actions
 - Caregiver escalation for failures

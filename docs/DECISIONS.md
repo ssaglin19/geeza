@@ -96,3 +96,18 @@ caregiver, not learned from the cloud.
 Elderly users don't type. Speech in via Apple's on-device speech recognition,
 out via AVSpeechSynthesizer. The UI is one screen, a few large targets, and a
 "watch it work" browser view.
+
+## D12 — Hackathon build: System 2 on Nebius Token Factory (2026-10-05)
+For the Nebius x NVIDIA Global AI Hackathon (Personal AI track), the project owner chose to
+switch from the earlier design wherever it conflicts with the hackathon scope. Changes:
+
+- **System 2 (comprehend)** is NVIDIA Nemotron served by Nebius Token Factory
+  (OpenAI-compatible API, `engine/boosh_flow/nebius.py`) instead of on-device Bonsai. D7 already
+  put the LLM behind a stable interface so a model can be swapped; this is that swap.
+- This overrides principle 1 ("no cloud model") for the hackathon version only. The deterministic
+  parts are unchanged and still local code: flow engine, amount-sanity gate, approval gate (D8).
+- The model never moves money. A scam warning from the code rules cannot be cleared by the model.
+- No key means offline mock output, labeled as such. The key is read from `NEBIUS_API_KEY` and is never in the repo.
+- The text-first gateway (`gateway/`) is the interface (TEXT-INTERFACE.md). Voice-first (D11) is not part of this build.
+- Laya stays the planned on-device System 1. Until it is loaded here, `engine/boosh_flow/assist.py`
+  stands in with keyword rules plus a model check.

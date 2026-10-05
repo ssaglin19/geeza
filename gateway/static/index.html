@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Geeza demo</title>
+<style>
+:root{--bg:#f4f1ea;--ink:#1d2433;--me:#2b6cb0;--bot:#fff;--warn:#b42318;--ok:#146c43}
+*{box-sizing:border-box}body{margin:0;font:19px/1.4 system-ui,sans-serif;background:var(--bg);color:var(--ink)}
+.wrap{max-width:1000px;margin:0 auto;padding:12px;display:grid;gap:12px;grid-template-columns:1fr 300px}
+@media(max-width:800px){.wrap{grid-template-columns:1fr}}
+header{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+h1{margin:0;font-size:28px}.badge{font-size:14px;padding:3px 10px;border-radius:99px;background:#e2e8f0}
+.badge.live{background:#d1fadf;color:var(--ok)}
+#chat{background:#fff;border-radius:14px;padding:12px;height:62vh;overflow:auto;display:flex;flex-direction:column;gap:8px}
+.m{max-width:85%;padding:10px 14px;border-radius:16px;white-space:pre-wrap}
+.m.me{align-self:flex-end;background:var(--me);color:#fff}.m.bot{align-self:flex-start;background:#eceff4}
+.m small{display:block;opacity:.6;font-size:12px;margin-top:4px}
+.card{border:2px solid #cbd5e1;border-radius:10px;padding:8px;margin-top:6px;background:#fff;color:var(--ink)}
+.card.scam{border-color:var(--warn)}.card b{display:block}
+.row{display:flex;gap:8px;margin-top:8px}input{flex:1;font:inherit;padding:12px;border-radius:10px;border:2px solid #cbd5e1}
+button{font:inherit;padding:10px 16px;border-radius:10px;border:0;background:var(--me);color:#fff;cursor:pointer}
+button.alt{background:#e2e8f0;color:var(--ink)}button.yes{background:var(--ok)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+aside{background:#fff;border-radius:14px;padding:12px;font-size:14px}
+aside h2{margin:0 0 6px;font-size:16px}#trace{font-family:ui-monospace,monospace;font-size:12px;white-space:pre-wrap}
+.note{font-size:13px;opacity:.75;margin-top:8px}
+</style></head><body><div class="wrap">
+<header><h1>Geeza</h1><span><span id="badge" class="badge">checking...</span>
+ <label class="badge">Bill scenario <select id="scen"><option value="normal">normal</option><option value="suspicious">suspicious amount</option></select></label></span></header>
+<main><div id="chat" aria-live="polite"></div>
+<div class="chips" id="chips"></div>
+<form class="row" id="f"><input id="t" autocomplete="off" placeholder="Type a message" maxlength="500"><button>Send</button></form>
+<div class="note">Demo with fake emails and a fake utility vendor. No real money moves. Text-first: the person just texts, and anything that spends needs an explicit YES.</div></main>
+<aside><h2>What the engine did</h2><div id="trace">Nothing yet. Try "pay the electric bill".</div></aside>
+</div><script>
+const chat=document.getElementById('chat'),t=document.getElementById('t');
+function add(cls,text,meta){const d=document.createElement('div');d.className='m '+cls;d.textContent=text;
+ if(meta){const s=document.createElement('small');s.textContent=meta;d.appendChild(s)}chat.appendChild(d);chat.scrollTop=1e9;return d}
+function chips(list){const c=document.getElementById('chips');c.innerHTML='';list.forEach(x=>{const b=document.createElement('button');b.type='button';b.className=x==='YES'?'yes':'alt';b.textContent=x;b.onclick=()=>send(x);c.appendChild(b)})}
+const START=['Check my mail','Pay the electric bill','What is a good lunch idea?'];chips(START);
+async function send(text){if(!text.trim())return;add('me',text);t.value='';chips([]);
+ try{const r=await fetch('/message',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,sender:'demo'})});
+  const j=await r.json();if(j.error){add('bot',j.error);chips(START);return}
+  const meta=j.model_used?(j.fallback?'offline fallback':'Nemotron: '+j.model_used):'';
+  const d=add('bot',j.response,meta);
+  (j.actions||[]).forEach(a=>{if(a.type==='mail')a.items.forEach(i=>{const c=document.createElement('div');c.className='card'+(i.scam?' scam':'');
+    c.innerHTML='<b></b><span></span>';c.firstChild.textContent=(i.scam?'Possible scam: ':'')+i.subject;c.lastChild.textContent=i.scam?i.reasons.join('; '):i.from;d.appendChild(c)})});
+  if(j.events)document.getElementById('trace').textContent=j.events.map(e=>e.event+(e.page?' '+e.page:'')+(e.value?' '+e.value:'')+(e.detail?' - '+e.detail:'')+(e.reason?' - '+e.reason:'')).join('\n');
+  const acts=(j.actions||[]).map(a=>a.type);
+  chips(acts.includes('flow_offer')||acts.includes('approval')?['YES','No']:START)
+ }catch(e){add('bot','Could not reach the server.');chips(START)}}
+document.getElementById('f').onsubmit=e=>{e.preventDefault();send(t.value)};
+document.getElementById('scen').onchange=async e=>{await fetch('/api/scenario',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({scenario:e.target.value})});add('bot','Scenario set: '+e.target.value+'. Pending actions cleared.')};
+fetch('/api/status').then(r=>r.json()).then(s=>{const b=document.getElementById('badge');b.textContent=s.nebius_live?'Nemotron on Nebius: live':'Offline fallback (no key)';if(s.nebius_live)b.classList.add('live')});
+add('bot','Hi, I am Geeza. I can read your mail, spot scams, and pay a bill with your OK.');
+</script></body></html>
