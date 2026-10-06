@@ -87,6 +87,21 @@ class TestWriteGate(unittest.TestCase):
         self.assertIn("[source: demo seed (synthetic); added: 2026-10-05]", out["response"])
 
 
+class LiveStub(Stub):
+    live = True
+
+
+class TestCodeRoutesMemoryCommands(unittest.TestCase):
+    def test_live_model_cannot_intercept_forget_or_remember(self):
+        a = Assistant(LiveStub("Are you sure? Reply YES"))
+        out = a.handle("remember that I like tea")
+        self.assertEqual(out["tool"], "remember")
+        self.assertEqual(a.pending["demo"]["kind"], "remember")
+        a.handle("yes")
+        a.handle("forget tea")
+        self.assertEqual(a.pending["demo"]["kind"], "forget")
+
+
 class TestMemoryIsData(unittest.TestCase):
     def test_mail_and_scam_check_never_write_memory(self):
         a = Assistant(Stub())

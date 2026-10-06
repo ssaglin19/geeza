@@ -74,6 +74,10 @@ class Assistant:
 
     def _choose(self, text: str) -> dict:
         """Pick a tool. Live model proposes JSON; code validates. With no key, keyword stand-in."""
+        # Explicit memory commands are matched by code first, so the model cannot ask for a YES
+        # that nothing is waiting on. Only text that STARTS with the command counts.
+        if RECALL.search(text) or REMEMBER.match(text) or FORGET.match(text):
+            return self._keyword_choice(text)
         if getattr(self.client, "live", False):
             raw = self.client.complete(
                 [{"role": "system", "content": TOOL_PROMPT}, {"role": "user", "content": text}],
