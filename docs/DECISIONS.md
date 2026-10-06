@@ -122,3 +122,13 @@ block, never parsed as tool calls); writes and removals come only from the perso
 and need YES; no passwords, codes or long numbers; seed notes are read-only, the person can only
 remove notes she saved herself. The demo seed (`memory/demo-memory/`) is invented data, and notes
 saved in the live demo live in server RAM and vanish on sleep or restart.
+
+## D14 - System 1 decision layer (question packs on Nemotron)
+
+The question packs in `laya/questions/` (scam-screen, mail-triage, intent-routing) now run in the demo through `engine/boosh_flow/decider.py`. One Nemotron Nano call on Token Factory answers a whole pack (temperature 0, JSON only, the state is marked as untrusted data). Code validates the shape, normalizes, and applies the pack's own bands. Bad output or a mock fallback returns ok=False and the earlier behavior runs.
+
+- Probabilities are self-reported by the model and not calibrated. This is not Laya, Bonsai or a trained decision model. The Laya encoder is not in the hosted demo.
+- The model can raise a scam warning, never clear a code rule hit.
+- Intent routing runs before tool choice: high >= 0.80 goes on, 0.50 to 0.79 asks "Did you want to...? YES", low goes to the normal path. Emergency prints an honest notice (the demo cannot call or text). Memory commands stay code-first.
+- OPEN QUESTION for Sean: scam-screen.json says `requests_payment` >= 0.5 also triggers the warning. Read literally, that flags a real electric bill. The demo requires is_phishing >= 0.5 as well. The literal rule is computed and shown in the policy output, and a test pins the difference.
+- Cost: about one extra call per email in read-back, and one per message for routing.

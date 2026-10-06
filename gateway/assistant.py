@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "engine"))
-from boosh_flow import assist, memory as mem  # noqa: E402
+from boosh_flow import assist, decider, memory as mem  # noqa: E402
 from boosh_flow.tools import REGISTRY, TOOL_PROMPT, parse_call  # noqa: E402
 from boosh_flow.intent_router_hybrid import IntentAction, route_intent  # noqa: E402
 
@@ -38,6 +38,7 @@ class Assistant:
         self.client = client
         self.scenario = scenario
         self.last_tool = None
+        self.last_intent = None
         self.pending: dict[str, dict] = {}   # sender -> {"kind": "offer"|"approval", ...}
         self.history: dict[str, list] = {}
         self.reminders: dict[str, list] = {}
@@ -64,6 +65,12 @@ class Assistant:
                 return {"response": "Okay, I did not do it.", "actions": [], **self._meta()}
             self.pending.pop(sender, None)  # any other text cancels a pending offer/approval
 
+        routed = self._route(text, sender)
+        if routed:
+            return routed
+        return self._after_route(text, sender)
+
+    def _after_route(self, text: str, sender: str) -> dict:
         call = self._choose(text)
         self.last_tool = call.get("tool")
         if "tool" not in call:
@@ -71,6 +78,36 @@ class Assistant:
                 return {"response": call["reply"], "actions": [], **self._meta()}
             return self._chat(text, sender)
         return self._dispatch(call["tool"], call["args"], sender, text)
+
+    SKILL_ASK = {"handle_bills": "deal with a bill", "check_schedule": "check your schedule or reminders",
+                 "contact_family": "reach family", "get_groceries": "order groceries",
+                 "check_safety": "check if something is a scam", "emergency": "get urgent help"}
+
+    def _route(self, text: str, sender: str) -> dict | None:
+        """System 1: intent-routing pack (bands: high >= 0.80 go, 0.50-0.79 ask, < 0.50 general).
+        Returns a reply when routing decides, else None and the normal tool choice runs.
+        Memory commands skip it (code-first). Probabilities are self-reported by Nemotron."""
+        if RECALL.search(text) or REMEMBER.match(text) or FORGET.match(text):
+            return None
+        if not getattr(self.client, "live", False):
+            return None
+        d = decider.decide("intent-routing", text, self.client)
+        if not d["ok"]:
+            return None
+        r = decider.intent_policy(d["answers"])
+        self.last_intent = r
+        meta = {**self._meta(), "intent": r}
+        if r["skill"] == "emergency":
+            return {"response": "This sounds urgent. If you are in danger or hurt, call 911 now. "
+                                "This demo cannot call or text anyone for you.",
+                    "actions": [{"type": "emergency_notice"}], **meta}
+        if r["skill"] == "get_groceries":
+            return {"response": "I cannot order groceries in this demo.", "actions": [], **meta}
+        if r["band"] == "medium" and r["skill"] in self.SKILL_ASK:
+            self.pending[sender] = {"kind": "intent", "text": text}
+            return {"response": f"Did you want to {self.SKILL_ASK[r['skill']]}? Reply YES to go on.",
+                    "actions": [{"type": "confirm_intent", "skill": r["skill"]}], **meta}
+        return None
 
     def _choose(self, text: str) -> dict:
         """Pick a tool. Live model proposes JSON; code validates. With no key, keyword stand-in."""
@@ -150,7 +187,9 @@ class Assistant:
             e = {"from": "", "subject": "", "body": args["text"]}
             r = assist.scam_screen(e, self.client)
             msg = ("This looks like a scam. Do not reply or click anything. " + "; ".join(r["reasons"]) + "."
-                   if r["flagged"] else "I did not find scam signs, but if it asks for money or codes, stop and ask Sean.")
+                   if r["flagged"] else ("This might be a scam, so be careful. Do not reply or click until Sean has looked at it."
+                      if r.get("soft_warning") else
+                      "I did not find scam signs, but if it asks for money or codes, stop and ask Sean."))
             return {"response": msg, "actions": [{"type": "scam_check", "flagged": r["flagged"]}],
                     "tool": name, **self._meta()}
         # Acting tools: never run before the person says YES.
@@ -178,12 +217,16 @@ class Assistant:
         return {"response": out["reply"], "actions": [], **self._meta()}
 
     def _mail(self) -> dict:
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(max_workers=len(demo_data.EMAILS)) as ex:
+            results = list(ex.map(lambda e: assist.read_back(e, self.client), demo_data.EMAILS))
         items = []
-        for e in demo_data.EMAILS:
-            r = assist.read_back(e, self.client)
+        for e, r in zip(demo_data.EMAILS, results):
+            t = r.get("triage") or {}
             items.append({"id": e["id"], "from": e["from"], "subject": e["subject"],
                           "spoken": r["spoken"], "scam": r["screen"]["flagged"],
-                          "reasons": r["screen"]["reasons"]})
+                          "reasons": r["screen"]["reasons"], "category": t.get("category"),
+                          "urgency": t.get("urgency"), "needs_reply": t.get("needs_reply")})
         n_scam = sum(i["scam"] for i in items)
         lines = [f"You have {len(items)} messages." + (f" {n_scam} looks like a scam and I did not read it." if n_scam else "")]
         for i in items:
@@ -195,6 +238,9 @@ class Assistant:
         return run_demo_flow(amount, demo_data.LAST_BILL, approver)
 
     def _on_yes(self, sender: str, p: dict) -> dict:
+        if p["kind"] == "intent":
+            self.pending.pop(sender, None)
+            return self._after_route(p["text"], sender)
         if p["kind"] == "reminder":
             self.pending.pop(sender, None)
             self.reminders.setdefault(sender, []).append(p["args"])
