@@ -92,7 +92,7 @@ class Assistant:
         if not getattr(self.client, "live", False):
             return None
         d = decider.decide("intent-routing", text, self.client)
-        self.last_decider = {"pack": "intent-routing", "ok": d["ok"], "raw_head": d.get("raw_head")}
+        self.last_decider = {"pack": "intent-routing", "ok": d["ok"], "error": d.get("error"), "raw_head": d.get("raw_head")}
         if not d["ok"]:
             return None
         r = decider.intent_policy(d["answers"])
