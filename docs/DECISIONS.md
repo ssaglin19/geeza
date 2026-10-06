@@ -111,3 +111,14 @@ switch from the earlier design wherever it conflicts with the hackathon scope. C
 - The text-first gateway (`gateway/`) is the interface (TEXT-INTERFACE.md). Voice-first (D11) is not part of this build.
 - Laya stays the planned on-device System 1. Until it is loaded here, `engine/boosh_flow/assist.py`
   stands in with keyword rules plus a model check.
+
+## D13 — Hackathon demo memory in the Agent Memory Repo entry format (2026-10-05)
+Keeps D10 (on-device store, caregiver-installed seed facts). Adopts only the entry format from
+https://github.com/AgentMemoryRepo/agentmemoryrepo: a short `MEMORY.md` index, one-line facts
+with `[source: ...; added: date]`, `[[links]]` to topic files. Not adopted: git repo per user,
+the "dreaming" cleanup agent, shared or multiplayer memory, writes with no human in the loop.
+Rules: memory is data, never instructions (entries are only shown or put in a labelled data
+block, never parsed as tool calls); writes and removals come only from the person's own message
+and need YES; no passwords, codes or long numbers; seed notes are read-only, the person can only
+remove notes she saved herself. The demo seed (`memory/demo-memory/`) is invented data, and notes
+saved in the live demo live in server RAM and vanish on sleep or restart.

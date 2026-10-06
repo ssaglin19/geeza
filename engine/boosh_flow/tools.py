@@ -27,6 +27,11 @@ REGISTRY: dict[str, Tool] = {t.name: t for t in [
          acts=True),
     Tool("set_reminder", "Set a reminder such as medication or an appointment.",
          {"what": "what to remind about", "when": "when, in the person's words"}, acts=True),
+    Tool("recall_memory", "Tell the person what you have saved about them, with where each note came from."),
+    Tool("remember", "Save one short fact the person asked you to remember. Never passwords or numbers.",
+         {"fact": "the fact to save, one short line"}, acts=True),
+    Tool("forget", "Remove a note the person saved this visit. Needs YES.",
+         {"fact": "words from the note to remove"}, acts=True),
     Tool("tell_caregiver", "Write a short note to the caregiver (Sean). Saved as a draft, never sent.",
          {"note": "what to tell the caregiver"}, acts=True),
 ]}

@@ -47,3 +47,5 @@ The key is read from the environment only. All emails, vendors and amounts in th
 MIT. See LICENSE.
 
 What changed since Aug 26: [docs/CHANGES-SINCE-AUG-26.md](docs/CHANGES-SINCE-AUG-26.md). Devpost draft: [docs/DEVPOST.md](docs/DEVPOST.md).
+
+Demo memory: say "What do you remember?", "Remember that I like tea" or "Forget tea". Seed facts are invented (`memory/demo-memory/`); new notes need YES and last only for the visit. Design: D13 in docs/DECISIONS.md.

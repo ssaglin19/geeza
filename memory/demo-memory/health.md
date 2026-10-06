@@ -1,0 +1,2 @@
+- Takes her blood pressure pill with breakfast [source: demo seed (synthetic); added: 2026-10-05]
+- Checkup with Dr. Patel on Thursday at 10:15 AM; bring the medication list [source: demo seed (synthetic); added: 2026-10-05]

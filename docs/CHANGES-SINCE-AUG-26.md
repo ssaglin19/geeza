@@ -23,6 +23,7 @@ build; it is Geeza now (same code).
 - Demo mode in the gateway (`python gateway/server.py --demo`): fake emails, fake vendor,
   no real money moves, 60 messages per hour per IP.
 - Deployed on Render (free): https://geeza.onrender.com. The key is a server-side secret.
+- Demo memory (D13): entry format borrowed from Agent Memory Repo, YES-gated writes, memory is data, invented seed data. Tools: recall_memory, remember, forget.
 - Decision D12: the no-cloud principle is relaxed for the hackathon version only.
 
 ## Not changed / not done

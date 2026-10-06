@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "engine"))
-from boosh_flow import assist  # noqa: E402
+from boosh_flow import assist, memory as mem  # noqa: E402
 from boosh_flow.tools import REGISTRY, TOOL_PROMPT, parse_call  # noqa: E402
 from boosh_flow.intent_router_hybrid import IntentAction, route_intent  # noqa: E402
 
@@ -26,6 +26,10 @@ MAIL = re.compile(r"\b(mail|email|emails|inbox|messages?)\b", re.I)
 REMIND = re.compile(r"\bremind me (?:to |about )?(?P<what>.+?)(?: (?P<when>(?:at|on|in|tomorrow|tonight|every)\b.*))?$", re.I)
 TELL = re.compile(r"\b(?:tell|message|text|let) (?:sean|my son|the caregiver)\b[ ,:]*(?:that |about )?(?P<note>.*)", re.I)
 SCAM_Q = re.compile(r"\b(is this|is that|check)\b.*\bscam\b|\bscam\b.*\?", re.I)
+RECALL = re.compile(r"\bwhat (?:do|have) you (?:remember|know|saved?)\b|\bwhat did i (?:tell|ask) you to remember\b", re.I)
+REMEMBER = re.compile(r"^\s*(?:please )?remember (?:that )?(?P<fact>.+)$", re.I)
+FORGET = re.compile(r"^\s*(?:please )?forget (?:that |about )?(?P<fact>.+)$", re.I)
+SEED_DIR = Path(__file__).resolve().parents[1] / "memory" / "demo-memory"
 BILL = re.compile(r"\b(pay|paying)\b.*\b(bill|electric|light|power)\b|\b(electric|power|light) bill\b", re.I)
 
 
@@ -38,6 +42,11 @@ class Assistant:
         self.history: dict[str, list] = {}
         self.reminders: dict[str, list] = {}
         self.drafts: dict[str, list] = {}
+        self.seed = mem.load_seed(SEED_DIR)          # caregiver-installed, read-only
+        self.notes: dict[str, list] = {}             # saved by the person this session (RAM only)
+
+    def _entries(self, sender):
+        return self.seed + self.notes.get(sender, [])
 
     def _meta(self, extra=None):
         d = {"model_used": getattr(self.client, "last_model", None),
@@ -83,6 +92,14 @@ class Assistant:
             return {"tool": "scam_check", "args": {"text": text}}
         if MAIL.search(text):
             return {"tool": "read_mail", "args": {}}
+        if RECALL.search(text):
+            return {"tool": "recall_memory", "args": {}}
+        m = FORGET.match(text)
+        if m:
+            return {"tool": "forget", "args": {"fact": m.group("fact").strip().rstrip(".")}}
+        m = REMEMBER.match(text)
+        if m:
+            return {"tool": "remember", "args": {"fact": m.group("fact").strip().rstrip(".")}}
         m = REMIND.search(text)
         if m:
             return {"tool": "set_reminder", "args": {"what": m.group("what"), "when": m.group("when") or "when I say"}}
@@ -103,6 +120,28 @@ class Assistant:
             out = self._mail()
             out["tool"] = name
             return out
+        if name == "recall_memory":
+            es = self._entries(sender)
+            body = "\n".join(mem.format_entry(e) for e in es) or "Nothing yet."
+            return {"response": "Here is what I have saved:\n" + body, "actions": [{"type": "recall", "count": len(es)}],
+                    "tool": name, **self._meta()}
+        if name == "remember":
+            why = mem.check_fact(args["fact"])
+            if why:
+                return {"response": f"I did not save that: {why}.", "actions": [], "tool": name, **self._meta()}
+            if any(e["text"].lower() == args["fact"].strip().lower() for e in self._entries(sender)):
+                return {"response": "I already have that saved.", "actions": [], "tool": name, **self._meta()}
+            self.pending[sender] = {"kind": "remember", "args": args}
+            return {"response": f'Save this note: "{args["fact"]}"? Reply YES to save it.',
+                    "actions": [{"type": "confirm", "tool": name}], "tool": name, **self._meta()}
+        if name == "forget":
+            hits = [e for e in self.notes.get(sender, []) if args["fact"].lower() in e["text"].lower()]
+            if not hits:
+                return {"response": "I have no note of yours like that. Notes set up by your caregiver "
+                                    "can only be changed by Sean.", "actions": [], "tool": name, **self._meta()}
+            self.pending[sender] = {"kind": "forget", "args": args}
+            return {"response": f'Remove this note: "{hits[0]["text"]}"? Reply YES to remove it.',
+                    "actions": [{"type": "confirm", "tool": name}], "tool": name, **self._meta()}
         if name == "scam_check":
             e = {"from": "", "subject": "", "body": args["text"]}
             r = assist.scam_screen(e, self.client)
@@ -130,7 +169,7 @@ class Assistant:
     def _chat(self, text: str, sender: str) -> dict:
         h = self.history.setdefault(sender, [])
         h.append({"role": "user", "content": text})
-        out = assist.chat(h, self.client)
+        out = assist.chat(h, self.client, mem.as_data_block(self._entries(sender)))
         h.append({"role": "assistant", "content": out["reply"]})
         return {"response": out["reply"], "actions": [], **self._meta()}
 
@@ -158,6 +197,21 @@ class Assistant:
             return {"response": f"Done. I will remind you to {p['args']['what']}, {p['args']['when']}. "
                                 "(Demo: shown here, no phone notification is sent.)",
                     "actions": [{"type": "reminder_set", **p["args"]}], "tool": "set_reminder", **self._meta()}
+        if p["kind"] == "forget":
+            self.pending.pop(sender, None)
+            keep = [e for e in self.notes.get(sender, []) if p["args"]["fact"].lower() not in e["text"].lower()]
+            n = len(self.notes.get(sender, [])) - len(keep)
+            self.notes[sender] = keep
+            return {"response": f"Removed {n} note." if n == 1 else f"Removed {n} notes.",
+                    "actions": [{"type": "memory_forgotten", "count": n}], "tool": "forget", **self._meta()}
+        if p["kind"] == "remember":
+            self.pending.pop(sender, None)
+            if mem.check_fact(p["args"]["fact"]):
+                return {"response": "I did not save that.", "actions": [], **self._meta()}
+            e = mem.new_entry(p["args"]["fact"])
+            self.notes.setdefault(sender, []).append(e)
+            return {"response": f"Saved. {mem.format_entry(e)} (Demo: kept for this visit only.)",
+                    "actions": [{"type": "memory_saved", **e}], "tool": "remember", **self._meta()}
         if p["kind"] == "draft":
             self.pending.pop(sender, None)
             self.drafts.setdefault(sender, []).append(p["args"])

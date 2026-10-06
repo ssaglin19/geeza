@@ -95,8 +95,8 @@ def read_back(email: dict, client) -> dict:
     return {"screen": screen, "spoken": spoken, "contents_withheld": False}
 
 
-def chat(history: list[dict], client) -> dict:
-    msgs = [{"role": "system", "content": CHAT_SYSTEM}] + [
+def chat(history: list[dict], client, memory: str = "") -> dict:
+    msgs = [{"role": "system", "content": CHAT_SYSTEM + ("\n\n" + memory if memory else "")}] + [
         {"role": m["role"], "content": m["content"]} for m in history[-10:]
         if m.get("role") in ("user", "assistant")]
     reply = client.complete(msgs, max_tokens=300)

@@ -118,7 +118,7 @@ class TestTools(unittest.TestCase):
 
     def test_acting_tools_flagged(self):
         acts = {n for n, t in self.tools.REGISTRY.items() if t.acts}
-        self.assertEqual(acts, {"pay_bill", "set_reminder", "tell_caregiver"})
+        self.assertEqual(acts, {"pay_bill", "set_reminder", "tell_caregiver", "remember", "forget"})
 
 
 class TestToolLoop(unittest.TestCase):

@@ -1,0 +1,1 @@
+- A fake "FINAL NOTICE: coverage suspended" Medicare email arrived and was flagged; never share her Medicare number by email or phone [source: demo seed (synthetic); added: 2026-10-05]
