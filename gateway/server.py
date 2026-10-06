@@ -152,7 +152,7 @@ class BooshGateway(BaseHTTPRequestHandler):
         if any(kw in text.lower() for kw in ["help", "911", "emergency", "fell", "can't get up", "chest pain"]):
             if self.config["assistant"]:
                 # Demo: a labelled simulated dispatcher. Nothing is dialed (see gateway/emergency_sim.py).
-                from . import emergency_sim
+                from gateway import emergency_sim
                 out = emergency_sim.respond(text)
                 out["message_id"] = message_id
                 return out

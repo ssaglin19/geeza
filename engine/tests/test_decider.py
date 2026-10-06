@@ -106,5 +106,18 @@ class TestDecider(unittest.TestCase):
         self.assertNotIn("number", out["actions"][0])
 
 
+    def test_server_keyword_bypass_returns_simulation(self):
+        from gateway import server
+        saved = dict(server.BooshGateway.config)
+        try:
+            server.BooshGateway.config["assistant"] = Assistant(Live({}))
+            for text in ("I fell and cannot get up", "help", "911"):
+                out = server.BooshGateway._process_message(object.__new__(server.BooshGateway), text, "s", "m")
+                self.assertEqual(out["actions"][0]["type"], "emergency_call_simulated")
+                self.assertIn("SIMULATED 911", out["response"])
+        finally:
+            server.BooshGateway.config.clear(); server.BooshGateway.config.update(saved)
+
+
 if __name__ == "__main__":
     unittest.main()
