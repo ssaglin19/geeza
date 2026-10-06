@@ -50,7 +50,7 @@ class Assistant:
         return self.seed + self.notes.get(sender, [])
 
     def _meta(self, extra=None):
-        d = {"model_used": getattr(self.client, "last_model", None),
+        d = {"decider": getattr(self, "last_decider", None), "model_used": getattr(self.client, "last_model", None),
              "fallback": bool(getattr(self.client, "used_fallback", False))}
         d.update(extra or {})
         return d
@@ -92,6 +92,7 @@ class Assistant:
         if not getattr(self.client, "live", False):
             return None
         d = decider.decide("intent-routing", text, self.client)
+        self.last_decider = {"pack": "intent-routing", "ok": d["ok"], "raw_head": d.get("raw_head")}
         if not d["ok"]:
             return None
         r = decider.intent_policy(d["answers"])

@@ -119,6 +119,7 @@ def decide(pack_name: str, state: str, client, model: str | None = None) -> dict
     fell = bool(getattr(client, "used_fallback", False))
     answers = None if fell else parse_answers(pack, raw)
     return {"ok": answers is not None, "answers": answers or {}, "pack": pack_name,
+            "raw_head": None if answers is not None else (raw or "")[:160],
             "model_used": getattr(client, "last_model", None), "fallback": fell}
 
 
