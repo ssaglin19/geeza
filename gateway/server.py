@@ -150,6 +150,12 @@ class BooshGateway(BaseHTTPRequestHandler):
         """Route a message through the Boosh stack."""
         # Emergency bypass
         if any(kw in text.lower() for kw in ["help", "911", "emergency", "fell", "can't get up", "chest pain"]):
+            if self.config["assistant"]:
+                # Demo: a labelled simulated dispatcher. Nothing is dialed (see gateway/emergency_sim.py).
+                from . import emergency_sim
+                out = emergency_sim.respond(text)
+                out["message_id"] = message_id
+                return out
             return {
                 "response": "Calling 911 now. Stay on the line.",
                 "actions": [{"type": "emergency_call", "number": "911"}],

@@ -63,7 +63,19 @@ def _conf(out: dict) -> float:
         return 0.0
 
 
-def scam_screen(email: dict, client) -> dict:
+def is_known_source(email: dict, known: list[str] | None) -> bool:
+    """True when the sender's address or domain is on the caregiver-installed known list AND the
+    message does not claim to be a different domain (rule_screen catches that mismatch)."""
+    addr = re.sub(r".*<|>.*", "", email.get("from", "")).strip().lower()
+    dom = _domain(addr)
+    ok = any(k.lower() == addr or (dom and (dom == k.lower() or dom.endswith("." + k.lower()))) for k in (known or []))
+    claimed = email.get("claims_to_be_domain", "")
+    if claimed and dom and not (dom == claimed or dom.endswith("." + claimed)):
+        return False
+    return ok
+
+
+def scam_screen(email: dict, client, known_sources: list[str] | None = None) -> dict:
     """Return {flagged, reasons, rule_hits, model_flag, model_used, fallback, decision}.
 
     Code rules run first. The model (typed scam-screen pack, bands from the pack) can raise a
@@ -73,7 +85,7 @@ def scam_screen(email: dict, client) -> dict:
     d = decider.decide("scam-screen", msg, client)
     decision = None
     if d["ok"]:
-        decision = decider.scam_policy(d["answers"])
+        decision = decider.scam_policy(d["answers"], is_known_source(email, known_sources))
         model_flag = decision["warn"]
         reasons = list(rule_hits)
         a = d["answers"]
@@ -103,13 +115,13 @@ def scam_screen(email: dict, client) -> dict:
     }
 
 
-def read_back(email: dict, client) -> dict:
+def read_back(email: dict, client, known_sources: list[str] | None = None) -> dict:
     """Scam screen first. A flagged message is never read aloud, only warned about.
 
     Then the mail-triage pack picks a category (bill, medical, personal, junk, scam), urgency and
     whether a reply is expected. Its bands (pack JSON): high >= 0.85 act; 0.60-0.85 hedge;
     below 0.60 read the subject and sender only."""
-    screen = scam_screen(email, client)
+    screen = scam_screen(email, client, known_sources)
     warn = ("This looks like a scam. Do not reply or click anything. Ask Sean to look at it first.")
     if screen["flagged"]:
         return {"screen": screen, "spoken": warn, "contents_withheld": True, "triage": None}

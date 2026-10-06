@@ -126,17 +126,19 @@ def decide(pack_name: str, state: str, client, model: str | None = None) -> dict
 
 # ---- pack policies (bands copied from the pack JSON; code, not model, applies them) ----
 
-def scam_policy(ans: dict) -> dict:
+def scam_policy(ans: dict, known_source: bool = False) -> dict:
     """scam-screen pack: act >= 0.85 on is_phishing; confirm 0.50-0.85; abort < 0.50.
-    The pack also says requests_payment >= 0.5 triggers the warning. Read literally that flags a
-    real bill (bills ask for payment), so `literal_payment_override` is reported but only
-    escalates when is_phishing is at least in the confirm band. Open question for the owner."""
+    Payment rule (owner decision, Oct 6: requesting payment from a known source is fine, from an
+    unknown source warns): requests_payment >= 0.5 warns only when the sender is NOT a known
+    source. The pack's literal wording (any sender) is still computed as `literal_payment_override`."""
     ph = ans["is_phishing"]["p"]
     pay = ans["requests_payment"]["p"]
     band = "act" if ph >= 0.85 else "confirm" if ph >= 0.5 else "abort"
     literal = pay >= 0.5
+    payment_warn = literal and not known_source
     return {"band": band, "is_phishing": ph, "literal_payment_override": literal,
-            "warn": band == "act" or (literal and band != "abort"),
+            "known_source": known_source, "payment_warn": payment_warn,
+            "warn": band == "act" or payment_warn,
             "soft": band == "confirm"}
 
 

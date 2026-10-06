@@ -40,11 +40,29 @@ class TestDecider(unittest.TestCase):
             a = decider.parse_answers(decider.load_pack("scam-screen"), json.dumps(scam(ph)))
             self.assertEqual(decider.scam_policy(a)["band"], band)
 
-    def test_literal_payment_rule_would_flag_the_bill(self):
+    def test_payment_request_known_vs_unknown_source(self):
         a = decider.parse_answers(decider.load_pack("scam-screen"), json.dumps(scam(0.05, 0.95)))
-        p = decider.scam_policy(a)
-        self.assertTrue(p["literal_payment_override"])  # pack text read literally
-        self.assertFalse(p["warn"])                      # we do not flag a real bill on that alone
+        self.assertTrue(decider.scam_policy(a)["literal_payment_override"])
+        self.assertFalse(decider.scam_policy(a, known_source=True)["warn"])
+        self.assertTrue(decider.scam_policy(a, known_source=False)["warn"])
+
+    def test_known_source_bill_not_flagged_unknown_flagged(self):
+        bill = demo_data.EMAILS[1]
+        r = assist.scam_screen(bill, Live(scam(0.05, 0.95)), demo_data.KNOWN_SOURCES)
+        self.assertFalse(r["flagged"])
+        r = assist.scam_screen(bill, Live(scam(0.05, 0.95)), [])
+        self.assertTrue(r["flagged"])
+        pasted = {"from": "", "subject": "", "body": "Please pay $90 now"}
+        self.assertTrue(assist.scam_screen(pasted, Live(scam(0.05, 0.95)), demo_data.KNOWN_SOURCES)["flagged"])
+
+    def test_known_source_cannot_spoof(self):
+        spoof = {"from": "Power <x@evil.test>", "claims_to_be_domain": "lakeshore-power.test", "subject": "", "body": "pay"}
+        self.assertFalse(assist.is_known_source(spoof, demo_data.KNOWN_SOURCES))
+        self.assertFalse(assist.is_known_source({"from": "a@notlakeshore-power.test"}, demo_data.KNOWN_SOURCES))
+
+    def test_known_source_phishing_still_warns(self):
+        r = assist.scam_screen(demo_data.EMAILS[1], Live(scam(0.95, 0.9)), demo_data.KNOWN_SOURCES)
+        self.assertTrue(r["flagged"])
 
     def test_model_cannot_clear_rule_hit(self):
         r = assist.scam_screen(demo_data.EMAILS[2], Live(scam(0.0)))
@@ -69,11 +87,23 @@ class TestDecider(unittest.TestCase):
         self.assertIn("Did you want to", r["response"])
         self.assertEqual(a.pending["s"]["kind"], "intent")
 
-    def test_emergency_honest_reply(self):
+    def test_emergency_is_simulated_and_labelled(self):
         probs = {k: 0 for k in ("handle_bills", "general_help", "check_schedule", "contact_family",
                                 "get_groceries", "check_safety")}; probs["emergency"] = 0.95
         r = Assistant(Live({"skill": probs})).handle("I fell and cannot get up", "s")
-        self.assertIn("911", r["response"]); self.assertIn("cannot call", r["response"])
+        self.assertIn("SIMULATED 911", r["response"])
+        a = r["actions"][0]
+        self.assertEqual(a["type"], "emergency_call_simulated")
+        self.assertTrue(a["simulated"]); self.assertIsNone(a["dialed"])
+
+    def test_emergency_sim_cannot_reach_a_number(self):
+        import re
+        src = (ROOT / "gateway" / "emergency_sim.py").read_text()
+        self.assertIsNone(re.search(r"^\s*(import|from)\s+(socket|urllib|http|requests|subprocess|os|smtplib|ssl)\b", src, re.M))
+        self.assertIsNone(re.search(r"\d{3}[- .]?\d{4}", src))
+        from gateway import emergency_sim
+        out = emergency_sim.respond("help")
+        self.assertNotIn("number", out["actions"][0])
 
 
 if __name__ == "__main__":

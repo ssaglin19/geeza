@@ -99,9 +99,10 @@ class Assistant:
         self.last_intent = r
         meta = {**self._meta(), "intent": r}
         if r["skill"] == "emergency":
-            return {"response": "This sounds urgent. If you are in danger or hurt, call 911 now. "
-                                "This demo cannot call or text anyone for you.",
-                    "actions": [{"type": "emergency_notice"}], **meta}
+            from . import emergency_sim
+            out = emergency_sim.respond(text)
+            out.update(meta)
+            return out
         if r["skill"] == "get_groceries":
             return {"response": "I cannot order groceries in this demo.", "actions": [], **meta}
         if r["band"] == "medium" and r["skill"] in self.SKILL_ASK:
@@ -186,7 +187,7 @@ class Assistant:
                     "actions": [{"type": "confirm", "tool": name}], "tool": name, **self._meta()}
         if name == "scam_check":
             e = {"from": "", "subject": "", "body": args["text"]}
-            r = assist.scam_screen(e, self.client)
+            r = assist.scam_screen(e, self.client, demo_data.KNOWN_SOURCES)
             msg = ("This looks like a scam. Do not reply or click anything. " + "; ".join(r["reasons"]) + "."
                    if r["flagged"] else ("This might be a scam, so be careful. Do not reply or click until Sean has looked at it."
                       if r.get("soft_warning") else
@@ -220,7 +221,7 @@ class Assistant:
     def _mail(self) -> dict:
         from concurrent.futures import ThreadPoolExecutor
         with ThreadPoolExecutor(max_workers=len(demo_data.EMAILS)) as ex:
-            results = list(ex.map(lambda e: assist.read_back(e, self.client), demo_data.EMAILS))
+            results = list(ex.map(lambda e: assist.read_back(e, self.client, demo_data.KNOWN_SOURCES), demo_data.EMAILS))
         items = []
         for e, r in zip(demo_data.EMAILS, results):
             t = r.get("triage") or {}

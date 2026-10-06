@@ -35,7 +35,7 @@ const chat=document.getElementById('chat'),t=document.getElementById('t');
 function add(cls,text,meta){const d=document.createElement('div');d.className='m '+cls;d.textContent=text;
  if(meta){const s=document.createElement('small');s.textContent=meta;d.appendChild(s)}chat.appendChild(d);chat.scrollTop=1e9;return d}
 function chips(list){const c=document.getElementById('chips');c.innerHTML='';list.forEach(x=>{const b=document.createElement('button');b.type='button';b.className=x==='YES'?'yes':'alt';b.textContent=x;b.onclick=()=>send(x);c.appendChild(b)})}
-const START=['Check my mail','Pay the electric bill','Remind me to take my pills at 8am','Tell Sean I need groceries','What do you remember?'];chips(START);
+const START=['Check my mail','Pay the electric bill','Remind me to take my pills at 8am','Tell Sean I need groceries','I fell and cannot get up','What do you remember?'];chips(START);
 async function send(text){if(!text.trim())return;add('me',text);t.value='';chips([]);
  try{const r=await fetch('/message',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,sender:'demo'})});
   const j=await r.json();if(j.error){add('bot',j.error);chips(START);return}
@@ -43,6 +43,8 @@ async function send(text){if(!text.trim())return;add('me',text);t.value='';chips
   const d=add('bot',j.response,meta);
   (j.actions||[]).forEach(a=>{if(a.type==='mail')a.items.forEach(i=>{const c=document.createElement('div');c.className='card'+(i.scam?' scam':'');
     c.innerHTML='<b></b><span></span>';c.firstChild.textContent=(i.scam?'Possible scam: ':'')+i.subject;c.lastChild.textContent=i.scam?i.reasons.join('; '):i.from;d.appendChild(c)})});
+  (j.actions||[]).forEach(a=>{if(a.type==='emergency_call_simulated'){const c=document.createElement('div');c.className='card scam';
+    c.innerHTML='<b>SIMULATED 911: sandbox, no real call or text</b><span></span>';c.lastChild.textContent=a.steps.map(s=>s.step.replace(/_/g,' ')+' (simulated): '+s.detail).join('\n');c.lastChild.style.whiteSpace='pre-line';d.appendChild(c)}});
   if(j.events)document.getElementById('trace').textContent=j.events.map(e=>e.event+(e.page?' '+e.page:'')+(e.value?' '+e.value:'')+(e.detail?' - '+e.detail:'')+(e.reason?' - '+e.reason:'')).join('\n');
   const acts=(j.actions||[]).map(a=>a.type);
   chips(acts.some(x=>['flow_offer','approval','confirm'].includes(x))?['YES','No']:START)

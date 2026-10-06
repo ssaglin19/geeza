@@ -16,3 +16,8 @@ EMAILS = [
 LAST_BILL = 84.00
 # Vendor's displayed amount per scenario. The amount-sanity gate compares it to LAST_BILL.
 SCENARIOS = {"normal": "86.90", "suspicious": "412.00"}
+
+
+# Known sources: senders the caregiver (Sean) installed as trusted for the demo persona. Invented data,
+# same status as the memory seed. A payment request from one of these does not trigger the scam warning.
+KNOWN_SOURCES = ["lakeshore-power.test", "patelfamilymed.test", "ruth.miller@example.com"]
