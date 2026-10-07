@@ -32,6 +32,10 @@ System 2 (the model that reads, explains and chats) is NVIDIA Nemotron on Nebius
 
 Status: live demo at https://geeza.onrender.com (free Render instance, so the first load after idle can take about a minute). The deployed demo calls Nemotron Nano 30B on Nebius Token Factory; the key is a server-side secret and is not in this repo. Mail read-back, scam screen, reminders and the caregiver draft were checked live against it; the bill-pay flow runs on the engine against a fake vendor. Only the Nano model is wired in so far.
 
+Decision layer (`docs/DECISIONS.md` D14): the question packs in `laya/questions` (scam screen, mail triage, intent routing) are answered by one Nemotron Nano call each, and plain code applies the bands. It is a typed decision layer on Nemotron. The probabilities are the model's own and are not calibrated. It is not Laya or Bonsai, and neither runs in the demo. A payment request only warns when the sender is not on the caregiver's known-sources list (invented demo data).
+
+911: saying you fell or need help runs a SIMULATED 911 dispatcher, a labelled sandbox transcript with an invented address. No call, text or number is ever dialed (`gateway/emergency_sim.py`). A real handoff to the phone's emergency call is parked with the iOS work. Ordinary phrases like "can you help me pay my bill" do not trigger it.
+
 Run the demo locally (offline mock without a key):
 
     NEBIUS_API_KEY=... python gateway/server.py --demo --port 8080

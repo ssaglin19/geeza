@@ -118,6 +118,20 @@ class TestDecider(unittest.TestCase):
         finally:
             server.BooshGateway.config.clear(); server.BooshGateway.config.update(saved)
 
+    def test_help_keyword_is_narrow(self):
+        from gateway.emergency_sim import is_emergency
+        for t in ("help", "Help me!", "I need help", "I fell and cannot get up", "911", "chest pain", "call an ambulance"):
+            self.assertTrue(is_emergency(t), t)
+        for t in ("can you help me pay my bill", "I need help paying the electric bill", "help me read this",
+                  "what is my emergency contact", "I fell asleep on the couch"):
+            self.assertFalse(is_emergency(t), t)
+
+    def test_check_my_mail_reads_mail_without_model(self):
+        a = Assistant(Live({}))
+        for t in ("check my mail", "Can you check my email please", "any mail?"):
+            self.assertEqual(a._choose(t), {"tool": "read_mail", "args": {}}, t)
+            self.assertIsNone(a._route(t, "s"), t)
+
 
 if __name__ == "__main__":
     unittest.main()

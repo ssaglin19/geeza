@@ -7,6 +7,25 @@ A real build would hand off to the phone's emergency call; that part is parked w
 from __future__ import annotations
 
 import datetime
+import re
+
+# Words that go straight to the simulated dispatcher without asking the model. "help" counts only
+# when it stands alone or is a plain cry for help ("help me", "I need help"), so "can you help me
+# pay my bill" does not trigger it. Anything vaguer goes to the model's intent routing, which still
+# sends real emergencies here.
+_EMERGENCY = re.compile(
+    r"\b911\b|\bemergency\b(?!\s+(?:contact|number|phone))|\b(?:i|i've|i have)\s+(?:fell(?!\s+(?:asleep|in love|behind|for))|fallen)\b|\bfell\s+(?:down|over)\b"
+    r"|\bfallen and\b|\bcan(?:'|\u2019)?t\s+get\s+up\b|\bcannot\s+get\s+up\b|\bchest\s+pain\b|\bheart\s+attack\b"
+    r"|\bcan(?:'|\u2019)?t\s+breathe\b|\bambulance\b|\bhaving\s+a\s+stroke\b",
+    re.I)
+_CRY_FOR_HELP = re.compile(
+    r"^\W*(?:please\s+|somebody\s+|someone\s+|oh\s+)*(?:help(?:\s+me)?|i\s+need\s+help(?:\s+now)?|need\s+help(?:\s+now)?)(?:\s+please)?\W*$",
+    re.I)
+
+
+def is_emergency(text: str) -> bool:
+    return bool(_EMERGENCY.search(text) or _CRY_FOR_HELP.match(text.strip()))
+
 
 LABEL = "SIMULATED 911 (demo sandbox: no real call, text or number is dialed)"
 PERSONA_ADDRESS = "12 Elm Street (invented demo address)"

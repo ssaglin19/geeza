@@ -23,6 +23,7 @@ DEMO_FLOW = "demo-utility-pay"
 YES = re.compile(r"^\s*(yes|y|yep|yeah|ok|okay)\b[.! ]*$", re.I)
 NO = re.compile(r"^\s*(no|n|cancel|stop|don'?t)\b", re.I)
 MAIL = re.compile(r"\b(mail|email|emails|inbox|messages?)\b", re.I)
+READ_MAIL = re.compile(r"^\W*(?:please\s+|can you\s+|could you\s+)?(?:check|read|open|see|show|look at|any)\s*(?:me\s+)?(?:my|the|new)?\s*(?:mail|e-?mails?|inbox|messages)\b[\w\s]{0,20}\W*$", re.I)
 REMIND = re.compile(r"\bremind me (?:to |about )?(?P<what>.+?)(?: (?P<when>(?:at|on|in|tomorrow|tonight|every)\b.*))?$", re.I)
 TELL = re.compile(r"\b(?:tell|message|text|let) (?:sean|my son|the caregiver)\b[ ,:]*(?:that |about )?(?P<note>.*)", re.I)
 SCAM_Q = re.compile(r"\b(is this|is that|check)\b.*\bscam\b|\bscam\b.*\?", re.I)
@@ -87,7 +88,7 @@ class Assistant:
         """System 1: intent-routing pack (bands: high >= 0.80 go, 0.50-0.79 ask, < 0.50 general).
         Returns a reply when routing decides, else None and the normal tool choice runs.
         Memory commands skip it (code-first). Probabilities are self-reported by Nemotron."""
-        if RECALL.search(text) or REMEMBER.match(text) or FORGET.match(text):
+        if RECALL.search(text) or REMEMBER.match(text) or FORGET.match(text) or READ_MAIL.match(text):
             return None
         if not getattr(self.client, "live", False):
             return None
@@ -115,7 +116,7 @@ class Assistant:
         """Pick a tool. Live model proposes JSON; code validates. With no key, keyword stand-in."""
         # Explicit memory commands are matched by code first, so the model cannot ask for a YES
         # that nothing is waiting on. Only text that STARTS with the command counts.
-        if RECALL.search(text) or REMEMBER.match(text) or FORGET.match(text):
+        if RECALL.search(text) or REMEMBER.match(text) or FORGET.match(text) or READ_MAIL.match(text):
             return self._keyword_choice(text)
         if getattr(self.client, "live", False):
             raw = self.client.complete(
