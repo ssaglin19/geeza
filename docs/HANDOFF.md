@@ -28,7 +28,7 @@ Last updated: 2026-10-09. Replaces the 2026-09-22 Boosh handoff, which overclaim
 - Cost-of-living flow: candidate pick is the electric bill spike explainer (idea 9 in `docs/COST-OF-LIVING-IDEAS.md`) on the Lakeshore Power demo bill. Waiting on Sean's OK on the pick before building. Fixtures stay synthetic.
 - Durable memory: SQLite would not persist on Render free tier (disk is wiped on sleep or redeploy). Build locally with tests, or skip; do not claim persistence in the live demo.
 - Known-sources list in the demo (Lakeshore Power, Patel Family Med, Ruth Miller) is invented. Waiting on Sean: keep for submission or supply a real list.
-- Demo video shot list: not written yet.
+- Demo video: shot list is in `docs/DEMO-SCRIPT.md`. Sean records it and submits on Devpost by Oct 30 (posted to Slack #geeza 2026-10-09).
 - Gap list (spec vs built) is finished and held.
 
 ## Read first when resuming
