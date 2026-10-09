@@ -27,6 +27,10 @@ You text Geeza in plain words. It can:
 - A small Python gateway serves a web demo. The API key stays on the server.
 - Deployed free on Render.
 
+## Results
+
+We ran the scam screen against the live demo on 40 synthetic messages we wrote (20 scams, 20 legitimate). It flagged 20 of 20 scams and passed 18 of 20 legitimate messages. The two false alarms were real-looking Social Security and bank notices. This is a small, hand-written set, not a benchmark. Details and every message are in docs/EVAL.md.
+
 ## Challenges
 The live model first flagged a real utility bill as a scam. We fixed it with temperature 0, a 0.85 confidence bar for model-only flags, and code rules the model can't override.
 
