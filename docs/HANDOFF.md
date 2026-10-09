@@ -1,12 +1,14 @@
 # Geeza - Project Handoff
 
-Last updated: 2026-10-06. Replaces the 2026-09-22 Boosh handoff, which overclaimed. Open, owed and in-progress items only.
+Last updated: 2026-10-09. Replaces the 2026-09-22 Boosh handoff, which overclaimed. Open, owed and in-progress items only.
 
 ## What is built
 
 - Python flow engine with unit tests (`engine/`), flow definitions (`flows/`).
 - Hackathon web demo: Nemotron Nano 30B on Nebius Token Factory picks one tool per turn as JSON, code validates it, anything that acts needs YES. Fake vendor, no real money. Live at https://geeza.onrender.com (free Render, sleeps, about 50s cold start).
 - `laya/`: training data and scripts from Sept 19-22. Not loaded by the demo.
+- `docs/EVAL.md` (2026-10-09): measured scam screen on 40 synthetic messages against the live demo. Scams 20/20 flagged, legitimate 18/20 passed (two real-looking SSA and bank notices flagged). Small, hand-written set. Quote these numbers, not the old ones.
+- Decision layer asks for a YES on 8 of 40 pasted messages (intent routing at medium confidence).
 
 ## Not verified or not built
 
@@ -22,9 +24,13 @@ Last updated: 2026-10-06. Replaces the 2026-09-22 Boosh handoff, which overclaim
 
 ## Open
 
-- Whether Nebius hackathon credits cover GPU VMs (unconfirmed; Token Factory only is confirmed).
+- GPU VMs: not covered. Credits are Token Factory only, $50 total (confirmed by Sean in the console 2026-10-06). Spend beyond that needs Sean's OK with the exact price.
+- Cost-of-living flow: candidate pick is the electric bill spike explainer (idea 9 in `docs/COST-OF-LIVING-IDEAS.md`) on the Lakeshore Power demo bill. Waiting on Sean's OK on the pick before building. Fixtures stay synthetic.
+- Durable memory: SQLite would not persist on Render free tier (disk is wiped on sleep or redeploy). Build locally with tests, or skip; do not claim persistence in the live demo.
+- Known-sources list in the demo (Lakeshore Power, Patel Family Med, Ruth Miller) is invented. Waiting on Sean: keep for submission or supply a real list.
+- Demo video shot list: not written yet.
 - Gap list (spec vs built) is finished and held.
 
 ## Read first when resuming
 
-`README.md`, `docs/DECISIONS.md`, `docs/ARCHITECTURE.md`, `docs/CHANGES-SINCE-AUG-26.md`, `docs/DEVPOST.md`.
+`README.md`, `docs/DECISIONS.md`, `docs/ARCHITECTURE.md`, `docs/CHANGES-SINCE-AUG-26.md`, `docs/DEVPOST.md`, `docs/EVAL.md`.
