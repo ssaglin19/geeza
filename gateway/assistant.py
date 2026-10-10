@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "engine"))
-from boosh_flow import assist, decider, memory as mem  # noqa: E402
+from boosh_flow import assist, bill_explainer, decider, memory as mem  # noqa: E402
 from boosh_flow.tools import REGISTRY, TOOL_PROMPT, parse_call  # noqa: E402
 from boosh_flow.intent_router_hybrid import IntentAction, route_intent  # noqa: E402
 
@@ -31,6 +31,7 @@ RECALL = re.compile(r"\bwhat (?:do|have) you (?:remember|know|saved?)\b|\bwhat d
 REMEMBER = re.compile(r"^\s*(?:please )?remember (?:that )?(?P<fact>.+)$", re.I)
 FORGET = re.compile(r"^\s*(?:please )?forget (?:that |about )?(?P<fact>.+)$", re.I)
 SEED_DIR = Path(__file__).resolve().parents[1] / "memory" / "demo-memory"
+BILL_WHY = re.compile(r"\bwhy\b.*\b(bill|electric|power)\b.*\b(high|so much|more|up|big|jump|spike)\w*|\b(bill|electric)\b.*\b(went up|too high|so high|spiked|doubled)\b|\bexplain\b.*\b(electric|power|light)?\s*bill\b", re.I)
 BILL = re.compile(r"\b(pay|paying)\b.*\b(bill|electric|light|power)\b|\b(electric|power|light) bill\b", re.I)
 
 
@@ -88,7 +89,7 @@ class Assistant:
         """System 1: intent-routing pack (bands: high >= 0.80 go, 0.50-0.79 ask, < 0.50 general).
         Returns a reply when routing decides, else None and the normal tool choice runs.
         Memory commands skip it (code-first). Probabilities are self-reported by Nemotron."""
-        if RECALL.search(text) or REMEMBER.match(text) or FORGET.match(text) or READ_MAIL.match(text):
+        if RECALL.search(text) or REMEMBER.match(text) or FORGET.match(text) or READ_MAIL.match(text) or BILL_WHY.search(text):
             return None
         if not getattr(self.client, "live", False):
             return None
@@ -116,7 +117,7 @@ class Assistant:
         """Pick a tool. Live model proposes JSON; code validates. With no key, keyword stand-in."""
         # Explicit memory commands are matched by code first, so the model cannot ask for a YES
         # that nothing is waiting on. Only text that STARTS with the command counts.
-        if RECALL.search(text) or REMEMBER.match(text) or FORGET.match(text) or READ_MAIL.match(text):
+        if RECALL.search(text) or REMEMBER.match(text) or FORGET.match(text) or READ_MAIL.match(text) or BILL_WHY.search(text):
             return self._keyword_choice(text)
         if getattr(self.client, "live", False):
             raw = self.client.complete(
@@ -150,6 +151,8 @@ class Assistant:
         m = TELL.search(text)
         if m and m.group("note").strip():
             return {"tool": "tell_caregiver", "args": {"note": m.group("note").strip()}}
+        if BILL_WHY.search(text):
+            return {"tool": "explain_bill", "args": {}}
         if BILL.search(text):
             # Laya's 3-class skill model is not loaded here; the keyword match stands in for it.
             r = route_intent(laya_skill="handle_bills", laya_confidence=0.9, laya_probs={},
@@ -164,6 +167,21 @@ class Assistant:
             out = self._mail()
             out["tool"] = name
             return out
+        if name == "explain_bill":
+            cur = demo_data.BILL_CURRENT.get(self.scenario, demo_data.BILL_CURRENT["normal"])
+            a = bill_explainer.analyze(demo_data.BILL_HISTORY, cur)
+            ex = bill_explainer.explain(a, self.client)
+            parts = [ex["text"]]
+            steps = bill_explainer.next_steps(a)
+            if steps:
+                parts.append("What you can do:\n" + "\n".join(f"- {t}" for t in steps))
+                parts.append("Draft billing review request (not sent):\n" + bill_explainer.draft_review_request(a))
+            parts.append(bill_explainer.SAFETY)
+            parts.append("(Demo: synthetic bill history. Numbers come from code, not the model.)")
+            return {"response": "\n\n".join(parts),
+                    "actions": [{"type": "bill_explained", "spike": a["spike"], "change": a["change"],
+                                 "main_reason": a["main_reason"], "wording": ex["source"]}],
+                    "tool": name, **self._meta()}
         if name == "recall_memory":
             es = self._entries(sender)
             body = "\n".join(mem.format_entry(e) for e in es) or "Nothing yet."
