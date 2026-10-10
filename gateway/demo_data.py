@@ -21,3 +21,19 @@ SCENARIOS = {"normal": "86.90", "suspicious": "412.00"}
 # Known sources: senders the caregiver (Sean) installed as trusted for the demo persona. Invented data,
 # same status as the memory seed. A payment request from one of these does not trigger the scam warning.
 KNOWN_SOURCES = ["lakeshore-power.test", "patelfamilymed.test", "ruth.miller@example.com"]
+
+
+# Electric bill history for the bill explainer (synthetic). Rate is dollars per kWh.
+BILL_HISTORY = [
+    {"period": "Aug", "days": 31, "kwh": 560, "rate": 0.138, "fixed": 12.38, "extras": []},
+    {"period": "Sep", "days": 30, "kwh": 505, "rate": 0.138, "fixed": 12.38, "extras": []},
+    {"period": "Oct", "days": 31, "kwh": 470, "rate": 0.138, "fixed": 12.38, "extras": []},
+    {"period": "Nov", "days": 30, "kwh": 498, "rate": 0.138, "fixed": 12.38, "extras": []},
+    {"period": "Dec", "days": 31, "kwh": 519, "rate": 0.138, "fixed": 12.38, "extras": []},
+]
+# January statement per scenario. "suspicious" matches the $412.00 amount in SCENARIOS.
+BILL_CURRENT = {
+    "normal": {"period": "January", "days": 31, "kwh": 540, "rate": 0.138, "fixed": 12.38, "extras": []},
+    "suspicious": {"period": "January", "days": 31, "kwh": 1240, "rate": 0.138, "fixed": 12.38,
+                   "extras": [{"label": "Prior-period estimate adjustment", "amount": 228.50}]},
+}
