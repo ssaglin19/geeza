@@ -17,6 +17,7 @@ You text Geeza in plain words. It can:
 - write a note for a caregiver (saved as a draft, never sent)
 - remember things you ask it to (it shows the note and where it came from, and saves only after YES) and forget them on request
 - run a simulated 911 call when you say you fell or need help (a labelled sandbox dispatcher: no real call, text or number is ever dialed)
+- explain why an electric bill jumped (synthetic six-month history): code does the math and names the biggest cause, the model only words it, and a billing-review request is drafted, never sent
 - pay a bill (demo vendor, fake money), only after two YESes, and it stops on a suspicious amount
 
 ## How we built it
