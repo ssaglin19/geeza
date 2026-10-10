@@ -25,7 +25,7 @@ Last updated: 2026-10-09. Replaces the 2026-09-22 Boosh handoff, which overclaim
 ## Open
 
 - GPU VMs: not covered. Credits are Token Factory only, $50 total (confirmed by Sean in the console 2026-10-06). Spend beyond that needs Sean's OK with the exact price.
-- Cost-of-living flow: candidate pick is the electric bill spike explainer (idea 9 in `docs/COST-OF-LIVING-IDEAS.md`) on the Lakeshore Power demo bill. Waiting on Sean's OK on the pick before building. Fixtures stay synthetic.
+- Cost-of-living flow built 2026-10-09: electric bill explainer (idea 9). `engine/boosh_flow/bill_explainer.py`, fixtures in `gateway/demo_data.py` (BILL_HISTORY, BILL_CURRENT), tool `explain_bill`, tests in `engine/tests/test_bill_explainer.py`. Ask "why is my electric bill so high?" (suspicious scenario shows the spike). Code computes; model only rewords and code rejects any number not in the facts. Draft request is never sent. Not yet checked on the live demo after deploy.
 - Durable memory: SQLite would not persist on Render free tier (disk is wiped on sleep or redeploy). Build locally with tests, or skip; do not claim persistence in the live demo.
 - Known-sources list in the demo (Lakeshore Power, Patel Family Med, Ruth Miller) is invented. Waiting on Sean: keep for submission or supply a real list.
 - Demo video: shot list is in `docs/DEMO-SCRIPT.md`. Sean records it and submits on Devpost by Oct 30 (posted to Slack #geeza 2026-10-09).
@@ -33,4 +33,4 @@ Last updated: 2026-10-09. Replaces the 2026-09-22 Boosh handoff, which overclaim
 
 ## Read first when resuming
 
-`README.md`, `docs/DECISIONS.md`, `docs/ARCHITECTURE.md`, `docs/CHANGES-SINCE-AUG-26.md`, `docs/DEVPOST.md`, `docs/EVAL.md`.
+`README.md`, `docs/DECISIONS.md`, `docs/ARCHITECTURE.md`, `docs/CHANGES-SINCE-AUG-26.md`, `docs/DEVPOST.md`, `docs/EVAL.md`, `engine/boosh_flow/bill_explainer.py`.
