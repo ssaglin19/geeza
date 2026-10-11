@@ -39,6 +39,7 @@ class Assistant:
     def __init__(self, client, scenario: str = "normal"):
         self.client = client
         self.scenario = scenario
+        self.scenarios: dict[str, str] = {}
         self.last_tool = None
         self.last_intent = None
         self.pending: dict[str, dict] = {}   # sender -> {"kind": "offer"|"approval", ...}
@@ -47,6 +48,15 @@ class Assistant:
         self.drafts: dict[str, list] = {}
         self.seed = mem.load_seed(SEED_DIR)          # caregiver-installed, read-only
         self.notes: dict[str, list] = {}             # saved by the person this session (RAM only)
+
+    def scenario_for(self, sender: str) -> str:
+        return self.scenarios.get(sender, self.scenario)
+
+    def set_scenario(self, sender: str, scenario: str) -> None:
+        if scenario not in demo_data.SCENARIOS:
+            raise ValueError("bad scenario")
+        self.scenarios[sender] = scenario
+        self.pending.pop(sender, None)
 
     def _entries(self, sender):
         return self.seed + self.notes.get(sender, [])
@@ -168,7 +178,7 @@ class Assistant:
             out["tool"] = name
             return out
         if name == "explain_bill":
-            cur = demo_data.BILL_CURRENT.get(self.scenario, demo_data.BILL_CURRENT["normal"])
+            cur = demo_data.BILL_CURRENT.get(self.scenario_for(sender), demo_data.BILL_CURRENT["normal"])
             a = bill_explainer.analyze(demo_data.BILL_HISTORY, cur)
             ex = bill_explainer.explain(a, self.client)
             parts = [ex["text"]]
@@ -254,8 +264,8 @@ class Assistant:
             lines.append(f"- {i['subject']}: {i['spoken']}")
         return {"response": "\n".join(lines), "actions": [{"type": "mail", "items": items}], **self._meta()}
 
-    def _run(self, approver):
-        amount = demo_data.SCENARIOS.get(self.scenario, demo_data.SCENARIOS["normal"])
+    def _run(self, approver, sender):
+        amount = demo_data.SCENARIOS.get(self.scenario_for(sender), demo_data.SCENARIOS["normal"])
         return run_demo_flow(amount, demo_data.LAST_BILL, approver)
 
     def _on_yes(self, sender: str, p: dict) -> dict:
@@ -292,7 +302,7 @@ class Assistant:
             # Dry run up to the approval gate: the approver always says no, so nothing is paid.
             seen = {}
             def ask(q): seen.update(q); return False
-            events, paid = self._run(ask)
+            events, paid = self._run(ask, sender)
             if "amount_key" not in seen:
                 self.pending.pop(sender, None)
                 gate = next((e for e in events if e["event"] == "GATE_FAILED"), None)
@@ -306,8 +316,8 @@ class Assistant:
                     "actions": [{"type": "approval", "amount": amount}], "events": events, **self._meta()}
         # Approval: the person's YES covers only the amount they were shown.
         quoted = p["amount"]
-        def approve(q): return q.get("kind") == "approval" and self._amount_now() == quoted
-        events, paid = self._run(approve)
+        def approve(q): return q.get("kind") == "approval" and self._amount_now(sender) == quoted
+        events, paid = self._run(approve, sender)
         self.pending.pop(sender, None)
         if paid:
             return {"response": f"Paid ${quoted} to Lakeshore Power (demo vendor, no real money moved).",
@@ -315,5 +325,5 @@ class Assistant:
         return {"response": "The amount changed, so I did not pay. Ask me again.",
                 "actions": [], "events": events, **self._meta()}
 
-    def _amount_now(self) -> str:
-        return demo_data.SCENARIOS.get(self.scenario, demo_data.SCENARIOS["normal"])
+    def _amount_now(self, sender: str) -> str:
+        return demo_data.SCENARIOS.get(self.scenario_for(sender), demo_data.SCENARIOS["normal"])
