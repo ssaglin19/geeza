@@ -101,7 +101,8 @@ class BooshGateway(BaseHTTPRequestHandler):
             self.wfile.write(body)
         elif self.path == "/api/status" and self.config["assistant"]:
             c = self.config["assistant"].client
-            self._send_json({"nebius_live": c.live, "model": c.model, "project": "Geeza"})
+            self._send_json({"nebius_live": c.live, "model": c.model, "project": "Geeza",
+                             "model_status": c.status()})
         elif self.path == "/health":
             self._send_json({"status": "ok", "timestamp": time.time()})
         elif self.path == "/config":
