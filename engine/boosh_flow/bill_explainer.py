@@ -126,23 +126,29 @@ def numbers_ok(text: str, a: dict) -> bool:
     return all(_norm(t) in ok for t in _NUM.findall(text))
 
 
-EXPLAIN_SYSTEM = ("You explain an electric bill to an older adult in plain words. Use only the facts given. "
-                  "Do not invent causes, do not promise savings, do not tell them to use less heat or cooling. "
-                  "Use at most 4 short sentences. Do not use any number that is not in the facts.")
+EXPLAIN_SYSTEM = ("Arrange the approved electric-bill sentences for an older adult. "
+                  "Return only JSON with one key, order, containing each supplied integer ID exactly once. "
+                  "Put the bill comparison first, then causes, then usage. Do not write new sentences.")
 
 
 def explain(a: dict, client=None) -> dict:
-    """Return {"text", "source"}. The model only words the facts; code checks its numbers."""
+    """The model orders approved facts. It cannot add, drop or rewrite a claim."""
     base = template(a)
     if client is None or not getattr(client, "live", False) or not a["spike"]:
         return {"text": base, "source": "code"}
     import json
+    # Each sentence is generated from verified arithmetic, not model prose.
+    sentences = [s.strip() for s in re.split(r"(?<=[.!?])\s+(?=[A-Z])", base) if s.strip()]
     try:
         raw = client.complete([{"role": "system", "content": EXPLAIN_SYSTEM},
-                               {"role": "user", "content": "Facts:\n" + json.dumps(a)}], max_tokens=300)
-    except Exception:
+                               {"role": "user", "content": json.dumps(dict(enumerate(sentences)))}], max_tokens=300)
+        if getattr(client, "used_fallback", False):
+            return {"text": base, "source": "code"}
+        obj = json.loads(raw)
+        order = obj.get("order") if isinstance(obj, dict) and set(obj) == {"order"} else None
+        if (not isinstance(order, list) or any(type(i) is not int for i in order)
+                or sorted(order) != list(range(len(sentences)))):
+            return {"text": base, "source": "code"}
+        return {"text": " ".join(sentences[i] for i in order), "source": "model"}
+    except (TypeError, ValueError, KeyError, IndexError, OSError):
         return {"text": base, "source": "code"}
-    raw = (raw or "").strip()
-    if getattr(client, "used_fallback", False) or not raw or raw.startswith(("{", "[")) or not numbers_ok(raw, a):
-        return {"text": base, "source": "code"}
-    return {"text": raw, "source": "model"}
