@@ -99,7 +99,8 @@ class NebiusClient:
         if not self.api_key:
             return self._fall("no API key configured", messages, model)
         body = json.dumps({"model": model, "messages": messages,
-                           "temperature": temperature, "max_tokens": max_tokens}).encode()
+                           "temperature": temperature, "max_tokens": max_tokens,
+                           "chat_template_kwargs": {"enable_thinking": False}}).encode()
         req = urllib.request.Request(
             self.base_url + "chat/completions", data=body, method="POST",
             headers={"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"})
