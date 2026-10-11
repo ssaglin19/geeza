@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 import urllib.error
 import urllib.request
 
@@ -52,16 +53,25 @@ class NebiusClient:
         self.used_fallback = False
         self.last_error: str | None = None
         self.last_model: str | None = None
+        self.last_error_class: str | None = None
+        self.attempted = False
 
     @property
     def live(self) -> bool:
         return bool(self.api_key)
+
+    def status(self) -> dict:
+        """Read-only status, never an inference or a credential/error-body disclosure."""
+        state = ("fallback" if self.used_fallback else "ok") if self.attempted else "not_attempted"
+        return {"configured": self.live, "state": state, "exception_class": self.last_error_class}
 
     def complete(self, messages, model: str | None = None, temperature: float = 0.2,
                  max_tokens: int = 512) -> str:
         """Return the assistant text. Falls back to the mock on missing key or any failure."""
         model = model or self.model
         self.used_fallback, self.last_error = False, None
+        self.last_error_class = None
+        self.attempted = True
         if not self.api_key:
             return self._fall("no API key configured", messages, model)
         body = json.dumps({"model": model, "messages": messages,
@@ -79,7 +89,17 @@ class NebiusClient:
             return text.strip()
         except (urllib.error.URLError, OSError, ValueError, KeyError, IndexError) as e:
             # Never put the key or request headers in the error text.
-            return self._fall(f"{type(e).__name__}", messages, model)
+            # Fixed allowlist prevents an arbitrary custom exception name becoming output.
+            if isinstance(e, urllib.error.HTTPError): cls = "HTTPError"
+            elif isinstance(e, urllib.error.URLError): cls = "URLError"
+            elif isinstance(e, TimeoutError): cls = "TimeoutError"
+            elif isinstance(e, OSError): cls = "OSError"
+            elif isinstance(e, KeyError): cls = "KeyError"
+            elif isinstance(e, IndexError): cls = "IndexError"
+            else: cls = "ValueError"
+            self.last_error_class = cls
+            print("Geeza model fallback exception_class=" + cls, file=sys.stderr, flush=True)
+            return self._fall(cls, messages, model)
 
     def _fall(self, why: str, messages, model) -> str:
         self.used_fallback, self.last_error, self.last_model = True, why, "mock"
