@@ -34,12 +34,13 @@ def analyze(history: list[dict], current: dict) -> dict:
     b_rate = sum(h["rate"] for h in history) / n
     b_fixed = sum(h["fixed"] for h in history) / n
     b_extras = sum(sum(e["amount"] for e in h.get("extras", [])) for h in history) / n
-    b_total = b_kwh * b_rate + b_fixed + b_extras
+    b_total = sum(h["kwh"] * h["rate"] + h["fixed"] +
+                  sum(e["amount"] for e in h.get("extras", [])) for h in history) / n
     c_extras = sum(e["amount"] for e in current.get("extras", []))
     c_total = current["kwh"] * current["rate"] + current["fixed"] + c_extras
     effects = {
-        "usage": (current["kwh"] - b_kwh) * b_rate,
-        "rate": (current["rate"] - b_rate) * current["kwh"],
+        "usage": sum((current["kwh"] - h["kwh"]) * h["rate"] for h in history) / n,
+        "rate": sum((current["rate"] - h["rate"]) * current["kwh"] for h in history) / n,
         "fixed": current["fixed"] - b_fixed,
         "extra charges": c_extras - b_extras,
     }
