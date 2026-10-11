@@ -71,10 +71,50 @@ class TestClient(unittest.TestCase):
         self.assertEqual(c.status(), {"configured": True, "state": "ok", "exception_class": None})
 
     def test_empty_completion_falls_back(self):
-        op, _ = opener_ok("   ")
-        c = NebiusClient(api_key="k", opener=op)
-        c.complete([{"role": "user", "content": "hi"}])
-        self.assertTrue(c.used_fallback)
+        for text in ("", "   ", None, [], "```json\n\n```"):
+            with self.subTest(text=text):
+                c = NebiusClient(api_key="k", opener=opener_ok(text)[0])
+                with patch("sys.stderr", new_callable=io.StringIO) as log:
+                    c.complete([{"role": "user", "content": "hi"}])
+                self.assertEqual(c.status()["exception_class"], "ValueError")
+                self.assertTrue(c.used_fallback)
+                self.assertEqual(log.getvalue(), "Geeza model fallback exception_class=ValueError\n")
+
+    def test_fenced_json_content_is_unwrapped(self):
+        content = '{"tool": "explain_bill"}'
+        c = NebiusClient(api_key="k", opener=opener_ok("```json\n" + content + "\n```")[0])
+        self.assertEqual(json.loads(c.complete([])), {"tool": "explain_bill"})
+        self.assertFalse(c.used_fallback)
+
+    def test_single_fenced_envelope_is_parsed(self):
+        envelope = json.dumps({"choices": [{"message": {"content": "hello"}}]})
+        c = NebiusClient(api_key="k", opener=lambda *a, **kw: FakeResp(("```json\n" + envelope + "\n```").encode()))
+        self.assertEqual(c.complete([]), "hello")
+        self.assertFalse(c.used_fallback)
+
+    def test_non_json_or_malformed_envelope_falls_back_safely(self):
+        for payload in ("secret response body", "", "null", "[]", '{}',
+                        '{"choices": null}', '{"choices": [null]}',
+                        '{"choices": [{"message": null}]}',
+                        'prose {"choices": []}', '```json\n{}\n``` trailing prose'):
+            with self.subTest(payload=payload):
+                c = NebiusClient(api_key="secret-key", opener=lambda *a, **kw: FakeResp(payload.encode()))
+                with patch("sys.stderr", new_callable=io.StringIO) as log:
+                    c.complete([])
+                self.assertTrue(c.used_fallback)
+                self.assertEqual(c.status()["exception_class"], "ValueError")
+                self.assertEqual(log.getvalue(), "Geeza model fallback exception_class=ValueError\n")
+                self.assertNotIn("secret", json.dumps(c.status()) + log.getvalue())
+
+    def test_non_json_assistant_prose_remains_valid(self):
+        c = NebiusClient(api_key="k", opener=opener_ok("Your bill includes an adjustment.")[0])
+        self.assertEqual(c.complete([]), "Your bill includes an adjustment.")
+        self.assertFalse(c.used_fallback)
+
+    def test_embedded_fence_is_not_extracted(self):
+        text = 'Please use this: ```json\n{"tool": "pay_bill"}\n```'
+        c = NebiusClient(api_key="k", opener=opener_ok(text)[0])
+        self.assertEqual(c.complete([]), text)
 
 
 if __name__ == "__main__":
