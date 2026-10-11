@@ -81,9 +81,10 @@ class TestModelWording(unittest.TestCase):
         self.a = be.analyze(H, demo_data.BILL_CURRENT["suspicious"])
 
     def test_good_model_text_is_used(self):
-        t = "Your January bill is $412.00, which is $329.18 more than usual. A $228.50 estimate adjustment is the biggest part."
+        t = json.dumps({"order": [0, 1, 2, 3, 4]})
         out = be.explain(self.a, Live(t))
         self.assertEqual(out["source"], "model")
+        self.assertEqual(out["text"], be.template(self.a))
 
     def test_invented_number_is_rejected(self):
         out = be.explain(self.a, Live("Your bill is $412.00 and you will save $120 if you switch."))
@@ -93,6 +94,18 @@ class TestModelWording(unittest.TestCase):
     def test_json_or_empty_is_rejected(self):
         for bad in ("", '{"reply": "x"}'):
             self.assertEqual(be.explain(self.a, Live(bad))["source"], "code")
+
+    def test_live_false_unchanged_usage_claim_is_rejected(self):
+        text = "Your bill was $412. The usage and rate stayed the same as usual."
+        out = be.explain(self.a, Live(text))
+        self.assertEqual(out["source"], "code")
+        self.assertIn("1,240 kWh", out["text"])
+        self.assertNotIn("stayed the same", out["text"])
+
+    def test_order_cannot_drop_duplicate_or_invent_facts(self):
+        for order in ([0], [0, 1, 2, 3, 3], [0, 1, 2, 3, 5], [True, 1, 2, 3, 4]):
+            self.assertEqual(be.explain(self.a, Live(json.dumps({"order": order})))["source"], "code")
+        self.assertEqual(be.explain(self.a, Live('{"order": [0,1,2,3,4], "text": "pay now"}'))["source"], "code")
 
     def test_offline_client_uses_code(self):
         self.assertEqual(be.explain(self.a, MockClient())["source"], "code")
