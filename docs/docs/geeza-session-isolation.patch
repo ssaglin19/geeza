@@ -1,0 +1,433 @@
+diff --git a/.github/workflows/demo-tests.yml b/.github/workflows/demo-tests.yml
+new file mode 100644
+index 0000000..4697efb
+--- /dev/null
++++ b/.github/workflows/demo-tests.yml
+@@ -0,0 +1,16 @@
++name: Offline demo regression tests
++on:
++  push:
++    paths: ["engine/**", "gateway/**", "flows/**", "scripts/test_demo.py", ".github/workflows/demo-tests.yml"]
++  pull_request:
++    paths: ["engine/**", "gateway/**", "flows/**", "scripts/test_demo.py", ".github/workflows/demo-tests.yml"]
++jobs:
++  test:
++    runs-on: ubuntu-latest
++    timeout-minutes: 5
++    steps:
++      - uses: actions/checkout@v4
++      - uses: actions/setup-python@v5
++        with:
++          python-version: "3.12"
++      - run: python scripts/test_demo.py
+diff --git a/README.md b/README.md
+index 03afaa0..cdebf06 100644
+--- a/README.md
++++ b/README.md
+@@ -44,7 +44,11 @@ The key is read from the environment only. All emails, vendors and amounts in th
+ 
+ ## Run the engine tests
+ 
+-    cd engine && python -m unittest discover -s tests -t .
++    python scripts/test_demo.py
++
++This offline suite uses no API key or model download. The optional GLiNER evaluation is not part of it.
++
++Demo visitors have separate browser sessions. Notes, approvals and scenario changes are not shared between visitors. Notes remain temporary and synthetic; this is not production account authentication.
+ 
+ ## License
+ 
+diff --git a/docs/HANDOFF.md b/docs/HANDOFF.md
+index 468c13e..b059cc6 100644
+--- a/docs/HANDOFF.md
++++ b/docs/HANDOFF.md
+@@ -1,6 +1,6 @@
+ # Geeza - Project Handoff
+ 
+-Last updated: 2026-10-09. Replaces the 2026-09-22 Boosh handoff, which overclaimed. Open, owed and in-progress items only.
++Last updated: 2026-10-10. Replaces the 2026-09-22 Boosh handoff, which overclaimed. Open, owed and in-progress items only.
+ 
+ ## What is built
+ 
+@@ -26,6 +26,8 @@ Last updated: 2026-10-09. Replaces the 2026-09-22 Boosh handoff, which overclaim
+ 
+ - GPU VMs: not covered. Credits are Token Factory only, $50 total (confirmed by Sean in the console 2026-10-06). Spend beyond that needs Sean's OK with the exact price.
+ - Cost-of-living flow built 2026-10-09: electric bill explainer (idea 9). `engine/boosh_flow/bill_explainer.py`, fixtures in `gateway/demo_data.py` (BILL_HISTORY, BILL_CURRENT), tool `explain_bill`, tests in `engine/tests/test_bill_explainer.py`. Ask "why is my electric bill so high?" (suspicious scenario shows the spike). Code computes; model only rewords and code rejects any number not in the facts. Draft request is never sent. Deployed to Render (manual deploy of 6fda37f, 2026-10-10) and live-verified: the question routes to explain_bill, and pay_bill is unaffected. Spike view checked by unit tests only (scenario switch is global on the public demo).
++- Session isolation built 2026-10-10: opaque HttpOnly browser cookies own approvals, notes, reminders, drafts and bill scenarios. Scenario changes clear only that visitor's pending action. Offline HTTP tests cover separate visitors, forged cookies, changed amounts, spike explanation and malformed payloads. Offline browser verification passed on desktop and 390px mobile: spike explanation and draft, blocked spike payment, separate normal scenario and two-YES payment. Actual pixels inspected. Deployment/live spike verification still pending.
++- Offline regression runner: `python scripts/test_demo.py` runs 165 tests without keys or model downloads. Optional GLiNER evaluation is excluded explicitly. `.github/workflows/demo-tests.yml` runs the same suite. Bill-average arithmetic now averages actual usage-times-rate, not the product of two averages.
+ - Durable memory: SQLite would not persist on Render free tier (disk is wiped on sleep or redeploy). Build locally with tests, or skip; do not claim persistence in the live demo.
+ - Known-sources list in the demo (Lakeshore Power, Patel Family Med, Ruth Miller) is invented. Waiting on Sean: keep for submission or supply a real list.
+ - Demo video: shot list is in `docs/DEMO-SCRIPT.md`. Sean records it and submits on Devpost by Oct 30 (posted to Slack #geeza 2026-10-09).
+diff --git a/engine/boosh_flow/bill_explainer.py b/engine/boosh_flow/bill_explainer.py
+index 0d15ae4..d97adee 100644
+--- a/engine/boosh_flow/bill_explainer.py
++++ b/engine/boosh_flow/bill_explainer.py
+@@ -34,12 +34,13 @@ def analyze(history: list[dict], current: dict) -> dict:
+     b_rate = sum(h["rate"] for h in history) / n
+     b_fixed = sum(h["fixed"] for h in history) / n
+     b_extras = sum(sum(e["amount"] for e in h.get("extras", [])) for h in history) / n
+-    b_total = b_kwh * b_rate + b_fixed + b_extras
++    b_total = sum(h["kwh"] * h["rate"] + h["fixed"] +
++                  sum(e["amount"] for e in h.get("extras", [])) for h in history) / n
+     c_extras = sum(e["amount"] for e in current.get("extras", []))
+     c_total = current["kwh"] * current["rate"] + current["fixed"] + c_extras
+     effects = {
+-        "usage": (current["kwh"] - b_kwh) * b_rate,
+-        "rate": (current["rate"] - b_rate) * current["kwh"],
++        "usage": sum((current["kwh"] - h["kwh"]) * h["rate"] for h in history) / n,
++        "rate": sum((current["rate"] - h["rate"]) * current["kwh"] for h in history) / n,
+         "fixed": current["fixed"] - b_fixed,
+         "extra charges": c_extras - b_extras,
+     }
+diff --git a/engine/tests/test_bill_explainer.py b/engine/tests/test_bill_explainer.py
+index b26658e..468dc99 100644
+--- a/engine/tests/test_bill_explainer.py
++++ b/engine/tests/test_bill_explainer.py
+@@ -52,6 +52,18 @@ class TestMath(unittest.TestCase):
+         a = be.analyze(H, cur)
+         self.assertEqual(a["main_reason"], "rate")
+ 
++    def test_average_uses_actual_bills_when_rate_and_usage_both_change(self):
++        history = [
++            {"period": "a", "days": 30, "kwh": 100, "rate": 0.10, "fixed": 10},
++            {"period": "b", "days": 30, "kwh": 300, "rate": 0.30, "fixed": 10},
++        ]
++        current = {"period": "c", "days": 30, "kwh": 200, "rate": 0.20, "fixed": 10}
++        a = be.analyze(history, current)
++        self.assertEqual(a["usual_bill"], 60)
++        self.assertEqual(a["bill"], 50)
++        self.assertEqual(a["change"], -10)
++        self.assertAlmostEqual(sum(a["effects"].values()), -10, places=2)
++
+     def test_needs_history(self):
+         with self.assertRaises(ValueError):
+             be.analyze([], demo_data.BILL_CURRENT["normal"])
+diff --git a/engine/tests/test_demo_sessions.py b/engine/tests/test_demo_sessions.py
+new file mode 100644
+index 0000000..d26f744
+--- /dev/null
++++ b/engine/tests/test_demo_sessions.py
+@@ -0,0 +1,94 @@
++"""Offline HTTP regressions: demo visitors cannot share approvals or notes."""
++import http.client
++import json
++import threading
++import unittest
++from http.server import HTTPServer
++from gateway.assistant import Assistant
++from gateway.server import BooshGateway
++from boosh_flow.nebius import MockClient
++
++
++class DemoSessions(unittest.TestCase):
++    def setUp(self):
++        self.old = BooshGateway.config.copy()
++        self.assistant = Assistant(MockClient())
++        BooshGateway.config = {**self.old, "token": None, "assistant": self.assistant}
++        self.server = HTTPServer(("127.0.0.1", 0), BooshGateway)
++        self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
++        self.thread.start()
++
++    def tearDown(self):
++        self.server.shutdown()
++        self.thread.join()
++        self.server.server_close()
++        BooshGateway.config = self.old
++
++    def post(self, data, cookie=None, path="/message"):
++        c = http.client.HTTPConnection("127.0.0.1", self.server.server_port)
++        headers = {"Content-Type": "application/json"}
++        if cookie:
++            headers["Cookie"] = cookie
++        c.request("POST", path, json.dumps(data), headers)
++        r = c.getresponse()
++        new_cookie = r.getheader("Set-Cookie")
++        result = json.loads(r.read())
++        status = r.status
++        c.close()
++        return status, result, (new_cookie.split(";")[0] if new_cookie else cookie)
++
++    def message(self, text, cookie=None):
++        return self.post({"text": text, "sender": "demo"}, cookie)
++
++    def test_approval_belongs_to_browser_not_claimed_sender(self):
++        _, _, a = self.message("pay my electric bill")
++        _, r, b = self.message("YES")
++        self.assertNotEqual(a, b)
++        self.assertNotIn("paid", [x["type"] for x in r["actions"]])
++        _, r, _ = self.message("YES", a)
++        self.assertEqual(r["actions"][0]["type"], "approval")
++        _, r, _ = self.message("YES", a)
++        self.assertEqual(r["actions"][0]["type"], "paid")
++
++    def test_scenario_and_pending_are_isolated(self):
++        _, _, a = self.message("pay my electric bill")
++        _, _, b = self.message("What do you remember?")
++        self.post({"scenario": "suspicious"}, b, "/api/scenario")
++        _, r, _ = self.message("YES", a)
++        self.assertEqual(r["actions"][0]["type"], "approval")
++        self.assertEqual(r["actions"][0]["amount"], "86.90")
++        _, r, _ = self.message("Why is my electric bill so high?", b)
++        self.assertTrue(r["actions"][0]["spike"])
++        self.assertIn("$412.00", r["response"])
++        _, r, _ = self.message("Why is my electric bill so high?", a)
++        self.assertFalse(r["actions"][0]["spike"])
++
++    def test_own_scenario_change_cancels_approval(self):
++        _, _, a = self.message("pay my electric bill")
++        self.message("YES", a)
++        self.post({"scenario": "suspicious"}, a, "/api/scenario")
++        _, r, _ = self.message("YES", a)
++        self.assertNotIn("paid", [x["type"] for x in r["actions"]])
++        self.message("pay my electric bill", a)
++        _, r, _ = self.message("YES", a)
++        self.assertEqual(r["actions"][0]["type"], "escalate")
++
++    def test_saved_notes_do_not_leak(self):
++        _, _, a = self.message("Remember that I like purple tea")
++        self.message("YES", a)
++        _, r, b = self.message("What do you remember?")
++        self.assertNotIn("purple tea", r["response"])
++        _, r, _ = self.message("What do you remember?", a)
++        self.assertIn("purple tea", r["response"])
++
++    def test_malformed_payload_returns_error_not_disconnection(self):
++        for data in ([], "x", {"text": 12}, {"text": None}):
++            status, _, _ = self.post(data)
++            self.assertEqual(status, 400)
++        status, _, _ = self.post({"scenario": "invalid"}, path="/api/scenario")
++        self.assertEqual(status, 400)
++        self.assertEqual(self.message("What do you remember?")[0], 200)
++
++    def test_forged_cookie_is_replaced(self):
++        _, _, a = self.message("pay my electric bill", "geeza_session=demo")
++        self.assertNotEqual(a, "geeza_session=demo")
+diff --git a/gateway/assistant.py b/gateway/assistant.py
+index ba677f3..6093285 100644
+--- a/gateway/assistant.py
++++ b/gateway/assistant.py
+@@ -39,6 +39,7 @@ class Assistant:
+     def __init__(self, client, scenario: str = "normal"):
+         self.client = client
+         self.scenario = scenario
++        self.scenarios: dict[str, str] = {}
+         self.last_tool = None
+         self.last_intent = None
+         self.pending: dict[str, dict] = {}   # sender -> {"kind": "offer"|"approval", ...}
+@@ -48,6 +49,15 @@ class Assistant:
+         self.seed = mem.load_seed(SEED_DIR)          # caregiver-installed, read-only
+         self.notes: dict[str, list] = {}             # saved by the person this session (RAM only)
+ 
++    def scenario_for(self, sender: str) -> str:
++        return self.scenarios.get(sender, self.scenario)
++
++    def set_scenario(self, sender: str, scenario: str) -> None:
++        if scenario not in demo_data.SCENARIOS:
++            raise ValueError("bad scenario")
++        self.scenarios[sender] = scenario
++        self.pending.pop(sender, None)
++
+     def _entries(self, sender):
+         return self.seed + self.notes.get(sender, [])
+ 
+@@ -168,7 +178,7 @@ class Assistant:
+             out["tool"] = name
+             return out
+         if name == "explain_bill":
+-            cur = demo_data.BILL_CURRENT.get(self.scenario, demo_data.BILL_CURRENT["normal"])
++            cur = demo_data.BILL_CURRENT.get(self.scenario_for(sender), demo_data.BILL_CURRENT["normal"])
+             a = bill_explainer.analyze(demo_data.BILL_HISTORY, cur)
+             ex = bill_explainer.explain(a, self.client)
+             parts = [ex["text"]]
+@@ -254,8 +264,8 @@ class Assistant:
+             lines.append(f"- {i['subject']}: {i['spoken']}")
+         return {"response": "\n".join(lines), "actions": [{"type": "mail", "items": items}], **self._meta()}
+ 
+-    def _run(self, approver):
+-        amount = demo_data.SCENARIOS.get(self.scenario, demo_data.SCENARIOS["normal"])
++    def _run(self, approver, sender):
++        amount = demo_data.SCENARIOS.get(self.scenario_for(sender), demo_data.SCENARIOS["normal"])
+         return run_demo_flow(amount, demo_data.LAST_BILL, approver)
+ 
+     def _on_yes(self, sender: str, p: dict) -> dict:
+@@ -292,7 +302,7 @@ class Assistant:
+             # Dry run up to the approval gate: the approver always says no, so nothing is paid.
+             seen = {}
+             def ask(q): seen.update(q); return False
+-            events, paid = self._run(ask)
++            events, paid = self._run(ask, sender)
+             if "amount_key" not in seen:
+                 self.pending.pop(sender, None)
+                 gate = next((e for e in events if e["event"] == "GATE_FAILED"), None)
+@@ -306,8 +316,8 @@ class Assistant:
+                     "actions": [{"type": "approval", "amount": amount}], "events": events, **self._meta()}
+         # Approval: the person's YES covers only the amount they were shown.
+         quoted = p["amount"]
+-        def approve(q): return q.get("kind") == "approval" and self._amount_now() == quoted
+-        events, paid = self._run(approve)
++        def approve(q): return q.get("kind") == "approval" and self._amount_now(sender) == quoted
++        events, paid = self._run(approve, sender)
+         self.pending.pop(sender, None)
+         if paid:
+             return {"response": f"Paid ${quoted} to Lakeshore Power (demo vendor, no real money moved).",
+@@ -315,5 +325,5 @@ class Assistant:
+         return {"response": "The amount changed, so I did not pay. Ask me again.",
+                 "actions": [], "events": events, **self._meta()}
+ 
+-    def _amount_now(self) -> str:
+-        return demo_data.SCENARIOS.get(self.scenario, demo_data.SCENARIOS["normal"])
++    def _amount_now(self, sender: str) -> str:
++        return demo_data.SCENARIOS.get(self.scenario_for(sender), demo_data.SCENARIOS["normal"])
+diff --git a/gateway/server.py b/gateway/server.py
+index 9263c02..215b60f 100644
+--- a/gateway/server.py
++++ b/gateway/server.py
+@@ -13,6 +13,8 @@ import argparse
+ import json
+ import time
+ import uuid
++from http.cookies import SimpleCookie
++import re
+ from http.server import HTTPServer, BaseHTTPRequestHandler
+ from pathlib import Path
+ import sys
+@@ -59,9 +61,25 @@ class BooshGateway(BaseHTTPRequestHandler):
+         """Send a JSON response."""
+         self.send_response(status)
+         self.send_header("Content-Type", "application/json")
++        if getattr(self, "_new_session", None):
++            self.send_header("Set-Cookie", f"geeza_session={self._new_session}; HttpOnly; SameSite=Lax; Path=/")
+         self.end_headers()
+         self.wfile.write(json.dumps(data).encode("utf-8"))
+ 
++    def _demo_sender(self):
++        """Opaque browser session, never the caller-supplied demo sender."""
++        cookie = SimpleCookie()
++        try:
++            cookie.load(self.headers.get("Cookie", ""))
++            token = cookie.get("geeza_session")
++            value = token.value if token else ""
++        except Exception:
++            value = ""
++        if not re.fullmatch(r"[a-f0-9]{32}", value):
++            value = uuid.uuid4().hex
++            self._new_session = value
++        return value
++
+     def _send_error(self, message, status=400):
+         """Send an error response."""
+         self._send_json({"error": message}, status)
+@@ -108,7 +126,14 @@ class BooshGateway(BaseHTTPRequestHandler):
+             return
+ 
+         # Parse request body
+-        content_length = int(self.headers.get("Content-Length", 0))
++        try:
++            content_length = int(self.headers.get("Content-Length", 0))
++        except ValueError:
++            self._send_error("invalid content length", 400)
++            return
++        if not 0 < content_length <= 8192:
++            self._send_error("invalid body size", 413)
++            return
+         body = self.rfile.read(content_length)
+         try:
+             data = json.loads(body.decode("utf-8"))
+@@ -116,17 +141,23 @@ class BooshGateway(BaseHTTPRequestHandler):
+             self._send_error("invalid JSON", 400)
+             return
+ 
++        if not isinstance(data, dict):
++            self._send_error("expected JSON object", 400)
++            return
++        sender = self._demo_sender() if self.config["assistant"] else data.get("sender", "unknown")
+         if self.path == "/api/scenario":
+             a = self.config["assistant"]
+             if not a or data.get("scenario") not in ("normal", "suspicious"):
+                 self._send_error("bad scenario", 400)
+                 return
+-            a.scenario = data["scenario"]
+-            a.pending.clear()
+-            self._send_json({"scenario": a.scenario})
++            a.set_scenario(sender, data["scenario"])
++            self._send_json({"scenario": a.scenario_for(sender)})
+             return
+ 
+         # Validate required fields
++        if not isinstance(data.get("text", ""), str):
++            self._send_error("text must be a string", 400)
++            return
+         text = data.get("text", "").strip()
+         if not text:
+             self._send_error("missing 'text' field", 400)
+@@ -139,7 +170,6 @@ class BooshGateway(BaseHTTPRequestHandler):
+             if not _rate_ok(self.headers.get("X-Forwarded-For", self.client_address[0]).split(",")[0].strip()):
+                 self._send_error("slow down: demo limit reached, try again later", 429)
+                 return
+-        sender = data.get("sender", "unknown")
+         message_id = data.get("message_id", str(uuid.uuid4()))
+ 
+         # Process the message
+diff --git a/gateway/static/index.html b/gateway/static/index.html
+index 4fc6805..13b7668 100644
+--- a/gateway/static/index.html
++++ b/gateway/static/index.html
+@@ -24,7 +24,7 @@ aside h2{margin:0 0 6px;font-size:16px}#trace{font-family:ui-monospace,monospace
+ .note{font-size:13px;opacity:.75;margin-top:8px}
+ </style></head><body><div class="wrap">
+ <header><h1>Geeza</h1><span><span id="badge" class="badge">checking...</span>
+- <label class="badge">Bill scenario <select id="scen"><option value="normal">normal</option><option value="suspicious">suspicious amount</option></select></label></span></header>
++ <label class="badge">Your bill scenario <select id="scen"><option value="normal">normal</option><option value="suspicious">suspicious amount</option></select></label></span></header>
+ <main><div id="chat" aria-live="polite"></div>
+ <div class="chips" id="chips"></div>
+ <form class="row" id="f"><input id="t" autocomplete="off" placeholder="Type a message" maxlength="500"><button>Send</button></form>
+@@ -35,9 +35,10 @@ const chat=document.getElementById('chat'),t=document.getElementById('t');
+ function add(cls,text,meta){const d=document.createElement('div');d.className='m '+cls;d.textContent=text;
+  if(meta){const s=document.createElement('small');s.textContent=meta;d.appendChild(s)}chat.appendChild(d);chat.scrollTop=1e9;return d}
+ function chips(list){const c=document.getElementById('chips');c.innerHTML='';list.forEach(x=>{const b=document.createElement('button');b.type='button';b.className=x==='YES'?'yes':'alt';b.textContent=x;b.onclick=()=>send(x);c.appendChild(b)})}
+-const START=['Check my mail','Pay the electric bill','Remind me to take my pills at 8am','Tell Sean I need groceries','I fell and cannot get up','What do you remember?'];chips(START);
+-async function send(text){if(!text.trim())return;add('me',text);t.value='';chips([]);
+- try{const r=await fetch('/message',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,sender:'demo'})});
++const START=['Check my mail','Pay the electric bill','Why is my electric bill so high?','Remind me to take my pills at 8am','Tell Sean I need groceries','I fell and cannot get up','What do you remember?'];chips(START);
++let busy=false;
++async function send(text){if(busy||!text.trim())return;busy=true;document.getElementById('scen').disabled=true;add('me',text);t.value='';chips([]);
++ try{const r=await fetch('/message',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text})});
+   const j=await r.json();if(j.error){add('bot',j.error);chips(START);return}
+   const meta=(j.tool?'tool: '+j.tool+' | ':'')+(j.model_used?(j.fallback?'offline fallback':'Nemotron: '+j.model_used):'');
+   const d=add('bot',j.response,meta);
+@@ -47,10 +48,10 @@ async function send(text){if(!text.trim())return;add('me',text);t.value='';chips
+     c.innerHTML='<b>SIMULATED 911: sandbox, no real call or text</b><span></span>';c.lastChild.textContent=a.steps.map(s=>s.step.replace(/_/g,' ')+' (simulated): '+s.detail).join('\n');c.lastChild.style.whiteSpace='pre-line';d.appendChild(c)}});
+   if(j.events)document.getElementById('trace').textContent=j.events.map(e=>e.event+(e.page?' '+e.page:'')+(e.value?' '+e.value:'')+(e.detail?' - '+e.detail:'')+(e.reason?' - '+e.reason:'')).join('\n');
+   const acts=(j.actions||[]).map(a=>a.type);
+-  chips(acts.some(x=>['flow_offer','approval','confirm'].includes(x))?['YES','No']:START)
+- }catch(e){add('bot','Could not reach the server.');chips(START)}}
++  chips(acts.some(x=>['flow_offer','approval','confirm','confirm_intent'].includes(x))?['YES','No']:START)
++ }catch(e){add('bot','Could not reach the server.');chips(START)}finally{busy=false;document.getElementById('scen').disabled=false}}
+ document.getElementById('f').onsubmit=e=>{e.preventDefault();send(t.value)};
+-document.getElementById('scen').onchange=async e=>{await fetch('/api/scenario',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({scenario:e.target.value})});add('bot','Scenario set: '+e.target.value+'. Pending actions cleared.')};
++document.getElementById('scen').onchange=async e=>{if(busy)return;busy=true;e.target.disabled=true;chips([]);try{const r=await fetch('/api/scenario',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({scenario:e.target.value})});if(!r.ok){add('bot','Could not change the scenario.');return}add('bot','Scenario set: '+e.target.value+'. Your pending action cleared.')}catch(err){add('bot','Could not change the scenario.')}finally{busy=false;e.target.disabled=false;chips(START)}};
+ fetch('/api/status').then(r=>r.json()).then(s=>{const b=document.getElementById('badge');b.textContent=s.nebius_live?'Nemotron on Nebius: live':'Offline fallback (no key)';if(s.nebius_live)b.classList.add('live')});
+ add('bot','Hi, I am Geeza. I can read your mail, spot scams, and pay a bill with your OK.');
+ </script></body></html>
+diff --git a/scripts/test_demo.py b/scripts/test_demo.py
+new file mode 100644
+index 0000000..793aa30
+--- /dev/null
++++ b/scripts/test_demo.py
+@@ -0,0 +1,16 @@
++#!/usr/bin/env python3
++"""Run offline engine and gateway tests without optional model downloads."""
++import sys
++import unittest
++from pathlib import Path
++
++ROOT = Path(__file__).resolve().parents[1]
++sys.path[:0] = [str(ROOT / "engine"), str(ROOT)]
++loader = unittest.TestLoader()
++suite = unittest.TestSuite()
++for path in sorted((ROOT / "engine" / "tests").glob("test_*.py")):
++    if path.stem == "test_gliner_eval":
++        continue  # optional model evaluation downloads weights; not an offline regression
++    suite.addTests(loader.loadTestsFromName("engine.tests." + path.stem))
++result = unittest.TextTestRunner(verbosity=2).run(suite)
++sys.exit(not result.wasSuccessful())
