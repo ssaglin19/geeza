@@ -44,7 +44,11 @@ The key is read from the environment only. All emails, vendors and amounts in th
 
 ## Run the engine tests
 
-    cd engine && python -m unittest discover -s tests -t .
+    python scripts/test_demo.py
+
+This offline suite uses no API key or model download. The optional GLiNER evaluation is not part of it.
+
+Demo visitors have separate browser sessions. Notes, approvals and scenario changes are not shared between visitors. Notes remain temporary and synthetic; this is not production account authentication.
 
 ## License
 

@@ -13,6 +13,8 @@ import argparse
 import json
 import time
 import uuid
+from http.cookies import SimpleCookie
+import re
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from pathlib import Path
 import sys
@@ -59,8 +61,24 @@ class BooshGateway(BaseHTTPRequestHandler):
         """Send a JSON response."""
         self.send_response(status)
         self.send_header("Content-Type", "application/json")
+        if getattr(self, "_new_session", None):
+            self.send_header("Set-Cookie", f"geeza_session={self._new_session}; HttpOnly; SameSite=Lax; Path=/")
         self.end_headers()
         self.wfile.write(json.dumps(data).encode("utf-8"))
+
+    def _demo_sender(self):
+        """Opaque browser session, never the caller-supplied demo sender."""
+        cookie = SimpleCookie()
+        try:
+            cookie.load(self.headers.get("Cookie", ""))
+            token = cookie.get("geeza_session")
+            value = token.value if token else ""
+        except Exception:
+            value = ""
+        if not re.fullmatch(r"[a-f0-9]{32}", value):
+            value = uuid.uuid4().hex
+            self._new_session = value
+        return value
 
     def _send_error(self, message, status=400):
         """Send an error response."""
@@ -108,7 +126,14 @@ class BooshGateway(BaseHTTPRequestHandler):
             return
 
         # Parse request body
-        content_length = int(self.headers.get("Content-Length", 0))
+        try:
+            content_length = int(self.headers.get("Content-Length", 0))
+        except ValueError:
+            self._send_error("invalid content length", 400)
+            return
+        if not 0 < content_length <= 8192:
+            self._send_error("invalid body size", 413)
+            return
         body = self.rfile.read(content_length)
         try:
             data = json.loads(body.decode("utf-8"))
@@ -116,17 +141,23 @@ class BooshGateway(BaseHTTPRequestHandler):
             self._send_error("invalid JSON", 400)
             return
 
+        if not isinstance(data, dict):
+            self._send_error("expected JSON object", 400)
+            return
+        sender = self._demo_sender() if self.config["assistant"] else data.get("sender", "unknown")
         if self.path == "/api/scenario":
             a = self.config["assistant"]
             if not a or data.get("scenario") not in ("normal", "suspicious"):
                 self._send_error("bad scenario", 400)
                 return
-            a.scenario = data["scenario"]
-            a.pending.clear()
-            self._send_json({"scenario": a.scenario})
+            a.set_scenario(sender, data["scenario"])
+            self._send_json({"scenario": a.scenario_for(sender)})
             return
 
         # Validate required fields
+        if not isinstance(data.get("text", ""), str):
+            self._send_error("text must be a string", 400)
+            return
         text = data.get("text", "").strip()
         if not text:
             self._send_error("missing 'text' field", 400)
@@ -139,7 +170,6 @@ class BooshGateway(BaseHTTPRequestHandler):
             if not _rate_ok(self.headers.get("X-Forwarded-For", self.client_address[0]).split(",")[0].strip()):
                 self._send_error("slow down: demo limit reached, try again later", 429)
                 return
-        sender = data.get("sender", "unknown")
         message_id = data.get("message_id", str(uuid.uuid4()))
 
         # Process the message

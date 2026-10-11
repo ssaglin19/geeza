@@ -52,6 +52,18 @@ class TestMath(unittest.TestCase):
         a = be.analyze(H, cur)
         self.assertEqual(a["main_reason"], "rate")
 
+    def test_average_uses_actual_bills_when_rate_and_usage_both_change(self):
+        history = [
+            {"period": "a", "days": 30, "kwh": 100, "rate": 0.10, "fixed": 10},
+            {"period": "b", "days": 30, "kwh": 300, "rate": 0.30, "fixed": 10},
+        ]
+        current = {"period": "c", "days": 30, "kwh": 200, "rate": 0.20, "fixed": 10}
+        a = be.analyze(history, current)
+        self.assertEqual(a["usual_bill"], 60)
+        self.assertEqual(a["bill"], 50)
+        self.assertEqual(a["change"], -10)
+        self.assertAlmostEqual(sum(a["effects"].values()), -10, places=2)
+
     def test_needs_history(self):
         with self.assertRaises(ValueError):
             be.analyze([], demo_data.BILL_CURRENT["normal"])
