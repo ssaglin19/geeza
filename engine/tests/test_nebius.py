@@ -38,6 +38,7 @@ class TestClient(unittest.TestCase):
         self.assertEqual(seen["url"], BASE_URL + "chat/completions")
         self.assertEqual(seen["auth"], "Bearer k")
         self.assertEqual(seen["body"]["model"], MODELS["fast"])
+        self.assertEqual(seen["body"]["chat_template_kwargs"], {"enable_thinking": False})
 
     def test_failure_falls_back_without_leaking_key(self):
         def boom(req, timeout=None): raise OSError("secret-k in message")
