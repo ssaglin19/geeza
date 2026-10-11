@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -20,6 +21,29 @@ MODELS = {
     "lightning": "nvidia/Nemotron-3_5-Lightning",
 }
 DEFAULT_MODEL = MODELS["fast"]
+
+
+def _unfence(text: str) -> str:
+    """Accept only a single complete JSON/text fence, never extract embedded prose."""
+    match = re.fullmatch(r"```(?:json|text)?[ \t]*\r?\n(.*?)\r?\n```", text.strip(), re.DOTALL | re.IGNORECASE)
+    return match.group(1).strip() if match else text.strip()
+
+
+def _completion_text(payload: str) -> str:
+    """Validate the response envelope before accepting nonempty assistant text."""
+    data = json.loads(_unfence(payload))
+    if not isinstance(data, dict):
+        raise ValueError("invalid completion envelope")
+    choices = data.get("choices")
+    if not isinstance(choices, list) or not choices or not isinstance(choices[0], dict):
+        raise ValueError("invalid completion choices")
+    message = choices[0].get("message")
+    if not isinstance(message, dict):
+        raise ValueError("invalid completion message")
+    text = message.get("content")
+    if not isinstance(text, str) or not _unfence(text):
+        raise ValueError("empty completion")
+    return _unfence(text)
 
 
 class MockClient:
@@ -81,10 +105,7 @@ class NebiusClient:
             headers={"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"})
         try:
             with self._open(req, timeout=self.timeout) as resp:
-                data = json.loads(resp.read().decode())
-            text = data["choices"][0]["message"]["content"]
-            if not isinstance(text, str) or not text.strip():
-                raise ValueError("empty completion")
+                text = _completion_text(resp.read().decode())
             self.last_model = model
             return text.strip()
         except (urllib.error.URLError, OSError, ValueError, KeyError, IndexError) as e:
