@@ -23,8 +23,35 @@ EXPLAIN_SYSTEM = (
 )
 CHAT_SYSTEM = (
     "You are Geeza, a calm helper for an older adult. Short plain sentences, one step at a time. "
-    "You cannot move money. Payments go through a separate approval screen the person controls."
+    "You cannot move money. Payments go through a separate approval screen the person controls. "
+    "Answer in at most three short sentences. Never repeat yourself."
 )
+
+
+def tame(text: str, max_sentences: int = 4, max_chars: int = 400) -> str:
+    """Guard against looping model output: drop repeated lines, cap length and sentence count."""
+    seen, lines = set(), []
+    for ln in (text or "").splitlines():
+        k = ln.strip().lower()
+        if k and k in seen:
+            continue
+        seen.add(k)
+        lines.append(ln.strip())
+    flat = " ".join(x for x in lines if x)
+    parts = re.split(r"(?<=[.!?])\s+", flat)
+    out, used = [], set()
+    for sent in parts:
+        k = sent.strip().lower()
+        if not k or k in used:
+            continue
+        used.add(k)
+        out.append(sent.strip())
+        if len(out) >= max_sentences:
+            break
+    res = " ".join(out)
+    if len(res) > max_chars:
+        res = res[:max_chars].rsplit(" ", 1)[0].rstrip(",;:") + "."
+    return res or (text or "").strip()[:max_chars]
 
 _RULES = [
     (r"gift\s*card|itunes card|google play card", "asks for gift cards"),
@@ -149,6 +176,6 @@ def chat(history: list[dict], client, memory: str = "") -> dict:
     msgs = [{"role": "system", "content": CHAT_SYSTEM + ("\n\n" + memory if memory else "")}] + [
         {"role": m["role"], "content": m["content"]} for m in history[-10:]
         if m.get("role") in ("user", "assistant")]
-    reply = client.complete(msgs, max_tokens=300)
+    reply = tame(client.complete(msgs, max_tokens=300))
     return {"reply": reply, "model_used": getattr(client, "last_model", None),
             "fallback": bool(getattr(client, "used_fallback", False))}
