@@ -77,6 +77,11 @@ class Assistant:
                 return {"response": "Okay, I did not do it.", "actions": [], **self._meta()}
             self.pending.pop(sender, None)  # any other text cancels a pending offer/approval
 
+        if YES.match(text) or NO.match(text):
+            return {"response": "There is nothing waiting for a YES right now.", "actions": [], **self._meta()}
+        if len(text) > 40 and not TELL.search(text) and assist.rule_screen({"body": text}):
+            # A pasted message with scam signals goes to the scam check, code-first.
+            return self._dispatch("scam_check", {"text": text}, sender, text)
         routed = self._route(text, sender)
         if routed:
             return routed
@@ -99,7 +104,7 @@ class Assistant:
         """System 1: intent-routing pack (bands: high >= 0.80 go, 0.50-0.79 ask, < 0.50 general).
         Returns a reply when routing decides, else None and the normal tool choice runs.
         Memory commands skip it (code-first). Probabilities are self-reported by Nemotron."""
-        if RECALL.search(text) or REMEMBER.match(text) or FORGET.match(text) or READ_MAIL.match(text) or BILL_WHY.search(text):
+        if RECALL.search(text) or REMEMBER.match(text) or FORGET.match(text) or READ_MAIL.match(text) or BILL_WHY.search(text) or TELL.search(text):
             return None
         if not getattr(self.client, "live", False):
             return None
@@ -127,7 +132,7 @@ class Assistant:
         """Pick a tool. Live model proposes JSON; code validates. With no key, keyword stand-in."""
         # Explicit memory commands are matched by code first, so the model cannot ask for a YES
         # that nothing is waiting on. Only text that STARTS with the command counts.
-        if RECALL.search(text) or REMEMBER.match(text) or FORGET.match(text) or READ_MAIL.match(text) or BILL_WHY.search(text):
+        if RECALL.search(text) or REMEMBER.match(text) or FORGET.match(text) or READ_MAIL.match(text) or BILL_WHY.search(text) or TELL.search(text):
             return self._keyword_choice(text)
         if getattr(self.client, "live", False):
             raw = self.client.complete(
