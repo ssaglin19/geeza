@@ -20,7 +20,7 @@ Last updated: 2026-10-11. Replaces the 2026-09-22 Boosh handoff, which overclaim
 ## Owed by Sean
 
 - Fill the memory corpus (parents' routines, meds, contacts). Not started.
-- Devpost demo video link (see `docs/DEVPOST.md`, currently TODO).
+- Final review/approval of the finished demo video and Devpost entry before the public YouTube upload and submit (video itself is agent-produced; link goes in `docs/DEVPOST.md`, currently TODO).
 
 ## Open
 
@@ -32,9 +32,13 @@ Last updated: 2026-10-11. Replaces the 2026-09-22 Boosh handoff, which overclaim
 - Live model path verified 2026-10-11 at 10:47 Central, source `e467390`, deployed on existing Free Render. Documented `chat_template_kwargs.enable_thinking=false` avoids empty final content on short Nano requests. A live response then exposed an unsupported verbal claim that usage was unchanged, so the bill model role is now limited to ordering approved code-written fact sentences. Code rejects missing, duplicate or invented IDs and extra fields; it never displays new model claims. Two subsequent spike responses succeeded; captured response metadata confirms `wording=model`, `fallback=false`, Nano model ID, health `ok` and no exception. Correct output retains the $228.50 extra charge, $100.68 usage effect and 1,240 versus 510 kWh. Four verification calls in this pass; no further calls after success. Model card: https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16. Deploy: https://dashboard.render.com/web/srv-db22k817lnhs73dcogag/deploys/dep-db5qukfavr4c739ot610.
 - Durable memory: SQLite would not persist on Render free tier (disk is wiped on sleep or redeploy). Build locally with tests, or skip; do not claim persistence in the live demo.
 - Known-sources list in the demo (Lakeshore Power, Patel Family Med, Ruth Miller) stays synthetic for submission. These are invented demo fixtures, not verified real contacts. No decision is waiting on Sean.
-- Demo video: shot list is in `docs/DEMO-SCRIPT.md`. Sean records it and submits on Devpost by Oct 30 (posted to Slack #geeza 2026-10-09).
+- Demo video: shot list is in `docs/DEMO-SCRIPT.md`. Superseded 2026-10-17: Sean said the agent has all the logins, so the agent produces the video. Sean's gates are approval of the finished cut and final entry before public upload/submit (deadline Oct 30, noon Central).
 - Gap list (spec vs built) is finished and held.
 
 ## Read first when resuming
 
 `README.md`, `docs/DECISIONS.md`, `docs/ARCHITECTURE.md`, `docs/CHANGES-SINCE-AUG-26.md`, `docs/DEVPOST.md`, `docs/EVAL.md`, `engine/boosh_flow/bill_explainer.py`.
+
+## Devpost access (verified 2026-10-17)
+
+No standalone Devpost login in the vault. Sign in with "Log in with GitHub" using the saved GitHub ssaglin19 session in the cloud browser profile. It linked to Sean's existing Devpost account (email on file with Devpost, same as his Gmail) and opened the draft at https://devpost.com/software/geeza: status "Incomplete submission" for Nebius x NVIDIA Global AI Hackathon. Nothing edited or submitted. Do not create another Devpost account or change identity. Google sign-in is not the route (Sean uses a passkey).
