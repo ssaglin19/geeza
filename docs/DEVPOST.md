@@ -30,10 +30,21 @@ You text Geeza in plain words. It can:
 
 ## Results
 
-We ran the scam screen against the live demo on 40 synthetic messages we wrote (20 scams, 20 legitimate). It flagged 20 of 20 scams and passed 18 of 20 legitimate messages. The two false alarms were real-looking Social Security and bank notices. This is a small, hand-written set, not a benchmark. Details and every message are in docs/EVAL.md.
+We ran the scam screen against the live demo on 40 synthetic messages we wrote (20 scams, 20 legitimate). It flagged 20 of 20 scams and passed 18 of 20 legitimate messages. The two false alarms were real-looking Social Security and bank notices. We reran the same 40 on 2026-10-18 after the final fixes and got the same result. This is a small, hand-written set, not a benchmark. Details and every message are in docs/EVAL.md.
 
 ## Challenges
 The live model first flagged a real utility bill as a scam. We fixed it with temperature 0, a 0.85 confidence bar for model-only flags, and code rules the model can't override.
+
+While recording the demo we found and fixed more bugs: the chat model looped its output after a pasted scam, "Tell Sean I need groceries" was refused by the intent router, and a bare YES with nothing pending needed a clear answer. Each now has a regression test (180 offline tests in total) and was checked again on the live demo.
+
+## What changed during the submission period
+The repo started on 2026-09-19 as a local-first flow engine (scam screen, mail read-back, caregiver path, specs). The hackathon build began 2026-10-05 and added: the Nebius Token Factory client for NVIDIA Nemotron, the tool loop with YES gates, the web demo and gateway, the simulated 911 flow, memory with sources, the electric bill explainer, per-visitor session isolation, the scam eval, and the Render deployment. The dated list is in docs/CHANGES-SINCE-AUG-26.md.
+
+## Feedback on Nebius Token Factory and NVIDIA Nemotron
+- Nemotron 3 Nano 30B A3B returned empty final content on short requests until we turned thinking off with `chat_template_kwargs.enable_thinking=false`. A note about this in the quickstart would save time.
+- With temperature 0 and the thinking flag off, the model followed our JSON tool format and our ordered-fact-sentence format reliably in the runs we checked. We still validate every output in code.
+- Credits are Token Factory only ($50 total), which was enough for this build. GPU VMs are not covered by them.
+- We did not use Nebius AI Cloud, NemoClaw, OpenShell or Hermes Agent. Geeza uses Token Factory only.
 
 ## What's next
 Durable on-device memory (SQLite), voice, the on-device fast layer (Laya), and the other Nemotron models for a second opinion on scams.
@@ -41,4 +52,7 @@ Durable on-device memory (SQLite), voice, the on-device fast layer (Laya), and t
 ## Links
 - Demo: https://geeza.onrender.com (first load after idle can take about a minute)
 - Code: https://github.com/ssaglin19/geeza
-- Demo video: TODO
+- Demo video: TODO (private review draft exists, not uploaded)
+
+## Built with (tags)
+NVIDIA Nemotron, Nebius Token Factory, Python, Render, OpenAI-compatible API, JSON tool calling
