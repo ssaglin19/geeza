@@ -19,6 +19,10 @@ Run 2026-10-09 against the deployed demo at https://geeza.onrender.com (Nemotron
 - Both false positives were real-looking notices that mention a Social Security payment or a bank statement (rows 33 and 34). The screen treated "credentials or ID numbers" wording as a scam sign even though both messages say to use the official site. For a protective assistant, a false alarm sends the person to ask a caregiver; a miss costs money. We do not claim this tradeoff is tuned.
 - 8 of 40 messages needed the YES step because intent routing was only medium confidence. Not an accuracy issue, but it adds a step.
 
+## Rerun 2026-10-18 (after the Oct 17 fixes)
+
+Same 40 messages, same method (fresh session per message, YES when asked), against the deployed demo (Nemotron Nano 30B A3B, no fallback on any call). Scams flagged: 20/20. Legitimate flagged: 2/20, the same two (rows 33 and 34). Only 1 of 40 messages needed the YES step, because pasted scam-like text now goes straight to the scam check.
+
 ## What this does and does not show
 
 - n=40, hand-written by us. Small, and the scams are fairly classic. It says nothing about novel or targeted scams.
