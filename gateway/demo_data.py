@@ -41,3 +41,13 @@ BILL_CURRENT = {
 
 # Payee names the caregiver installed as trusted, for the optional bill-text reader (exact match after trimming/case).
 KNOWN_PAYEES = ["Lakeshore Power"]
+
+# Synthetic statement text per scenario, read by the optional bill reader as a cross-check of the
+# vendor page amount. Fixed server-side text: visitors cannot choose what is sent to the reader.
+STATEMENT_DATE = "2026-01-10"
+STATEMENTS = {
+    "normal": "Lakeshore Power. Your January statement is ready. Previous balance: $84.00 (paid). "
+              "Amount due: $86.90, due 2026-01-28. Pay from your account page.",
+    "suspicious": "Lakeshore Power. Your January statement is ready. Previous balance: $84.00 (paid). "
+                  "Amount due: $412.00, due 2026-01-28. Includes a prior-period estimate adjustment.",
+}

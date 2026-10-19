@@ -31,6 +31,7 @@ FIELDS = {
 }
 REQUIRED = ("vendor", "amount_due", "due_date")
 _calls = 0
+_CACHE: dict[str, dict] = {}
 
 
 def enabled() -> bool:
@@ -55,6 +56,19 @@ def _norm(s: str) -> str:
 
 def _review(reasons, fields=None) -> dict:
     return {"status": "review", "reasons": reasons, "fields": fields or {}}
+
+
+def paste_enabled() -> bool:
+    """Reading arbitrary pasted text is a separate switch, off unless CLAIRIC_PASTE=1."""
+    return enabled() and os.environ.get("CLAIRIC_PASTE") == "1"
+
+
+def extract_cached(text, last_bill, known_sources, reference_date, call=None, within_pct=15.0) -> dict:
+    """Same as extract, but one call per distinct text per process. For fixed server-side
+    statements, so visitors cannot cause repeated calls."""
+    if text not in _CACHE:
+        _CACHE[text] = extract(text, last_bill, known_sources, reference_date, call, within_pct)
+    return _CACHE[text]
 
 
 def extract(text: str, last_bill: float, known_sources: list[str], reference_date: str,

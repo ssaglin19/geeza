@@ -88,6 +88,9 @@ class TestAssistant(unittest.TestCase):
         a = Assistant(MockClient())
         orig_en, orig_ex = be.enabled, be.extract
         be.enabled = lambda: enabled
+        op = be.paste_enabled
+        be.paste_enabled = lambda: enabled
+        self.addCleanup(setattr, be, "paste_enabled", op)
         be.extract = lambda *x, **k: orig_ex(*x, **k, call=lambda b: r)
         self.addCleanup(setattr, be, "enabled", orig_en)
         self.addCleanup(setattr, be, "extract", orig_ex)
@@ -116,3 +119,47 @@ class TestAssistant(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestPayFlowCrosscheck(unittest.TestCase):
+    def _a(self, r):
+        a = Assistant(MockClient())
+        oe, ox = be.enabled, be.extract
+        be.enabled = lambda: True
+        be.extract = lambda *x, **k: ox(*x[:4], call=lambda b: r)
+        self.addCleanup(setattr, be, "enabled", oe)
+        self.addCleanup(setattr, be, "extract", ox)
+        be._calls = 0
+        be._CACHE.clear()
+        self.addCleanup(be._CACHE.clear)
+        return a
+
+    def _offer(self, a):
+        a.handle("pay my electric bill")
+        return a.handle("yes")
+
+    def test_agreeing_reader_keeps_two_yes(self):
+        a = self._a(resp())
+        out = self._offer(a)
+        self.assertEqual(out["actions"][0]["type"], "approval")
+        self.assertIn("Paid", a.handle("yes")["response"])
+
+    def test_mismatch_stops(self):
+        a = self._a(resp(amt=95.0))
+        out = self._offer(a)
+        self.assertEqual(out["actions"][0]["type"], "escalate")
+        self.assertEqual(a.pending, {})
+
+    def test_reader_failure_stops(self):
+        a = self._a({"answers": {}})
+        self.assertEqual(self._offer(a)["actions"][0]["type"], "escalate")
+
+    def test_cache_bounds_calls(self):
+        a = self._a(resp())
+        for _ in range(5):
+            self._offer(a); a.pending.clear()
+        self.assertEqual(be._calls, 1)
+
+    def test_disabled_unchanged(self):
+        a = Assistant(MockClient())
+        self.assertEqual(self._offer(a)["actions"][0]["type"], "approval")

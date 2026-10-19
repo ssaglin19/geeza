@@ -83,7 +83,7 @@ class Assistant:
         if len(text) > 40 and not TELL.search(text) and assist.rule_screen({"body": text}):
             # A pasted message with scam signals goes to the scam check, code-first.
             return self._dispatch("scam_check", {"text": text}, sender, text)
-        if len(text) > 60 and BILL_TEXT.search(text) and bill_extract.enabled():
+        if len(text) > 60 and BILL_TEXT.search(text) and bill_extract.paste_enabled():
             return self._read_bill_text(text)
         routed = self._route(text, sender)
         if routed:
@@ -335,6 +335,11 @@ class Assistant:
                 return {"response": f"I stopped before paying. {why}. This needs Sean to look at it.",
                         "actions": [{"type": "escalate", "reason": why}], "events": events, **self._meta()}
             amount = next(e["value"] for e in events if e["event"] == "READ")
+            stop = self._statement_stop(sender, amount)
+            if stop:
+                self.pending.pop(sender, None)
+                return {"response": f"I stopped before paying. {stop}. This needs Sean to look at it.",
+                        "actions": [{"type": "escalate", "reason": stop}], "events": events, **self._meta()}
             self.pending[sender] = {"kind": "approval", "amount": amount}
             return {"response": f"Your Lakeshore Power bill is ${amount}. Last month was "
                                 f"${demo_data.LAST_BILL:.2f}, so that looks normal. Reply YES to pay ${amount}.",
@@ -349,6 +354,22 @@ class Assistant:
                     "actions": [{"type": "paid", "amount": quoted}], "events": events, **self._meta()}
         return {"response": "The amount changed, so I did not pay. Ask me again.",
                 "actions": [], "events": events, **self._meta()}
+
+    def _statement_stop(self, sender: str, page_amount: str) -> str | None:
+        """Optional cross-check: Clairic reads the fixed statement text and must agree with the
+        amount on the vendor page. Only ever adds a stop; it never approves anything. Off by default."""
+        if not bill_extract.enabled():
+            return None
+        key = self.scenario_for(sender)
+        st = demo_data.STATEMENTS.get(key, demo_data.STATEMENTS["normal"])
+        r = bill_extract.extract_cached(st, demo_data.LAST_BILL, demo_data.KNOWN_PAYEES, demo_data.STATEMENT_DATE)
+        if r["status"] != "ok":
+            return "The statement reader did not give a clear answer (" + "; ".join(r["reasons"]) + ")"
+        try:
+            same = abs(float(r["fields"]["amount_due"]) - float(page_amount)) < 0.005
+        except (TypeError, ValueError):
+            same = False
+        return None if same else "The statement and the bill page show different amounts"
 
     def _amount_now(self, sender: str) -> str:
         return demo_data.SCENARIOS.get(self.scenario_for(sender), demo_data.SCENARIOS["normal"])
