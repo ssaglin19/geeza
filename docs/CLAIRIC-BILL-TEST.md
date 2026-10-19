@@ -23,3 +23,12 @@ Limits:
 - Clairic is a hosted preview, not open weights yet, so it is not a local-first option today.
 - Usage: 13 calls (6 planned, 7 extra reruns), about 34 neurons on the Cloudflare dashboard against a 10,000/day free allocation. Price is $0.10 per million input tokens (Cloudflare pricing page).
 - The test token was deleted after the run.
+
+## Integration (2026-10-19, code only, off by default)
+
+`engine/boosh_flow/bill_extract.py` plus a cross-check in the demo bill-pay offer step. When switched on (`CLAIRIC_ENABLED=1`, `CLAIRIC_ACCOUNT_ID`, `CLAIRIC_API_TOKEN` as server env vars), Clairic reads a fixed synthetic statement text and its amount must pass the existing 15% amount check, match the known payee name exactly, and equal the amount on the vendor page. Any failure stops the pay offer for Sean. It can only add a stop; the two-YES approval is unchanged and Nemotron's role is unchanged.
+
+- Covers only the synthetic Lakeshore statement flow, text only. It is not a general bill reader. Images are not supported or tested.
+- Visitors cannot choose the text sent to Clairic. Results are cached per statement in the process (a restart resets this). Pasted-text reading is a separate switch (`CLAIRIC_PASTE=1`) and should stay off on a public URL.
+- Confidence thresholds (0.95 / 0.05) are experiment values, not validated policy.
+- Tests: `engine/tests/test_bill_extract.py`, offline with an injected client (nan/inf, negative, wrong types, low confidence, look-alike payee, mismatched amounts, reader failure, call budget, parallel visitors). These test the handling logic, not Clairic's accuracy.
