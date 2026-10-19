@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "engine"))
-from boosh_flow import assist, bill_explainer, decider, memory as mem  # noqa: E402
+from boosh_flow import assist, bill_explainer, bill_extract, decider, memory as mem  # noqa: E402
 from boosh_flow.tools import REGISTRY, TOOL_PROMPT, parse_call  # noqa: E402
 from boosh_flow.intent_router_hybrid import IntentAction, route_intent  # noqa: E402
 
@@ -32,6 +32,7 @@ REMEMBER = re.compile(r"^\s*(?:please )?remember (?:that )?(?P<fact>.+)$", re.I)
 FORGET = re.compile(r"^\s*(?:please )?forget (?:that |about )?(?P<fact>.+)$", re.I)
 SEED_DIR = Path(__file__).resolve().parents[1] / "memory" / "demo-memory"
 BILL_WHY = re.compile(r"\bwhy\b.*\b(bill|electric|power)\b.*\b(high|so much|more|up|big|jump|spike)\w*|\b(bill|electric)\b.*\b(went up|too high|so high|spiked|doubled)\b|\bexplain\b.*\b(electric|power|light)?\s*bill\b", re.I)
+BILL_TEXT = re.compile(r"\bamount due\b|\btotal due\b|\bbalance due\b", re.I)
 BILL = re.compile(r"\b(pay|paying)\b.*\b(bill|electric|light|power)\b|\b(electric|power|light) bill\b", re.I)
 
 
@@ -82,10 +83,29 @@ class Assistant:
         if len(text) > 40 and not TELL.search(text) and assist.rule_screen({"body": text}):
             # A pasted message with scam signals goes to the scam check, code-first.
             return self._dispatch("scam_check", {"text": text}, sender, text)
+        if len(text) > 60 and BILL_TEXT.search(text) and bill_extract.enabled():
+            return self._read_bill_text(text)
         routed = self._route(text, sender)
         if routed:
             return routed
         return self._after_route(text, sender)
+
+    def _read_bill_text(self, text: str) -> dict:
+        """Optional Clairic reading of a pasted bill. Read only: it never starts a payment and
+        never answers a YES. Anything unclear goes to Sean for review."""
+        import datetime
+        r = bill_extract.extract(text, demo_data.LAST_BILL, demo_data.KNOWN_PAYEES,
+                                 datetime.date.today().isoformat())
+        f = r["fields"]
+        if r["status"] == "ok":
+            msg = (f"I read this bill as ${f['amount_due']:.2f} to {f['vendor']}, due {f['due_date']}. "
+                   "That looks normal, but I have only read the words you pasted. "
+                   "To pay, ask me to pay the electric bill and I will check it again.")
+        else:
+            msg = ("I could not read this bill well enough to trust it: " + "; ".join(r["reasons"]) +
+                   ". Please show it to Sean before paying anything.")
+        return {"response": msg, "actions": [{"type": "bill_text_read", "status": r["status"]}],
+                **self._meta()}
 
     def _after_route(self, text: str, sender: str) -> dict:
         call = self._choose(text)

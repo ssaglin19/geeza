@@ -37,3 +37,7 @@ BILL_CURRENT = {
     "suspicious": {"period": "January", "days": 31, "kwh": 1240, "rate": 0.138, "fixed": 12.38,
                    "extras": [{"label": "Prior-period estimate adjustment", "amount": 228.50}]},
 }
+
+
+# Payee names the caregiver installed as trusted, for the optional bill-text reader (exact match after trimming/case).
+KNOWN_PAYEES = ["Lakeshore Power"]
