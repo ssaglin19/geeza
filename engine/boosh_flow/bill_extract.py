@@ -15,6 +15,7 @@ import json
 import math
 import os
 import re
+import threading
 import urllib.request
 
 from .gates import amount_sanity
@@ -32,6 +33,7 @@ FIELDS = {
 REQUIRED = ("vendor", "amount_due", "due_date")
 _calls = 0
 _CACHE: dict[str, dict] = {}
+_LOCK = threading.Lock()   # single flight: parallel visitors wait for one call
 
 
 def enabled() -> bool:
@@ -66,9 +68,10 @@ def paste_enabled() -> bool:
 def extract_cached(text, last_bill, known_sources, reference_date, call=None, within_pct=15.0) -> dict:
     """Same as extract, but one call per distinct text per process. For fixed server-side
     statements, so visitors cannot cause repeated calls."""
-    if text not in _CACHE:
-        _CACHE[text] = extract(text, last_bill, known_sources, reference_date, call, within_pct)
-    return _CACHE[text]
+    with _LOCK:
+        if text not in _CACHE:   # failures are cached too, so a failing reader is not retried per visitor
+            _CACHE[text] = extract(text, last_bill, known_sources, reference_date, call, within_pct)
+        return _CACHE[text]
 
 
 def extract(text: str, last_bill: float, known_sources: list[str], reference_date: str,

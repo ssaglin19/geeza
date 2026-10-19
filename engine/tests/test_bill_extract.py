@@ -163,3 +163,22 @@ class TestPayFlowCrosscheck(unittest.TestCase):
     def test_disabled_unchanged(self):
         a = Assistant(MockClient())
         self.assertEqual(self._offer(a)["actions"][0]["type"], "approval")
+
+
+class TestSingleFlight(unittest.TestCase):
+    def test_parallel_visitors_one_call_and_failure_cached(self):
+        import threading, time
+        be._calls = 0
+        be._CACHE.clear()
+        self.addCleanup(be._CACHE.clear)
+        n = []
+        def slow(b):
+            n.append(1)
+            time.sleep(0.2)
+            raise RuntimeError("down")
+        out = []
+        ts = [threading.Thread(target=lambda: out.append(
+            be.extract_cached("stmt", 84.0, KN, "2026-01-10", call=slow)["status"])) for _ in range(8)]
+        [t.start() for t in ts]
+        [t.join() for t in ts]
+        self.assertEqual((len(n), set(out)), (1, {"review"}))
