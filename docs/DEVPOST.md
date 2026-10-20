@@ -35,7 +35,9 @@ We ran the scam screen against the live demo on 40 synthetic messages we wrote (
 ## Challenges
 The live model first flagged a real utility bill as a scam. We fixed it with temperature 0, a 0.85 confidence bar for model-only flags, and code rules the model can't override.
 
-While recording the demo we found and fixed more bugs: the chat model looped its output after a pasted scam, "Tell Sean I need groceries" was refused by the intent router, and a bare YES with nothing pending needed a clear answer. Each now has a regression test (180 offline tests in total) and was checked again on the live demo.
+While recording the demo we found and fixed more bugs: the chat model looped its output after a pasted scam, "Tell Sean I need groceries" was refused by the intent router, and a bare YES with nothing pending needed a clear answer. Each now has a regression test (199 offline tests in total as of 2026-10-19) and was checked again on the live demo. Three later assistant edge cases (spaced card or SSN digits in a saved note, a non-YES reply cancelling a pending request without saying so, and a second money request being ignored) were fixed and covered by offline tests on 2026-10-19; those fixes were checked offline and deploy health only, not on the live model route.
+
+Optional Clairic bill reader: it only reads a pasted bill in the demo video, it is off for public visitors, and it can only add a stop. It never approves a payment. Recorded results are in docs/CLAIRIC-BILL-TEST.md.
 
 ## What changed during the submission period
 The repo started on 2026-09-19 as a local-first flow engine (scam screen, mail read-back, caregiver path, specs). The hackathon build began 2026-10-05 and added: the Nebius Token Factory client for NVIDIA Nemotron, the tool loop with YES gates, the web demo and gateway, the simulated 911 flow, memory with sources, the electric bill explainer, per-visitor session isolation, the scam eval, and the Render deployment. The dated list is in docs/CHANGES-SINCE-AUG-26.md.
