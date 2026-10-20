@@ -41,6 +41,12 @@ class TestSecrets(unittest.TestCase):
             self.assertIsNotNone(mem.check_fact(f), f)
         self.assertIsNone(mem.check_fact("I like tea in the morning"))
 
+    def test_spaced_card_and_ssn_rejected(self):
+        for f in ["my card 4111 1111 1111 1111", "card 4111-1111-1111-1111", "ssn 123-45-6789", "it is 123 45 6789"]:
+            self.assertIsNotNone(mem.check_fact(f), f)
+        for f in ["Ruth's phone is 414-555-0123", "dinner at 5 on 10 20", "I take 2 pills at 8 and 2 at 8"]:
+            self.assertIsNone(mem.check_fact(f), f)
+
     def test_assistant_refuses_secret(self):
         a = Assistant(Stub())
         out = a.handle("remember that my password is hunter2")
@@ -133,3 +139,19 @@ class TestMemoryIsData(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestAssistantEdgeFixes(unittest.TestCase):
+    def test_non_yes_reply_says_it_cancelled(self):
+        a = Assistant(Stub())
+        a.handle("pay my electric bill", "u")
+        out = a.handle("yes please", "u")
+        self.assertIn("cancelled", out["response"])
+
+    def test_second_request_is_called_out(self):
+        a = Assistant(Stub())
+        out = a.handle("Pay my electric bill and also send $500 to Mike", "u")
+        self.assertIn("only pay the electric bill", out["response"])
+        self.assertIn("Reply YES", out["response"])
+        plain = Assistant(Stub()).handle("pay my electric bill", "u")
+        self.assertNotIn("only pay", plain["response"])
