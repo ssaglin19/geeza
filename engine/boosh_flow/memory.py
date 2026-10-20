@@ -21,6 +21,8 @@ MAX_FACT_LEN = 200
 SECRET = re.compile(
     r"\d{5,}|password|passcode|\bpin\b|\bssn\b|social security|card number|account number|"
     r"medicare number|api key|secret|token|sk-", re.I)
+# Card or SSN written with spaces or dashes slips past the plain digit-run rule above.
+SPACED_NUMBER = re.compile(r"(?<!\d)(?:\d[ -]?){12,18}\d(?!\d)|(?<!\d)\d{3}[ -]\d{2}[ -]\d{4}(?!\d)")
 
 
 def parse_entry(line: str) -> dict | None:
@@ -47,7 +49,7 @@ def check_fact(fact: str) -> str | None:
         return "nothing to save"
     if len(f) > MAX_FACT_LEN or "\n" in f:
         return "too long, keep it to one short line"
-    if SECRET.search(f):
+    if SECRET.search(f) or SPACED_NUMBER.search(f):
         return "I do not save passwords, codes or long numbers"
     return None
 
