@@ -1,10 +1,10 @@
 # Known limitations (2026-10-19)
 
-Geeza is a hackathon demo with invented data and a fake vendor. Known limits:
+Geeza is a hackathon demo with invented data and a fake vendor.
 
-- The note-saving filter that refuses secrets is not complete. Do not type real personal or financial numbers into the demo.
-- Replies that are not a plain YES or NO cancel a waiting request, and the demo does not always say so clearly.
-- The assistant handles one request at a time and does not always say what it left undone.
-- Some docs (test count, optional Clairic reader, latest deploy) lag the code.
+Fixed on 2026-10-19 and covered by offline tests (not verified on the live model route): the note filter now rejects more number formats, a non-YES reply now says it cancelled the waiting request, and a bill request with a second money request now says only the bill can be paid.
 
-These are being tracked privately and will be fixed in the code, not described here.
+Still true:
+- The note-saving filter is a simple rule and is not complete. Do not type real personal or financial numbers into the demo.
+- The assistant handles one request at a time.
+- The optional Clairic bill reader is off for public visitors and only appears in the demo video.
