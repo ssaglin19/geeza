@@ -128,6 +128,14 @@ class Assistant:
                  "contact_family": "reach family", "get_groceries": "order groceries",
                  "check_safety": "check if something is a scam", "emergency": "get urgent help"}
 
+    COMPOUND = re.compile(r"\b(and also|also|and then|then)\b.*(send|transfer|wire|pay)\b|\bsend\b.*\$?\d", re.I)
+
+    def _compound_note(self, text: str) -> str:
+        """Say so when a bill request carries a second money request that this demo will not do."""
+        if self.COMPOUND.search(text):
+            return "I can only pay the electric bill here. I did not do the other part of your request. "
+        return ""
+
     def _route(self, text: str, sender: str) -> dict | None:
         """System 1: intent-routing pack (bands: high >= 0.80 go, 0.50-0.79 ask, < 0.50 general).
         Returns a reply when routing decides, else None and the normal tool choice runs.
@@ -152,7 +160,8 @@ class Assistant:
             return {"response": "I cannot order groceries in this demo.", "actions": [], **meta}
         if r["band"] == "medium" and r["skill"] in self.SKILL_ASK:
             self.pending[sender] = {"kind": "intent", "text": text}
-            return {"response": f"Did you want to {self.SKILL_ASK[r['skill']]}? Reply YES to go on.",
+            note = self._compound_note(text) if r["skill"] == "handle_bills" else ""
+            return {"response": f"{note}Did you want to {self.SKILL_ASK[r['skill']]}? Reply YES to go on.",
                     "actions": [{"type": "confirm_intent", "skill": r["skill"]}], **meta}
         return None
 
@@ -259,9 +268,7 @@ class Assistant:
         # Acting tools: never run before the person says YES.
         if name == "pay_bill":
             self.pending[sender] = {"kind": "offer"}
-            extra = ""
-            if re.search(r"\b(and also|also|and then|then)\b.*(send|transfer|wire|pay)\b|\bsend\b.*\$?\d", text, re.I):
-                extra = ("I can only pay the electric bill here. I did not do the other part of your request. ")
+            extra = self._compound_note(text)
             return {"response": extra + "I can pay your electric bill. First I will look up the amount "
                                 "and check it. Reply YES to start.",
                     "actions": [{"type": "flow_offer", "flow_id": DEMO_FLOW}], "tool": name, **self._meta()}
