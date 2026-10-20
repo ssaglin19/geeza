@@ -77,7 +77,15 @@ class Assistant:
                 self.pending.pop(sender, None)
                 return {"response": "Okay, I did not do it.", "actions": [], **self._meta()}
             self.pending.pop(sender, None)  # any other text cancels a pending offer/approval
+            if p.get("kind") in ("offer", "approval", "reminder", "draft", "remember", "forget"):
+                out = self._handle_fresh(text, sender)
+                out["response"] = ("I cancelled the request that was waiting, because that was not a plain YES. "
+                                   "Ask me again if you still want it.\n\n" + out["response"])
+                return out
 
+        return self._handle_fresh(text, sender)
+
+    def _handle_fresh(self, text: str, sender: str) -> dict:
         if YES.match(text) or NO.match(text):
             return {"response": "There is nothing waiting for a YES right now.", "actions": [], **self._meta()}
         if len(text) > 40 and not TELL.search(text) and assist.rule_screen({"body": text}):
@@ -251,7 +259,10 @@ class Assistant:
         # Acting tools: never run before the person says YES.
         if name == "pay_bill":
             self.pending[sender] = {"kind": "offer"}
-            return {"response": "I can pay your electric bill. First I will look up the amount "
+            extra = ""
+            if re.search(r"\b(and also|also|and then|then)\b.*(send|transfer|wire|pay)\b|\bsend\b.*\$?\d", text, re.I):
+                extra = ("I can only pay the electric bill here. I did not do the other part of your request. ")
+            return {"response": extra + "I can pay your electric bill. First I will look up the amount "
                                 "and check it. Reply YES to start.",
                     "actions": [{"type": "flow_offer", "flow_id": DEMO_FLOW}], "tool": name, **self._meta()}
         if name == "set_reminder":
