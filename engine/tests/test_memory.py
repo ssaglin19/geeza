@@ -155,3 +155,23 @@ class TestAssistantEdgeFixes(unittest.TestCase):
         self.assertIn("Reply YES", out["response"])
         plain = Assistant(Stub()).handle("pay my electric bill", "u")
         self.assertNotIn("only pay", plain["response"])
+
+
+class TestModelConfirmedRoute(unittest.TestCase):
+    """Mocked decider only: no model call is made."""
+    def test_compound_request_on_confirm_route(self):
+        from unittest import mock
+        from gateway import assistant as amod
+        class Live(Stub):
+            live = True
+        a = Assistant(Live())
+        fake = {"ok": True, "answers": {}, "error": None, "raw_head": None}
+        rt = {"skill": "handle_bills", "band": "medium", "confidence": 0.6}
+        with mock.patch.object(amod.decider, "decide", return_value=fake), \
+             mock.patch.object(amod.decider, "intent_policy", return_value=rt):
+            first = a.handle("Pay my electric bill and also send $500 to Mike", "u")
+            self.assertIn("only pay the electric bill", first["response"])
+            self.assertIn("Reply YES", first["response"])
+            second = a.handle("yes", "u")
+        self.assertIn("only pay the electric bill", second["response"])
+        self.assertNotIn("send $500", second["response"])
