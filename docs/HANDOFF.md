@@ -1,6 +1,6 @@
 # Geeza - Project Handoff
 
-Last updated: 2026-10-11. Replaces the 2026-09-22 Boosh handoff, which overclaimed. Open, owed and in-progress items only.
+Last updated: 2026-10-23. Replaces the 2026-09-22 Boosh handoff, which overclaimed. Open, owed and in-progress items only.
 
 ## What is built
 
@@ -49,3 +49,11 @@ No standalone Devpost login in the vault. Sign in with "Log in with GitHub" usin
 
 - Optional Clairic bill reader (`bill_extract.py`) is built and tested offline, and is dormant on Render: no Clairic env vars, off for public visitors, video-only. It can add a stop but never approves a payment; the amount gate, known-payee check and two-YES approval are unchanged. Recorded results: `docs/CLAIRIC-BILL-TEST.md`, `docs/CLAIRIC-INTEGRATION-LIVE-CHECK.md`.
 - Three assistant edge cases fixed offline-tested on main (6b8104d plus the compound-route follow-up): spaced card/SSN digits in notes, silent cancel on a non-YES reply, and an ignored second money request (also on the model-confirmed route, covered with a mocked decider). Render was last deployed manually; verified for health only, not live behavior. Live model calls are on hold until Token Factory balance is checked.
+
+## Update 2026-10-23
+
+- Deadline re-verified on the official rules page: submission period ends Thursday Oct 30, 2026, 10:00 am Pacific (noon Central). The Devpost draft page agrees ("7 more days to deadline" on Oct 23).
+- Live app health checked: https://geeza.onrender.com/health returns ok after a cold start of about 22s. No model calls made.
+- Devpost draft re-read (read-only, same GitHub OAuth sign-in): still DRAFT, 2/5 steps done (Manage team, Project overview). Project details are all still empty: About-the-project story, Built-with tags, Try-it-out links, image gallery, Demo video URL. Nothing edited or submitted. Entry text stays in `docs/DEVPOST.md` awaiting Sean's review.
+- Token Factory balance: docs re-checked - still no documented balance or usage API (billing docs point to the console Usage tab; the balance-API feature request on Nebius's ideas portal is still open). Console sign-in is still blocked (Google passkey route; the earlier password attempt failed). The balance check stays with Sean and model calls stay on hold.
+- Demo video: the loudness-normalized recut made 2026-10-18 was not recoverable through the tried routes. The 102.3s private review cut remains available privately to Sean. If he approves the cut, re-normalize its audio track or rebuild from `docs/DEMO-VIDEO-SCRIPT.md` before the public YouTube upload. Public upload and submission remain Sean's call.
