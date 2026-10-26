@@ -50,6 +50,20 @@ This offline suite uses no API key or model download. The optional GLiNER evalua
 
 Demo visitors have separate browser sessions. Notes, approvals and scenario changes are not shared between visitors. Notes remain temporary and synthetic; this is not production account authentication.
 
+## For judges: how to try the demo
+
+Live demo: https://geeza.onrender.com - free, no login, nothing to install. The first load after idle can take about a minute (free Render instance).
+
+Things to try:
+
+- "Check my mail" - reads invented mail back in plain words; a fake Medicare notice is flagged and not read out.
+- Paste a scam message (for example a gift-card demand) - Geeza names the warning signs and says not to reply or click.
+- "Pay the electric bill" - a fake vendor flow that only proceeds after two YESes; use the scenario links at the top of the demo page to see it stop and ask when the amount jumps 390% above the usual bill.
+- "Remember that my neighbor is called Ruth", then "What do you remember?" - notes are saved only after YES and each shows its source and date.
+- "I fell and cannot get up" - runs the clearly labelled SIMULATED 911 dispatcher; no real call, text or number is ever dialed.
+
+Everything in the demo is synthetic: invented mail, vendor, bills and amounts, and no real money moves. Each visitor gets a separate browser session; notes and approvals are not shared between visitors. The optional Clairic bill reader shown in the demo video is an optional text-only integration, disabled by default.
+
 ## License
 
 MIT. See LICENSE.
