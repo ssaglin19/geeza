@@ -2,6 +2,16 @@
 
 Last updated: 2026-10-23. Replaces the 2026-09-22 Boosh handoff, which overclaimed. Open, owed and in-progress items only.
 
+## Current submission readiness - October 27, 2026
+This section supersedes historical video/status notes below.
+
+- Deadline: Friday October 30, noon Central (10am Pacific), verified against the official rules.
+- Devpost remains an unsubmitted draft, 2/5 steps. Story, build tags and demo/repo links saved; required public-or-unlisted video URL missing. Gallery images are optional in the current form.
+- Final 126-second v5 video is complete; upload approved, destination channel and visibility not yet resolved. No video uploaded or entry submitted.
+- Additional info is an unfinished questionnaire, not only declarations: technical model/platform feedback, subjective ratings, AI-tool disclosure, personal eligibility and learning answers still need completion/review. Technical response drafts prepared privately; no unsupported declarations saved.
+- Current Token Factory balance, expiry and functional AI access through December 15 judging end remain unverified. Final live-model regression remains held until credit coverage is resolved. Current no-login web access is not proof of working AI coverage through judging.
+- No rebuild is currently planned. Remaining critical path: resolve credits and final live tests, upload approved video to the selected channel, finish/review questionnaire and obtain final submission approval.
+
 ## What is built
 
 - Python flow engine with unit tests (`engine/`), flow definitions (`flows/`).
@@ -52,7 +62,7 @@ No standalone Devpost login in the vault. Sign in with "Log in with GitHub" usin
 
 ## Update 2026-10-23
 
-- Deadline re-verified on the official rules page: submission period ends Thursday Oct 30, 2026, 10:00 am Pacific (noon Central). The Devpost draft page agrees ("7 more days to deadline" on Oct 23).
+- Deadline re-verified on the official rules page: submission period ends Friday Oct 30, 2026, 10:00 am Pacific (noon Central). The Devpost draft page agrees ("7 more days to deadline" on Oct 23).
 - Live app health checked: https://geeza.onrender.com/health returns ok after a cold start of about 22s. No model calls made.
 - Devpost draft re-read (read-only, same GitHub OAuth sign-in): still DRAFT, 2/5 steps done (Manage team, Project overview). Project details are all still empty: About-the-project story, Built-with tags, Try-it-out links, image gallery, Demo video URL. Nothing edited or submitted. Entry text stays in `docs/DEVPOST.md` awaiting Sean's review.
 - Token Factory balance: docs re-checked - still no documented balance or usage API (billing docs point to the console Usage tab; the balance-API feature request on Nebius's ideas portal is still open). Console sign-in is still blocked (Google passkey route; the earlier password attempt failed). The balance check stays with Sean and model calls stay on hold.
